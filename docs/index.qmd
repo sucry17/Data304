@@ -39,18 +39,21 @@ library(dplyr)
 
 - **Create a graphic that shows the mean temperature for each month. How many “months” should you be displaying? (There is more than one answer to this – perhaps try doing it more that one way.)**
 
-```{r}
+<details>
+  <summary> Code </summary>
+  
+```{r,warning=FALSE,echo=FALSE}
 # Reading the data
 weather_data<- read_csv("https://calvin-data304.netlify.app/data/weather-with-dates.csv")
 
 # Checking the first few rows of the data
-head(weather)
+head(weather_data)
 
 # Checking my variables types
-str(weather$month)
-str(weather$year)
-str(weather$temp_min)
-str(weather$temp_max)
+str(weather_data$month)
+str(weather_data$year)
+str(weather_data$temp_min)
+str(weather_data$temp_max)
  
 # Changing year from numeric to categorical
 weather_data$year <- as.factor(weather_data$year)
@@ -60,7 +63,10 @@ weather_data <- weather_data |> mutate(avg_temp = (temp_max + temp_min)/2)
 
 # Grouping by year and month
 weather_data <- weather_data |> group_by(year,month)
-
+```
+</details>
+```{r}
+  
 # Creating the graphics
 vl_chart(data = weather_data, height = 400, width = 600) |>
   vl_mark_bar() |>
@@ -69,19 +75,23 @@ vl_chart(data = weather_data, height = 400, width = 600) |>
   vl_encode_xOffset("year")|>
   vl_encode_color("year",scale=list(scheme = "category10"))
 
+```
+
+```{r}
+# Creating the graphics
 vl_chart(data = weather_data, height = 250, width = 400) |>
   vl_mark_bar() |>
   vl_encode_x("month", title = "Month", type = "nominal", sort = "ascending") |>
   vl_encode_y("avg_temp", title = "Average Temperature", type = "quantitative", aggregate = "mean" )|>
   vl_facet_wrap("year")
 
-
 ```
+
 
 
 - **Create a graphic that shows how the different types of weather (rain, fog, etc.) are distributed by month in Seattle. When is it rainiest in Seattle? Sunniest?**
 
-```{r}
+```{r,warning=FALSE,echo=TRUE}
 # Grouping by weather
 weather_data <- weather_data |> group_by(weather)
 
