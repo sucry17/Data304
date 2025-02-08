@@ -41,7 +41,7 @@ library(dplyr)
 
 ```{r}
 # Reading the data
-weather <- read_csv("https://calvin-data304.netlify.app/data/weather-with-dates.csv")
+weather_data<- read_csv("https://calvin-data304.netlify.app/data/weather-with-dates.csv")
 
 # Checking the first few rows of the data
 head(weather)
@@ -53,26 +53,46 @@ str(weather$temp_min)
 str(weather$temp_max)
  
 # Changing year from numeric to categorical
-weather$year <- as.factor(weather$year)
+weather_data$year <- as.factor(weather_data$year)
 
 # Calculating the average mean
-weather <- weather |> mutate(avg_temp = (temp_max + temp_min)/2)
+weather_data <- weather_data |> mutate(avg_temp = (temp_max + temp_min)/2)
 
 # Grouping by year and month
-weather <- weather |> group_by(year,month)
+weather_data <- weather_data |> group_by(year,month)
 
-# Creating the graphic
-vl_chart(data = weather, height = 250, width = 400) |>
+# Creating the graphics
+vl_chart(data = weather_data, height = 400, width = 600) |>
   vl_mark_bar() |>
   vl_encode_x("month", title = "Month", type = "nominal", sort = "ascending") |>
   vl_encode_y("avg_temp", title = "Average Temperature", type = "quantitative", aggregate = "mean" )|>
-  vl_facet_wrap(field = "year")
+  vl_encode_xOffset("year")|>
+  vl_encode_color("year",scale=list(scheme = "category10"))
+
+vl_chart(data = weather_data, height = 250, width = 400) |>
+  vl_mark_bar() |>
+  vl_encode_x("month", title = "Month", type = "nominal", sort = "ascending") |>
+  vl_encode_y("avg_temp", title = "Average Temperature", type = "quantitative", aggregate = "mean" )|>
+  vl_facet_wrap("year")
+
+
 ```
 
 
 - **Create a graphic that shows how the different types of weather (rain, fog, etc.) are distributed by month in Seattle. When is it rainiest in Seattle? Sunniest?**
 
 ```{r}
+# Grouping by weather
+weather_data <- weather_data |> group_by(weather)
+
+# Creating the graphics
+  vl_chart(data = weather_data, height = 400, width = 600) |>
+  vl_mark_bar() |>
+  vl_encode_x("month", title = "Month", type = "nominal", sort = "ascending") |>
+  vl_encode_y(aggregate = "count", title = "Count", type = "quantitative") |>
+  vl_encode_color("weather", type = "nominal", title = "Weather Type", ) |>
+  vl_encode_xOffset("weather", type = "nominal", title = "Weather Type")
+
 
 ```
 
