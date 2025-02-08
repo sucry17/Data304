@@ -1,5 +1,6 @@
 ---
-title: "Even better"
+title: "Homework 5"
+author: "Sucry Bendeck"
 format: html
 embed-resources: true
 ---
@@ -17,7 +18,7 @@ library(dplyr)
 
 - **a. Graphic**
 
-![Cars](https://r-graph-gallery.com/275-add-text-labels-with-ggplot2_files/figure-html/thecode2-1.png){width=40%}
+![**Cars**](https://r-graph-gallery.com/275-add-text-labels-with-ggplot2_files/figure-html/thecode2-1.png){width=40%}
 
 - **b. What marks are being used? What variables are mapped to which properties?**
    - The marks being used are points. Variables miles per gallon and weight are mapped to the point. Where each point represents a specific car. 
@@ -39,11 +40,6 @@ library(dplyr)
 - **Create a graphic that shows the mean temperature for each month. How many “months” should you be displaying? (There is more than one answer to this – perhaps try doing it more that one way.)**
 
 ```{r}
-# Reading necessary libraries
-library(vegabrite)
-library(readr)
-library(dplyr)
-
 # Reading the data
 weather <- read_csv("https://calvin-data304.netlify.app/data/weather-with-dates.csv")
 
