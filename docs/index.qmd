@@ -65,7 +65,7 @@ weather_data <- weather_data |> mutate(avg_temp = (temp_max + temp_min)/2)
 weather_data <- weather_data |> group_by(year,month)
 ```
 </details>
-```{r}
+```{r,warning=FALSE,echo=FALSE}
   
 # Creating the graphics
 vl_chart(data = weather_data, height = 400, width = 600) |>
@@ -77,7 +77,7 @@ vl_chart(data = weather_data, height = 400, width = 600) |>
 
 ```
 
-```{r}
+```{r,warning=FALSE,echo=FALSE}
 # Creating the graphics
 vl_chart(data = weather_data, height = 250, width = 400) |>
   vl_mark_bar() |>
