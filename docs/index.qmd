@@ -109,6 +109,11 @@ weather_data <- weather_data |> group_by(weather)
 
 ```
 
+#### Link 
+
+
+[Link to my qmd](https://r.cs.calvin.edu/s/70edcc67d757757020aa0/?launcher=1)
+
 
 - **Comments**
 I tried to make the weather types match the colors, but for some reason, it did not allow me to change the scale and, therefore, the domain of the colors. The plot appeared, but the actual data did not. I tried to debug it but was unsuccessful.
