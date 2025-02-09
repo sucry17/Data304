@@ -24,16 +24,16 @@ library(dplyr)
    - The marks being used are points. Variables miles per gallon and weight are mapped to the point. Where each point represents a specific car. 
    
 - **c. What is the main story of this graphic?**
-  - This graphic, I think , is telling us a story about cars fuel efficiency in comparison to their weight. Furthermore, the graphic shows that on the lower the weight  the better the fuel efficiency.
+    - This graphic, I think, is telling us a story about cars' fuel efficiency in comparison to their weight. Furthermore,        the graphic shows that the lower the weight, the better the fuel efficiency.
   
 - **d. What makes it a good graphic?**
-  - For the most part its an easy graphic to interpret. Labels are clear, how ever there is room for improvement. For example, instead of having static labels for the cars it could perhaps be interactive so that you can hover over the points and then the label appears. Right now all the labels appear which means that many overlap, having the labels this way makes it hard to read the car names. 
+     - For the most part, it's an easy graphic to interpret. The labels are clear; however, there is room for improvement.        For example, instead of having static labels for the cars, it could be interactive so that you can hover over the           points and see the label. Right now, all the labels appear at once, causing many to overlap. Having the labels this         way makes it hard to read the car names.
   
 - **e. What features do you think you would know how to implement in Vega-Lite?**
   - I think that I would be able to replicate the graphic.
   
 - **f. Are there any features of the graphic that you would not know how to do in Vega-Lite? If so, list them.**
-  -  I think I would have to investigate the labels. Although I might be able to make it a layer but if i want to implement the hovering interaction I might have to research a little to try and implement that feature. 
+  - I think I would have to investigate how to mark the labels. Although I might be able to make it a layer, if I want to       implement the hovering interaction, I would need to research how to add this feature.
 
 ### Exercise 2
 
