@@ -69,6 +69,7 @@ weather_data <- weather_data |> group_by(year,month)
   
 # Creating the graphics
 vl_chart(data = weather_data, height = 400, width = 600) |>
+  vl_config(title = list(text = "Weather Patterns by Month"))|>
   vl_mark_bar() |>
   vl_encode_x("month", title = "Month", type = "nominal", sort = "ascending") |>
   vl_encode_y("avg_temp", title = "Average Temperature", type = "quantitative", aggregate = "mean" )|>
@@ -80,6 +81,7 @@ vl_chart(data = weather_data, height = 400, width = 600) |>
 ```{r,warning=FALSE,echo=FALSE}
 # Creating the graphics
 vl_chart(data = weather_data, height = 250, width = 400) |>
+  vl_config(title = list(text = "Weather Patterns by Month"))|>
   vl_mark_bar() |>
   vl_encode_x("month", title = "Month", type = "nominal", sort = "ascending") |>
   vl_encode_y("avg_temp", title = "Average Temperature", type = "quantitative", aggregate = "mean" )|>
@@ -97,6 +99,7 @@ weather_data <- weather_data |> group_by(weather)
 
 # Creating the graphics
   vl_chart(data = weather_data, height = 400, width = 600) |>
+  vl_config(title = list(text = "Weather Patterns by Month"))|>
   vl_mark_bar() |>
   vl_encode_x("month", title = "Month", type = "nominal", sort = "ascending") |>
   vl_encode_y(aggregate = "count", title = "Count", type = "quantitative") |>
