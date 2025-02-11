@@ -1,0 +1,29 @@
+---
+title: "Homework 6"
+author: "Sucry Bendeck"
+format: html
+editor: visual
+---
+## Libraries
+
+```{r, warning=FALSE, message=FALSE}
+library(vegabrite)
+library(readr)
+library(dplyr)
+```
+
+**Exercise 1**
+
+- ***a. What is the most interesting lesson, guide, or piece of advice Tufte offers you in this chapter?***
+
+- ***b. Tufte shares some of his favorite graphics in this chapter. Pick one (but not the one about the military advance on and retreat from Russia) and answer the following.***
+
+  - What page is your graphic on? [Take a screen shot and include the image as well, if you can.]
+
+  -  Why did you pick the graphic you chose?
+
+  - What encoding channels are used in the graphic? What variables are they associated with?
+
+  -  What, if any, elements of the graphic would be hard/impossible for you to implement in Vega-Lite (given what we know so far)?
+
+  - What point is Tufte illustrating with this graphic?
