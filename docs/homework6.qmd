@@ -4,6 +4,7 @@ author: "Sucry Bendeck"
 format: html
 editor: visual
 ---
+
 ## Libraries
 
 ```{r, warning=FALSE, message=FALSE}
@@ -14,29 +15,65 @@ library(dplyr)
 
 **Exercise 1**
 
-- ***a. What is the most interesting lesson, guide, or piece of advice Tufte offers you in this chapter?***
-  - A silly theory means a silly graphic.
-  - Graphical exelence the effcient communication of complex quantiatvie ideas.
-  
-  
-  
+-   ***a. What is the most interesting lesson, guide, or piece of advice Tufte offers you in this chapter?***
 
-- ***b. Tufte shares some of his favorite graphics in this chapter. Pick one (but not the one about the military advance on and retreat from Russia) and answer the following.***
+    -   A silly theory means a silly graphic.
+    -   Graphical exelence the effcient communication of complex quantiatvie ideas.
 
-  - What page is your graphic on? [Take a screen shot and include the image as well, if you can.]
+-   ***b. Tufte shares some of his favorite graphics in this chapter. Pick one (but not the one about the military advance on and retreat from Russia) and answer the following.***
 
-  -  Why did you pick the graphic you chose?
+-   What page is your graphic on? \[Take a screen shot and include the image as well, if you can.\]
 
-  - What encoding channels are used in the graphic? What variables are they associated with?
+![European like map pg.22](/rprojects/scb36/Data304/docs/maps-hw6.png)
 
-  -  What, if any, elements of the graphic would be hard/impossible for you to implement in Vega-Lite (given what we know so far)?
+-   **Why did you pick the graphic you chose?**
 
-  - What point is Tufte illustrating with this graphic?
+-   In all honesty the graphic looks like a monopoly board and then also the hands make it look intrrestring. Also, I find the latin
+
+-   **What encoding channels are used in the graphic? What variables are they associated with?**
+
+-   Text: The text helps us to identify the cities, the longitude and lattitude. I helps us with the orientation of the the map.
+
+-   **Position: The postion here is defined by the strings and the pins and we have a position basd on the long and lat.**
+
+-   Drawings: It has the string locating the position of Praga. The mountain could be showing the terrain of the location.
+
+-   **What, if any, elements of the graphic would be hard/impossible for you to implement in Vega-Lite (given what we know so far)?**
+
+-   I think the positioning of the images(Mountains, hands and strings) would be extremely hard would be hard to.
+
+-   **What point is Tufte illustrating with this graphic?**
+
+-   The map's design is old in that it still used the name of the city being trying to be located. In contrast the newer maps had greater level of abstraction as it had coordinates instead of names.
 
 **Exercise 2**
 
-***List one or two ideas that you learned in these sections that will change the way you design and create data graphics.***
+***List one or two ideas that you learned in these sections that will change the way you design and create data graphics.*** 
+    
+    - There aren’t a lot of hard-and-fast rules when it comes visualizing data. 
+    - When you consider getting rid of data, you always want to think through 
+      what context you lose when doing so.
 
 **Exercise 3**
 
 ***Do Exercies 2.13 of (Knaflic 2020, p 96).***
+
+**Exercise 2.13: what’s wrong with this graph?**
+
+*Consider Figure 2.13, which shows response and completion rates for an email marketing campaign where email recipients were asked to complete a survey.*
+
+-  **STEP 1: List three things that are not ideal about this graph. What makes it challenging?**
+
+    - Both marks should be the same to make comparison easier.
+    - Eliminate the the axis numbers or the numebrs on the marks.
+    - The scales of the axis are visually deceiving.
+
+-   **STEP 2: For each of the three things you’ve listed, describe how you would overcome the given challenge.**
+
+    -  I would make both marks to be bars so that it is easier to comapre by eye.
+    - I would eliminate the numbers on top of the graphs or the numebers on the axis to create less clutter.
+    -  Some how standardize the numbers to have relatively good scales. So that its not deceiving.
+  
+  
+
+-   **STEP 3: Download the data. Create your visual that puts into practice the strategies you’ve outlined**
