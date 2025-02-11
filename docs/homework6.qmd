@@ -15,6 +15,11 @@ library(dplyr)
 **Exercise 1**
 
 - ***a. What is the most interesting lesson, guide, or piece of advice Tufte offers you in this chapter?***
+  - A silly theory means a silly graphic.
+  - Graphical exelence the effcient communication of complex quantiatvie ideas.
+  
+  
+  
 
 - ***b. Tufte shares some of his favorite graphics in this chapter. Pick one (but not the one about the military advance on and retreat from Russia) and answer the following.***
 
@@ -27,3 +32,11 @@ library(dplyr)
   -  What, if any, elements of the graphic would be hard/impossible for you to implement in Vega-Lite (given what we know so far)?
 
   - What point is Tufte illustrating with this graphic?
+
+**Exercise 2**
+
+***List one or two ideas that you learned in these sections that will change the way you design and create data graphics.***
+
+**Exercise 3**
+
+***Do Exercies 2.13 of (Knaflic 2020, p 96).***
