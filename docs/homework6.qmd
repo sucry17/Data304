@@ -84,7 +84,6 @@ library(vegabrite)
 
 <details>
   <summary> Code </summary>
-  
 ```{r,warning=FALSE,echo=FALSE}
 # Reading the data
 email_rate_data<- '{ "values" :
@@ -108,7 +107,6 @@ str("Completion")
 str("Response")
 str(email_rate_data)
 ```
-
 </details>
 
 
@@ -128,7 +126,6 @@ I want a column for each variable so that I can easily compare the values. The g
 
 <details>
   <summary> Code </summary>
-  
 ```{r}
 
 # Pivot the data
@@ -164,7 +161,6 @@ my_spec <- list(
   )
 )
 ```
-
 </details>
 
 
