@@ -1,8 +1,10 @@
 ---
 title: "Homework 6"
 author: "Sucry Bendeck"
+date: "last-modified"
 format: html
 editor: visual
+embed-resources: true
 ---
 
 ## Libraries
@@ -23,40 +25,37 @@ library(vegabrite)
 
 -   **b. Tufte shares some of his favorite graphics in this chapter. Pick one (but not the one about the military advance on and retreat from Russia) and answer the following.**
 
-  - What page is your graphic on? \[Take a screen shot and include the image as well, if you can.\]
+  - **What page is your graphic on? \[Take a screen shot and include the image as well, if you can.\]**
 
 ![European like map pg.22](maps-hw6.png)
 
+- **Why did you pick the graphic you chose?**
 
+  - In all honesty, the graphic looks like a Monopoly board, and the hands make it look interesting. Also, I find the Latin appealing because I can somewhat read or guess what it’s saying for the simple reason that I know Spanish.
 
+- **What encoding channels are used in the graphic? What variables are they associated with?**
 
--   **Why did you pick the graphic you chose?**
+  - Text: The text helps us identify the cities, as well as the longitude and latitude. It also assists with the orientation of the map.
 
-  -  In all honesty, the graphic looks like a Monopoly board, and the hands make it look interesting. Also, I find the Latin appealing because I can somewhat read or guess what it’s saying for the simple reason that I know Spanish.
+- **Position: The position here is defined by the strings and the pins and we have a position based on the long and lat.**
 
--   **What encoding channels are used in the graphic? What variables are they associated with?**
+  - Drawings: It has the string indicating the position of Prague. The mountain could be showing the terrain of the location.
 
-  -   Text: The text helps us identify the cities, as well as the longitude and latitude. It also assists with the orientation of the map.
+- **What, if any, elements of the graphic would be hard/impossible for you to implement in Vega-Lite (given what we know so far)?**
 
--   **Position: The position here is defined by the strings and the pins and we have a position based on the long and lat.**
+  - think the positioning of the images (mountains, hands, and strings) would be extremely hard to achieve because of their positioning
 
-  -  Drawings: It has the string indicating the position of Prague. The mountain could be showing the terrain of the location.
+- **What point is Tufte illustrating with this graphic?**
 
-  -   **What, if any, elements of the graphic would be hard/impossible for you to implement in Vega-Lite (given what we know so far)?**
-
-  -    think the positioning of the images (mountains, hands, and strings) would be extremely hard to achieve because of their positioning
-
--   **What point is Tufte illustrating with this graphic?**
-
-  -   The map's design is outdated, as it still uses the name of the city being located. In contrast, the newer maps have a greater level of abstraction, using coordinates instead of names.
+  - The map's design is outdated, as it still uses the name of the city being located. In contrast, the newer maps have a greater level of abstraction, using coordinates instead of names.
 
 ## **Exercise 2**
 
-- **List one or two ideas that you learned in these sections that will change the way you design and create data graphics.**
+-   **List one or two ideas that you learned in these sections that will change the way you design and create data graphics.**
 
-    - There are not a lot of hard and fast rules when it comes to visualizing dat.
-    - When you consider getting rid of data, you always want to think through what context you lose when do so.
-   
+    -   There are not a lot of hard and fast rules when it comes to visualizing dat.
+    -   When you consider getting rid of data, you always want to think through what context you lose when do so.
+
 ## **Exercise 3**
 
 ***Do Exercies 2.13 of (Knaflic 2020, p 96).***
@@ -65,23 +64,22 @@ library(vegabrite)
 
 *Consider Figure 2.13, which shows response and completion rates for an email marketing campaign where email recipients were asked to complete a survey.*
 
--  **STEP 1: List three things that are not ideal about this graph. What makes it challenging?**
+-   **STEP 1: List three things that are not ideal about this graph. What makes it challenging?**
 
-    - Both marks should be the same to make comparison easier.
-    - Eliminate the the axis numbers or the numebrs on the marks.
-    - The scales of the axis are visually deceiving.
+    -   Both marks should be the same to make comparison easier.
+    -   Eliminate the the axis numbers or the numebrs on the marks.
+    -   The scales of the axis are visually deceiving.
 
 -   **STEP 2: For each of the three things you’ve listed, describe how you would overcome the given challenge.**
 
-    - I would make both marks bars to make comparison easier by eye.
-    - I would eliminate the numbers on top of the graphs and the numbers on the axis to reduce clutter.
-    - Standardize the numbers to have relatively good scales. So that its not deceiving.
-  
-  
+    -   I would make both marks bars to make comparison easier by eye.
+    -   I would eliminate the numbers on top of the graphs and the numbers on the axis to reduce clutter.
+    -   Standardize the numbers to have relatively good scales. So that its not deceiving.
 
 -   **STEP 3: Download the data. Create your visual that puts into practice the strategies you’ve outlined**
 
 ```{r,warning=FALSE,echo=FALSE}
+#| code-fold: true
 # Reading the data
 email_rate_data<- '{ "values" :
         [{"Date":"Q1-2017","Completion Rate":0.91,"Response Rate":0.023},
@@ -113,11 +111,10 @@ vl_chart(data = email_rate_data, height = 400, width = 600) |>
   vl_encode_y2("Response Rate",title = "Response Rate", type = "Quantitative")
 ```
 
-
 I want a column for each variable so that I can easily compare the values. The graph above seems to be combining both Completion Rate and Reply into a single variable. To fix this, I will pivot the data frame to a long format, which will provide the three columns I need and help me construct the graph more easily.
 
 ```{r}
-
+#| code-fold: true
 # Pivot the data
 email_rate_data_long <- email_rate_data |>
   pivot_longer(
@@ -141,7 +138,6 @@ my_spec <- vl_chart(data = email_rate_data_long, height = 450, width = 600) |>
 my_spec |> as_vegaspec()
 
 ```
-
 
 ### Comments:
 
