@@ -106,11 +106,6 @@ str("Date")
 str("Completion")
 str("Response")
 str(email_rate_data)
-```
-</details>
-
-
-```{r}
 
 # Initial visualization
 vl_chart(data = email_rate_data, height = 400, width = 600) |>
@@ -125,7 +120,6 @@ vl_chart(data = email_rate_data, height = 400, width = 600) |>
 I want a column for each variable so that I can easily compare the values. The graph above seems to be combining both Completion Rate and Reply into a single variable. To fix this, I will pivot the data frame to a long format, which will provide the three columns I need and help me construct the graph more easily.
 
 ```{r}
-
 # Pivot the data
 email_rate_data_long <- email_rate_data %>%
   pivot_longer(
@@ -158,11 +152,7 @@ my_spec <- list(
     color = list(field = "Rate Type", type = "nominal", title = "Rate Type")
   )
 )
-```
 
-
-
-```{r}
 
 # Graphic
 my_spec |> as_vegaspec()
