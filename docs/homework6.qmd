@@ -82,8 +82,6 @@ library(vegabrite)
 
 -   **STEP 3: Download the data. Create your visual that puts into practice the strategies you’ve outlined**
 
-<details>
-  <summary> Code </summary>
 ```{r,warning=FALSE,echo=FALSE}
 # Reading the data
 email_rate_data<- '{ "values" :
