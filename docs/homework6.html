@@ -68,6 +68,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="homework6_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="homework6_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="homework6_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="homework6_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="homework6_files/libs/vega-5.24.0/vega@5.24.0.min.js"></script>
+<script src="homework6_files/libs/vega-lite-5.16.3/vega-lite@5.16.3.min.js"></script>
+<link href="homework6_files/libs/vega-embed-6.22.2/vega-embed.css" rel="stylesheet">
+<script src="homework6_files/libs/vega-embed-6.22.2/vega-embed@6.22.2.min.js"></script>
+<script src="homework6_files/libs/vegawidget-vl5-binding-0.5.0/vegawidget-vl5.js"></script>
 
 
 </head>
@@ -106,9 +112,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="libraries" class="level2">
 <h2 class="anchored" data-anchor-id="libraries">Libraries</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(vegabrite)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(vegawidget)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(vegabrite)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="exercise-1" class="level2">
@@ -124,7 +132,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="/rprojects/scb36/Data304/docs/maps-hw6.png" class="img-fluid figure-img"></p>
+<p><img src="maps-hw6.png" class="img-fluid figure-img"></p>
 <figcaption>European like map pg.22</figcaption>
 </figure>
 </div>
@@ -143,10 +151,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="exercise-2" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-2"><strong>Exercise 2</strong></h2>
-<p><strong>List one or two ideas that you learned in these sections that will change the way you design and create data graphics.</strong></p>
-<pre><code>- There aren’t a lot of hard-and-fast rules when it comes visualizing data. 
-- When you consider getting rid of data, you always want to think through 
-  what context you lose when doing so.</code></pre>
+<ul>
+<li><p><strong>List one or two ideas that you learned in these sections that will change the way you design and create data graphics.</strong></p>
+<ul>
+<li>There are not a lot of hard and fast rules when it comes to visualizing dat.</li>
+<li>When you consider getting rid of data, you always want to think through what context you lose when do so.</li>
+</ul></li>
+</ul>
 </section>
 <section id="exercise-3" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-3"><strong>Exercise 3</strong></h2>
@@ -168,6 +179,309 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 <li><p><strong>STEP 3: Download the data. Create your visual that puts into practice the strategies you’ve outlined</strong></p></li>
 </ul>
+<details>
+<summary>
+Code
+</summary>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code> chr "Date"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code> chr "Completion"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code> chr "Response"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   9 obs. of  3 variables:
+ $ Date           : chr  "Q1-2017" "Q2-2017" "Q3-2017" "Q42017" ...
+ $ Completion Rate: num  0.91 0.93 0.91 0.89 0.84 0.88 0.91 0.87 0.83
+ $ Response Rate  : num  0.023 0.018 0.028 0.023 0.034 0.027 0.026 0.039 0.028</code></pre>
+</div>
+</div>
+</details>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initial visualization</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">vl_chart</span>(<span class="at">data =</span> email_rate_data, <span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_config</span>(<span class="at">title =</span> <span class="fu">list</span>(<span class="at">text =</span> <span class="st">"Email Response Rate"</span>))<span class="sc">|&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_bar</span>() <span class="sc">|&gt;</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"Date"</span>, <span class="at">title =</span> <span class="st">"Date"</span>, <span class="at">type =</span> <span class="st">"nominal"</span>, <span class="at">sort =</span> <span class="st">"ascending"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"Completion Rate"</span>, <span class="at">title =</span> <span class="st">"Complition Rate"</span>, <span class="at">type =</span> <span class="st">"Quantitative"</span> )<span class="sc">|&gt;</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y2</span>(<span class="st">"Response Rate"</span>,<span class="at">title =</span> <span class="st">"Response Rate"</span>, <span class="at">type =</span> <span class="st">"Quantitative"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Invalid schema for object passed to or created by
+modify_inner_spec.vegaspec_unit
+Warning: Invalid schema for object passed to or created by
+modify_inner_spec.vegaspec_unit</code></pre>
+</div>
+<div class="cell-output-display">
+<div id="htmlwidget-c34f1f4dea27d4d7d945" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c34f1f4dea27d4d7d945">{"x":{
+  "chart_spec": {
+    "data": {
+      "values": [
+        {
+          "Date": "Q1-2017",
+          "Completion Rate": 0.91,
+          "Response Rate": 0.023
+        },
+        {
+          "Date": "Q2-2017",
+          "Completion Rate": 0.93,
+          "Response Rate": 0.018
+        },
+        {
+          "Date": "Q3-2017",
+          "Completion Rate": 0.91,
+          "Response Rate": 0.028
+        },
+        {
+          "Date": "Q42017",
+          "Completion Rate": 0.89,
+          "Response Rate": 0.023
+        },
+        {
+          "Date": "Q1-2018",
+          "Completion Rate": 0.84,
+          "Response Rate": 0.034
+        },
+        {
+          "Date": "Q2-2018",
+          "Completion Rate": 0.88,
+          "Response Rate": 0.027
+        },
+        {
+          "Date": "Q3-2018",
+          "Completion Rate": 0.91,
+          "Response Rate": 0.026
+        },
+        {
+          "Date": "Q4-2018",
+          "Completion Rate": 0.87,
+          "Response Rate": 0.039
+        },
+        {
+          "Date": "Q1-2019",
+          "Completion Rate": 0.83,
+          "Response Rate": 0.028
+        }
+      ]
+    },
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "height": 400,
+    "width": 600,
+    "config": {
+      "title": {
+        "text": "Email Response Rate"
+      }
+    },
+    "mark": {
+      "type": "bar"
+    },
+    "encoding": {
+      "x": {
+        "field": "Date",
+        "type": "nominal",
+        "sort": "ascending",
+        "title": "Date"
+      },
+      "y": {
+        "field": "Completion Rate",
+        "type": "Quantitative",
+        "title": "Complition Rate"
+      },
+      "y2": {
+        "field": "Response Rate",
+        "type": "Quantitative",
+        "title": "Response Rate"
+      }
+    }
+  },
+  "embed_options": {
+    "renderer": "canvas",
+    "defaultStyle": true
+  }
+},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<p>I want a column per variable so that I can easily compare the values.The graph above seems to be taking both of Completion Rate and Reply into one single variable. In order to fix this I will pivot the data frame to long format.</p>
+<details>
+<summary>
+Code
+</summary>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pivot the data</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>email_rate_data_long <span class="ot">&lt;-</span> email_rate_data <span class="sc">%&gt;%</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">c</span>(<span class="st">`</span><span class="at">Completion Rate</span><span class="st">`</span>, <span class="st">`</span><span class="at">Response Rate</span><span class="st">`</span>),</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"Rate Type"</span>, </span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"Rate Value"</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Converting Completion Rate and Response Rate to percentages</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>email_rate_data_long <span class="ot">&lt;-</span> email_rate_data_long <span class="sc">%&gt;%</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Rate Value</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">Rate Value</span><span class="st">`</span> <span class="sc">*</span> <span class="dv">100</span>  <span class="co"># Convert rates to percentages</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Constructing the Vega-Lite specification</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>my_spec <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">$schema</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"https://vega.github.io/schema/vega-lite/v5.json"</span>,  </span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> <span class="fu">list</span>(<span class="at">values =</span> email_rate_data_long),  <span class="co"># Using long data</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">mark =</span> <span class="fu">list</span>( <span class="at">type =</span> <span class="st">"bar"</span>, <span class="at">width =</span> <span class="dv">45</span>),</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">height =</span> <span class="dv">450</span>,</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">width =</span> <span class="dv">600</span>,</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">encoding =</span> <span class="fu">list</span>(</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">list</span>(<span class="at">field =</span> <span class="st">"Date"</span>, <span class="at">type =</span> <span class="st">"ordinal"</span>, <span class="at">title =</span> <span class="st">"Date"</span>),</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="fu">list</span>(</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">field =</span> <span class="st">"Rate Value"</span>, </span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>      <span class="at">type =</span> <span class="st">"quantitative"</span>, </span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">"Rate Value (%)"</span>,</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>      <span class="at">scale =</span> <span class="fu">list</span>(<span class="at">domain =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>), <span class="at">step =</span> <span class="dv">5</span>)  <span class="co"># Set y-axis to have steps of 5</span></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="fu">list</span>(<span class="at">field =</span> <span class="st">"Rate Type"</span>, <span class="at">type =</span> <span class="st">"nominal"</span>, <span class="at">title =</span> <span class="st">"Rate Type"</span>)</span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</details>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Graphic</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>my_spec <span class="sc">|&gt;</span> <span class="fu">as_vegaspec</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="htmlwidget-1d9f7a0e80ce9b67458b" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1d9f7a0e80ce9b67458b">{"x":{
+  "chart_spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "values": [
+        {
+          "Date": "Q1-2017",
+          "Rate Type": "Completion Rate",
+          "Rate Value": 91
+        },
+        {
+          "Date": "Q1-2017",
+          "Rate Type": "Response Rate",
+          "Rate Value": 2.3
+        },
+        {
+          "Date": "Q2-2017",
+          "Rate Type": "Completion Rate",
+          "Rate Value": 93
+        },
+        {
+          "Date": "Q2-2017",
+          "Rate Type": "Response Rate",
+          "Rate Value": 1.8
+        },
+        {
+          "Date": "Q3-2017",
+          "Rate Type": "Completion Rate",
+          "Rate Value": 91
+        },
+        {
+          "Date": "Q3-2017",
+          "Rate Type": "Response Rate",
+          "Rate Value": 2.8
+        },
+        {
+          "Date": "Q42017",
+          "Rate Type": "Completion Rate",
+          "Rate Value": 89
+        },
+        {
+          "Date": "Q42017",
+          "Rate Type": "Response Rate",
+          "Rate Value": 2.3
+        },
+        {
+          "Date": "Q1-2018",
+          "Rate Type": "Completion Rate",
+          "Rate Value": 84
+        },
+        {
+          "Date": "Q1-2018",
+          "Rate Type": "Response Rate",
+          "Rate Value": 3.4
+        },
+        {
+          "Date": "Q2-2018",
+          "Rate Type": "Completion Rate",
+          "Rate Value": 88
+        },
+        {
+          "Date": "Q2-2018",
+          "Rate Type": "Response Rate",
+          "Rate Value": 2.7
+        },
+        {
+          "Date": "Q3-2018",
+          "Rate Type": "Completion Rate",
+          "Rate Value": 91
+        },
+        {
+          "Date": "Q3-2018",
+          "Rate Type": "Response Rate",
+          "Rate Value": 2.6
+        },
+        {
+          "Date": "Q4-2018",
+          "Rate Type": "Completion Rate",
+          "Rate Value": 87
+        },
+        {
+          "Date": "Q4-2018",
+          "Rate Type": "Response Rate",
+          "Rate Value": 3.9
+        },
+        {
+          "Date": "Q1-2019",
+          "Rate Type": "Completion Rate",
+          "Rate Value": 83
+        },
+        {
+          "Date": "Q1-2019",
+          "Rate Type": "Response Rate",
+          "Rate Value": 2.8
+        }
+      ]
+    },
+    "mark": {
+      "type": "bar",
+      "width": 45
+    },
+    "height": 450,
+    "width": 600,
+    "encoding": {
+      "x": {
+        "field": "Date",
+        "type": "ordinal",
+        "title": "Date"
+      },
+      "y": {
+        "field": "Rate Value",
+        "type": "quantitative",
+        "title": "Rate Value (%)",
+        "scale": {
+          "domain": [0, 100],
+          "step": 5
+        }
+      },
+      "color": {
+        "field": "Rate Type",
+        "type": "nominal",
+        "title": "Rate Type"
+      }
+    }
+  },
+  "embed_options": {
+    "renderer": "canvas",
+    "defaultStyle": true
+  }
+},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
 </section>
 
 </main>

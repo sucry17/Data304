@@ -12,6 +12,7 @@ library(dplyr)
 library(jsonlite)
 library(tidyr)
 library(vegawidget)
+library(vegabrite)
 ```
 
 ## **Exercise 1**
@@ -25,7 +26,7 @@ library(vegawidget)
 
   - What page is your graphic on? \[Take a screen shot and include the image as well, if you can.\]
 
-![European like map pg.22](/rprojects/scb36/Data304/docs/maps-hw6.png)
+![European like map pg.22](maps-hw6.png)
 
 
 
@@ -52,12 +53,11 @@ library(vegawidget)
 
 ## **Exercise 2**
 
-**List one or two ideas that you learned in these sections that will change the way you design and create data graphics.**
-    
-    - There aren’t a lot of hard-and-fast rules when it comes visualizing data. 
-    - When you consider getting rid of data, you always want to think through 
-      what context you lose when doing so.
+- **List one or two ideas that you learned in these sections that will change the way you design and create data graphics.**
 
+    - There are not a lot of hard and fast rules when it comes to visualizing dat.
+    - When you consider getting rid of data, you always want to think through what context you lose when do so.
+   
 ## **Exercise 3**
 
 ***Do Exercies 2.13 of (Knaflic 2020, p 96).***
@@ -82,6 +82,9 @@ library(vegawidget)
 
 -   **STEP 3: Download the data. Create your visual that puts into practice the strategies you’ve outlined**
 
+<details>
+  <summary> Code </summary>
+  
 ```{r,warning=FALSE,echo=FALSE}
 # Reading the data
 email_rate_data<- '{ "values" :
@@ -106,9 +109,11 @@ str("Response")
 str(email_rate_data)
 ```
 
+</details>
+
 ```{r}
 
-# Intial Visualization
+# Initial visualization
 vl_chart(data = email_rate_data, height = 400, width = 600) |>
   vl_config(title = list(text = "Email Response Rate"))|>
   vl_mark_bar() |>
@@ -120,6 +125,9 @@ vl_chart(data = email_rate_data, height = 400, width = 600) |>
 I want a column per variable so that I can easily compare the values.The graph above seems to be taking both of Completion Rate and Reply into one single variable. In order to fix this I will pivot  the data frame to long format. 
 
 
+<details>
+  <summary> Code </summary>
+  
 ```{r}
 
 # Pivot the data
@@ -140,22 +148,27 @@ email_rate_data_long <- email_rate_data_long %>%
 my_spec <- list(
   `$schema` = "https://vega.github.io/schema/vega-lite/v5.json",  
   data = list(values = email_rate_data_long),  # Using long data
-  mark = "bar",# Define the mark type (bar chart)
+  mark = list( type = "bar", width = 45),
   height = 450,
   width = 600,
   encoding = list(
-    x = list(field = "Date", type = "nominal", title = "Date"),
+    x = list(field = "Date", type = "ordinal", title = "Date"),
     y = list(
       field = "Rate Value", 
       type = "quantitative", 
       title = "Rate Value (%)",
-      scale = list(domain = c(0, 100), nice = TRUE, step = 5)  # Set y-axis to have steps of 5
+      scale = list(domain = c(0, 100), step = 5)  # Set y-axis to have steps of 5
     ),
     color = list(field = "Rate Type", type = "nominal", title = "Rate Type")
   )
 )
+```
 
-# Render the chart using vegawidget
+</details>
+
+```{r}
+
+# Graphic
 my_spec |> as_vegaspec()
 
 ```
