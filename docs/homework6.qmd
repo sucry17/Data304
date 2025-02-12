@@ -8,53 +8,57 @@ editor: visual
 ## Libraries
 
 ```{r, warning=FALSE, message=FALSE}
-library(vegabrite)
-library(readr)
 library(dplyr)
+library(jsonlite)
+library(tidyr)
+library(vegawidget)
 ```
 
-**Exercise 1**
+## **Exercise 1**
 
--   ***a. What is the most interesting lesson, guide, or piece of advice Tufte offers you in this chapter?***
+-   **a. What is the most interesting lesson, guide, or piece of advice Tufte offers you in this chapter?**
 
     -   A silly theory means a silly graphic.
     -   Graphical exelence the effcient communication of complex quantiatvie ideas.
 
--   ***b. Tufte shares some of his favorite graphics in this chapter. Pick one (but not the one about the military advance on and retreat from Russia) and answer the following.***
+-   **b. Tufte shares some of his favorite graphics in this chapter. Pick one (but not the one about the military advance on and retreat from Russia) and answer the following.**
 
--   What page is your graphic on? \[Take a screen shot and include the image as well, if you can.\]
+  - What page is your graphic on? \[Take a screen shot and include the image as well, if you can.\]
 
 ![European like map pg.22](/rprojects/scb36/Data304/docs/maps-hw6.png)
 
+
+
+
 -   **Why did you pick the graphic you chose?**
 
--   In all honesty the graphic looks like a monopoly board and then also the hands make it look intrrestring. Also, I find the latin
+  -   In all honesty the graphic looks like a monopoly board and then also the hands make it look intrrestring. Also, I find the latin
 
 -   **What encoding channels are used in the graphic? What variables are they associated with?**
 
--   Text: The text helps us to identify the cities, the longitude and lattitude. I helps us with the orientation of the the map.
+  -   Text: The text helps us to identify the cities, the longitude and latitude. I helps us with the orientation of the the map.
 
 -   **Position: The postion here is defined by the strings and the pins and we have a position basd on the long and lat.**
 
--   Drawings: It has the string locating the position of Praga. The mountain could be showing the terrain of the location.
+  -   Drawings: It has the string locating the position of Praga. The mountain could be showing the terrain of the location.
 
--   **What, if any, elements of the graphic would be hard/impossible for you to implement in Vega-Lite (given what we know so far)?**
+  -   **What, if any, elements of the graphic would be hard/impossible for you to implement in Vega-Lite (given what we know so far)?**
 
--   I think the positioning of the images(Mountains, hands and strings) would be extremely hard would be hard to.
+  -   I think the positioning of the images(Mountains, hands and strings) would be extremely hard would be hard to.
 
 -   **What point is Tufte illustrating with this graphic?**
 
--   The map's design is old in that it still used the name of the city being trying to be located. In contrast the newer maps had greater level of abstraction as it had coordinates instead of names.
+  -   The map's design is old in that it still used the name of the city being trying to be located. In contrast the newer maps had greater level of abstraction as it had coordinates instead of names.
 
-**Exercise 2**
+## **Exercise 2**
 
-***List one or two ideas that you learned in these sections that will change the way you design and create data graphics.*** 
+**List one or two ideas that you learned in these sections that will change the way you design and create data graphics.**
     
     - There aren’t a lot of hard-and-fast rules when it comes visualizing data. 
     - When you consider getting rid of data, you always want to think through 
       what context you lose when doing so.
 
-**Exercise 3**
+## **Exercise 3**
 
 ***Do Exercies 2.13 of (Knaflic 2020, p 96).***
 
@@ -71,9 +75,88 @@ library(dplyr)
 -   **STEP 2: For each of the three things you’ve listed, describe how you would overcome the given challenge.**
 
     -  I would make both marks to be bars so that it is easier to comapre by eye.
-    - I would eliminate the numbers on top of the graphs or the numebers on the axis to create less clutter.
-    -  Some how standardize the numbers to have relatively good scales. So that its not deceiving.
+    - I would eliminate the numbers on top of the graphs or the numebers on the axis to create less           clutter.
+    - Some how standardize the numbers to have relatively good scales. So that its not deceiving.
   
   
 
 -   **STEP 3: Download the data. Create your visual that puts into practice the strategies you’ve outlined**
+
+```{r,warning=FALSE,echo=FALSE}
+# Reading the data
+email_rate_data<- '{ "values" :
+        [{"Date":"Q1-2017","Completion Rate":0.91,"Response Rate":0.023},
+        {"Date":"Q2-2017","Completion Rate":0.93,"Response Rate":0.018},
+        {"Date":"Q3-2017","Completion Rate":0.91,"Response Rate":0.028},
+        {"Date":"Q42017","Completion Rate":0.89,"Response Rate":0.023},
+        {"Date":"Q1-2018","Completion Rate":0.84,"Response Rate":0.034},
+        {"Date":"Q2-2018","Completion Rate":0.88,"Response Rate":0.027},
+        {"Date":"Q3-2018","Completion Rate":0.91,"Response Rate":0.026},
+        {"Date":"Q4-2018","Completion Rate":0.87,"Response Rate":0.039},
+        {"Date":"Q1-2019","Completion Rate":0.83,"Response Rate":0.028}] 
+    }'
+
+# Convert the JSON string into a data frame
+email_rate_data <- fromJSON(email_rate_data)$values
+
+# Checking variable types
+str("Date")
+str("Completion")
+str("Response")
+str(email_rate_data)
+```
+
+```{r}
+
+# Intial Visualization
+vl_chart(data = email_rate_data, height = 400, width = 600) |>
+  vl_config(title = list(text = "Email Response Rate"))|>
+  vl_mark_bar() |>
+  vl_encode_x("Date", title = "Date", type = "nominal", sort = "ascending") |>
+  vl_encode_y("Completion Rate", title = "Complition Rate", type = "Quantitative" )|>
+  vl_encode_y2("Response Rate",title = "Response Rate", type = "Quantitative")
+```
+
+I want a column per variable so that I can easily compare the values.The graph above seems to be taking both of Completion Rate and Reply into one single variable. In order to fix this I will pivot  the data frame to long format. 
+
+
+```{r}
+
+# Pivot the data
+email_rate_data_long <- email_rate_data %>%
+  pivot_longer(
+    cols = c(`Completion Rate`, `Response Rate`),
+    names_to = "Rate Type", 
+    values_to = "Rate Value"
+  )
+
+# Converting Completion Rate and Response Rate to percentages
+email_rate_data_long <- email_rate_data_long %>%
+  mutate(
+    `Rate Value` = `Rate Value` * 100  # Convert rates to percentages
+  )
+
+# Constructing the Vega-Lite specification
+my_spec <- list(
+  `$schema` = "https://vega.github.io/schema/vega-lite/v5.json",  
+  data = list(values = email_rate_data_long),  # Using long data
+  mark = "bar",# Define the mark type (bar chart)
+  height = 450,
+  width = 600,
+  encoding = list(
+    x = list(field = "Date", type = "nominal", title = "Date"),
+    y = list(
+      field = "Rate Value", 
+      type = "quantitative", 
+      title = "Rate Value (%)",
+      scale = list(domain = c(0, 100), nice = TRUE, step = 5)  # Set y-axis to have steps of 5
+    ),
+    color = list(field = "Rate Type", type = "nominal", title = "Rate Type")
+  )
+)
+
+# Render the chart using vegawidget
+my_spec |> as_vegaspec()
+
+```
+
