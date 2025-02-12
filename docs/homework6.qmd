@@ -11,7 +11,6 @@ editor: visual
 library(dplyr)
 library(jsonlite)
 library(tidyr)
-library(vegawidget)
 library(vegabrite)
 ```
 
@@ -118,38 +117,24 @@ vl_chart(data = email_rate_data, height = 400, width = 600) |>
 I want a column for each variable so that I can easily compare the values. The graph above seems to be combining both Completion Rate and Reply into a single variable. To fix this, I will pivot the data frame to a long format, which will provide the three columns I need and help me construct the graph more easily.
 
 ```{r}
+
 # Pivot the data
-email_rate_data_long <- email_rate_data %>%
+email_rate_data_long <- email_rate_data |>
   pivot_longer(
     cols = c(`Completion Rate`, `Response Rate`),
     names_to = "Rate Type", 
     values_to = "Rate Value"
-  )
-
-# Converting Completion Rate and Response Rate to percentages
-email_rate_data_long <- email_rate_data_long %>%
-  mutate(
-    `Rate Value` = `Rate Value` * 100  # Convert rates to percentages
-  )
+  ) |>
+  mutate(`Rate Value` = `Rate Value` * 100)  # Convert rates to percentages
 
 # Constructing the Vega-Lite specification
-my_spec <- list(
-  `$schema` = "https://vega.github.io/schema/vega-lite/v5.json",  
-  data = list(values = email_rate_data_long),  # Using long data
-  mark = list( type = "bar", width = 45),
-  height = 450,
-  width = 600,
-  encoding = list(
-    x = list(field = "Date", type = "ordinal", title = "Date"),
-    y = list(
-      field = "Rate Value", 
-      type = "quantitative", 
-      title = "Rate Value (%)",
-      scale = list(domain = c(0, 100), step = 5)  # Set y-axis to have steps of 5
-    ),
-    color = list(field = "Rate Type", type = "nominal", title = "Rate Type")
-  )
-)
+my_spec <- vl_chart(data = email_rate_data_long, height = 450, width = 600) |>
+  vl_config(title = list(text = "Email Response and Completion Rates")) |>
+  vl_mark_bar(width = 45) |>
+  vl_encode_x("Date", title = "Date", type = "ordinal", sort = "ascending") |>
+  vl_encode_y("Rate Value", title = "Rate Value (%)", type = "quantitative", 
+              scale = list(domain = c(0, 100))) |>
+  vl_encode_color("Rate Type", title = "Rate Type", type = "nominal")
 
 
 # Graphic
