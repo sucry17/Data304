@@ -33,23 +33,23 @@ library(vegabrite)
 
 -   **Why did you pick the graphic you chose?**
 
-  -   In all honesty the graphic looks like a monopoly board and then also the hands make it look intrrestring. Also, I find the latin
+  -  In all honesty, the graphic looks like a Monopoly board, and the hands make it look interesting. Also, I find the Latin appealing because I can somewhat read or guess what it’s saying for the simple reason that I know Spanish.
 
 -   **What encoding channels are used in the graphic? What variables are they associated with?**
 
-  -   Text: The text helps us to identify the cities, the longitude and latitude. I helps us with the orientation of the the map.
+  -   Text: The text helps us identify the cities, as well as the longitude and latitude. It also assists with the orientation of the map.
 
--   **Position: The postion here is defined by the strings and the pins and we have a position basd on the long and lat.**
+-   **Position: The position here is defined by the strings and the pins and we have a position based on the long and lat.**
 
-  -   Drawings: It has the string locating the position of Praga. The mountain could be showing the terrain of the location.
+  -  Drawings: It has the string indicating the position of Prague. The mountain could be showing the terrain of the location.
 
   -   **What, if any, elements of the graphic would be hard/impossible for you to implement in Vega-Lite (given what we know so far)?**
 
-  -   I think the positioning of the images(Mountains, hands and strings) would be extremely hard would be hard to.
+  -    think the positioning of the images (mountains, hands, and strings) would be extremely hard to achieve because of their positioning
 
 -   **What point is Tufte illustrating with this graphic?**
 
-  -   The map's design is old in that it still used the name of the city being trying to be located. In contrast the newer maps had greater level of abstraction as it had coordinates instead of names.
+  -   The map's design is outdated, as it still uses the name of the city being located. In contrast, the newer maps have a greater level of abstraction, using coordinates instead of names.
 
 ## **Exercise 2**
 
@@ -74,9 +74,9 @@ library(vegabrite)
 
 -   **STEP 2: For each of the three things you’ve listed, describe how you would overcome the given challenge.**
 
-    -  I would make both marks to be bars so that it is easier to comapre by eye.
-    - I would eliminate the numbers on top of the graphs or the numebers on the axis to create less           clutter.
-    - Some how standardize the numbers to have relatively good scales. So that its not deceiving.
+    - I would make both marks bars to make comparison easier by eye.
+    - I would eliminate the numbers on top of the graphs and the numbers on the axis to reduce clutter.
+    - Standardize the numbers to have relatively good scales. So that its not deceiving.
   
   
 
@@ -122,8 +122,8 @@ vl_chart(data = email_rate_data, height = 400, width = 600) |>
   vl_encode_y2("Response Rate",title = "Response Rate", type = "Quantitative")
 ```
 
-I want a column per variable so that I can easily compare the values.The graph above seems to be taking both of Completion Rate and Reply into one single variable. In order to fix this I will pivot  the data frame to long format. 
 
+I want a column for each variable so that I can easily compare the values. The graph above seems to be combining both Completion Rate and Reply into a single variable. To fix this, I will pivot the data frame to a long format, which will provide the three columns I need and help me construct the graph more easily.
 
 <details>
   <summary> Code </summary>
@@ -173,3 +173,7 @@ my_spec |> as_vegaspec()
 
 ```
 
+
+### Comments:
+
+Making the graphs was harder than it seemed, partly due to the data wrangling. Furthermore, I decided to use a stacked bar graph to show proportions, as it makes it easier to compare and observe the true values. I also added a legend to help the reader easily identify the two different rates
