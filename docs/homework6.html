@@ -216,8 +216,8 @@ Warning: Invalid schema for object passed to or created by
 modify_inner_spec.vegaspec_unit</code></pre>
 </div>
 <div class="cell-output-display">
-<div id="htmlwidget-c00e76876b09d800846a" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c00e76876b09d800846a">{"x":{
+<div id="htmlwidget-c69dacbe418ee0256711" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c69dacbe418ee0256711">{"x":{
   "chart_spec": {
     "data": {
       "values": [
@@ -306,10 +306,6 @@ modify_inner_spec.vegaspec_unit</code></pre>
 </div>
 </div>
 <p>I want a column for each variable so that I can easily compare the values. The graph above seems to be combining both Completion Rate and Reply into a single variable. To fix this, I will pivot the data frame to a long format, which will provide the three columns I need and help me construct the graph more easily.</p>
-<details>
-<summary>
-Code
-</summary>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pivot the data</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>email_rate_data_long <span class="ot">&lt;-</span> email_rate_data <span class="sc">%&gt;%</span></span>
@@ -344,13 +340,12 @@ Code
 <span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</details>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Graphic</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>my_spec <span class="sc">|&gt;</span> vegawidget<span class="sc">::</span><span class="fu">as_vegaspec</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>my_spec <span class="sc">|&gt;</span> <span class="fu">as_vegaspec</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="htmlwidget-edc503939c713bc2abfe" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
-<script type="application/json" data-for="htmlwidget-edc503939c713bc2abfe">{"x":{
+<div id="htmlwidget-ec771a624c6f65516c12" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ec771a624c6f65516c12">{"x":{
   "chart_spec": {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "data": {

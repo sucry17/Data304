@@ -124,8 +124,6 @@ vl_chart(data = email_rate_data, height = 400, width = 600) |>
 
 I want a column for each variable so that I can easily compare the values. The graph above seems to be combining both Completion Rate and Reply into a single variable. To fix this, I will pivot the data frame to a long format, which will provide the three columns I need and help me construct the graph more easily.
 
-<details>
-  <summary> Code </summary>
 ```{r}
 
 # Pivot the data
@@ -161,13 +159,13 @@ my_spec <- list(
   )
 )
 ```
-</details>
+
 
 
 ```{r}
 
 # Graphic
-my_spec |> vegawidget::as_vegaspec()
+my_spec |> as_vegaspec()
 
 ```
 
