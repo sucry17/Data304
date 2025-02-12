@@ -167,7 +167,7 @@ my_spec <- list(
 ```{r}
 
 # Graphic
-my_spec |> as_vegaspec()
+my_spec |> vegawidget::as_vegaspec()
 
 ```
 
