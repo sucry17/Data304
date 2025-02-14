@@ -164,7 +164,7 @@ vl_chart(data = countries_data_combined, height = 400, width = 600) |>
 heat_data <- read.csv("https://calvin-data304.netlify.app/data/cow-internet2.csv")
 head(heat_data)
 
-# Visualization
+# Visualizatio
 vl_chart()
 ```
 
