@@ -163,6 +163,9 @@ vl_chart(data = countries_data_combined, height = 400, width = 600) |>
 #Reading the data:
 heat_data <- read.csv("https://calvin-data304.netlify.app/data/cow-internet2.csv")
 head(heat_data)
+
+# Visualization
+vl_chart()
 ```
 
 -   *At around 20:10, Healy presents a possible problem with heat maps, what is it?*
