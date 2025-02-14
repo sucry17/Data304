@@ -6,34 +6,36 @@ format: html
 editor: visual
 embed-resources: true
 ---
-
-
-```{r, warning=FALSE, message=FALSE, echo = FALSE}
+## Libraries
+```{r, warning=FALSE, message=FALSE, echo = TRUE}
 library(dplyr)
 library(jsonlite)
 library(tidyr)
 library(vegabrite)
 ```
+## **Exercise 1 (Wilke on visualizing amounts) Read Chapter 6 of Wilke (2019).**
+- **List some guidelines/advice Wilke gives about creating bar charts.** 
+  - If names are too big switch the axis. 
 
-**List some guidelines/advice Wilke gives about creating bar charts.**
-  - If names are too big switch the axis.
-  - 
-
-**When is it not advised to use a bar chart? Why?**
-  - When the categorical variables are on the x-axis becuse they take so much space.
-**What alternatives to bars are mentioned in this chapter?**
+- **When is it not advised to use a bar chart? Why?** 
+  - When the categorical variables are on the x-axis becuse they take so much space. 
+- **What alternatives to bars are mentioned in this chapter?**
   - Dot plots and heat maps.
 
-**What guidance does Wilke give about whether or not to stack bars vs. dodge them (using an offset in Vega-Lite)?**
-  -  Stacking is useful when the sum of the amounts represented by the individual stacked bars is in itself a meaningful amount.It is also appropriate when the individual bars represent counts
-  -  We offset to avoid the mental effort.
-**Recreate Figure 6.3 in Vega-Lite. [CSV]**
+- **What guidance does Wilke give about whether or not to stack bars vs. dodge them (using an offset in Vega-Lite)?** 
+  - Stacking is useful when the sum of the amounts represented by the individual stacked bars is in itself a meaningful amount.It is also appropriate when the individual bars represent counts - We offset to avoid the mental effort. 
+  
+
+
 ```{r}
 movie_data<-read.csv("https://calvin-data304.netlify.app/data/cow-movies.csv")
 head(movie_data)
 ```
 
-```{r}
+**Recreate Figure 6.3 in Vega-Lite. \[CSV\]**
+
+```{r, warning=FALSE}
+#| code-fold: true
 vl_chart(data = movie_data, height = 400, width = 600) |>
   vl_mark_bar() |>
   vl_encode_x("amount", title = "Weekend Gross(million USD)", type = "Quantitative") |>
@@ -41,22 +43,27 @@ vl_chart(data = movie_data, height = 400, width = 600) |>
 
 ```
 
-**Recreate Figures 6.8 and 6.9 in Vega-Lite. [CSV]**
-```{r}
+**Recreate Figures 6.8 and 6.9 in Vega-Lite. \[CSV\]**
+
+```{r, warning=FALSE}
+#| code-fold: true
 #Reading the data:
 income_data <- read.csv("https://calvin-data304.netlify.app/data/cow-income.csv")
 head(income_data)
 ```
 
-```{r} 
-#Graph6.8- initial graph
+```{r, warning=FALSE}
+#| code-fold: true
+#Graph6.8- EDA
 vl_chart(data = income_data, height = 400, width = 600) |>
   vl_mark_bar() |>
   vl_encode_x("age", title = "Age (years)", type = "ordinal") |>
   vl_encode_y("median_income", type = "Ordinal"  , sort = "ascending")|>
   vl_encode_color("race",type ="Nominal")
 ```
-```{r}
+
+```{r, warning=FALSE}
+#| code-fold: true
 # Data prep
 income_data_grouped <- income_data |>
   mutate(race = recode(race, "white_non_hispanic" = "white")) |>  # Combining
@@ -82,15 +89,17 @@ vl_chart(data = income_data_grouped, height = 400, width = 600) |>
   vl_encode_xOffset("age",type = "Nominal")
 ```
 
+**Recreate Figure 6.11 and explain why Figures 6.12 and 6.13 are labeled “bad”. \[CSV\]**
 
-**Recreate Figure 6.11 and explain why Figures 6.12 and 6.13 are labeled “bad”. [CSV]**
-
-```{r}
+```{r, warning=FALSE}
+#| code-fold: true
 #Reading the data:
 countries_data <- read.csv("https://calvin-data304.netlify.app/data/cow-gapminder.csv")
 head(countries_data)
 ```
-```{r}
+
+```{r, warning=FALSE}
+#| code-fold: true
 countries_data_combined <- countries_data |>  
   filter(year == 2007, continent == "Americas") |>  
   group_by(country) |>  
@@ -105,7 +114,9 @@ vl_chart(data = countries_data_combined, height = 400, width = 600) |>
   vl_encode_y("country", title = "Country", type = "Nominal",sort = list("-lifeExp"))
 
 ```
-```{r}
+
+```{r, warning=FALSE}
+#| code-fold: true
 # 6.12
 vl_chart(data = countries_data_combined, height = 400, width = 600) |>
   vl_mark_bar() |>
@@ -113,7 +124,9 @@ vl_chart(data = countries_data_combined, height = 400, width = 600) |>
   vl_encode_y("country", title = "Country", type = "Nominal",sort = list("-lifeExp"))
 #How to step, ticks?
 ```
-```{r}
+
+```{r, warning=FALSE}
+#| code-fold: true
 #6.13
 vl_chart(data = countries_data_combined, height = 400, width = 600) |>
   vl_mark_circle() |>
@@ -121,44 +134,56 @@ vl_chart(data = countries_data_combined, height = 400, width = 600) |>
   vl_encode_y("country", title = "Country", type = "Nominal")
 # step by 5?
 ```
- # **Exercise 2 (A video presentation by Healy)**
-  - *Watch this video starting at 12:18 until 49:52. (You are welcome to watch the whole thing if you like.) You will see some things that look familiar from our discussion of perception in class, but there are also a number of additional examples and discussion.*
-  - 
 
-- *List at least three pieces of advice you can glean from this video that might help you design good graphics.*
-  - If you use color make sure that the contrast in color will not be deceiving or that will add to the distraction.
-  - Categorical variables usually in the y axis. No iron rules but keep in mind your audience and what story you are trying to convey.                 - Context,Convection,Meaning.
-  - Great tool for discovery and persuasion
- - *There are two figures in this video that come from Chapter 1 of Tufte (2001). Did you spot them? Which figures are they?*
-  - ![Russian Campaign (Unicorns)](russiancampaign.png)
-  - ![Russian Campaign (Unicorns)](russiancampaign.png)
-  
-  
+## **Exercise 2 (A video presentation by Healy)** 
+- *Watch this video starting at 12:18 until 49:52. (You are welcome to watch the whole thing if you like.) You will see some things that look familiar from our discussion of perception in class, but there are also a number of additional examples and discussion.* 
+  - Done
+-   *List at least three pieces of advice you can glean from this video that might help you design good graphics.*
+
+    -   If you use color make sure that the contrast in color will not be deceiving or that will add to the distraction.
+    -   Categorical variables usually in the y axis. No iron rules but keep in mind your audience and what story you are trying to convey. - Context,Convection,Meaning.
+    -   Great tool for discovery and persuasion
+
+-   *There are two figures in this video that come from Chapter 1 of Tufte (2001). Did you spot them? Which figures are they?*
+
+-   ![Russian Campaign (Unicorns)](russiancampaign.png)
+
+-   ![Russian Campaign (Unicorns)](russiancampaign.png)
 
 ## **Exercise 3 (Heat maps)**
 
- - *In Vega-Lite lingo, what makes something be a heat map?*
-  -  You layer the data and highlight what make it important, and because you are replicating the graphic you repeat as many times as needed.
-  
- - *Recreate Figure 6.14 or 6.15 from Wilke (2019) (your choice). Or get fancy and include an interactive element that let’s you select the year to order by. [CSV]*
+-   *In Vega-Lite lingo, what makes something be a heat map?*
+
+-   You layer the data and highlight what make it important, and because you are replicating the graphic you repeat as many times as needed.
+
+-   *Recreate Figure 6.14 or 6.15 from Wilke (2019) (your choice). Or get fancy and include an interactive element that let’s you select the year to order by. \[CSV\]*
+
 ```{r}
+#| code-fold: true
 #Reading the data:
 heat_data <- read.csv("https://calvin-data304.netlify.app/data/cow-internet2.csv")
 head(heat_data)
 ```
-  
- - *At around 20:10, Healy presents a possible problem with heat maps, what is it?*
-  -
- - *But starting at around 44:12, he presents a heat map as a “show pony”. Why isn’t the problem presented earlier an issue here? Is it an issue in the figure you make in part b? Why or why not?*
-  -
-  
+
+-   *At around 20:10, Healy presents a possible problem with heat maps, what is it?*
+  -   
+-   *But starting at around 44:12, he presents a heat map as a “show pony”. Why isn’t the problem presented earlier an issue here? Is it an issue in the figure you make in part b? Why or why not?*
+  -   
+
 ## **Exercise 4 (Pie charts)**
 
-- *What does Healy have to say about pie charts in his video?*
-  -
-- *How does that compare to what Wilke says in Section 10.1 of Wilke (2019)?*
-  -
-- *What alternatives does Wilke present to pie charts and in what situations does he favor each? (You should be comparing pie charts to two other types of graphics that can be made with the same sort of data.)*
-  -
-- *We won’t make many pie charts, but I suppose you should make at least one. To do this in Vega-Lite, use an arc mark. Recreate Figure 10.1 of Wilke (2019).*
-  -
+-   
+
+    ## *What does Healy have to say about pie charts in his video?*
+
+-   
+
+    ## *How does that compare to what Wilke says in Section 10.1 of Wilke (2019)?*
+
+-   
+
+    ## *What alternatives does Wilke present to pie charts and in what situations does he favor each? (You should be comparing pie charts to two other types of graphics that can be made with the same sort of data.)*
+
+-   
+
+    ## *We won’t make many pie charts, but I suppose you should make at least one. To do this in Vega-Lite, use an arc mark. Recreate Figure 10.1 of Wilke (2019).*
