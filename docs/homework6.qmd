@@ -25,29 +25,29 @@ library(vegabrite)
 
 -   **b. Tufte shares some of his favorite graphics in this chapter. Pick one (but not the one about the military advance on and retreat from Russia) and answer the following.**
 
-  - **What page is your graphic on? \[Take a screen shot and include the image as well, if you can.\]**
+-   **What page is your graphic on? \[Take a screen shot and include the image as well, if you can.\]**
 
 ![European like map pg.22](maps-hw6.png)
 
-- **Why did you pick the graphic you chose?**
+-   **Why did you pick the graphic you chose?**
 
-  - In all honesty, the graphic looks like a Monopoly board, and the hands make it look interesting. Also, I find the Latin appealing because I can somewhat read or guess what it’s saying for the simple reason that I know Spanish.
+    -   In all honesty, the graphic looks like a Monopoly board, and the hands make it look interesting. Also, I find the Latin appealing because I can somewhat read or guess what it’s saying for the simple reason that I know Spanish.
 
-- **What encoding channels are used in the graphic? What variables are they associated with?**
+-   **What encoding channels are used in the graphic? What variables are they associated with?**
 
-  - Text: The text helps us identify the cities, as well as the longitude and latitude. It also assists with the orientation of the map.
+    -   Text: The text helps us identify the cities, as well as the longitude and latitude. It also assists with the orientation of the map.
 
-- **Position: The position here is defined by the strings and the pins and we have a position based on the long and lat.**
+-   **Position: The position here is defined by the strings and the pins and we have a position based on the long and lat.**
 
-  - Drawings: It has the string indicating the position of Prague. The mountain could be showing the terrain of the location.
+    -   Drawings: It has the string indicating the position of Prague. The mountain could be showing the terrain of the location.
 
-- **What, if any, elements of the graphic would be hard/impossible for you to implement in Vega-Lite (given what we know so far)?**
+-   **What, if any, elements of the graphic would be hard/impossible for you to implement in Vega-Lite (given what we know so far)?**
 
-  - think the positioning of the images (mountains, hands, and strings) would be extremely hard to achieve because of their positioning
+    -   think the positioning of the images (mountains, hands, and strings) would be extremely hard to achieve because of their positioning
 
-- **What point is Tufte illustrating with this graphic?**
+-   **What point is Tufte illustrating with this graphic?**
 
-  - The map's design is outdated, as it still uses the name of the city being located. In contrast, the newer maps have a greater level of abstraction, using coordinates instead of names.
+    -   The map's design is outdated, as it still uses the name of the city being located. In contrast, the newer maps have a greater level of abstraction, using coordinates instead of names.
 
 ## **Exercise 2**
 
