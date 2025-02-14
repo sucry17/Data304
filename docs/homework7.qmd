@@ -128,6 +128,37 @@ vl_chart(data = countries_data_combined, height = 400, width = 600) |>
 - *List at least three pieces of advice you can glean from this video that might help you design good graphics.*
   - If you use color make sure that the contrast in color will not be deceiving or that will add to the distraction.
   - Categorical variables usually in the y axis. No iron rules but keep in mind your audience and what story you are trying to convey.                 - Context,Convection,Meaning.
-  -
+  - Great tool for discovery and persuasion
  - *There are two figures in this video that come from Chapter 1 of Tufte (2001). Did you spot them? Which figures are they?*
-  - 
+  - ![Russian Campaign (Unicorns)](russiancampaign.png)
+  - ![Russian Campaign (Unicorns)](russiancampaign.png)
+  
+  
+
+## **Exercise 3 (Heat maps)**
+
+ - *In Vega-Lite lingo, what makes something be a heat map?*
+  -  You layer the data and highlight what make it important, and because you are replicating the graphic you repeat as many times as needed.
+  
+ - *Recreate Figure 6.14 or 6.15 from Wilke (2019) (your choice). Or get fancy and include an interactive element that let’s you select the year to order by. [CSV]*
+```{r}
+#Reading the data:
+heat_data <- read.csv("https://calvin-data304.netlify.app/data/cow-internet2.csv")
+head(heat_data)
+```
+  
+ - *At around 20:10, Healy presents a possible problem with heat maps, what is it?*
+  -
+ - *But starting at around 44:12, he presents a heat map as a “show pony”. Why isn’t the problem presented earlier an issue here? Is it an issue in the figure you make in part b? Why or why not?*
+  -
+  
+## **Exercise 4 (Pie charts)**
+
+- *What does Healy have to say about pie charts in his video?*
+  -
+- *How does that compare to what Wilke says in Section 10.1 of Wilke (2019)?*
+  -
+- *What alternatives does Wilke present to pie charts and in what situations does he favor each? (You should be comparing pie charts to two other types of graphics that can be made with the same sort of data.)*
+  -
+- *We won’t make many pie charts, but I suppose you should make at least one. To do this in Vega-Lite, use an arc mark. Recreate Figure 10.1 of Wilke (2019).*
+  -
