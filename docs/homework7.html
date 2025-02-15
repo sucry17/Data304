@@ -4293,7 +4293,7 @@ if (HTMLWidgets.shinyMode) {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Homework 7</h1>
+<div class="quarto-title-block"><div><h1 class="title">Homework 7</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
 </div>
 
 
@@ -4322,15 +4322,6 @@ if (HTMLWidgets.shinyMode) {
 </header>
 
 
-<section id="libraries" class="level2">
-<h2 class="anchored" data-anchor-id="libraries">Libraries</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(vegabrite)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
 <section id="exercise-1-wilke-on-visualizing-amounts-read-chapter-6-of-wilke-2019." class="level2">
 <h2 class="anchored" data-anchor-id="exercise-1-wilke-on-visualizing-amounts-read-chapter-6-of-wilke-2019."><strong>Exercise 1 (Wilke on visualizing amounts) Read Chapter 6 of Wilke (2019).</strong></h2>
 <ul>
@@ -4352,8 +4343,8 @@ if (HTMLWidgets.shinyMode) {
 </ul></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>movie_data<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">&quot;https://calvin-data304.netlify.app/data/cow-movies.csv&quot;</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(movie_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>movie_data<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">&quot;https://calvin-data304.netlify.app/data/cow-movies.csv&quot;</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(movie_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  rank                          title      title_short   amount amount_text
 1    1       Star Wars: The Last Jedi        Star Wars 71565498 $71,565,498
@@ -4367,14 +4358,14 @@ if (HTMLWidgets.shinyMode) {
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vl_chart</span>(<span class="at">data =</span> movie_data, <span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_bar</span>() <span class="sc">|&gt;</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">&quot;amount&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Weekend Gross(million USD)&quot;</span>, <span class="at">type =</span> <span class="st">&quot;Quantitative&quot;</span>) <span class="sc">|&gt;</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">&quot;title&quot;</span>, <span class="at">type =</span> <span class="st">&quot;Ordinal&quot;</span>  , <span class="at">sort =</span> <span class="fu">list</span>(<span class="st">&quot;-sort&quot;</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vl_chart</span>(<span class="at">data =</span> movie_data, <span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_bar</span>() <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">&quot;amount&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Weekend Gross(million USD)&quot;</span>, <span class="at">type =</span> <span class="st">&quot;Quantitative&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">&quot;title&quot;</span>, <span class="at">type =</span> <span class="st">&quot;Ordinal&quot;</span>  , <span class="at">sort =</span> <span class="fu">list</span>(<span class="st">&quot;-sort&quot;</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="htmlwidget-ce324e7a1f9e68f57fb7" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ce324e7a1f9e68f57fb7">{"x":{
+<div id="htmlwidget-1405fda07d13ba807105" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1405fda07d13ba807105">{"x":{
   "chart_spec": {
     "data": {
       "values": [
@@ -4447,9 +4438,9 @@ if (HTMLWidgets.shinyMode) {
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Reading the data:</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>income_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://calvin-data304.netlify.app/data/cow-income.csv&quot;</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(income_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Reading the data:</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>income_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://calvin-data304.netlify.app/data/cow-income.csv&quot;</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(income_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>       age year median_income race
@@ -4464,16 +4455,16 @@ if (HTMLWidgets.shinyMode) {
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Graph6.8- EDA</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">vl_chart</span>(<span class="at">data =</span> income_data, <span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_bar</span>() <span class="sc">|&gt;</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">&quot;age&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Age (years)&quot;</span>, <span class="at">type =</span> <span class="st">&quot;ordinal&quot;</span>) <span class="sc">|&gt;</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">&quot;median_income&quot;</span>, <span class="at">type =</span> <span class="st">&quot;Ordinal&quot;</span>  , <span class="at">sort =</span> <span class="st">&quot;ascending&quot;</span>)<span class="sc">|&gt;</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">&quot;race&quot;</span>,<span class="at">type =</span><span class="st">&quot;Nominal&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Graph6.8- EDA</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">vl_chart</span>(<span class="at">data =</span> income_data, <span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_bar</span>() <span class="sc">|&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">&quot;age&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Age (years)&quot;</span>, <span class="at">type =</span> <span class="st">&quot;ordinal&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">&quot;median_income&quot;</span>, <span class="at">type =</span> <span class="st">&quot;Ordinal&quot;</span>  , <span class="at">sort =</span> <span class="st">&quot;ascending&quot;</span>)<span class="sc">|&gt;</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">&quot;race&quot;</span>,<span class="at">type =</span><span class="st">&quot;Nominal&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="htmlwidget-a4e9bdc3d50c7d3fb05e" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a4e9bdc3d50c7d3fb05e">{"x":{
+<div id="htmlwidget-294a8b690dd75acaf3c8" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-294a8b690dd75acaf3c8">{"x":{
   "chart_spec": {
     "data": {
       "values": [
@@ -4764,25 +4755,25 @@ if (HTMLWidgets.shinyMode) {
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Data prep</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>income_data_grouped <span class="ot">&lt;-</span> income_data <span class="sc">|&gt;</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">race =</span> <span class="fu">recode</span>(race, <span class="st">&quot;white_non_hispanic&quot;</span> <span class="ot">=</span> <span class="st">&quot;white&quot;</span>)) <span class="sc">|&gt;</span>  <span class="co"># Combining</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(race, age) <span class="sc">|&gt;</span>  <span class="co"># Group by both race and age</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">median_income =</span> <span class="fu">median</span>(median_income, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">.groups =</span> <span class="st">&quot;drop&quot;</span>) <span class="sc">|&gt;</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(race <span class="sc">!=</span> <span class="st">&quot;all&quot;</span>) <span class="sc">|&gt;</span>  <span class="co"># Drop the rows where race is &quot;all&quot;</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(median_income))</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualization 6.8</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="fu">vl_chart</span>(<span class="at">data =</span> income_data_grouped, <span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_bar</span>() <span class="sc">|&gt;</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">&quot;age&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Age&quot;</span>, <span class="at">type =</span> <span class="st">&quot;Nominal&quot;</span>) <span class="sc">|&gt;</span>  </span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">&quot;median_income&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Median Income&quot;</span>, <span class="at">type =</span> <span class="st">&quot;Quantitative&quot;</span>, <span class="at">sort =</span> <span class="fu">list</span>(<span class="st">&quot;ascending&quot;</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">&quot;race&quot;</span>, <span class="at">type =</span> <span class="st">&quot;Nominal&quot;</span>) <span class="sc">|&gt;</span></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_facet</span>(<span class="st">&quot;race&quot;</span>,<span class="at">type =</span> <span class="st">&quot;Nominal&quot;</span>, <span class="at">columns =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Data prep</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>income_data_grouped <span class="ot">&lt;-</span> income_data <span class="sc">|&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">race =</span> <span class="fu">recode</span>(race, <span class="st">&quot;white_non_hispanic&quot;</span> <span class="ot">=</span> <span class="st">&quot;white&quot;</span>)) <span class="sc">|&gt;</span>  <span class="co"># Combining</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(race, age) <span class="sc">|&gt;</span>  <span class="co"># Group by both race and age</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">median_income =</span> <span class="fu">median</span>(median_income, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">.groups =</span> <span class="st">&quot;drop&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(race <span class="sc">!=</span> <span class="st">&quot;all&quot;</span>) <span class="sc">|&gt;</span>  <span class="co"># Drop the rows where race is &quot;all&quot;</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(median_income))</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualization 6.8</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="fu">vl_chart</span>(<span class="at">data =</span> income_data_grouped, <span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_bar</span>() <span class="sc">|&gt;</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">&quot;age&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Age&quot;</span>, <span class="at">type =</span> <span class="st">&quot;Nominal&quot;</span>) <span class="sc">|&gt;</span>  </span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">&quot;median_income&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Median Income&quot;</span>, <span class="at">type =</span> <span class="st">&quot;Quantitative&quot;</span>, <span class="at">sort =</span> <span class="fu">list</span>(<span class="st">&quot;ascending&quot;</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">&quot;race&quot;</span>, <span class="at">type =</span> <span class="st">&quot;Nominal&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_facet</span>(<span class="st">&quot;race&quot;</span>,<span class="at">type =</span> <span class="st">&quot;Nominal&quot;</span>, <span class="at">columns =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="htmlwidget-736ec591bc0332c93326" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
-<script type="application/json" data-for="htmlwidget-736ec591bc0332c93326">{"x":{
+<div id="htmlwidget-bb11e072bf62a6551dec" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-bb11e072bf62a6551dec">{"x":{
   "chart_spec": {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "data": {
@@ -4969,17 +4960,17 @@ if (HTMLWidgets.shinyMode) {
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualization 6.9</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">vl_chart</span>(<span class="at">data =</span> income_data_grouped, <span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_bar</span>() <span class="sc">|&gt;</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">&quot;race&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Race&quot;</span>, <span class="at">type =</span> <span class="st">&quot;Nominal&quot;</span>, <span class="at">sort =</span> <span class="fu">list</span>(<span class="st">&quot;-race&quot;</span>)) <span class="sc">|&gt;</span>  </span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">&quot;median_income&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Median Income&quot;</span>, <span class="at">type =</span> <span class="st">&quot;Quantitative&quot;</span>, <span class="at">sort =</span> <span class="fu">list</span>(<span class="st">&quot;ascending&quot;</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">&quot;age&quot;</span>, <span class="at">type =</span> <span class="st">&quot;Nominal&quot;</span>) <span class="sc">|&gt;</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_xOffset</span>(<span class="st">&quot;age&quot;</span>,<span class="at">type =</span> <span class="st">&quot;Nominal&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualization 6.9</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">vl_chart</span>(<span class="at">data =</span> income_data_grouped, <span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_bar</span>() <span class="sc">|&gt;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">&quot;race&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Race&quot;</span>, <span class="at">type =</span> <span class="st">&quot;Nominal&quot;</span>, <span class="at">sort =</span> <span class="fu">list</span>(<span class="st">&quot;-race&quot;</span>)) <span class="sc">|&gt;</span>  </span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">&quot;median_income&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Median Income&quot;</span>, <span class="at">type =</span> <span class="st">&quot;Quantitative&quot;</span>, <span class="at">sort =</span> <span class="fu">list</span>(<span class="st">&quot;ascending&quot;</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">&quot;age&quot;</span>, <span class="at">type =</span> <span class="st">&quot;Nominal&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_xOffset</span>(<span class="st">&quot;age&quot;</span>,<span class="at">type =</span> <span class="st">&quot;Nominal&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="htmlwidget-8f6c2f4c686879552068" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
-<script type="application/json" data-for="htmlwidget-8f6c2f4c686879552068">{"x":{
+<div id="htmlwidget-556930830da1d30f14f7" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-556930830da1d30f14f7">{"x":{
   "chart_spec": {
     "data": {
       "values": [
@@ -5169,9 +5160,9 @@ if (HTMLWidgets.shinyMode) {
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Reading the data:</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>countries_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://calvin-data304.netlify.app/data/cow-gapminder.csv&quot;</span>)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(countries_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Reading the data:</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>countries_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://calvin-data304.netlify.app/data/cow-gapminder.csv&quot;</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(countries_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>      country continent year lifeExp      pop gdpPercap
@@ -5186,22 +5177,22 @@ if (HTMLWidgets.shinyMode) {
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>countries_data_combined <span class="ot">&lt;-</span> countries_data <span class="sc">|&gt;</span>  </span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>, continent <span class="sc">==</span> <span class="st">&quot;Americas&quot;</span>) <span class="sc">|&gt;</span>  </span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">|&gt;</span>  </span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">lifeExp =</span> <span class="fu">median</span>(lifeExp, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">.groups =</span> <span class="st">&quot;drop&quot;</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(lifeExp <span class="sc">&gt;=</span> <span class="dv">60</span>) <span class="sc">|&gt;</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(lifeExp))  </span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualization 6.11</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="fu">vl_chart</span>(<span class="at">data =</span> countries_data_combined, <span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_circle</span>() <span class="sc">|&gt;</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">&quot;lifeExp&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Life Expectancy&quot;</span>, <span class="at">type =</span> <span class="st">&quot;Quantitative&quot;</span>, <span class="at">scale =</span> <span class="fu">list</span>(<span class="at">domain =</span> <span class="fu">list</span>(<span class="dv">60</span>, <span class="dv">85</span>)) )<span class="sc">|&gt;</span>  </span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">&quot;country&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">type =</span> <span class="st">&quot;Nominal&quot;</span>,<span class="at">sort =</span> <span class="fu">list</span>(<span class="st">&quot;-lifeExp&quot;</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>countries_data_combined <span class="ot">&lt;-</span> countries_data <span class="sc">|&gt;</span>  </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>, continent <span class="sc">==</span> <span class="st">&quot;Americas&quot;</span>) <span class="sc">|&gt;</span>  </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">|&gt;</span>  </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">lifeExp =</span> <span class="fu">median</span>(lifeExp, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">.groups =</span> <span class="st">&quot;drop&quot;</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(lifeExp <span class="sc">&gt;=</span> <span class="dv">60</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(lifeExp))  </span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualization 6.11</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="fu">vl_chart</span>(<span class="at">data =</span> countries_data_combined, <span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_circle</span>() <span class="sc">|&gt;</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">&quot;lifeExp&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Life Expectancy&quot;</span>, <span class="at">type =</span> <span class="st">&quot;Quantitative&quot;</span>, <span class="at">scale =</span> <span class="fu">list</span>(<span class="at">domain =</span> <span class="fu">list</span>(<span class="dv">60</span>, <span class="dv">85</span>)) )<span class="sc">|&gt;</span>  </span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">&quot;country&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">type =</span> <span class="st">&quot;Nominal&quot;</span>,<span class="at">sort =</span> <span class="fu">list</span>(<span class="st">&quot;-lifeExp&quot;</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="htmlwidget-22cf310e454a50a92110" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
-<script type="application/json" data-for="htmlwidget-22cf310e454a50a92110">{"x":{
+<div id="htmlwidget-cf04b3ce31d40099d88e" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-cf04b3ce31d40099d88e">{"x":{
   "chart_spec": {
     "data": {
       "values": [
@@ -5345,15 +5336,15 @@ if (HTMLWidgets.shinyMode) {
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 6.12</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">vl_chart</span>(<span class="at">data =</span> countries_data_combined, <span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_bar</span>() <span class="sc">|&gt;</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">&quot;lifeExp&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Life Expectancy&quot;</span>, <span class="at">type =</span> <span class="st">&quot;Quantitative&quot;</span>, <span class="at">scale =</span> <span class="fu">list</span>(<span class="at">domain =</span> <span class="fu">list</span>(<span class="dv">0</span>, <span class="dv">85</span>)) )<span class="sc">|&gt;</span>  </span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">&quot;country&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">type =</span> <span class="st">&quot;Nominal&quot;</span>,<span class="at">sort =</span> <span class="fu">list</span>(<span class="st">&quot;-lifeExp&quot;</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 6.12</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">vl_chart</span>(<span class="at">data =</span> countries_data_combined, <span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_bar</span>() <span class="sc">|&gt;</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">&quot;lifeExp&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Life Expectancy&quot;</span>, <span class="at">type =</span> <span class="st">&quot;Quantitative&quot;</span>, <span class="at">scale =</span> <span class="fu">list</span>(<span class="at">domain =</span> <span class="fu">list</span>(<span class="dv">0</span>, <span class="dv">85</span>)) )<span class="sc">|&gt;</span>  </span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">&quot;country&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">type =</span> <span class="st">&quot;Nominal&quot;</span>,<span class="at">sort =</span> <span class="fu">list</span>(<span class="st">&quot;-lifeExp&quot;</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="htmlwidget-51912f0680aa5d13b4e8" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
-<script type="application/json" data-for="htmlwidget-51912f0680aa5d13b4e8">{"x":{
+<div id="htmlwidget-b4d814ae7d3829424acc" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b4d814ae7d3829424acc">{"x":{
   "chart_spec": {
     "data": {
       "values": [
@@ -5495,21 +5486,21 @@ if (HTMLWidgets.shinyMode) {
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#How to step, ticks?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#How to step, ticks?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#6.13</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">vl_chart</span>(<span class="at">data =</span> countries_data_combined, <span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_circle</span>() <span class="sc">|&gt;</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">&quot;lifeExp&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Life Expectancy&quot;</span>, <span class="at">type =</span> <span class="st">&quot;Quantitative&quot;</span>, <span class="at">scale =</span> <span class="fu">list</span>(<span class="at">domain =</span> <span class="fu">list</span>(<span class="dv">60</span>, <span class="dv">85</span>)) )<span class="sc">|&gt;</span>  </span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">&quot;country&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">type =</span> <span class="st">&quot;Nominal&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#6.13</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">vl_chart</span>(<span class="at">data =</span> countries_data_combined, <span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_circle</span>() <span class="sc">|&gt;</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">&quot;lifeExp&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Life Expectancy&quot;</span>, <span class="at">type =</span> <span class="st">&quot;Quantitative&quot;</span>, <span class="at">scale =</span> <span class="fu">list</span>(<span class="at">domain =</span> <span class="fu">list</span>(<span class="dv">60</span>, <span class="dv">85</span>)) )<span class="sc">|&gt;</span>  </span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">&quot;country&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">type =</span> <span class="st">&quot;Nominal&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="htmlwidget-1c796e73c9a59b621034" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1c796e73c9a59b621034">{"x":{
+<div id="htmlwidget-f8ffe2011c9a5b17da19" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f8ffe2011c9a5b17da19">{"x":{
   "chart_spec": {
     "data": {
       "values": [
@@ -5648,7 +5639,7 @@ if (HTMLWidgets.shinyMode) {
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># step by 5?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># step by 5?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -5690,9 +5681,9 @@ if (HTMLWidgets.shinyMode) {
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Reading the data:</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>heat_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://calvin-data304.netlify.app/data/cow-internet2.csv&quot;</span>)</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(heat_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Reading the data</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>heat_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://calvin-data304.netlify.app/data/cow-internet2.csv&quot;</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(heat_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>    country year     users
@@ -5705,14 +5696,2762 @@ if (HTMLWidgets.shinyMode) {
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizatio</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">vl_chart</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the heatmap using vegabrite</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>heatmap <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>(<span class="at">data =</span> heat_data ,<span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_rect</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">&quot;year&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Year&quot;</span>, <span class="at">type =</span> <span class="st">&quot;nominal&quot;</span>,   <span class="at">axis =</span> <span class="fu">list</span>(<span class="at">labelAngle =</span> <span class="dv">0</span>, <span class="at">values =</span> <span class="fu">c</span>(<span class="dv">1995</span>, <span class="dv">2000</span>, <span class="dv">2005</span>, <span class="dv">2010</span>, <span class="dv">2015</span>,<span class="at">orient=</span><span class="st">&quot;right&quot;</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">&quot;country&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">type =</span> <span class="st">&quot;nominal&quot;</span>,<span class="at">sort=</span><span class="fu">list</span>(<span class="at">field=</span><span class="st">&quot;users&quot;</span>,<span class="at">op=</span> <span class="st">&quot;max&quot;</span>,<span class="at">order=</span> <span class="st">&quot;descending&quot;</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">&quot;users&quot;</span>, </span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">title =</span> <span class="st">&quot;User Count (Scaled)&quot;</span>,</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">type =</span> <span class="st">&quot;quantitative&quot;</span>, </span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>                  <span class="at">scale =</span> <span class="fu">list</span>(<span class="at">scheme =</span> <span class="st">&quot;Viridis&quot;</span>))</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the chart</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>heatmap</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="htmlwidget-3ff8fa12519690cf7177" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3ff8fa12519690cf7177">{"x":{
+<div id="htmlwidget-5087f05106582bda9cdf" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5087f05106582bda9cdf">{"x":{
   "chart_spec": {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json"
+    "data": {
+      "values": [
+        {
+          "country": "Argentina",
+          "year": 1990,
+          "users": 0
+        },
+        {
+          "country": "Brazil",
+          "year": 1990,
+          "users": 0
+        },
+        {
+          "country": "Canada",
+          "year": 1990,
+          "users": 0.360999701
+        },
+        {
+          "country": "Chile",
+          "year": 1990,
+          "users": 0
+        },
+        {
+          "country": "China",
+          "year": 1990,
+          "users": 0
+        },
+        {
+          "country": "Germany",
+          "year": 1990,
+          "users": 0.125892223
+        },
+        {
+          "country": "Algeria",
+          "year": 1990,
+          "users": 0
+        },
+        {
+          "country": "France",
+          "year": 1990,
+          "users": 0.052777862
+        },
+        {
+          "country": "United Kingdom",
+          "year": 1990,
+          "users": 0.087355319
+        },
+        {
+          "country": "India",
+          "year": 1990,
+          "users": 0
+        },
+        {
+          "country": "Iceland",
+          "year": 1990,
+          "users": 0
+        },
+        {
+          "country": "Israel",
+          "year": 1990,
+          "users": 0.110773866
+        },
+        {
+          "country": "Italy",
+          "year": 1990,
+          "users": 0.017544562
+        },
+        {
+          "country": "Japan",
+          "year": 1990,
+          "users": 0.020293683
+        },
+        {
+          "country": "Kenya",
+          "year": 1990,
+          "users": 0
+        },
+        {
+          "country": "Mexico",
+          "year": 1990,
+          "users": 0
+        },
+        {
+          "country": "Norway",
+          "year": 1990,
+          "users": 0.707299448
+        },
+        {
+          "country": "New Zealand",
+          "year": 1990,
+          "users": 0
+        },
+        {
+          "country": "United States",
+          "year": 1990,
+          "users": 0.784728502
+        },
+        {
+          "country": "South Africa",
+          "year": 1990,
+          "users": 0
+        },
+        {
+          "country": "Argentina",
+          "year": 1991,
+          "users": null
+        },
+        {
+          "country": "Brazil",
+          "year": 1991,
+          "users": 0.003288171
+        },
+        {
+          "country": "Canada",
+          "year": 1991,
+          "users": 0.570385926
+        },
+        {
+          "country": "Chile",
+          "year": 1991,
+          "users": null
+        },
+        {
+          "country": "China",
+          "year": 1991,
+          "users": null
+        },
+        {
+          "country": "Germany",
+          "year": 1991,
+          "users": 0.250274153
+        },
+        {
+          "country": "Algeria",
+          "year": 1991,
+          "users": null
+        },
+        {
+          "country": "France",
+          "year": 1991,
+          "users": 0.140113895
+        },
+        {
+          "country": "United Kingdom",
+          "year": 1991,
+          "users": 0.174230922
+        },
+        {
+          "country": "India",
+          "year": 1991,
+          "users": null
+        },
+        {
+          "country": "Iceland",
+          "year": 1991,
+          "users": 0.505129002
+        },
+        {
+          "country": "Israel",
+          "year": 1991,
+          "users": 0.2146241
+        },
+        {
+          "country": "Italy",
+          "year": 1991,
+          "users": 0.035063256
+        },
+        {
+          "country": "Japan",
+          "year": 1991,
+          "users": 0.040438041
+        },
+        {
+          "country": "Kenya",
+          "year": 1991,
+          "users": null
+        },
+        {
+          "country": "Mexico",
+          "year": 1991,
+          "users": 0.005880695
+        },
+        {
+          "country": "Norway",
+          "year": 1991,
+          "users": 1.407395158
+        },
+        {
+          "country": "New Zealand",
+          "year": 1991,
+          "users": null
+        },
+        {
+          "country": "United States",
+          "year": 1991,
+          "users": 1.163193726
+        },
+        {
+          "country": "South Africa",
+          "year": 1991,
+          "users": 0.013283591
+        },
+        {
+          "country": "Argentina",
+          "year": 1992,
+          "users": 0.002992874
+        },
+        {
+          "country": "Brazil",
+          "year": 1992,
+          "users": 0.012946262
+        },
+        {
+          "country": "Canada",
+          "year": 1992,
+          "users": 0.91598104
+        },
+        {
+          "country": "Chile",
+          "year": 1992,
+          "users": 0.036548938
+        },
+        {
+          "country": "China",
+          "year": 1992,
+          "users": null
+        },
+        {
+          "country": "Germany",
+          "year": 1992,
+          "users": 0.43528529
+        },
+        {
+          "country": "Algeria",
+          "year": 1992,
+          "users": null
+        },
+        {
+          "country": "France",
+          "year": 1992,
+          "users": 0.279049463
+        },
+        {
+          "country": "United Kingdom",
+          "year": 1992,
+          "users": 0.260615159
+        },
+        {
+          "country": "India",
+          "year": 1992,
+          "users": 0.000111308
+        },
+        {
+          "country": "Iceland",
+          "year": 1992,
+          "users": 1.53916008
+        },
+        {
+          "country": "Israel",
+          "year": 1992,
+          "users": 0.310579197
+        },
+        {
+          "country": "Italy",
+          "year": 1992,
+          "users": 0.070053433
+        },
+        {
+          "country": "Japan",
+          "year": 1992,
+          "users": 0.096678025
+        },
+        {
+          "country": "Kenya",
+          "year": 1992,
+          "users": null
+        },
+        {
+          "country": "Mexico",
+          "year": 1992,
+          "users": 0.01730781
+        },
+        {
+          "country": "Norway",
+          "year": 1992,
+          "users": 2.216365832
+        },
+        {
+          "country": "New Zealand",
+          "year": 1992,
+          "users": 0.285941241
+        },
+        {
+          "country": "United States",
+          "year": 1992,
+          "users": 1.724202539
+        },
+        {
+          "country": "South Africa",
+          "year": 1992,
+          "users": 0.038869106
+        },
+        {
+          "country": "Argentina",
+          "year": 1993,
+          "users": 0.029527065
+        },
+        {
+          "country": "Brazil",
+          "year": 1993,
+          "users": 0.025498253
+        },
+        {
+          "country": "Canada",
+          "year": 1993,
+          "users": 1.184557509
+        },
+        {
+          "country": "Chile",
+          "year": 1993,
+          "users": 0.071783144
+        },
+        {
+          "country": "China",
+          "year": 1993,
+          "users": 0.00016868
+        },
+        {
+          "country": "Germany",
+          "year": 1993,
+          "users": 0.463635096
+        },
+        {
+          "country": "Algeria",
+          "year": 1993,
+          "users": null
+        },
+        {
+          "country": "France",
+          "year": 1993,
+          "users": 0.590619383
+        },
+        {
+          "country": "United Kingdom",
+          "year": 1993,
+          "users": 0.519762001
+        },
+        {
+          "country": "India",
+          "year": 1993,
+          "users": 0.000218176
+        },
+        {
+          "country": "Iceland",
+          "year": 1993,
+          "users": 2.667825265
+        },
+        {
+          "country": "Israel",
+          "year": 1993,
+          "users": 0.398833333
+        },
+        {
+          "country": "Italy",
+          "year": 1993,
+          "users": 0.122462053
+        },
+        {
+          "country": "Japan",
+          "year": 1993,
+          "users": 0.401277526
+        },
+        {
+          "country": "Kenya",
+          "year": 1993,
+          "users": null
+        },
+        {
+          "country": "Mexico",
+          "year": 1993,
+          "users": 0.028305042
+        },
+        {
+          "country": "Norway",
+          "year": 1993,
+          "users": 2.783990846
+        },
+        {
+          "country": "New Zealand",
+          "year": 1993,
+          "users": 0.631215367
+        },
+        {
+          "country": "United States",
+          "year": 1993,
+          "users": 2.271673294
+        },
+        {
+          "country": "South Africa",
+          "year": 1993,
+          "users": 0.113747184
+        },
+        {
+          "country": "Argentina",
+          "year": 1994,
+          "users": 0.043705951
+        },
+        {
+          "country": "Brazil",
+          "year": 1994,
+          "users": 0.037672709
+        },
+        {
+          "country": "Canada",
+          "year": 1994,
+          "users": 2.378693853
+        },
+        {
+          "country": "Chile",
+          "year": 1994,
+          "users": 0.141084507
+        },
+        {
+          "country": "China",
+          "year": 1994,
+          "users": 0.001168115
+        },
+        {
+          "country": "Germany",
+          "year": 1994,
+          "users": 0.922541043
+        },
+        {
+          "country": "Algeria",
+          "year": 1994,
+          "users": 0.000360674
+        },
+        {
+          "country": "France",
+          "year": 1994,
+          "users": 0.899867425
+        },
+        {
+          "country": "United Kingdom",
+          "year": 1994,
+          "users": 1.036609166
+        },
+        {
+          "country": "India",
+          "year": 1994,
+          "users": 0.001069562
+        },
+        {
+          "country": "Iceland",
+          "year": 1994,
+          "users": 6.794811784
+        },
+        {
+          "country": "Israel",
+          "year": 1994,
+          "users": 0.57696646
+        },
+        {
+          "country": "Italy",
+          "year": 1994,
+          "users": 0.192304619
+        },
+        {
+          "country": "Japan",
+          "year": 1994,
+          "users": 0.799684291
+        },
+        {
+          "country": "Kenya",
+          "year": 1994,
+          "users": null
+        },
+        {
+          "country": "Mexico",
+          "year": 1994,
+          "users": 0.043339167
+        },
+        {
+          "country": "Norway",
+          "year": 1994,
+          "users": 4.152450292
+        },
+        {
+          "country": "New Zealand",
+          "year": 1994,
+          "users": 3.168718848
+        },
+        {
+          "country": "United States",
+          "year": 1994,
+          "users": 4.862780635
+        },
+        {
+          "country": "South Africa",
+          "year": 1994,
+          "users": 0.246905533
+        },
+        {
+          "country": "Argentina",
+          "year": 1995,
+          "users": 0.086277081
+        },
+        {
+          "country": "Brazil",
+          "year": 1995,
+          "users": 0.105138168
+        },
+        {
+          "country": "Canada",
+          "year": 1995,
+          "users": 4.163525253
+        },
+        {
+          "country": "Chile",
+          "year": 1995,
+          "users": 0.346980781
+        },
+        {
+          "country": "China",
+          "year": 1995,
+          "users": 0.00495471
+        },
+        {
+          "country": "Germany",
+          "year": 1995,
+          "users": 1.837737754
+        },
+        {
+          "country": "Algeria",
+          "year": 1995,
+          "users": 0.001768954
+        },
+        {
+          "country": "France",
+          "year": 1995,
+          "users": 1.637947245
+        },
+        {
+          "country": "United Kingdom",
+          "year": 1995,
+          "users": 1.895168284
+        },
+        {
+          "country": "India",
+          "year": 1995,
+          "users": 0.026228879
+        },
+        {
+          "country": "Iceland",
+          "year": 1995,
+          "users": 11.2158757
+        },
+        {
+          "country": "Israel",
+          "year": 1995,
+          "users": 0.93042297
+        },
+        {
+          "country": "Italy",
+          "year": 1995,
+          "users": 0.524412787
+        },
+        {
+          "country": "Japan",
+          "year": 1995,
+          "users": 1.594363148
+        },
+        {
+          "country": "Kenya",
+          "year": 1995,
+          "users": 0.000727482
+        },
+        {
+          "country": "Mexico",
+          "year": 1995,
+          "users": 0.10256419
+        },
+        {
+          "country": "Norway",
+          "year": 1995,
+          "users": 6.423220493
+        },
+        {
+          "country": "New Zealand",
+          "year": 1995,
+          "users": 4.88424078
+        },
+        {
+          "country": "United States",
+          "year": 1995,
+          "users": 9.237088297
+        },
+        {
+          "country": "South Africa",
+          "year": 1995,
+          "users": 0.676740104
+        },
+        {
+          "country": "Argentina",
+          "year": 1996,
+          "users": 0.141954704
+        },
+        {
+          "country": "Brazil",
+          "year": 1996,
+          "users": 0.450789179
+        },
+        {
+          "country": "Canada",
+          "year": 1996,
+          "users": 6.76023965
+        },
+        {
+          "country": "Chile",
+          "year": 1996,
+          "users": 0.68347561
+        },
+        {
+          "country": "China",
+          "year": 1996,
+          "users": 0.013081692
+        },
+        {
+          "country": "Germany",
+          "year": 1996,
+          "users": 3.054805234
+        },
+        {
+          "country": "Algeria",
+          "year": 1996,
+          "users": 0.001738533
+        },
+        {
+          "country": "France",
+          "year": 1996,
+          "users": 2.584033979
+        },
+        {
+          "country": "United Kingdom",
+          "year": 1996,
+          "users": 4.123650336
+        },
+        {
+          "country": "India",
+          "year": 1996,
+          "users": 0.046333977
+        },
+        {
+          "country": "Iceland",
+          "year": 1996,
+          "users": 14.80647932
+        },
+        {
+          "country": "Israel",
+          "year": 1996,
+          "users": 2.1683676
+        },
+        {
+          "country": "Italy",
+          "year": 1996,
+          "users": 1.023289903
+        },
+        {
+          "country": "Japan",
+          "year": 1996,
+          "users": 4.372981968
+        },
+        {
+          "country": "Kenya",
+          "year": 1996,
+          "users": 0.008839115
+        },
+        {
+          "country": "Mexico",
+          "year": 1996,
+          "users": 0.20040628
+        },
+        {
+          "country": "Norway",
+          "year": 1996,
+          "users": 18.25031077
+        },
+        {
+          "country": "New Zealand",
+          "year": 1996,
+          "users": 8.041899368
+        },
+        {
+          "country": "United States",
+          "year": 1996,
+          "users": 16.41935296
+        },
+        {
+          "country": "South Africa",
+          "year": 1996,
+          "users": 0.841882931
+        },
+        {
+          "country": "Argentina",
+          "year": 1997,
+          "users": 0.280339882
+        },
+        {
+          "country": "Brazil",
+          "year": 1997,
+          "users": 0.786079155
+        },
+        {
+          "country": "Canada",
+          "year": 1997,
+          "users": 15.07235736
+        },
+        {
+          "country": "Chile",
+          "year": 1997,
+          "users": 1.057092496
+        },
+        {
+          "country": "China",
+          "year": 1997,
+          "users": 0.032394861
+        },
+        {
+          "country": "Germany",
+          "year": 1997,
+          "users": 6.711087477
+        },
+        {
+          "country": "Algeria",
+          "year": 1997,
+          "users": 0.010268463
+        },
+        {
+          "country": "France",
+          "year": 1997,
+          "users": 4.255003872
+        },
+        {
+          "country": "United Kingdom",
+          "year": 1997,
+          "users": 7.385398957
+        },
+        {
+          "country": "India",
+          "year": 1997,
+          "users": 0.070767849
+        },
+        {
+          "country": "Iceland",
+          "year": 1997,
+          "users": 27.47886875
+        },
+        {
+          "country": "Israel",
+          "year": 1997,
+          "users": 4.399405482
+        },
+        {
+          "country": "Italy",
+          "year": 1997,
+          "users": 2.276737834
+        },
+        {
+          "country": "Japan",
+          "year": 1997,
+          "users": 9.16307714
+        },
+        {
+          "country": "Kenya",
+          "year": 1997,
+          "users": 0.034406051
+        },
+        {
+          "country": "Mexico",
+          "year": 1997,
+          "users": 0.62731154
+        },
+        {
+          "country": "Norway",
+          "year": 1997,
+          "users": 20.41788144
+        },
+        {
+          "country": "New Zealand",
+          "year": 1997,
+          "users": 14.6015244
+        },
+        {
+          "country": "United States",
+          "year": 1997,
+          "users": 21.61640097
+        },
+        {
+          "country": "South Africa",
+          "year": 1997,
+          "users": 1.632093791
+        },
+        {
+          "country": "Argentina",
+          "year": 1998,
+          "users": 0.83076668
+        },
+        {
+          "country": "Brazil",
+          "year": 1998,
+          "users": 1.477874959
+        },
+        {
+          "country": "Canada",
+          "year": 1998,
+          "users": 24.8974003
+        },
+        {
+          "country": "Chile",
+          "year": 1998,
+          "users": 1.662322022
+        },
+        {
+          "country": "China",
+          "year": 1998,
+          "users": 0.168540297
+        },
+        {
+          "country": "Germany",
+          "year": 1998,
+          "users": 9.877852428
+        },
+        {
+          "country": "Algeria",
+          "year": 1998,
+          "users": 0.020238555
+        },
+        {
+          "country": "France",
+          "year": 1998,
+          "users": 6.319778722
+        },
+        {
+          "country": "United Kingdom",
+          "year": 1998,
+          "users": 13.6699831
+        },
+        {
+          "country": "India",
+          "year": 1998,
+          "users": 0.139027329
+        },
+        {
+          "country": "Iceland",
+          "year": 1998,
+          "users": 36.2642065
+        },
+        {
+          "country": "Israel",
+          "year": 1998,
+          "users": 10.30706995
+        },
+        {
+          "country": "Italy",
+          "year": 1998,
+          "users": 4.558519565
+        },
+        {
+          "country": "Japan",
+          "year": 1998,
+          "users": 13.41404088
+        },
+        {
+          "country": "Kenya",
+          "year": 1998,
+          "users": 0.050261388
+        },
+        {
+          "country": "Mexico",
+          "year": 1998,
+          "users": 1.265783278
+        },
+        {
+          "country": "Norway",
+          "year": 1998,
+          "users": 22.56011255
+        },
+        {
+          "country": "New Zealand",
+          "year": 1998,
+          "users": 31.63626081
+        },
+        {
+          "country": "United States",
+          "year": 1998,
+          "users": 30.09319659
+        },
+        {
+          "country": "South Africa",
+          "year": 1998,
+          "users": 2.906220867
+        },
+        {
+          "country": "Argentina",
+          "year": 1999,
+          "users": 3.284481956
+        },
+        {
+          "country": "Brazil",
+          "year": 1999,
+          "users": 2.038732184
+        },
+        {
+          "country": "Canada",
+          "year": 1999,
+          "users": 36.18644004
+        },
+        {
+          "country": "Chile",
+          "year": 1999,
+          "users": 4.103419297
+        },
+        {
+          "country": "China",
+          "year": 1999,
+          "users": 0.708187957
+        },
+        {
+          "country": "Germany",
+          "year": 1999,
+          "users": 20.84598264
+        },
+        {
+          "country": "Algeria",
+          "year": 1999,
+          "users": 0.199523843
+        },
+        {
+          "country": "France",
+          "year": 1999,
+          "users": 9.125317889
+        },
+        {
+          "country": "United Kingdom",
+          "year": 1999,
+          "users": 21.29363827
+        },
+        {
+          "country": "India",
+          "year": 1999,
+          "users": 0.273224277
+        },
+        {
+          "country": "Iceland",
+          "year": 1999,
+          "users": 41.29456671
+        },
+        {
+          "country": "Israel",
+          "year": 1999,
+          "users": 13.43612191
+        },
+        {
+          "country": "Italy",
+          "year": 1999,
+          "users": 14.37841019
+        },
+        {
+          "country": "Japan",
+          "year": 1999,
+          "users": 21.39129031
+        },
+        {
+          "country": "Kenya",
+          "year": 1999,
+          "users": 0.114256028
+        },
+        {
+          "country": "Mexico",
+          "year": 1999,
+          "users": 1.857436221
+        },
+        {
+          "country": "Norway",
+          "year": 1999,
+          "users": 40
+        },
+        {
+          "country": "New Zealand",
+          "year": 1999,
+          "users": 41.49448266
+        },
+        {
+          "country": "United States",
+          "year": 1999,
+          "users": 35.84872446
+        },
+        {
+          "country": "South Africa",
+          "year": 1999,
+          "users": 4.116249583
+        },
+        {
+          "country": "Argentina",
+          "year": 2000,
+          "users": 7.038683086
+        },
+        {
+          "country": "Brazil",
+          "year": 2000,
+          "users": 2.870685159
+        },
+        {
+          "country": "Canada",
+          "year": 2000,
+          "users": 51.3
+        },
+        {
+          "country": "Chile",
+          "year": 2000,
+          "users": 16.6
+        },
+        {
+          "country": "China",
+          "year": 2000,
+          "users": 1.775913207
+        },
+        {
+          "country": "Germany",
+          "year": 2000,
+          "users": 30.2163466
+        },
+        {
+          "country": "Algeria",
+          "year": 2000,
+          "users": 0.491705679
+        },
+        {
+          "country": "France",
+          "year": 2000,
+          "users": 14.30792394
+        },
+        {
+          "country": "United Kingdom",
+          "year": 2000,
+          "users": 26.82175435
+        },
+        {
+          "country": "India",
+          "year": 2000,
+          "users": 0.52753245
+        },
+        {
+          "country": "Iceland",
+          "year": 2000,
+          "users": 44.47053382
+        },
+        {
+          "country": "Israel",
+          "year": 2000,
+          "users": 20.87379
+        },
+        {
+          "country": "Italy",
+          "year": 2000,
+          "users": 23.11087424
+        },
+        {
+          "country": "Japan",
+          "year": 2000,
+          "users": 29.99074036
+        },
+        {
+          "country": "Kenya",
+          "year": 2000,
+          "users": 0.318059714
+        },
+        {
+          "country": "Mexico",
+          "year": 2000,
+          "users": 5.081384153
+        },
+        {
+          "country": "Norway",
+          "year": 2000,
+          "users": 52
+        },
+        {
+          "country": "New Zealand",
+          "year": 2000,
+          "users": 47.37955654
+        },
+        {
+          "country": "United States",
+          "year": 2000,
+          "users": 43.07916264
+        },
+        {
+          "country": "South Africa",
+          "year": 2000,
+          "users": 5.348559732
+        },
+        {
+          "country": "Argentina",
+          "year": 2001,
+          "users": 9.780807285
+        },
+        {
+          "country": "Brazil",
+          "year": 2001,
+          "users": 4.528494869
+        },
+        {
+          "country": "Canada",
+          "year": 2001,
+          "users": 60.2
+        },
+        {
+          "country": "Chile",
+          "year": 2001,
+          "users": 19.1
+        },
+        {
+          "country": "China",
+          "year": 2001,
+          "users": 2.639650215
+        },
+        {
+          "country": "Germany",
+          "year": 2001,
+          "users": 31.65093942
+        },
+        {
+          "country": "Algeria",
+          "year": 2001,
+          "users": 0.646114017
+        },
+        {
+          "country": "France",
+          "year": 2001,
+          "users": 26.32590355
+        },
+        {
+          "country": "United Kingdom",
+          "year": 2001,
+          "users": 33.48109487
+        },
+        {
+          "country": "India",
+          "year": 2001,
+          "users": 0.660146377
+        },
+        {
+          "country": "Iceland",
+          "year": 2001,
+          "users": 49.39299537
+        },
+        {
+          "country": "Israel",
+          "year": 2001,
+          "users": 17.37862386
+        },
+        {
+          "country": "Italy",
+          "year": 2001,
+          "users": 27.22211698
+        },
+        {
+          "country": "Japan",
+          "year": 2001,
+          "users": 38.53206086
+        },
+        {
+          "country": "Kenya",
+          "year": 2001,
+          "users": 0.619782266
+        },
+        {
+          "country": "Mexico",
+          "year": 2001,
+          "users": 7.038023117
+        },
+        {
+          "country": "Norway",
+          "year": 2001,
+          "users": 64
+        },
+        {
+          "country": "New Zealand",
+          "year": 2001,
+          "users": 53.24101529
+        },
+        {
+          "country": "United States",
+          "year": 2001,
+          "users": 49.08083159
+        },
+        {
+          "country": "South Africa",
+          "year": 2001,
+          "users": 6.346619318
+        },
+        {
+          "country": "Argentina",
+          "year": 2002,
+          "users": 10.88212438
+        },
+        {
+          "country": "Brazil",
+          "year": 2002,
+          "users": 9.149425086
+        },
+        {
+          "country": "Canada",
+          "year": 2002,
+          "users": 61.59329927
+        },
+        {
+          "country": "Chile",
+          "year": 2002,
+          "users": 22.1
+        },
+        {
+          "country": "China",
+          "year": 2002,
+          "users": 4.595704331
+        },
+        {
+          "country": "Germany",
+          "year": 2002,
+          "users": 48.82
+        },
+        {
+          "country": "Algeria",
+          "year": 2002,
+          "users": 1.59164126
+        },
+        {
+          "country": "France",
+          "year": 2002,
+          "users": 30.18
+        },
+        {
+          "country": "United Kingdom",
+          "year": 2002,
+          "users": 56.48
+        },
+        {
+          "country": "India",
+          "year": 2002,
+          "users": 1.537875582
+        },
+        {
+          "country": "Iceland",
+          "year": 2002,
+          "users": 79.12
+        },
+        {
+          "country": "Israel",
+          "year": 2002,
+          "users": 17.76459906
+        },
+        {
+          "country": "Italy",
+          "year": 2002,
+          "users": 28.04
+        },
+        {
+          "country": "Japan",
+          "year": 2002,
+          "users": 46.59420112
+        },
+        {
+          "country": "Kenya",
+          "year": 2002,
+          "users": 1.207773885
+        },
+        {
+          "country": "Mexico",
+          "year": 2002,
+          "users": 11.9
+        },
+        {
+          "country": "Norway",
+          "year": 2002,
+          "users": 72.84
+        },
+        {
+          "country": "New Zealand",
+          "year": 2002,
+          "users": 59.08075328
+        },
+        {
+          "country": "United States",
+          "year": 2002,
+          "users": 58.78540388
+        },
+        {
+          "country": "South Africa",
+          "year": 2002,
+          "users": 6.710322437
+        },
+        {
+          "country": "Argentina",
+          "year": 2003,
+          "users": 11.91369655
+        },
+        {
+          "country": "Brazil",
+          "year": 2003,
+          "users": 13.2075861
+        },
+        {
+          "country": "Canada",
+          "year": 2003,
+          "users": 64.2
+        },
+        {
+          "country": "Chile",
+          "year": 2003,
+          "users": 25.47377889
+        },
+        {
+          "country": "China",
+          "year": 2003,
+          "users": 6.2
+        },
+        {
+          "country": "Germany",
+          "year": 2003,
+          "users": 55.9
+        },
+        {
+          "country": "Algeria",
+          "year": 2003,
+          "users": 2.195359731
+        },
+        {
+          "country": "France",
+          "year": 2003,
+          "users": 36.14
+        },
+        {
+          "country": "United Kingdom",
+          "year": 2003,
+          "users": 64.82
+        },
+        {
+          "country": "India",
+          "year": 2003,
+          "users": 1.686489971
+        },
+        {
+          "country": "Iceland",
+          "year": 2003,
+          "users": 83.14
+        },
+        {
+          "country": "Israel",
+          "year": 2003,
+          "users": 19.59339366
+        },
+        {
+          "country": "Italy",
+          "year": 2003,
+          "users": 29.04
+        },
+        {
+          "country": "Japan",
+          "year": 2003,
+          "users": 48.43526589
+        },
+        {
+          "country": "Kenya",
+          "year": 2003,
+          "users": 2.941902861
+        },
+        {
+          "country": "Mexico",
+          "year": 2003,
+          "users": 12.9
+        },
+        {
+          "country": "Norway",
+          "year": 2003,
+          "users": 78.13
+        },
+        {
+          "country": "New Zealand",
+          "year": 2003,
+          "users": 60.96253987
+        },
+        {
+          "country": "United States",
+          "year": 2003,
+          "users": 61.69711712
+        },
+        {
+          "country": "South Africa",
+          "year": 2003,
+          "users": 7.007691726
+        },
+        {
+          "country": "Argentina",
+          "year": 2004,
+          "users": 16.03668411
+        },
+        {
+          "country": "Brazil",
+          "year": 2004,
+          "users": 19.07367227
+        },
+        {
+          "country": "Canada",
+          "year": 2004,
+          "users": 65.95596346
+        },
+        {
+          "country": "Chile",
+          "year": 2004,
+          "users": 28.17791012
+        },
+        {
+          "country": "China",
+          "year": 2004,
+          "users": 7.3
+        },
+        {
+          "country": "Germany",
+          "year": 2004,
+          "users": 64.73
+        },
+        {
+          "country": "Algeria",
+          "year": 2004,
+          "users": 4.634475088
+        },
+        {
+          "country": "France",
+          "year": 2004,
+          "users": 39.15
+        },
+        {
+          "country": "United Kingdom",
+          "year": 2004,
+          "users": 65.61
+        },
+        {
+          "country": "India",
+          "year": 2004,
+          "users": 1.976136492
+        },
+        {
+          "country": "Iceland",
+          "year": 2004,
+          "users": 83.88
+        },
+        {
+          "country": "Israel",
+          "year": 2004,
+          "users": 22.77048553
+        },
+        {
+          "country": "Italy",
+          "year": 2004,
+          "users": 33.24
+        },
+        {
+          "country": "Japan",
+          "year": 2004,
+          "users": 62.39392963
+        },
+        {
+          "country": "Kenya",
+          "year": 2004,
+          "users": 3.023528042
+        },
+        {
+          "country": "Mexico",
+          "year": 2004,
+          "users": 14.1
+        },
+        {
+          "country": "Norway",
+          "year": 2004,
+          "users": 77.69
+        },
+        {
+          "country": "New Zealand",
+          "year": 2004,
+          "users": 61.84762781
+        },
+        {
+          "country": "United States",
+          "year": 2004,
+          "users": 64.75825648
+        },
+        {
+          "country": "South Africa",
+          "year": 2004,
+          "users": 8.425118683
+        },
+        {
+          "country": "Argentina",
+          "year": 2005,
+          "users": 17.72058337
+        },
+        {
+          "country": "Brazil",
+          "year": 2005,
+          "users": 21.02274725
+        },
+        {
+          "country": "Canada",
+          "year": 2005,
+          "users": 71.66
+        },
+        {
+          "country": "Chile",
+          "year": 2005,
+          "users": 31.17534703
+        },
+        {
+          "country": "China",
+          "year": 2005,
+          "users": 8.523257003
+        },
+        {
+          "country": "Germany",
+          "year": 2005,
+          "users": 68.71
+        },
+        {
+          "country": "Algeria",
+          "year": 2005,
+          "users": 5.843942092
+        },
+        {
+          "country": "France",
+          "year": 2005,
+          "users": 42.87
+        },
+        {
+          "country": "United Kingdom",
+          "year": 2005,
+          "users": 70
+        },
+        {
+          "country": "India",
+          "year": 2005,
+          "users": 2.388075
+        },
+        {
+          "country": "Iceland",
+          "year": 2005,
+          "users": 87
+        },
+        {
+          "country": "Israel",
+          "year": 2005,
+          "users": 25.19404242
+        },
+        {
+          "country": "Italy",
+          "year": 2005,
+          "users": 35
+        },
+        {
+          "country": "Japan",
+          "year": 2005,
+          "users": 66.9210661
+        },
+        {
+          "country": "Kenya",
+          "year": 2005,
+          "users": 3.101897702
+        },
+        {
+          "country": "Mexico",
+          "year": 2005,
+          "users": 17.21
+        },
+        {
+          "country": "Norway",
+          "year": 2005,
+          "users": 81.99
+        },
+        {
+          "country": "New Zealand",
+          "year": 2005,
+          "users": 62.72021237
+        },
+        {
+          "country": "United States",
+          "year": 2005,
+          "users": 67.96805292
+        },
+        {
+          "country": "South Africa",
+          "year": 2005,
+          "users": 7.48854253
+        },
+        {
+          "country": "Argentina",
+          "year": 2006,
+          "users": 20.9272021
+        },
+        {
+          "country": "Brazil",
+          "year": 2006,
+          "users": 28.17838018
+        },
+        {
+          "country": "Canada",
+          "year": 2006,
+          "users": 72.4
+        },
+        {
+          "country": "Chile",
+          "year": 2006,
+          "users": 34.49775117
+        },
+        {
+          "country": "China",
+          "year": 2006,
+          "users": 10.52315262
+        },
+        {
+          "country": "Germany",
+          "year": 2006,
+          "users": 72.16
+        },
+        {
+          "country": "Algeria",
+          "year": 2006,
+          "users": 7.375984956
+        },
+        {
+          "country": "France",
+          "year": 2006,
+          "users": 46.87
+        },
+        {
+          "country": "United Kingdom",
+          "year": 2006,
+          "users": 68.82
+        },
+        {
+          "country": "India",
+          "year": 2006,
+          "users": 2.805499865
+        },
+        {
+          "country": "Iceland",
+          "year": 2006,
+          "users": 89.51
+        },
+        {
+          "country": "Israel",
+          "year": 2006,
+          "users": 27.88107446
+        },
+        {
+          "country": "Italy",
+          "year": 2006,
+          "users": 37.99
+        },
+        {
+          "country": "Japan",
+          "year": 2006,
+          "users": 68.68527032
+        },
+        {
+          "country": "Kenya",
+          "year": 2006,
+          "users": 3.6
+        },
+        {
+          "country": "Mexico",
+          "year": 2006,
+          "users": 19.52
+        },
+        {
+          "country": "Norway",
+          "year": 2006,
+          "users": 82.55
+        },
+        {
+          "country": "New Zealand",
+          "year": 2006,
+          "users": 69
+        },
+        {
+          "country": "United States",
+          "year": 2006,
+          "users": 68.93119327
+        },
+        {
+          "country": "South Africa",
+          "year": 2006,
+          "users": 7.607139675
+        },
+        {
+          "country": "Argentina",
+          "year": 2007,
+          "users": 25.94663294
+        },
+        {
+          "country": "Brazil",
+          "year": 2007,
+          "users": 30.88
+        },
+        {
+          "country": "Canada",
+          "year": 2007,
+          "users": 73.2
+        },
+        {
+          "country": "Chile",
+          "year": 2007,
+          "users": 35.9
+        },
+        {
+          "country": "China",
+          "year": 2007,
+          "users": 16
+        },
+        {
+          "country": "Germany",
+          "year": 2007,
+          "users": 75.16
+        },
+        {
+          "country": "Algeria",
+          "year": 2007,
+          "users": 9.451190626
+        },
+        {
+          "country": "France",
+          "year": 2007,
+          "users": 66.09
+        },
+        {
+          "country": "United Kingdom",
+          "year": 2007,
+          "users": 75.09
+        },
+        {
+          "country": "India",
+          "year": 2007,
+          "users": 3.95
+        },
+        {
+          "country": "Iceland",
+          "year": 2007,
+          "users": 90.6
+        },
+        {
+          "country": "Israel",
+          "year": 2007,
+          "users": 48.12806219
+        },
+        {
+          "country": "Italy",
+          "year": 2007,
+          "users": 40.79
+        },
+        {
+          "country": "Japan",
+          "year": 2007,
+          "users": 74.3
+        },
+        {
+          "country": "Kenya",
+          "year": 2007,
+          "users": 4.4
+        },
+        {
+          "country": "Mexico",
+          "year": 2007,
+          "users": 20.81
+        },
+        {
+          "country": "Norway",
+          "year": 2007,
+          "users": 86.93
+        },
+        {
+          "country": "New Zealand",
+          "year": 2007,
+          "users": 69.76
+        },
+        {
+          "country": "United States",
+          "year": 2007,
+          "users": 75
+        },
+        {
+          "country": "South Africa",
+          "year": 2007,
+          "users": 8.065375174
+        },
+        {
+          "country": "Argentina",
+          "year": 2008,
+          "users": 28.11262348
+        },
+        {
+          "country": "Brazil",
+          "year": 2008,
+          "users": 33.83
+        },
+        {
+          "country": "Canada",
+          "year": 2008,
+          "users": 76.7
+        },
+        {
+          "country": "Chile",
+          "year": 2008,
+          "users": 37.3
+        },
+        {
+          "country": "China",
+          "year": 2008,
+          "users": 22.6
+        },
+        {
+          "country": "Germany",
+          "year": 2008,
+          "users": 78
+        },
+        {
+          "country": "Algeria",
+          "year": 2008,
+          "users": 10.18
+        },
+        {
+          "country": "France",
+          "year": 2008,
+          "users": 70.68
+        },
+        {
+          "country": "United Kingdom",
+          "year": 2008,
+          "users": 78.39
+        },
+        {
+          "country": "India",
+          "year": 2008,
+          "users": 4.38
+        },
+        {
+          "country": "Iceland",
+          "year": 2008,
+          "users": 91
+        },
+        {
+          "country": "Israel",
+          "year": 2008,
+          "users": 59.39
+        },
+        {
+          "country": "Italy",
+          "year": 2008,
+          "users": 44.53
+        },
+        {
+          "country": "Japan",
+          "year": 2008,
+          "users": 75.4
+        },
+        {
+          "country": "Kenya",
+          "year": 2008,
+          "users": 5.2
+        },
+        {
+          "country": "Mexico",
+          "year": 2008,
+          "users": 21.71
+        },
+        {
+          "country": "Norway",
+          "year": 2008,
+          "users": 90.57
+        },
+        {
+          "country": "New Zealand",
+          "year": 2008,
+          "users": 72.03
+        },
+        {
+          "country": "United States",
+          "year": 2008,
+          "users": 74
+        },
+        {
+          "country": "South Africa",
+          "year": 2008,
+          "users": 8.43
+        },
+        {
+          "country": "Argentina",
+          "year": 2009,
+          "users": 34
+        },
+        {
+          "country": "Brazil",
+          "year": 2009,
+          "users": 39.22
+        },
+        {
+          "country": "Canada",
+          "year": 2009,
+          "users": 80.3
+        },
+        {
+          "country": "Chile",
+          "year": 2009,
+          "users": 41.56
+        },
+        {
+          "country": "China",
+          "year": 2009,
+          "users": 28.9
+        },
+        {
+          "country": "Germany",
+          "year": 2009,
+          "users": 79
+        },
+        {
+          "country": "Algeria",
+          "year": 2009,
+          "users": 11.23
+        },
+        {
+          "country": "France",
+          "year": 2009,
+          "users": 71.58
+        },
+        {
+          "country": "United Kingdom",
+          "year": 2009,
+          "users": 83.56
+        },
+        {
+          "country": "India",
+          "year": 2009,
+          "users": 5.12
+        },
+        {
+          "country": "Iceland",
+          "year": 2009,
+          "users": 93
+        },
+        {
+          "country": "Israel",
+          "year": 2009,
+          "users": 63.12
+        },
+        {
+          "country": "Italy",
+          "year": 2009,
+          "users": 48.83
+        },
+        {
+          "country": "Japan",
+          "year": 2009,
+          "users": 78
+        },
+        {
+          "country": "Kenya",
+          "year": 2009,
+          "users": 6.1
+        },
+        {
+          "country": "Mexico",
+          "year": 2009,
+          "users": 26.34
+        },
+        {
+          "country": "Norway",
+          "year": 2009,
+          "users": 92.08
+        },
+        {
+          "country": "New Zealand",
+          "year": 2009,
+          "users": 79.7
+        },
+        {
+          "country": "United States",
+          "year": 2009,
+          "users": 71
+        },
+        {
+          "country": "South Africa",
+          "year": 2009,
+          "users": 10
+        },
+        {
+          "country": "Argentina",
+          "year": 2010,
+          "users": 45
+        },
+        {
+          "country": "Brazil",
+          "year": 2010,
+          "users": 40.65
+        },
+        {
+          "country": "Canada",
+          "year": 2010,
+          "users": 80.3
+        },
+        {
+          "country": "Chile",
+          "year": 2010,
+          "users": 45
+        },
+        {
+          "country": "China",
+          "year": 2010,
+          "users": 34.3
+        },
+        {
+          "country": "Germany",
+          "year": 2010,
+          "users": 82
+        },
+        {
+          "country": "Algeria",
+          "year": 2010,
+          "users": 12.5
+        },
+        {
+          "country": "France",
+          "year": 2010,
+          "users": 77.28
+        },
+        {
+          "country": "United Kingdom",
+          "year": 2010,
+          "users": 85
+        },
+        {
+          "country": "India",
+          "year": 2010,
+          "users": 7.5
+        },
+        {
+          "country": "Iceland",
+          "year": 2010,
+          "users": 93.39
+        },
+        {
+          "country": "Israel",
+          "year": 2010,
+          "users": 67.5
+        },
+        {
+          "country": "Italy",
+          "year": 2010,
+          "users": 53.68
+        },
+        {
+          "country": "Japan",
+          "year": 2010,
+          "users": 78.21
+        },
+        {
+          "country": "Kenya",
+          "year": 2010,
+          "users": 7.2
+        },
+        {
+          "country": "Mexico",
+          "year": 2010,
+          "users": 31.05
+        },
+        {
+          "country": "Norway",
+          "year": 2010,
+          "users": 93.39
+        },
+        {
+          "country": "New Zealand",
+          "year": 2010,
+          "users": 80.46
+        },
+        {
+          "country": "United States",
+          "year": 2010,
+          "users": 71.69
+        },
+        {
+          "country": "South Africa",
+          "year": 2010,
+          "users": 24
+        },
+        {
+          "country": "Argentina",
+          "year": 2011,
+          "users": 51
+        },
+        {
+          "country": "Brazil",
+          "year": 2011,
+          "users": 45.69
+        },
+        {
+          "country": "Canada",
+          "year": 2011,
+          "users": 83
+        },
+        {
+          "country": "Chile",
+          "year": 2011,
+          "users": 52.24960729
+        },
+        {
+          "country": "China",
+          "year": 2011,
+          "users": 38.3
+        },
+        {
+          "country": "Germany",
+          "year": 2011,
+          "users": 81.26999954
+        },
+        {
+          "country": "Algeria",
+          "year": 2011,
+          "users": 14.9
+        },
+        {
+          "country": "France",
+          "year": 2011,
+          "users": 77.81999899
+        },
+        {
+          "country": "United Kingdom",
+          "year": 2011,
+          "users": 85.37999855
+        },
+        {
+          "country": "India",
+          "year": 2011,
+          "users": 10.07
+        },
+        {
+          "country": "Iceland",
+          "year": 2011,
+          "users": 94.8196868
+        },
+        {
+          "country": "Israel",
+          "year": 2011,
+          "users": 68.87387799
+        },
+        {
+          "country": "Italy",
+          "year": 2011,
+          "users": 54.3899983
+        },
+        {
+          "country": "Japan",
+          "year": 2011,
+          "users": 79.05411352
+        },
+        {
+          "country": "Kenya",
+          "year": 2011,
+          "users": 8.8
+        },
+        {
+          "country": "Mexico",
+          "year": 2011,
+          "users": 37.17629541
+        },
+        {
+          "country": "Norway",
+          "year": 2011,
+          "users": 93.48998265
+        },
+        {
+          "country": "New Zealand",
+          "year": 2011,
+          "users": 81.23
+        },
+        {
+          "country": "United States",
+          "year": 2011,
+          "users": 69.72946076
+        },
+        {
+          "country": "South Africa",
+          "year": 2011,
+          "users": 33.97
+        },
+        {
+          "country": "Argentina",
+          "year": 2012,
+          "users": 55.8
+        },
+        {
+          "country": "Brazil",
+          "year": 2012,
+          "users": 48.56
+        },
+        {
+          "country": "Canada",
+          "year": 2012,
+          "users": 83
+        },
+        {
+          "country": "Chile",
+          "year": 2012,
+          "users": 55.05
+        },
+        {
+          "country": "China",
+          "year": 2012,
+          "users": 42.30011749
+        },
+        {
+          "country": "Germany",
+          "year": 2012,
+          "users": 82.34999847
+        },
+        {
+          "country": "Algeria",
+          "year": 2012,
+          "users": 18.2
+        },
+        {
+          "country": "France",
+          "year": 2012,
+          "users": 81.44
+        },
+        {
+          "country": "United Kingdom",
+          "year": 2012,
+          "users": 87.47999842
+        },
+        {
+          "country": "India",
+          "year": 2012,
+          "users": 12.58006091
+        },
+        {
+          "country": "Iceland",
+          "year": 2012,
+          "users": 96.20979955
+        },
+        {
+          "country": "Israel",
+          "year": 2012,
+          "users": 70.8
+        },
+        {
+          "country": "Italy",
+          "year": 2012,
+          "users": 55.82999799
+        },
+        {
+          "country": "Japan",
+          "year": 2012,
+          "users": 79.4964
+        },
+        {
+          "country": "Kenya",
+          "year": 2012,
+          "users": 10.5
+        },
+        {
+          "country": "Mexico",
+          "year": 2012,
+          "users": 39.75
+        },
+        {
+          "country": "Norway",
+          "year": 2012,
+          "users": 94.64997805
+        },
+        {
+          "country": "New Zealand",
+          "year": 2012,
+          "users": 81.64447018
+        },
+        {
+          "country": "United States",
+          "year": 2012,
+          "users": 74.7
+        },
+        {
+          "country": "South Africa",
+          "year": 2012,
+          "users": 41
+        },
+        {
+          "country": "Argentina",
+          "year": 2013,
+          "users": 59.9
+        },
+        {
+          "country": "Brazil",
+          "year": 2013,
+          "users": 51.04
+        },
+        {
+          "country": "Canada",
+          "year": 2013,
+          "users": 85.8
+        },
+        {
+          "country": "Chile",
+          "year": 2013,
+          "users": 58
+        },
+        {
+          "country": "China",
+          "year": 2013,
+          "users": 45.8
+        },
+        {
+          "country": "Germany",
+          "year": 2013,
+          "users": 84.17
+        },
+        {
+          "country": "Algeria",
+          "year": 2013,
+          "users": 22.5
+        },
+        {
+          "country": "France",
+          "year": 2013,
+          "users": 81.9198
+        },
+        {
+          "country": "United Kingdom",
+          "year": 2013,
+          "users": 89.8441
+        },
+        {
+          "country": "India",
+          "year": 2013,
+          "users": 15.1
+        },
+        {
+          "country": "Iceland",
+          "year": 2013,
+          "users": 96.5468
+        },
+        {
+          "country": "Israel",
+          "year": 2013,
+          "users": 70.25031195
+        },
+        {
+          "country": "Italy",
+          "year": 2013,
+          "users": 58.4593
+        },
+        {
+          "country": "Japan",
+          "year": 2013,
+          "users": 88.21942891
+        },
+        {
+          "country": "Kenya",
+          "year": 2013,
+          "users": 13
+        },
+        {
+          "country": "Mexico",
+          "year": 2013,
+          "users": 43.46
+        },
+        {
+          "country": "Norway",
+          "year": 2013,
+          "users": 95.0534
+        },
+        {
+          "country": "New Zealand",
+          "year": 2013,
+          "users": 82.78
+        },
+        {
+          "country": "United States",
+          "year": 2013,
+          "users": 71.4
+        },
+        {
+          "country": "South Africa",
+          "year": 2013,
+          "users": 46.5
+        },
+        {
+          "country": "Argentina",
+          "year": 2014,
+          "users": 64.7
+        },
+        {
+          "country": "Brazil",
+          "year": 2014,
+          "users": 54.55100188
+        },
+        {
+          "country": "Canada",
+          "year": 2014,
+          "users": 87.12
+        },
+        {
+          "country": "Chile",
+          "year": 2014,
+          "users": 61.11
+        },
+        {
+          "country": "China",
+          "year": 2014,
+          "users": 47.9
+        },
+        {
+          "country": "Germany",
+          "year": 2014,
+          "users": 86.19
+        },
+        {
+          "country": "Algeria",
+          "year": 2014,
+          "users": 29.5
+        },
+        {
+          "country": "France",
+          "year": 2014,
+          "users": 83.75
+        },
+        {
+          "country": "United Kingdom",
+          "year": 2014,
+          "users": 91.61
+        },
+        {
+          "country": "India",
+          "year": 2014,
+          "users": 21
+        },
+        {
+          "country": "Iceland",
+          "year": 2014,
+          "users": 98.16
+        },
+        {
+          "country": "Israel",
+          "year": 2014,
+          "users": 75.01775316
+        },
+        {
+          "country": "Italy",
+          "year": 2014,
+          "users": 55.63846022
+        },
+        {
+          "country": "Japan",
+          "year": 2014,
+          "users": 89.10683302
+        },
+        {
+          "country": "Kenya",
+          "year": 2014,
+          "users": 16.5
+        },
+        {
+          "country": "Mexico",
+          "year": 2014,
+          "users": 44.39
+        },
+        {
+          "country": "Norway",
+          "year": 2014,
+          "users": 96.3
+        },
+        {
+          "country": "New Zealand",
+          "year": 2014,
+          "users": 85.5
+        },
+        {
+          "country": "United States",
+          "year": 2014,
+          "users": 73
+        },
+        {
+          "country": "South Africa",
+          "year": 2014,
+          "users": 49
+        },
+        {
+          "country": "Argentina",
+          "year": 2015,
+          "users": 68.04306411
+        },
+        {
+          "country": "Brazil",
+          "year": 2015,
+          "users": 58.32795173
+        },
+        {
+          "country": "Canada",
+          "year": 2015,
+          "users": 88.47
+        },
+        {
+          "country": "Chile",
+          "year": 2015,
+          "users": 64.289
+        },
+        {
+          "country": "China",
+          "year": 2015,
+          "users": 50.3
+        },
+        {
+          "country": "Germany",
+          "year": 2015,
+          "users": 87.5898
+        },
+        {
+          "country": "Algeria",
+          "year": 2015,
+          "users": 38.2
+        },
+        {
+          "country": "France",
+          "year": 2015,
+          "users": 84.6945
+        },
+        {
+          "country": "United Kingdom",
+          "year": 2015,
+          "users": 92.0003
+        },
+        {
+          "country": "India",
+          "year": 2015,
+          "users": 26
+        },
+        {
+          "country": "Iceland",
+          "year": 2015,
+          "users": 98.2
+        },
+        {
+          "country": "Israel",
+          "year": 2015,
+          "users": 77.35208966
+        },
+        {
+          "country": "Italy",
+          "year": 2015,
+          "users": 58.14173496
+        },
+        {
+          "country": "Japan",
+          "year": 2015,
+          "users": 91.05802839
+        },
+        {
+          "country": "Kenya",
+          "year": 2015,
+          "users": 21
+        },
+        {
+          "country": "Mexico",
+          "year": 2015,
+          "users": 57.43104299
+        },
+        {
+          "country": "Norway",
+          "year": 2015,
+          "users": 96.8103
+        },
+        {
+          "country": "New Zealand",
+          "year": 2015,
+          "users": 88.22288882
+        },
+        {
+          "country": "United States",
+          "year": 2015,
+          "users": 74.55420245
+        },
+        {
+          "country": "South Africa",
+          "year": 2015,
+          "users": 51.91911572
+        },
+        {
+          "country": "Argentina",
+          "year": 2016,
+          "users": 70.15076431
+        },
+        {
+          "country": "Brazil",
+          "year": 2016,
+          "users": 59.68274736
+        },
+        {
+          "country": "Canada",
+          "year": 2016,
+          "users": 89.84
+        },
+        {
+          "country": "Chile",
+          "year": 2016,
+          "users": 66.01
+        },
+        {
+          "country": "China",
+          "year": 2016,
+          "users": 53.2
+        },
+        {
+          "country": "Germany",
+          "year": 2016,
+          "users": 89.64710059
+        },
+        {
+          "country": "Algeria",
+          "year": 2016,
+          "users": 42.94552688
+        },
+        {
+          "country": "France",
+          "year": 2016,
+          "users": 85.62219995
+        },
+        {
+          "country": "United Kingdom",
+          "year": 2016,
+          "users": 94.77580063
+        },
+        {
+          "country": "India",
+          "year": 2016,
+          "users": 29.54716289
+        },
+        {
+          "country": "Iceland",
+          "year": 2016,
+          "users": 98.2400163
+        },
+        {
+          "country": "Israel",
+          "year": 2016,
+          "users": 79.77879126
+        },
+        {
+          "country": "Italy",
+          "year": 2016,
+          "users": 61.32425277
+        },
+        {
+          "country": "Japan",
+          "year": 2016,
+          "users": 92
+        },
+        {
+          "country": "Kenya",
+          "year": 2016,
+          "users": 26
+        },
+        {
+          "country": "Mexico",
+          "year": 2016,
+          "users": 59.540446
+        },
+        {
+          "country": "Norway",
+          "year": 2016,
+          "users": 97.29820367
+        },
+        {
+          "country": "New Zealand",
+          "year": 2016,
+          "users": 88.47018635
+        },
+        {
+          "country": "United States",
+          "year": 2016,
+          "users": 76.17673698
+        },
+        {
+          "country": "South Africa",
+          "year": 2016,
+          "users": 54
+        }
+      ]
+    },
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "height": 400,
+    "width": 600,
+    "mark": {
+      "type": "rect"
+    },
+    "encoding": {
+      "x": {
+        "field": "year",
+        "type": "nominal",
+        "axis": {
+          "labelAngle": 0,
+          "values": ["1995", "2000", "2005", "2010", "2015", "right"]
+        },
+        "title": "Year"
+      },
+      "y": {
+        "field": "country",
+        "type": "nominal",
+        "sort": {
+          "field": "users",
+          "op": "max",
+          "order": "descending"
+        },
+        "title": "Country"
+      },
+      "color": {
+        "field": "users",
+        "type": "quantitative",
+        "scale": {
+          "scheme": "Viridis"
+        },
+        "title": "User Count (Scaled)"
+      }
+    }
   },
   "embed_options": {
     "renderer": "canvas",
@@ -5736,6 +8475,8 @@ if (HTMLWidgets.shinyMode) {
 <li><h2 id="what-alternatives-does-wilke-present-to-pie-charts-and-in-what-situations-does-he-favor-each-you-should-be-comparing-pie-charts-to-two-other-types-of-graphics-that-can-be-made-with-the-same-sort-of-data." class="anchored"><em>What alternatives does Wilke present to pie charts and in what situations does he favor each? (You should be comparing pie charts to two other types of graphics that can be made with the same sort of data.)</em></h2></li>
 <li><h2 id="we-wont-make-many-pie-charts-but-i-suppose-you-should-make-at-least-one.-to-do-this-in-vega-lite-use-an-arc-mark.-recreate-figure-10.1-of-wilke-2019." class="anchored"><em>We won’t make many pie charts, but I suppose you should make at least one. To do this in Vega-Lite, use an arc mark. Recreate Figure 10.1 of Wilke (2019).</em></h2></li>
 </ul>
+<!-- -->
+
 </section>
 
 </main>
@@ -5819,6 +8560,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -6148,7 +8940,219 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class>
+<div class="sourceCode" id="cb19" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;Homework 7&quot;</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> &quot;Sucry Bendeck&quot;</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> &quot;last-modified&quot;</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="an">editor:</span><span class="co"> visual</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="an">embed-resources:</span><span class="co"> true</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="an">code-tools:</span><span class="co"> true</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, warning=FALSE, message=FALSE, include=FALSE}</span></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a><span class="in">library(dplyr)</span></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="in">library(jsonlite)</span></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a><span class="in">library(tidyr)</span></span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a><span class="in">library(vegabrite)</span></span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a><span class="fu">## **Exercise 1 (Wilke on visualizing amounts) Read Chapter 6 of Wilke (2019).**</span></span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**List some guidelines/advice Wilke gives about creating bar charts.**</span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>If names are too big switch the axis.</span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**When is it not advised to use a bar chart? Why?**</span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>When the categorical variables are on the x-axis becuse they take so much space.</span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**What alternatives to bars are mentioned in this chapter?**</span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Dot plots and heat maps.</span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**What guidance does Wilke give about whether or not to stack bars vs. dodge them (using an offset in Vega-Lite)?**</span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Stacking is useful when the sum of the amounts represented by the individual stacked bars is in itself a meaningful amount.It is also appropriate when the individual bars represent counts - We offset to avoid the mental effort.</span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a>movie_data<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">&quot;https://calvin-data304.netlify.app/data/cow-movies.csv&quot;</span>)</span>
+<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(movie_data)</span>
+<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-37"><a href="#cb19-37" aria-hidden="true" tabindex="-1"></a>**Recreate Figure 6.3 in Vega-Lite. \[CSV\]**</span>
+<span id="cb19-38"><a href="#cb19-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-39"><a href="#cb19-39" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, warning=FALSE}</span></span>
+<span id="cb19-40"><a href="#cb19-40" aria-hidden="true" tabindex="-1"></a><span class="in">#| code-fold: true</span></span>
+<span id="cb19-41"><a href="#cb19-41" aria-hidden="true" tabindex="-1"></a><span class="in">vl_chart(data = movie_data, height = 400, width = 600) |&gt;</span></span>
+<span id="cb19-42"><a href="#cb19-42" aria-hidden="true" tabindex="-1"></a><span class="in">  vl_mark_bar() |&gt;</span></span>
+<span id="cb19-43"><a href="#cb19-43" aria-hidden="true" tabindex="-1"></a><span class="in">  vl_encode_x(&quot;amount&quot;, title = &quot;Weekend Gross(million USD)&quot;, type = &quot;Quantitative&quot;) |&gt;</span></span>
+<span id="cb19-44"><a href="#cb19-44" aria-hidden="true" tabindex="-1"></a><span class="in">  vl_encode_y(&quot;title&quot;, type = &quot;Ordinal&quot;  , sort = list(&quot;-sort&quot;))</span></span>
+<span id="cb19-45"><a href="#cb19-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-46"><a href="#cb19-46" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-47"><a href="#cb19-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-48"><a href="#cb19-48" aria-hidden="true" tabindex="-1"></a>**Recreate Figures 6.8 and 6.9 in Vega-Lite. \[CSV\]**</span>
+<span id="cb19-49"><a href="#cb19-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-50"><a href="#cb19-50" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, warning=FALSE}</span></span>
+<span id="cb19-51"><a href="#cb19-51" aria-hidden="true" tabindex="-1"></a><span class="in">#| code-fold: true</span></span>
+<span id="cb19-52"><a href="#cb19-52" aria-hidden="true" tabindex="-1"></a><span class="in">#Reading the data:</span></span>
+<span id="cb19-53"><a href="#cb19-53" aria-hidden="true" tabindex="-1"></a><span class="in">income_data &lt;- read.csv(&quot;https://calvin-data304.netlify.app/data/cow-income.csv&quot;)</span></span>
+<span id="cb19-54"><a href="#cb19-54" aria-hidden="true" tabindex="-1"></a><span class="in">head(income_data)</span></span>
+<span id="cb19-55"><a href="#cb19-55" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-56"><a href="#cb19-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-57"><a href="#cb19-57" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, warning=FALSE}</span></span>
+<span id="cb19-58"><a href="#cb19-58" aria-hidden="true" tabindex="-1"></a><span class="in">#| code-fold: true</span></span>
+<span id="cb19-59"><a href="#cb19-59" aria-hidden="true" tabindex="-1"></a><span class="in">#Graph6.8- EDA</span></span>
+<span id="cb19-60"><a href="#cb19-60" aria-hidden="true" tabindex="-1"></a><span class="in">vl_chart(data = income_data, height = 400, width = 600) |&gt;</span></span>
+<span id="cb19-61"><a href="#cb19-61" aria-hidden="true" tabindex="-1"></a><span class="in">  vl_mark_bar() |&gt;</span></span>
+<span id="cb19-62"><a href="#cb19-62" aria-hidden="true" tabindex="-1"></a><span class="in">  vl_encode_x(&quot;age&quot;, title = &quot;Age (years)&quot;, type = &quot;ordinal&quot;) |&gt;</span></span>
+<span id="cb19-63"><a href="#cb19-63" aria-hidden="true" tabindex="-1"></a><span class="in">  vl_encode_y(&quot;median_income&quot;, type = &quot;Ordinal&quot;  , sort = &quot;ascending&quot;)|&gt;</span></span>
+<span id="cb19-64"><a href="#cb19-64" aria-hidden="true" tabindex="-1"></a><span class="in">  vl_encode_color(&quot;race&quot;,type =&quot;Nominal&quot;)</span></span>
+<span id="cb19-65"><a href="#cb19-65" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-66"><a href="#cb19-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-67"><a href="#cb19-67" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, warning=FALSE}</span></span>
+<span id="cb19-68"><a href="#cb19-68" aria-hidden="true" tabindex="-1"></a><span class="in">#| code-fold: true</span></span>
+<span id="cb19-69"><a href="#cb19-69" aria-hidden="true" tabindex="-1"></a><span class="in"># Data prep</span></span>
+<span id="cb19-70"><a href="#cb19-70" aria-hidden="true" tabindex="-1"></a><span class="in">income_data_grouped &lt;- income_data |&gt;</span></span>
+<span id="cb19-71"><a href="#cb19-71" aria-hidden="true" tabindex="-1"></a><span class="in">  mutate(race = recode(race, &quot;white_non_hispanic&quot; = &quot;white&quot;)) |&gt;  # Combining</span></span>
+<span id="cb19-72"><a href="#cb19-72" aria-hidden="true" tabindex="-1"></a><span class="in">  group_by(race, age) |&gt;  # Group by both race and age</span></span>
+<span id="cb19-73"><a href="#cb19-73" aria-hidden="true" tabindex="-1"></a><span class="in">  summarise(median_income = median(median_income, na.rm = TRUE), .groups = &quot;drop&quot;) |&gt;</span></span>
+<span id="cb19-74"><a href="#cb19-74" aria-hidden="true" tabindex="-1"></a><span class="in">  filter(race != &quot;all&quot;) |&gt;  # Drop the rows where race is &quot;all&quot;</span></span>
+<span id="cb19-75"><a href="#cb19-75" aria-hidden="true" tabindex="-1"></a><span class="in">  arrange(desc(median_income))</span></span>
+<span id="cb19-76"><a href="#cb19-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-77"><a href="#cb19-77" aria-hidden="true" tabindex="-1"></a><span class="in"># Visualization 6.8</span></span>
+<span id="cb19-78"><a href="#cb19-78" aria-hidden="true" tabindex="-1"></a><span class="in">vl_chart(data = income_data_grouped, height = 400, width = 600) |&gt;</span></span>
+<span id="cb19-79"><a href="#cb19-79" aria-hidden="true" tabindex="-1"></a><span class="in">  vl_mark_bar() |&gt;</span></span>
+<span id="cb19-80"><a href="#cb19-80" aria-hidden="true" tabindex="-1"></a><span class="in">  vl_encode_x(&quot;age&quot;, title = &quot;Age&quot;, type = &quot;Nominal&quot;) |&gt;  </span></span>
+<span id="cb19-81"><a href="#cb19-81" aria-hidden="true" tabindex="-1"></a><span class="in">  vl_encode_y(&quot;median_income&quot;, title = &quot;Median Income&quot;, type = &quot;Quantitative&quot;, sort = list(&quot;ascending&quot;)) |&gt;</span></span>
+<span id="cb19-82"><a href="#cb19-82" aria-hidden="true" tabindex="-1"></a><span class="in">  vl_encode_color(&quot;race&quot;, type = &quot;Nominal&quot;) |&gt;</span></span>
+<span id="cb19-83"><a href="#cb19-83" aria-hidden="true" tabindex="-1"></a><span class="in">  vl_facet(&quot;race&quot;,type = &quot;Nominal&quot;, columns = 2)</span></span>
+<span id="cb19-84"><a href="#cb19-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-85"><a href="#cb19-85" aria-hidden="true" tabindex="-1"></a><span class="in"># Visualization 6.9</span></span>
+<span id="cb19-86"><a href="#cb19-86" aria-hidden="true" tabindex="-1"></a><span class="in">vl_chart(data = income_data_grouped, height = 400, width = 600) |&gt;</span></span>
+<span id="cb19-87"><a href="#cb19-87" aria-hidden="true" tabindex="-1"></a><span class="in">  vl_mark_bar() |&gt;</span></span>
+<span id="cb19-88"><a href="#cb19-88" aria-hidden="true" tabindex="-1"></a><span class="in">  vl_encode_x(&quot;race&quot;, title = &quot;Race&quot;, type = &quot;Nominal&quot;, sort = list(&quot;-race&quot;)) |&gt;  </span></span>
+<span id="cb19-89"><a href="#cb19-89" aria-hidden="true" tabindex="-1"></a><span class="in">  vl_encode_y(&quot;median_income&quot;, title = &quot;Median Income&quot;, type = &quot;Quantitative&quot;, sort = list(&quot;ascending&quot;)) |&gt;</span></span>
+<span id="cb19-90"><a href="#cb19-90" aria-hidden="true" tabindex="-1"></a><span class="in">  vl_encode_color(&quot;age&quot;, type = &quot;Nominal&quot;) |&gt;</span></span>
+<span id="cb19-91"><a href="#cb19-91" aria-hidden="true" tabindex="-1"></a><span class="in">  vl_encode_xOffset(&quot;age&quot;,type = &quot;Nominal&quot;)</span></span>
+<span id="cb19-92"><a href="#cb19-92" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-93"><a href="#cb19-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-94"><a href="#cb19-94" aria-hidden="true" tabindex="-1"></a>**Recreate Figure 6.11 and explain why Figures 6.12 and 6.13 are labeled “bad”. \[CSV\]**</span>
+<span id="cb19-95"><a href="#cb19-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-96"><a href="#cb19-96" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, warning=FALSE}</span></span>
+<span id="cb19-97"><a href="#cb19-97" aria-hidden="true" tabindex="-1"></a><span class="in">#| code-fold: true</span></span>
+<span id="cb19-98"><a href="#cb19-98" aria-hidden="true" tabindex="-1"></a><span class="in">#Reading the data:</span></span>
+<span id="cb19-99"><a href="#cb19-99" aria-hidden="true" tabindex="-1"></a><span class="in">countries_data &lt;- read.csv(&quot;https://calvin-data304.netlify.app/data/cow-gapminder.csv&quot;)</span></span>
+<span id="cb19-100"><a href="#cb19-100" aria-hidden="true" tabindex="-1"></a><span class="in">head(countries_data)</span></span>
+<span id="cb19-101"><a href="#cb19-101" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-102"><a href="#cb19-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-103"><a href="#cb19-103" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, warning=FALSE}</span></span>
+<span id="cb19-104"><a href="#cb19-104" aria-hidden="true" tabindex="-1"></a><span class="in">#| code-fold: true</span></span>
+<span id="cb19-105"><a href="#cb19-105" aria-hidden="true" tabindex="-1"></a><span class="in">countries_data_combined &lt;- countries_data |&gt;  </span></span>
+<span id="cb19-106"><a href="#cb19-106" aria-hidden="true" tabindex="-1"></a><span class="in">  filter(year == 2007, continent == &quot;Americas&quot;) |&gt;  </span></span>
+<span id="cb19-107"><a href="#cb19-107" aria-hidden="true" tabindex="-1"></a><span class="in">  group_by(country) |&gt;  </span></span>
+<span id="cb19-108"><a href="#cb19-108" aria-hidden="true" tabindex="-1"></a><span class="in">  summarise(lifeExp = median(lifeExp, na.rm = TRUE), .groups = &quot;drop&quot;) |&gt; </span></span>
+<span id="cb19-109"><a href="#cb19-109" aria-hidden="true" tabindex="-1"></a><span class="in">  filter(lifeExp &gt;= 60) |&gt;</span></span>
+<span id="cb19-110"><a href="#cb19-110" aria-hidden="true" tabindex="-1"></a><span class="in">  arrange(desc(lifeExp))  </span></span>
+<span id="cb19-111"><a href="#cb19-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-112"><a href="#cb19-112" aria-hidden="true" tabindex="-1"></a><span class="in"># Visualization 6.11</span></span>
+<span id="cb19-113"><a href="#cb19-113" aria-hidden="true" tabindex="-1"></a><span class="in">vl_chart(data = countries_data_combined, height = 400, width = 600) |&gt;</span></span>
+<span id="cb19-114"><a href="#cb19-114" aria-hidden="true" tabindex="-1"></a><span class="in">  vl_mark_circle() |&gt;</span></span>
+<span id="cb19-115"><a href="#cb19-115" aria-hidden="true" tabindex="-1"></a><span class="in">  vl_encode_x(&quot;lifeExp&quot;, title = &quot;Life Expectancy&quot;, type = &quot;Quantitative&quot;, scale = list(domain = list(60, 85)) )|&gt;  </span></span>
+<span id="cb19-116"><a href="#cb19-116" aria-hidden="true" tabindex="-1"></a><span class="in">  vl_encode_y(&quot;country&quot;, title = &quot;Country&quot;, type = &quot;Nominal&quot;,sort = list(&quot;-lifeExp&quot;))</span></span>
+<span id="cb19-117"><a href="#cb19-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-118"><a href="#cb19-118" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-119"><a href="#cb19-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-120"><a href="#cb19-120" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, warning=FALSE}</span></span>
+<span id="cb19-121"><a href="#cb19-121" aria-hidden="true" tabindex="-1"></a><span class="in">#| code-fold: true</span></span>
+<span id="cb19-122"><a href="#cb19-122" aria-hidden="true" tabindex="-1"></a><span class="in"># 6.12</span></span>
+<span id="cb19-123"><a href="#cb19-123" aria-hidden="true" tabindex="-1"></a><span class="in">vl_chart(data = countries_data_combined, height = 400, width = 600) |&gt;</span></span>
+<span id="cb19-124"><a href="#cb19-124" aria-hidden="true" tabindex="-1"></a><span class="in">  vl_mark_bar() |&gt;</span></span>
+<span id="cb19-125"><a href="#cb19-125" aria-hidden="true" tabindex="-1"></a><span class="in">  vl_encode_x(&quot;lifeExp&quot;, title = &quot;Life Expectancy&quot;, type = &quot;Quantitative&quot;, scale = list(domain = list(0, 85)) )|&gt;  </span></span>
+<span id="cb19-126"><a href="#cb19-126" aria-hidden="true" tabindex="-1"></a><span class="in">  vl_encode_y(&quot;country&quot;, title = &quot;Country&quot;, type = &quot;Nominal&quot;,sort = list(&quot;-lifeExp&quot;))</span></span>
+<span id="cb19-127"><a href="#cb19-127" aria-hidden="true" tabindex="-1"></a><span class="in">#How to step, ticks?</span></span>
+<span id="cb19-128"><a href="#cb19-128" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-129"><a href="#cb19-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-130"><a href="#cb19-130" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, warning=FALSE}</span></span>
+<span id="cb19-131"><a href="#cb19-131" aria-hidden="true" tabindex="-1"></a><span class="in">#| code-fold: true</span></span>
+<span id="cb19-132"><a href="#cb19-132" aria-hidden="true" tabindex="-1"></a><span class="in">#6.13</span></span>
+<span id="cb19-133"><a href="#cb19-133" aria-hidden="true" tabindex="-1"></a><span class="in">vl_chart(data = countries_data_combined, height = 400, width = 600) |&gt;</span></span>
+<span id="cb19-134"><a href="#cb19-134" aria-hidden="true" tabindex="-1"></a><span class="in">  vl_mark_circle() |&gt;</span></span>
+<span id="cb19-135"><a href="#cb19-135" aria-hidden="true" tabindex="-1"></a><span class="in">  vl_encode_x(&quot;lifeExp&quot;, title = &quot;Life Expectancy&quot;, type = &quot;Quantitative&quot;, scale = list(domain = list(60, 85)) )|&gt;  </span></span>
+<span id="cb19-136"><a href="#cb19-136" aria-hidden="true" tabindex="-1"></a><span class="in">  vl_encode_y(&quot;country&quot;, title = &quot;Country&quot;, type = &quot;Nominal&quot;)</span></span>
+<span id="cb19-137"><a href="#cb19-137" aria-hidden="true" tabindex="-1"></a><span class="in"># step by 5?</span></span>
+<span id="cb19-138"><a href="#cb19-138" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-139"><a href="#cb19-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-140"><a href="#cb19-140" aria-hidden="true" tabindex="-1"></a><span class="fu">## **Exercise 2 (A video presentation by Healy)**</span></span>
+<span id="cb19-141"><a href="#cb19-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-142"><a href="#cb19-142" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>*Watch this video starting at 12:18 until 49:52. (You are welcome to watch the whole thing if you like.) You will see some things that look familiar from our discussion of perception in class, but there are also a number of additional examples and discussion.*</span>
+<span id="cb19-143"><a href="#cb19-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-144"><a href="#cb19-144" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Done</span>
+<span id="cb19-145"><a href="#cb19-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-146"><a href="#cb19-146" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>*List at least three pieces of advice you can glean from this video that might help you design good graphics.*</span>
+<span id="cb19-147"><a href="#cb19-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-148"><a href="#cb19-148" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>If you use color make sure that the contrast in color will not be deceiving or that will add to the distraction.</span>
+<span id="cb19-149"><a href="#cb19-149" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Categorical variables usually in the y axis. No iron rules but keep in mind your audience and what story you are trying to convey. - Context,Convection,Meaning.</span>
+<span id="cb19-150"><a href="#cb19-150" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Great tool for discovery and persuasion</span>
+<span id="cb19-151"><a href="#cb19-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-152"><a href="#cb19-152" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>*There are two figures in this video that come from Chapter 1 of Tufte (2001). Did you spot them? Which figures are they?*</span>
+<span id="cb19-153"><a href="#cb19-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-154"><a href="#cb19-154" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span></span>
+<span id="cb19-155"><a href="#cb19-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-156"><a href="#cb19-156" aria-hidden="true" tabindex="-1"></a>    <span class="al">![Russian Campaign (Unicorns)](russiancampaign.png)</span></span>
+<span id="cb19-157"><a href="#cb19-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-158"><a href="#cb19-158" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span></span>
+<span id="cb19-159"><a href="#cb19-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-160"><a href="#cb19-160" aria-hidden="true" tabindex="-1"></a>    <span class="al">![Russian Campaign (Unicorns)](russiancampaign.png)</span></span>
+<span id="cb19-161"><a href="#cb19-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-162"><a href="#cb19-162" aria-hidden="true" tabindex="-1"></a><span class="fu">## **Exercise 3 (Heat maps)**</span></span>
+<span id="cb19-163"><a href="#cb19-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-164"><a href="#cb19-164" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>*In Vega-Lite lingo, what makes something be a heat map?*</span>
+<span id="cb19-165"><a href="#cb19-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-166"><a href="#cb19-166" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>You layer the data and highlight what make it important, and because you are replicating the graphic you repeat as many times as needed.</span>
+<span id="cb19-167"><a href="#cb19-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-168"><a href="#cb19-168" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>*Recreate Figure 6.14 or 6.15 from Wilke (2019) (your choice). Or get fancy and include an interactive element that let’s you select the year to order by. \[CSV\]*</span>
+<span id="cb19-169"><a href="#cb19-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-172"><a href="#cb19-172" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb19-173"><a href="#cb19-173" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
+<span id="cb19-174"><a href="#cb19-174" aria-hidden="true" tabindex="-1"></a><span class="co"># Reading the data</span></span>
+<span id="cb19-175"><a href="#cb19-175" aria-hidden="true" tabindex="-1"></a>heat_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://calvin-data304.netlify.app/data/cow-internet2.csv&quot;</span>)</span>
+<span id="cb19-176"><a href="#cb19-176" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(heat_data)</span>
+<span id="cb19-177"><a href="#cb19-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-178"><a href="#cb19-178" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the heatmap using vegabrite</span></span>
+<span id="cb19-179"><a href="#cb19-179" aria-hidden="true" tabindex="-1"></a>heatmap <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>(<span class="at">data =</span> heat_data ,<span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
+<span id="cb19-180"><a href="#cb19-180" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_rect</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb19-181"><a href="#cb19-181" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">&quot;year&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Year&quot;</span>, <span class="at">type =</span> <span class="st">&quot;nominal&quot;</span>,   <span class="at">axis =</span> <span class="fu">list</span>(<span class="at">labelAngle =</span> <span class="dv">0</span>, <span class="at">values =</span> <span class="fu">c</span>(<span class="dv">1995</span>, <span class="dv">2000</span>, <span class="dv">2005</span>, <span class="dv">2010</span>, <span class="dv">2015</span>,<span class="at">orient=</span><span class="st">&quot;right&quot;</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb19-182"><a href="#cb19-182" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">&quot;country&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">type =</span> <span class="st">&quot;nominal&quot;</span>,<span class="at">sort=</span><span class="fu">list</span>(<span class="at">field=</span><span class="st">&quot;users&quot;</span>,<span class="at">op=</span> <span class="st">&quot;max&quot;</span>,<span class="at">order=</span> <span class="st">&quot;descending&quot;</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb19-183"><a href="#cb19-183" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">&quot;users&quot;</span>, </span>
+<span id="cb19-184"><a href="#cb19-184" aria-hidden="true" tabindex="-1"></a>                  <span class="at">title =</span> <span class="st">&quot;User Count (Scaled)&quot;</span>,</span>
+<span id="cb19-185"><a href="#cb19-185" aria-hidden="true" tabindex="-1"></a>                  <span class="at">type =</span> <span class="st">&quot;quantitative&quot;</span>, </span>
+<span id="cb19-186"><a href="#cb19-186" aria-hidden="true" tabindex="-1"></a>                  <span class="at">scale =</span> <span class="fu">list</span>(<span class="at">scheme =</span> <span class="st">&quot;Viridis&quot;</span>))</span>
+<span id="cb19-187"><a href="#cb19-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-188"><a href="#cb19-188" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the chart</span></span>
+<span id="cb19-189"><a href="#cb19-189" aria-hidden="true" tabindex="-1"></a>heatmap</span>
+<span id="cb19-190"><a href="#cb19-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-191"><a href="#cb19-191" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-192"><a href="#cb19-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-193"><a href="#cb19-193" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>*At around 20:10, Healy presents a possible problem with heat maps, what is it?*</span>
+<span id="cb19-194"><a href="#cb19-194" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span></span>
+<span id="cb19-195"><a href="#cb19-195" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>*But starting at around 44:12, he presents a heat map as a “show pony”. Why isn’t the problem presented earlier an issue here? Is it an issue in the figure you make in part b? Why or why not?*</span>
+<span id="cb19-196"><a href="#cb19-196" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span></span>
+<span id="cb19-197"><a href="#cb19-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-198"><a href="#cb19-198" aria-hidden="true" tabindex="-1"></a><span class="fu">## **Exercise 4 (Pie charts)**</span></span>
+<span id="cb19-199"><a href="#cb19-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-200"><a href="#cb19-200" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span></span>
+<span id="cb19-201"><a href="#cb19-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-202"><a href="#cb19-202" aria-hidden="true" tabindex="-1"></a>    ## *What does Healy have to say about pie charts in his video?*</span>
+<span id="cb19-203"><a href="#cb19-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-204"><a href="#cb19-204" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span></span>
+<span id="cb19-205"><a href="#cb19-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-206"><a href="#cb19-206" aria-hidden="true" tabindex="-1"></a>    ## *How does that compare to what Wilke says in Section 10.1 of Wilke (2019)?*</span>
+<span id="cb19-207"><a href="#cb19-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-208"><a href="#cb19-208" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span></span>
+<span id="cb19-209"><a href="#cb19-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-210"><a href="#cb19-210" aria-hidden="true" tabindex="-1"></a>    ## *What alternatives does Wilke present to pie charts and in what situations does he favor each? (You should be comparing pie charts to two other types of graphics that can be made with the same sort of data.)*</span>
+<span id="cb19-211"><a href="#cb19-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-212"><a href="#cb19-212" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span></span>
+<span id="cb19-213"><a href="#cb19-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-214"><a href="#cb19-214" aria-hidden="true" tabindex="-1"></a>    ## *We won’t make many pie charts, but I suppose you should make at least one. To do this in Vega-Lite, use an arc mark. Recreate Figure 10.1 of Wilke (2019).*</span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 
 

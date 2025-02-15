@@ -5,27 +5,27 @@ date: "last-modified"
 format: html
 editor: visual
 embed-resources: true
+code-tools: true
 ---
-## Libraries
-```{r, warning=FALSE, message=FALSE, echo = TRUE}
+
+
+```{r, warning=FALSE, message=FALSE, include=FALSE}
 library(dplyr)
 library(jsonlite)
 library(tidyr)
 library(vegabrite)
 ```
+
 ## **Exercise 1 (Wilke on visualizing amounts) Read Chapter 6 of Wilke (2019).**
-- **List some guidelines/advice Wilke gives about creating bar charts.** 
-  - If names are too big switch the axis. 
 
-- **When is it not advised to use a bar chart? Why?** 
-  - When the categorical variables are on the x-axis becuse they take so much space. 
-- **What alternatives to bars are mentioned in this chapter?**
-  - Dot plots and heat maps.
-
-- **What guidance does Wilke give about whether or not to stack bars vs. dodge them (using an offset in Vega-Lite)?** 
-  - Stacking is useful when the sum of the amounts represented by the individual stacked bars is in itself a meaningful amount.It is also appropriate when the individual bars represent counts - We offset to avoid the mental effort. 
-  
-
+-   **List some guidelines/advice Wilke gives about creating bar charts.**
+    -   If names are too big switch the axis.
+-   **When is it not advised to use a bar chart? Why?**
+    -   When the categorical variables are on the x-axis becuse they take so much space.
+-   **What alternatives to bars are mentioned in this chapter?**
+    -   Dot plots and heat maps.
+-   **What guidance does Wilke give about whether or not to stack bars vs. dodge them (using an offset in Vega-Lite)?**
+    -   Stacking is useful when the sum of the amounts represented by the individual stacked bars is in itself a meaningful amount.It is also appropriate when the individual bars represent counts - We offset to avoid the mental effort.
 
 ```{r}
 movie_data<-read.csv("https://calvin-data304.netlify.app/data/cow-movies.csv")
@@ -135,9 +135,12 @@ vl_chart(data = countries_data_combined, height = 400, width = 600) |>
 # step by 5?
 ```
 
-## **Exercise 2 (A video presentation by Healy)** 
-- *Watch this video starting at 12:18 until 49:52. (You are welcome to watch the whole thing if you like.) You will see some things that look familiar from our discussion of perception in class, but there are also a number of additional examples and discussion.* 
-  - Done
+## **Exercise 2 (A video presentation by Healy)**
+
+-   *Watch this video starting at 12:18 until 49:52. (You are welcome to watch the whole thing if you like.) You will see some things that look familiar from our discussion of perception in class, but there are also a number of additional examples and discussion.*
+
+    -   Done
+
 -   *List at least three pieces of advice you can glean from this video that might help you design good graphics.*
 
     -   If you use color make sure that the contrast in color will not be deceiving or that will add to the distraction.
@@ -146,9 +149,13 @@ vl_chart(data = countries_data_combined, height = 400, width = 600) |>
 
 -   *There are two figures in this video that come from Chapter 1 of Tufte (2001). Did you spot them? Which figures are they?*
 
--   ![Russian Campaign (Unicorns)](russiancampaign.png)
+-   
 
--   ![Russian Campaign (Unicorns)](russiancampaign.png)
+    ![Russian Campaign (Unicorns)](russiancampaign.png)
+
+-   
+
+    ![Russian Campaign (Unicorns)](russiancampaign.png)
 
 ## **Exercise 3 (Heat maps)**
 
@@ -160,18 +167,29 @@ vl_chart(data = countries_data_combined, height = 400, width = 600) |>
 
 ```{r}
 #| code-fold: true
-#Reading the data:
+# Reading the data
 heat_data <- read.csv("https://calvin-data304.netlify.app/data/cow-internet2.csv")
 head(heat_data)
 
-# Visualizatio
-vl_chart()
+# Create the heatmap using vegabrite
+heatmap <- vl_chart(data = heat_data ,height = 400, width = 600) |>
+  vl_mark_rect() |> 
+  vl_encode_x("year", title = "Year", type = "nominal",   axis = list(labelAngle = 0, values = c(1995, 2000, 2005, 2010, 2015,orient="right"))) |>
+  vl_encode_y("country", title = "Country", type = "nominal",sort=list(field="users",op= "max",order= "descending")) |>
+  vl_encode_color("users", 
+                  title = "User Count (Scaled)",
+                  type = "quantitative", 
+                  scale = list(scheme = "Viridis"))
+
+# Display the chart
+heatmap
+
 ```
 
 -   *At around 20:10, Healy presents a possible problem with heat maps, what is it?*
-  -   
+-   
 -   *But starting at around 44:12, he presents a heat map as a “show pony”. Why isn’t the problem presented earlier an issue here? Is it an issue in the figure you make in part b? Why or why not?*
-  -   
+-   
 
 ## **Exercise 4 (Pie charts)**
 
