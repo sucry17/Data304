@@ -174,12 +174,12 @@ head(heat_data)
 # Create the heatmap using vegabrite
 heatmap <- vl_chart(data = heat_data ,height = 400, width = 600) |>
   vl_mark_rect() |> 
-  vl_encode_x("year", title = "Year", type = "nominal",   axis = list(labelAngle = 0, values = c(1995, 2000, 2005, 2010, 2015,orient="right"))) |>
-  vl_encode_y("country", title = "Country", type = "nominal",sort=list(field="users",op= "max",order= "descending")) |>
+  vl_encode_x("year", title = "Year", type = "nominal",   axis = list(labelAngle = 0, values = c(1995, 2000, 2005, 2010, 2015))) |>
+  vl_encode_y("country", title = "Country", type = "nominal",sort=list(field="users",op= "max",order= "descending"),axis = list(orient = "right")) |>
   vl_encode_color("users", 
                   title = "User Count (Scaled)",
                   type = "quantitative", 
-                  scale = list(scheme = "Viridis"))
+                  scale = list(scheme = "Viridis",orient = "top"),legend = list(orient = "top"))
 
 # Display the chart
 heatmap
