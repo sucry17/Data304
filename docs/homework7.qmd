@@ -208,3 +208,10 @@ heatmap
 -   
 
     ## *We won’t make many pie charts, but I suppose you should make at least one. To do this in Vega-Lite, use an arc mark. Recreate Figure 10.1 of Wilke (2019).*
+
+```{r, warning=FALSE}
+#| code-fold: true
+#Reading the data:
+pie_data <- read.csv("https://calvin-data304.netlify.app/hw/hw07-perception-and.html#ref-Wilke:2019")
+head(pie_data)
+```
