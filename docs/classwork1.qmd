@@ -1,0 +1,64 @@
+---
+title: "InClass1"
+author: "Sucry Bendeck"
+format: html
+editor: visual
+date: "last-modified"
+embed-resources: true
+---
+
+```{r, warning=FALSE, message=FALSE, include=FALSE}
+library(dplyr)
+library(jsonlite)
+library(tidyr)
+library(vegabrite)
+```
+
+```{r}
+# Reading data:
+jobs<- fromJSON("https://cdn.jsdelivr.net/npm/vega-datasets@2.8.0/data/jobs.json")
+head(jobs)
+```
+
+```{r}
+#filter
+jobYears<- jobs |> 
+  filter(year== 1950 | year == 2000)
+
+jobYears$year <- as.factor(jobYears$year)
+
+
+head(jobYears)
+str(jobYears)
+
+```
+
+```{r}
+#Graphic
+vl_chart()|>
+vl_mark_point(tooltip=list(content = "data"))|>
+  vl_pivot("year",groupby = list("job","sex"), value = "perc")|>
+  vl_encode_x("1950:Q")|>
+  vl_encode_y("2000:Q")|>
+  vl_scale_x(type= "symlog",constant = 1)|>
+    vl_scale_y(type= "symlog",constant = 1)|>
+  vl_facet_column("sex",title = "")|>
+  vl_encode_tooltip_array(list("job","sex","1850","2000"))|>
+  vl_add_data(jobs)
+
+```
+
+```{r}
+vl_chart()|>
+  vl_mark_point(tooltip=list(content = "data"))|>
+  vl_pivot("year",groupby = list("job","sex"), value = "perc")|>
+  vl_encode_x("1950:Q")|>
+  vl_encode_y("2000:Q")|>
+  vl_scale_x(type= "symlog",constant = .00001)|>
+    vl_scale_y(type= "symlog",constant = 0.00001)|>
+  vl_facet_column("sex",title = "")|>
+  vl_add_properties(title = list(text= "Percent of people working various jobs", 
+                                 subtitle= "each dot represents one ocupation"))|>
+   vl_encode_tooltip_array(list("job","sex"))|>
+vl_add_data(jobYears)
+```

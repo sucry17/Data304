@@ -186,26 +186,30 @@ heatmap
 ```
 
 -   *At around 20:10, Healy presents a possible problem with heat maps, what is it?*
-  -   Overuse of color can be problematic because it affects how we perceive differences in data, making it harder to interpret patterns accurately.
-  
+
+-   Overuse of color can be problematic because it affects how we perceive differences in data, making it harder to interpret patterns accurately.
+
 -   *But starting at around 44:12, he presents a heat map as a “show pony”. Why isn’t the problem presented earlier an issue here? Is it an issue in the figure you make in part b? Why or why not?*
-  -  Heat maps highlight the individual data point but it still reveals the broader trend of the of the data set.
-  
+
+-   Heat maps highlight the individual data point but it still reveals the broader trend of the of the data set.
+
 ## **Exercise 4 (Pie charts)**
 
-- *What does Healy have to say about pie charts in his video?*
-  - Our eyes are better at decoding lengths then at decoding angles. 
+-   *What does Healy have to say about pie charts in his video?*
 
-- *How does that compare to what Wilke says in Section 10.1 of Wilke (2019)?*
-  - It depends on what the pie chart is for. If it emphasizes simple fractions its good
-  
-- *What alternatives does Wilke present to pie charts and in what situations does he favor each? (You should be comparing pie charts to two other types of graphics that can be made with the same sort of data.)*
+    -   Our eyes are better at decoding lengths then at decoding angles.
 
-  - Side-by-Side Bars: Wilke likes side-by-side bars as they highlight differences between categories. Pie charts are hard to visualize because they rely on angles.
+-   *How does that compare to what Wilke says in Section 10.1 of Wilke (2019)?*
 
-  - Stacked Bars: For proportions over time, stacked bar charts become more useful. Comparing side-by-side pie charts is harder than comparing side-by-side stacked ba
+    -   It depends on what the pie chart is for. If it emphasizes simple fractions its good
 
-    ## *We won’t make many pie charts, but I suppose you should make at least one. To do this in Vega-Lite, use an arc mark. Recreate Figure 10.1 of Wilke (2019).*
+-   *What alternatives does Wilke present to pie charts and in what situations does he favor each? (You should be comparing pie charts to two other types of graphics that can be made with the same sort of data.)*
+
+    -   Side-by-Side Bars: Wilke likes side-by-side bars as they highlight differences between categories. Pie charts are hard to visualize because they rely on angles.
+
+    -   Stacked Bars: For proportions over time, stacked bar charts become more useful. Comparing side-by-side pie charts is harder than comparing side-by-side stacked ba
+
+        ## *We won’t make many pie charts, but I suppose you should make at least one. To do this in Vega-Lite, use an arc mark. Recreate Figure 10.1 of Wilke (2019).*
 
 ```{r, warning=FALSE}
 #| code-fold: true

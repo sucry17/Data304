@@ -1,0 +1,101 @@
+---
+title: "Homework 8"
+author: "Sucry Bendeck"
+date: "last-modified"
+format: html
+editor: visual
+embed-resources: true
+code-tools: true
+---
+
+```{r, warning=FALSE, message=FALSE, include=FALSE}
+library(dplyr)
+library(jsonlite)
+library(tidyr)
+library(vegabrite)
+```
+
+# Data
+```{r}
+ds<- fromJSON("https://calvin-data304.netlify.app/data/swd-lets-practice-ex-2-3.json")
+head(ds)
+```
+
+
+# Data wrangling 
+```{r}
+ds_long <- ds |>
+  pivot_longer(cols = c(capacity, demand), 
+               names_to = "type", 
+               values_to = "value")
+
+# Ensure that 'date' column is retained properly
+str(ds_long)
+
+# Convert 'date' to Date format
+ds_long <- ds_long |>
+  mutate(date = as.Date(paste0(date, "-01"), format = "%Y-%m-%d"))  # Adding day for proper conversion
+
+# Check the structure of the new long format dataset
+str(ds_long)
+
+
+```
+
+## Graphic 1
+
+```{r}
+
+vl_chart() |>
+  vl_mark_bar() |>
+  vl_encode_x("date", type = "nominal") |>
+  vl_encode_y("value", type = "quantitative")|>
+  vl_encode_xOffset("type")|>
+  vl_encode_color("type")|>
+  vl_add_data(ds_long)
+
+```
+
+```{r}
+vl_chart(height = 400, width = 600) |>
+  vl_layer(
+    # Bar for Capacity (wider bars)
+    vl_mark_bar(size = 30) |>
+      vl_encode_x("date", type = "temporal", title = "Date") |>
+      vl_encode_y("value", type = "quantitative") |>
+      vl_encode_color("type") |>
+      vl_filter("type == 'capacity'"),
+    
+    # Bar for Demand (default width)
+    vl_mark_bar() |>
+      vl_encode_x("date", type = "temporal", title = "Date") |>
+      vl_encode_y("value", type = "quantitative") |>
+      vl_encode_color("type") |>
+      vl_filter("type == 'demand'")
+  ) |>
+  vl_add_data(ds_long)
+
+```
+
+
+```{r} 
+#graph 3 ?
+ vl_chart(height = 400, width = 600) |>
+  vl_add_data(ds_long) |>
+  vl_layer(
+    # Bars for capacity and demand
+    vl_chart() |>
+      vl_mark_bar() |>
+      vl_encode_x("date", type = "temporal", title = "Date") |>
+      vl_encode_y("value", type = "quantitative", title = "Value") |>
+      vl_encode_color("type", type = "nominal"),
+    
+    # Points for capacity and demand
+    vl_chart() |>
+      vl_mark_point() |>
+      vl_encode_x("date", type = "temporal") |>
+      vl_encode_y("value", type = "quantitative") |>
+      vl_encode_color("type", type = "nominal")
+  )
+```
+
