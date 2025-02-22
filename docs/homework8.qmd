@@ -274,7 +274,6 @@ DataSet2<- read.csv("https://raw.githubusercontent.com/lukes/ISO-3166-Countries-
 
 ## Wrangling the data:
 ```{r, warning=FALSE}
-#| code-fold: true
 #changing name to country so the merge is easier.
 DataSet2<-DataSet2|> rename(country= name)
 
