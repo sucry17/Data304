@@ -11,4 +11,4 @@ embed-resources: true
 
 - You can view my [homework 7](https://sucry17.github.io/Data304/homework7.html).
 
-- You can view my [homework 7](https://sucry17.github.io/Data304/homework8.html).
+- You can view my [homework 8](https://sucry17.github.io/Data304/homework8.html).
