@@ -229,7 +229,8 @@ vl_chart(height = 400, width = 600) |>
   vl_add_data(jobs_summary)
 ```
 
-The first graph appears to show the proportion of men and women in the total job market. This provides insight into the distribution of employment between men and women. The second graph focuses on the trend of employment share over time for both genders, revealing that the values for men and women are gradually converging toward 0.5. This suggests that gender participation in the workforce is becoming more equal over time.
+The first graph appears to show the proportion of men and women in the total job market. This provides insight into the distribution of employment between men and women. The second graph focuses on the trend of employment share over time for both genders, revealing that the values for men and women are gradually converging toward 0.5. This suggests that gender participation in the workforce is becoming more equal over time.\
+
 ## *B:*
 ```{r}
 #| code-fold: true
@@ -249,6 +250,7 @@ vl_chart(title = "") |>
   vl_encode_text("perc", format = ".0%") # Format perc as percentage
 
 ```
+
 
 ```{r}
 #| code-fold: true
@@ -313,14 +315,18 @@ setdiff(unique(gasprice$country), unique(gasprice_long$country))
 # Pivot and filter the data for USA
 gasprice_long_usa <- gasprice |>
   pivot_longer(cols = starts_with("X"), names_to = "year", values_to = "price") |>
-  mutate(year = gsub("X", "", year), year = as.integer(year)) |>
+ mutate(
+    year = gsub("X", "", year),
+    year = as.integer(year),
+    price_per_gallon = price * 3.79 # Convert price from per liter to per gallon
+  ) |>
   filter(country == "USA")
 
 # Create the chart
 vl_chart(title = "Gas Prices Trend in the USA by Year") |>
   vl_mark_line(point = TRUE) |>
   vl_encode_x("year", type = "nominal",title = "Year") |>
-  vl_encode_y("price", type = "quantitative",title = "US $ per liter") |>
+  vl_encode_y("price_per_gallon", type = "quantitative",title = "US $ per liter") |>
   vl_add_data(gasprice_long_usa)
 
 ```
