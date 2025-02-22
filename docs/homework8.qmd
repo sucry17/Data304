@@ -207,16 +207,37 @@ vl_chart(height = 400, width = 600) |>
   vl_encode_y("total_perc", type = "quantitative", stack = "zero") |>
   vl_encode_color("sex") |>
   vl_add_data(jobs_summary)
-# Side-by-Side( easier to compare)
+
+# Line( easier to observe trend ovetr time)
 vl_chart(height = 400, width = 600) |>
-  vl_mark_bar() |>
+  vl_mark_line() |>
   vl_encode_x("year", type = "ordinal") |>
   vl_encode_y("total_perc", type = "quantitative", stack = "zero") |>
   vl_encode_xOffset("sex") |>
   vl_encode_color("sex") |>
   vl_add_data(jobs_summary)
 ```
- I think the graph is showing the proprtion of men and women how were employed- regardless 
+
+The first graph appears to show the proportion of men and women in the total job market. This provides insight into the distribution of employment between men and women. The second graph focuses on the trend of employment share over time for both genders, revealing that the values for men and women are gradually converging toward 0.5. This suggests that gender participation in the workforce is becoming more equal over time.
+## *B:*
+```{r}
+# Selecting Years
+jobYears <- jobs |>
+  filter(year == 1970 | year == 1980 | year == 1990 | year == 2000)
+
+# Creating the chart
+vl_chart(title = "") |>
+  vl_mark_point() |>
+  vl_encode_y("job", type = "nominal") |>
+  vl_encode_x("perc", type = "quantitative") |>
+  vl_encode_color("sex") |>
+  vl_encode_shape("sex") |>
+  vl_facet_column("year", title = "") |>
+  vl_add_data(jobYears) |>
+  vl_encode_text("perc", format = ".0%") # Format perc as percentage
+
+```
+
 # Exercise #3
 
 ```{r}
