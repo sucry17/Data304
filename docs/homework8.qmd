@@ -326,7 +326,7 @@ gasprice_long_usa <- gasprice |>
 vl_chart(title = "Gas Prices Trend in the USA by Year") |>
   vl_mark_line(point = TRUE) |>
   vl_encode_x("year", type = "nominal",title = "Year") |>
-  vl_encode_y("price_per_gallon", type = "quantitative",title = "US $ per liter") |>
+  vl_encode_y("price_per_gallon", type = "quantitative",title = "US $ per gallon") |>
   vl_add_data(gasprice_long_usa)
 
 ```
