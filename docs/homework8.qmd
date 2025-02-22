@@ -259,6 +259,7 @@ vl_chart(title = "Employment Percentage by Job and Sex") |>
   vl_encode_x("perc", type = "quantitative", stack = "zero") |>
   vl_encode_color("sex") |>
   vl_facet_column("year") |>
+  vl_encode_xOffset("sex")|>
   vl_add_data(jobYears) |>
   vl_facet_row("sex", title = "")|>
   vl_encode_text("perc", format = ".0%") # Format perc as percentage
