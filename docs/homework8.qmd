@@ -249,13 +249,14 @@ vl_chart(title = "") |>
   vl_encode_text("perc", format = ".0%") # Format perc as percentage
 
 ```
+
 ```{r}
 #| code-fold: true
 
 vl_chart(title = "Employment Percentage by Job and Sex") |>
   vl_mark_bar() |>
-  vl_encode_x("job", type = "nominal") |>
-  vl_encode_y("perc", type = "quantitative", stack = "zero") |>
+  vl_encode_y("job", type = "nominal") |>
+  vl_encode_x("perc", type = "quantitative", stack = "zero") |>
   vl_encode_color("sex") |>
   vl_facet_column("year") |>
   vl_add_data(jobYears) |>
