@@ -18,6 +18,7 @@ library(vegabrite)
 # Data
 
 ```{r}
+#| code-fold: true
 ds<- fromJSON("https://calvin-data304.netlify.app/data/swd-lets-practice-ex-2-3.json")
 head(ds)
 ```
@@ -27,6 +28,7 @@ head(ds)
 ## Graphic 1
 
 ```{r}
+#| code-fold: true
 
 vl_chart() |>
   vl_mark_bar() |>
@@ -42,6 +44,7 @@ vl_chart() |>
 ## Graphic #2
 
 ```{r}
+#| code-fold: true
 chart <- vl_chart(height = 400, width = 600) |>
   vl_mark_bar() |>
   vl_encode_x("date", type = "nominal", scale = list(padding = 0.3)) |>
@@ -62,6 +65,7 @@ vl_layer(
 
 ## Graphic #3
 ```{r}
+#| code-fold: true
 base_chart <- vl_chart(height = 400, width = 600) |>
   vl_encode_x("date", type = "nominal") |>
   vl_encode_color("type") |>
@@ -89,6 +93,7 @@ vl_layer(
 ## Graphic #4
 
 ```{r}
+#| code-fold: true
  base_chart <- vl_chart(height = 400, width = 600) |>
   vl_encode_x("date", type = "nominal") |>
   vl_encode_color("type:n") |>
@@ -109,6 +114,7 @@ vl_layer(
 
 ## Graphic #5
 ```{r}
+#| code-fold: true
 capDem <- vl_chart(height = 400, width = 600) |>
   vl_encode_x("date", type = "nominal") |>
   vl_encode_color("type") |>
@@ -133,8 +139,8 @@ vl_layer(
 
 ## Graphic #6
 ```{r}
+#| code-fold: true
 # data wrangling
-
 ds <- ds |>
   mutate(unmet_demand = demand - capacity)
 
@@ -149,9 +155,10 @@ vl_chart(height = 400, width = 600) |>
 
 # Exercise #2
 
-## Reading data:
+### Reading data:
 
-```{r}
+```{r, include=FALSE}
+#| code-fold: true
 jobs<- fromJSON("https://cdn.jsdelivr.net/npm/vega-datasets@2.8.0/data/jobs.json")
 head(jobs)
 ```
@@ -160,6 +167,7 @@ head(jobs)
 ## Graphic #1
 
 ```{r}
+#| code-fold: true
 vl_chart()|>
 vl_mark_point(tooltip=list(content = "data"))|>
   vl_pivot("year",groupby = list("job","sex"), value = "perc")|>
@@ -176,6 +184,7 @@ vl_mark_point(tooltip=list(content = "data"))|>
 ## Graphic #2
 
 ```{r}
+#| code-fold: true
 vl_chart()|>
   vl_mark_point(tooltip=list(content = "data"))|>
   vl_pivot("year",groupby = list("job","sex"), value = "perc")|>
@@ -193,6 +202,7 @@ vl_add_data(jobs)
 ## *A:*
 
 ```{r} 
+#| code-fold: true
 #Grouping the data
 jobs_summary <- jobs |>
   group_by(year, sex) |>
@@ -200,6 +210,7 @@ jobs_summary <- jobs |>
 ```
 
 ```{r}
+#| code-fold: true
 #Stacked bar( easier to observe the total perc)
 vl_chart(height = 400, width = 600) |>
   vl_mark_bar() |>
@@ -221,6 +232,7 @@ vl_chart(height = 400, width = 600) |>
 The first graph appears to show the proportion of men and women in the total job market. This provides insight into the distribution of employment between men and women. The second graph focuses on the trend of employment share over time for both genders, revealing that the values for men and women are gradually converging toward 0.5. This suggests that gender participation in the workforce is becoming more equal over time.
 ## *B:*
 ```{r}
+#| code-fold: true
 # Selecting Years
 jobYears <- jobs |>
   filter(year == 1970 | year == 1980 | year == 1990 | year == 2000)
@@ -237,12 +249,80 @@ vl_chart(title = "") |>
   vl_encode_text("perc", format = ".0%") # Format perc as percentage
 
 ```
+```{r}
+#| code-fold: true
+
+vl_chart(title = "Employment Percentage by Job and Sex") |>
+  vl_mark_bar() |>
+  vl_encode_x("job", type = "nominal") |>
+  vl_encode_y("perc", type = "quantitative", stack = "zero") |>
+  vl_encode_color("sex") |>
+  vl_facet_column("year") |>
+  vl_add_data(jobYears) |>
+  vl_facet_row("sex", title = "")|>
+  vl_encode_text("perc", format = ".0%") # Format perc as percentage
+```
 
 # Exercise #3
 
-```{r}
+```{r,include=FALSE}
+#| code-fold: true
 DataSet1<- read.csv("https://calvin-data304.netlify.app/data/pump_price_for_gasoline_us_per_liter.csv")
 
 DataSet2<- read.csv("https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/master/all/all.csv")
 ```
+
+## Wrangling the data:
+```{r, warning=FALSE}
+#| code-fold: true
+#changing name to country so the merge is easier.
+DataSet2<-DataSet2|> rename(country= name)
+
+# Merging the datasets
+ gasprice<-left_join(DataSet1,DataSet2, by = "country")
+
+gasprice <- gasprice |>
+  mutate(across(starts_with("X"), as.numeric))
+
+# Pivot the data while keeping NAs
+gasprice_long <- gasprice %>%
+  pivot_longer(cols = starts_with("X"), names_to = "year", values_to = "price", values_drop_na = FALSE)
+```
+
+```{r, results='hide', echo = "FALSE", include=FALSE}
+
+# Check for countries
+unique(gasprice$country)
+
+# Check for countries after pivot
+unique(gasprice_long$country)
+```
+
+### Check countries  differences  
+```{r}
+#| code-fold: true
+# Check countries differences 
+setdiff(unique(gasprice$country), unique(gasprice_long$country))
+
+```
+
+
+```{r}
+#| code-fold: true
+# Pivot and filter the data for USA
+gasprice_long_usa <- gasprice |>
+  pivot_longer(cols = starts_with("X"), names_to = "year", values_to = "price") |>
+  mutate(year = gsub("X", "", year), year = as.integer(year)) |>
+  filter(country == "USA")
+
+# Create the chart
+vl_chart(title = "Gas Prices Trend in the USA by Year") |>
+  vl_mark_line(point = TRUE) |>
+  vl_encode_x("year", type = "nominal",title = "Year") |>
+  vl_encode_y("price", type = "quantitative",title = "US $ per liter") |>
+  vl_add_data(gasprice_long_usa)
+
+```
+
+
 
