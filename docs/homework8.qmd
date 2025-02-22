@@ -16,31 +16,13 @@ library(vegabrite)
 ```
 
 # Data
+
 ```{r}
 ds<- fromJSON("https://calvin-data304.netlify.app/data/swd-lets-practice-ex-2-3.json")
 head(ds)
 ```
 
-
-# Data wrangling 
-```{r}
-ds_long <- ds |>
-  pivot_longer(cols = c(capacity, demand), 
-               names_to = "type", 
-               values_to = "value")
-
-# Ensure that 'date' column is retained properly
-str(ds_long)
-
-# Convert 'date' to Date format
-ds_long <- ds_long |>
-  mutate(date = as.Date(paste0(date, "-01"), format = "%Y-%m-%d"))  # Adding day for proper conversion
-
-# Check the structure of the new long format dataset
-str(ds_long)
-
-
-```
+# Exercise #1
 
 ## Graphic 1
 
@@ -49,53 +31,197 @@ str(ds_long)
 vl_chart() |>
   vl_mark_bar() |>
   vl_encode_x("date", type = "nominal") |>
-  vl_encode_y("value", type = "quantitative")|>
-  vl_encode_xOffset("type")|>
-  vl_encode_color("type")|>
-  vl_add_data(ds_long)
+  vl_encode_y("value", type = "quantitative") |>
+  vl_encode_xOffset("type") |>
+  vl_encode_color("type") |>
+  vl_add_data(ds) |>
+  vl_fold(c("capacity", "demand"), as = c("type", "value"))
 
+```
+
+## Graphic #2
+
+```{r}
+chart <- vl_chart(height = 400, width = 600) |>
+  vl_mark_bar() |>
+  vl_encode_x("date", type = "nominal", scale = list(padding = 0.3)) |>
+  vl_add_data(ds)
+
+vl_layer(
+  chart |>
+    vl_mark_bar() |>
+    vl_encode_y("capacity"),
+  
+  chart |>
+    vl_mark_bar() |>
+    vl_encode_y("demand") |>
+    vl_encode_size("demand", scale = list(range = c(5, 20)))
+)
+
+```
+
+## Graphic #3
+```{r}
+base_chart <- vl_chart(height = 400, width = 600) |>
+  vl_encode_x("date", type = "nominal") |>
+  vl_encode_color("type") |>
+  vl_encode_detail("type") |>
+  vl_add_data(ds)
+
+vl_layer(
+  base_chart |>
+    vl_mark_point() |>
+    vl_encode_y("capacity", type = "quantitative"),
+  
+  base_chart |>
+    vl_mark_point() |>
+    vl_encode_y("demand", type = "quantitative"),
+  
+  base_chart |>
+    vl_mark_line() |>
+    vl_encode_x("date", type = "nominal") |>
+    vl_encode_y("capacity", type = "quantitative") |>
+    vl_encode_y2("demand", type = "quantitative") |>
+    vl_encode_color("type")
+)
+```
+
+## Graphic #4
+
+```{r}
+ base_chart <- vl_chart(height = 400, width = 600) |>
+  vl_encode_x("date", type = "nominal") |>
+  vl_encode_color("type:n") |>
+  vl_add_data(ds)
+
+vl_layer(
+  base_chart |>
+    vl_mark_line() |>
+    vl_encode_y("capacity", type = "Q"),
+  
+  base_chart |>
+    vl_mark_line() |>
+    vl_encode_y("demand", type = "Q")
+)
+
+
+```
+
+## Graphic #5
+```{r}
+capDem <- vl_chart(height = 400, width = 600) |>
+  vl_encode_x("date", type = "nominal") |>
+  vl_encode_color("type") |>
+  vl_add_data(ds)|>
+  vl_fold(c("capacity", "demand"), as = c("type", "value"))
+
+vl_layer(
+  capDem |>
+    vl_mark_bar() |>
+    vl_encode_y("capacity", type = "quantitative") |>
+    vl_encode_color("type"),
+  
+  capDem |>
+    vl_mark_bar() |>
+    vl_encode_y("unmet_demand", type = "quantitative") |>
+    vl_encode_color("type") 
+)
+
+
+```
+
+
+## Graphic #6
+```{r}
+# data wrangling
+
+ds <- ds |>
+  mutate(unmet_demand = demand - capacity)
+
+# Graphic 5
+vl_chart(height = 400, width = 600) |>
+  vl_mark_line(point = TRUE) |>
+  vl_encode_x("date", type = "nominal") |>
+  vl_encode_y("unmet_demand", type = "quantitative") |>
+  vl_add_data(ds)
+
+```
+
+# Exercise #2
+
+## Reading data:
+
+```{r}
+jobs<- fromJSON("https://cdn.jsdelivr.net/npm/vega-datasets@2.8.0/data/jobs.json")
+head(jobs)
+```
+
+
+## Graphic #1
+
+```{r}
+vl_chart()|>
+vl_mark_point(tooltip=list(content = "data"))|>
+  vl_pivot("year",groupby = list("job","sex"), value = "perc")|>
+  vl_encode_x("1950:Q")|>
+  vl_encode_y("2000:Q")|>
+  vl_scale_x(type= "symlog",constant = 1)|>
+    vl_scale_y(type= "symlog",constant = 1)|>
+  vl_facet_column("sex",title = "")|>
+  vl_encode_tooltip_array(list("job","sex","1850","2000"))|>
+  vl_add_data(jobs)
+
+```
+
+## Graphic #2
+
+```{r}
+vl_chart()|>
+  vl_mark_point(tooltip=list(content = "data"))|>
+  vl_pivot("year",groupby = list("job","sex"), value = "perc")|>
+  vl_encode_x("1950:Q")|>
+  vl_encode_y("2000:Q")|>
+  vl_scale_x(type= "symlog",constant = .00001)|>
+    vl_scale_y(type= "symlog",constant = 0.00001)|>
+  vl_facet_column("sex",title = "")|>
+  vl_add_properties(title = list(text= "Percent of people working various jobs", 
+                                 subtitle= "each dot represents one ocupation"))|>
+   vl_encode_tooltip_array(list("job","sex","1850","1950"))|>
+vl_add_data(jobs)
+
+```
+## *A:*
+
+```{r} 
+#Grouping the data
+jobs_summary <- jobs |>
+  group_by(year, sex) |>
+  summarize(total_perc = sum(perc, na.rm = TRUE))
 ```
 
 ```{r}
+#Stacked bar( easier to observe the total perc)
 vl_chart(height = 400, width = 600) |>
-  vl_layer(
-    # Bar for Capacity (wider bars)
-    vl_mark_bar(size = 30) |>
-      vl_encode_x("date", type = "temporal", title = "Date") |>
-      vl_encode_y("value", type = "quantitative") |>
-      vl_encode_color("type") |>
-      vl_filter("type == 'capacity'"),
-    
-    # Bar for Demand (default width)
-    vl_mark_bar() |>
-      vl_encode_x("date", type = "temporal", title = "Date") |>
-      vl_encode_y("value", type = "quantitative") |>
-      vl_encode_color("type") |>
-      vl_filter("type == 'demand'")
-  ) |>
-  vl_add_data(ds_long)
-
+  vl_mark_bar() |>
+  vl_encode_x("year", type = "ordinal") |>
+  vl_encode_y("total_perc", type = "quantitative", stack = "zero") |>
+  vl_encode_color("sex") |>
+  vl_add_data(jobs_summary)
+# Side-by-Side( easier to compare)
+vl_chart(height = 400, width = 600) |>
+  vl_mark_bar() |>
+  vl_encode_x("year", type = "ordinal") |>
+  vl_encode_y("total_perc", type = "quantitative", stack = "zero") |>
+  vl_encode_xOffset("sex") |>
+  vl_encode_color("sex") |>
+  vl_add_data(jobs_summary)
 ```
+ I think the graph is showing the proprtion of men and women how were employed- regardless 
+# Exercise #3
 
+```{r}
+DataSet1<- read.csv("https://calvin-data304.netlify.app/data/pump_price_for_gasoline_us_per_liter.csv")
 
-```{r} 
-#graph 3 ?
- vl_chart(height = 400, width = 600) |>
-  vl_add_data(ds_long) |>
-  vl_layer(
-    # Bars for capacity and demand
-    vl_chart() |>
-      vl_mark_bar() |>
-      vl_encode_x("date", type = "temporal", title = "Date") |>
-      vl_encode_y("value", type = "quantitative", title = "Value") |>
-      vl_encode_color("type", type = "nominal"),
-    
-    # Points for capacity and demand
-    vl_chart() |>
-      vl_mark_point() |>
-      vl_encode_x("date", type = "temporal") |>
-      vl_encode_y("value", type = "quantitative") |>
-      vl_encode_color("type", type = "nominal")
-  )
+DataSet2<- read.csv("https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/master/all/all.csv")
 ```
 
