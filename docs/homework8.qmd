@@ -6,6 +6,13 @@ format: html
 editor: visual
 embed-resources: true
 code-tools: true
+output: 
+  html_document:
+    theme: darkly
+    toc: yes
+    toc_float:
+      collapsed: true
+    highlight: tango
 ---
 
 ```{r, warning=FALSE, message=FALSE, include=FALSE}
