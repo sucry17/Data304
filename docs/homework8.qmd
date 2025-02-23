@@ -48,22 +48,24 @@ vl_chart() |>
 chart <- vl_chart(height = 400, width = 600) |>
   vl_mark_bar() |>
   vl_encode_x("date", type = "nominal", scale = list(padding = 0.3)) |>
-  vl_add_data(ds)
+  vl_encode_color("type")|>
+  vl_add_data(ds)|>
+  vl_fold(c("capacity", "demand"), as = c("type", "value"))
 
 vl_layer(
   chart |>
     vl_mark_bar() |>
     vl_encode_y("capacity"),
-  
+
   chart |>
     vl_mark_bar() |>
-    vl_encode_y("demand") |>
-    vl_encode_size("demand", scale = list(range = c(5, 20)))
+    vl_encode_y("demand")
 )
 
 ```
 
 ## Graphic #3
+
 ```{r}
 #| code-fold: true
 base_chart <- vl_chart(height = 400, width = 600) |>
@@ -113,6 +115,7 @@ vl_layer(
 ```
 
 ## Graphic #5
+
 ```{r}
 #| code-fold: true
 capDem <- vl_chart(height = 400, width = 600) |>
@@ -136,8 +139,8 @@ vl_layer(
 
 ```
 
-
 ## Graphic #6
+
 ```{r}
 #| code-fold: true
 # data wrangling
@@ -162,7 +165,6 @@ vl_chart(height = 400, width = 600) |>
 jobs<- fromJSON("https://cdn.jsdelivr.net/npm/vega-datasets@2.8.0/data/jobs.json")
 head(jobs)
 ```
-
 
 ## Graphic #1
 
@@ -199,9 +201,10 @@ vl_chart()|>
 vl_add_data(jobs)
 
 ```
+
 ## *A:*
 
-```{r} 
+```{r}
 #| code-fold: true
 #Grouping the data
 jobs_summary <- jobs |>
@@ -232,6 +235,7 @@ vl_chart(height = 400, width = 600) |>
 The first graph appears to show the proportion of men and women in the total job market. This provides insight into the distribution of employment between men and women. The second graph focuses on the trend of employment share over time for both genders, revealing that the values for men and women are gradually converging toward 0.5. This suggests that gender participation in the workforce is becoming more equal over time.\
 
 ## *B:*
+
 ```{r}
 #| code-fold: true
 # Selecting Years
@@ -250,7 +254,6 @@ vl_chart(title = "") |>
   vl_encode_text("perc", format = ".0%") # Format perc as percentage
 
 ```
-
 
 ```{r}
 #| code-fold: true
@@ -277,6 +280,7 @@ DataSet2<- read.csv("https://raw.githubusercontent.com/lukes/ISO-3166-Countries-
 ```
 
 ## Wrangling the data:
+
 ```{r, warning=FALSE}
 #changing name to country so the merge is easier.
 DataSet2<-DataSet2|> rename(country= name)
@@ -301,14 +305,14 @@ unique(gasprice$country)
 unique(gasprice_long$country)
 ```
 
-### Check countries  differences  
+### Check countries differences
+
 ```{r}
 #| code-fold: true
 # Check countries differences 
 setdiff(unique(gasprice$country), unique(gasprice_long$country))
 
 ```
-
 
 ```{r}
 #| code-fold: true
@@ -330,6 +334,3 @@ vl_chart(title = "Gas Prices Trend in the USA by Year") |>
   vl_add_data(gasprice_long_usa)
 
 ```
-
-
-
