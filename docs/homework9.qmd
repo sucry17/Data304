@@ -1,0 +1,76 @@
+---
+title: "Homework 9"
+author: "Sucry Bendeck"
+date: "last-modified"
+format: html
+editor: visual
+embed-resources: true
+code-tools: true
+output: 
+  html_document:
+    theme: darkly
+    toc: yes
+    toc_float:
+      collapsed: true
+    highlight: tango
+---
+
+# Exercise 1(Wilke)
+
+## A. (Chapter 4):
+
+I learned ,in class and in the reading, that color is a tool that can aid us to do multiple things in our graphics-things such as:
+
+-   Represent different data points.
+-   Highlight elements in the graphic.
+-   Make the groups of data different.
+
+## B. (Chapter 5):
+
+The organization the Wilke gives the graphics is based on the what story is the author through the data. Wilke gives us six categories:
+
+-    Amounts
+
+-   Distribution
+
+-    Proportions
+
+-    x-y prop
+
+-    Geospatial data \
+
+-    Uncertainty I appreciate that Wilke tells us the difrent limitations that each of the graphics have. Wilke mentioned that certain graphics reduce the ambiguity of the data which and so by using certain marks you may help the audience have a better comprehension of the visualization.
+
+## C. (Graphs that I dont know)
+
+Here are a few of the graphics I dont know how to do:
+
+-    Mosaic Plot
+
+-    Tree Map
+
+-    Parallel Sets
+
+-    Density Contours
+
+-    Hex Bins
+
+-    Correlogram
+
+-    Cartogram
+
+-    Cartogram heatmap
+
+-    Confidence Strips
+
+-    Eyes
+
+-    Half eyes
+
+## D. (Graphics attempts)
+
+```{r}
+library(vegabrite)
+library(dplyr)
+
+```
