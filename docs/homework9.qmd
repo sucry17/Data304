@@ -6,13 +6,6 @@ format: html
 editor: visual
 embed-resources: true
 code-tools: true
-output: 
-  html_document:
-    theme: darkly
-    toc: yes
-    toc_float:
-      collapsed: true
-    highlight: tango
 ---
 
 # Exercise 1(Wilke)
@@ -29,48 +22,134 @@ I learned ,in class and in the reading, that color is a tool that can aid us to 
 
 The organization the Wilke gives the graphics is based on the what story is the author through the data. Wilke gives us six categories:
 
--    Amounts
+-   Amounts
 
 -   Distribution
 
--    Proportions
+-   Proportions
 
--    x-y prop
+-   x-y prop
 
--    Geospatial data \
+-   Geospatial data\
 
--    Uncertainty I appreciate that Wilke tells us the difrent limitations that each of the graphics have. Wilke mentioned that certain graphics reduce the ambiguity of the data which and so by using certain marks you may help the audience have a better comprehension of the visualization.
+-   Uncertainty I appreciate that Wilke tells us the difrent limitations that each of the graphics have. Wilke mentioned that certain graphics reduce the ambiguity of the data which and so by using certain marks you may help the audience have a better comprehension of the visualization.
 
 ## C. (Graphs that I dont know)
 
 Here are a few of the graphics I dont know how to do:
 
--    Mosaic Plot
+-   Mosaic Plot
 
--    Tree Map
+-   Tree Map
 
--    Parallel Sets
+-   Parallel Sets
 
--    Density Contours
+-   Density Contours
 
--    Hex Bins
+-   Hex Bins
 
--    Correlogram
+-   Correlogram
 
--    Cartogram
+-   Cartogram
 
--    Cartogram heatmap
+-   Cartogram heatmap
 
--    Confidence Strips
+-   Confidence Strips
 
--    Eyes
+-   Eyes
 
--    Half eyes
+-   Half eyes
 
 ## D. (Graphics attempts)
 
 ```{r}
-library(vegabrite)
 library(dplyr)
+library(jsonlite)
+library(vegabrite)
+# Load data from the URL
+data_url <- "https://cdn.jsdelivr.net/npm/vega-datasets@2.8.0/data/cars.json"
+data <- fromJSON(data_url)
+
+# Create the chart
+chart <- vl_chart(height = 400,width = 600) |>
+  vl_mark_rect() |>
+  vl_encode_x("Origin:N") |>
+  vl_encode_y("Cylinders:N") |>
+  vl_encode_size("count:Q") |>
+  vl_encode_color("Origin:N",legend = FALSE) |>
+  vl_config(
+    mark = list(
+      opacity = 0.7,
+      strokeWidth = 0.5
+    ),
+    axis = list(
+      domain = FALSE,
+      ticks = FALSE,
+      grid = FALSE
+    )
+  )|> 
+  vl_add_data(data)
+
+# Show the chart
+chart
+```
+## E.(Chapters 6 - 16)
+This tree map clearly easily shows the proportions of the car data which is what I am trying to do here. It also uses space effectivly by filling the area with the data.
+
+# Exercise 2(More pie)
+## A.
+```{r}
+library(tidyr)
+ficData<-tribble(
+  ~number, ~ response, ~count, ~year,
+  5, "strongly agree", 230, "this year",
+  4, "agree", 320, "this year",
+  3, "neither agree nor disagree", 192, "this year",
+  2, "disagree", 95, "this year",
+  1, "strongly disagre", 157, "this year",
+  0, "no reponse", 52, "this year",
+  5, "strongly agree", 240, "last year",
+  4, "agree", 275, "last year",
+  3, "neither agree nor disagree", 182, "last year",
+  2, "disagree", 125, "last year",
+  1, "strongly disagre", 189, "last year",
+  0, "no reponse", 32, "last year"
+)
+
+data_prop <- ficData|>
+  group_by(year) |>
+  mutate(proportion = count / sum(count))
+# check data types
+str(ficData)
+
+pie_chart0 <- vl_chart(height=200, width = 300,data = data_prop) |>
+  vl_encode_theta(field = "proportion", type = "quantitative") |>
+  vl_encode_color(field = "response", type = "nominal") |>
+  vl_encode_tooltip(field = "proportion", type = "quantitative") |>
+  vl_facet(field = "year", type = "ordinal", title = "") |>
+  vl_mark_arc()
+
+# Render the pie chart
+pie_chart0
+
 
 ```
+
+```{r}
+# graph
+stacked_bar_chart <- vl_chart(width= 400, height = 200,data = data_prop) |>
+  vl_mark_bar() |> 
+  vl_encode_x(field = "year", type = "nominal") |>
+  vl_encode_y(field = "proportion", type = "quantitative") |>
+  vl_encode_color(field = "response", type = "nominal", scale = list(
+    domain = c("strongly agree", "agree", "neither agree nor disagree", "disagree", "strongly disagree", "no response"),
+    range = c("green", "lightgreen", "yellow", "orange", "red", "gray")
+  ))
+
+# Render the stacked bar chart
+stacked_bar_chart
+
+```
+
+### pros and cons 
+It’s going to depend on the story you’re trying to tell. Pie charts are better for simple comparisons of proportions within a single category (like a year), however they can be less precise.Stacked bar charts are more effective if you want to observe trends across multiple years. 
