@@ -61,6 +61,7 @@ Here are a few of the graphics I dont know how to do:
 -   Half eyes
 
 ## D. (Graphics attempts)
+
 ```{r, include=FALSE}
 library(dplyr)
 library(jsonlite)
@@ -68,7 +69,6 @@ library(vegabrite)
 library(tidyr)
 library(sf)
 ```
-
 
 ```{r}
 
@@ -168,6 +168,7 @@ It’s going to depend on the story you’re trying to tell. Pie charts are bett
 # Exercise 3 (Create a choropleth map)
 
 ## Map
+
 ### Data
 
 ```{r}
@@ -196,55 +197,48 @@ dam_points_albers <- st_transform(dam_points_sf, crs = 5070)
 us_geojson_url <- "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/us-10m.json"
 ```
 
-
-
 ### US maps
+
 ```{r}
 
 # U.S. map visualization
 us_map <- vl_chart(width = 600, height = 400) |>
-  vl_add_data(url = us_geojson_url,
-              format = list(type = "topojson", feature = "states")) |>
   vl_mark_geoshape() |>
   vl_encode_color(value = "lightgray") |>
-  vl_add_properties(projection = list(type = "albersUsa"))
+  vl_add_properties(projection = list(type = "albersUsa"))|>
+   vl_add_data(url = us_geojson_url,
+              format = list(type = "topojson", feature = "states"))
 us_map
 
 ```
 
-
 ```{r}
-# Transform the dam data 
-dam_points_albers <- st_transform(dam_points_sf, crs = 5070)
+## Extract longitude and latitude from the original spatial data
+sampled_USAdams_clean_ll <- st_coordinates(dam_points_sf)
 
-# Extract transformed coordinates
-sampled_USAdams_clean_albers <- st_coordinates(dam_points_albers)
+# Rename columns to long and latitude
+colnames(sampled_USAdams_clean_ll) <- c("long", "latitude")
 
-# Combine the transformed coordinates with the original data
-sampled_USAdams_clean_albers <- cbind(sampled_USAdams_clean, sampled_USAdams_clean_albers)
+# Combine the extracted coordinates with the original data
+sampled_USAdams_clean_ll <- cbind(sampled_USAdams_clean, sampled_USAdams_clean_ll)
 
-# Get the min and max values of the transformed coordinates
-x_range <- range(sampled_USAdams_clean_albers$X)
-y_range <- range(sampled_USAdams_clean_albers$Y)
+# Get the min and max values for longitude and latitude
+long_range <- range(sampled_USAdams_clean_ll$longitude)
+lat_range <- range(sampled_USAdams_clean_ll$latitude)
 
-us_projection_x_range <- c(-2500000, 2500000) 
-us_projection_y_range <- c(0, 4000000)  
-
-scaled_x <- scales::rescale(sampled_USAdams_clean_albers$X, to = us_projection_x_range)
-scaled_y <- scales::rescale(sampled_USAdams_clean_albers$Y, to = us_projection_y_range)
-
-# Create the scatter plot with adjusted coordinates and the correct projection
-scatter_plot <- vl_chart(data = sampled_USAdams_clean_albers, width = 600, height = 400) |>
+# Create the scatter plot using longitude and latitude
+scatter_plot <- vl_chart(data = sampled_USAdams_clean_ll, width = 600, height = 400) |>
   vl_mark_point() |>
-  vl_encode_x("X", type = "quantitative", scale = list(domain = c(x_range[1], x_range[2]))) |>
-  vl_encode_y("Y", type = "quantitative", scale = list(domain = c(y_range[1], y_range[2]))) |>
+  vl_encode_x("longitude", type = "quantitative", scale = list(domain = c(long_range[1], long_range[2]))) |>
+  vl_encode_y("latitude", type = "quantitative", scale = list(domain = c(lat_range[1], lat_range[2]))) |>
   vl_encode_size(value = 10) |>
-  vl_encode_color(value = "red") |>
+  vl_encode_color(value = "blue") |>
   vl_add_properties(
-    projection = list(type = "albersUsa")  # Ensure same projection as the US map
+    projection = list(type = "mercator")  # Use Mercator projection for geographic coordinates
   )
 
 scatter_plot
+
 
 
 ```
@@ -260,4 +254,3 @@ overlay_map <- vl_layer(
 overlay_map
 
 ```
-
