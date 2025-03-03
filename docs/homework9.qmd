@@ -61,11 +61,17 @@ Here are a few of the graphics I dont know how to do:
 -   Half eyes
 
 ## D. (Graphics attempts)
-
-```{r}
+```{r, include=FALSE}
 library(dplyr)
 library(jsonlite)
 library(vegabrite)
+library(tidyr)
+library(sf)
+```
+
+
+```{r}
+
 # Load data from the URL
 data_url <- "https://cdn.jsdelivr.net/npm/vega-datasets@2.8.0/data/cars.json"
 data <- fromJSON(data_url)
@@ -93,13 +99,17 @@ chart <- vl_chart(height = 400,width = 600) |>
 # Show the chart
 chart
 ```
+
 ## E.(Chapters 6 - 16)
+
 This tree map clearly easily shows the proportions of the car data which is what I am trying to do here. It also uses space effectivly by filling the area with the data.
 
 # Exercise 2(More pie)
+
 ## A.
+
 ```{r}
-library(tidyr)
+
 ficData<-tribble(
   ~number, ~ response, ~count, ~year,
   5, "strongly agree", 230, "this year",
@@ -151,5 +161,71 @@ stacked_bar_chart
 
 ```
 
-### pros and cons 
-It’s going to depend on the story you’re trying to tell. Pie charts are better for simple comparisons of proportions within a single category (like a year), however they can be less precise.Stacked bar charts are more effective if you want to observe trends across multiple years. 
+### pros and cons
+
+It’s going to depend on the story you’re trying to tell. Pie charts are better for simple comparisons of proportions within a single category (like a year), however they can be less precise.Stacked bar charts are more effective if you want to observe trends across multiple years.
+
+# Exercise 3 (Create a choropleth map)
+
+## Map
+
+```{r,include=FALSE}
+library(vegabrite)
+library(tidyverse)
+library(dplyr)
+library(jsonlite)
+library(sf)
+```
+
+### Data
+
+```{r}
+# Load the obesity data from the URL
+obesity <- fromJSON("https://cdn.jsdelivr.net/npm/vega-datasets@2.11.0/data/obesity.json")
+# Load abbreviation data 
+abbreviations<-read.csv("abbreviations.csv")
+
+abbreviations <- abbreviations |>
+  rename(states = Abbreviation)
+```
+
+```{r}
+# Normalize the names in the obesity data (rename state to states for merging)
+obesity_json_normalized <- obesity
+names(obesity_json_normalized) <- gsub("state", "states", names(obesity_json_normalized))
+
+# Check the normalized data
+head(obesity_json_normalized)
+
+```
+
+```{r}
+#Merging data sets 
+merged_data <- left_join(obesity_json_normalized, abbreviations, by = "states")
+head(merged_data)
+```
+
+```{r}
+us_geojson_url <- fromJSON("https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/us-10m.json")
+states_geojson <- us_geojson_url$objects$states$geometries
+
+```
+
+### US maps
+
+```{r}
+# U.S. GeoJSON URL for state boundaries
+us_geojson_url <- "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/us-10m.json"
+head(us_geojson_url)
+# Create the U.S. map visualization
+us_map <- vl_chart(width = 800, height = 500) |>
+  vl_add_data(url = us_geojson_url, format = list(type = "topojson", feature = "states")) |>
+  vl_mark_geoshape() |>
+  vl_encode_color(value = "lightgray") |>
+  vl_add_properties(projection = list(type = "albersUsa"))
+
+# Render the U.S. map
+us_map
+
+```
+
