@@ -21,7 +21,10 @@ library(vegabrite)
 
 ### A.
 
-![Graph I like](GraphILike.png) Its easy to compare the kits and observe their differences. The color is good because it se then easy to distinguish between each kit type.
+![Graph I like](GraphILike.png) 
+
+
+Its easy to compare the kits and observe their differences. The color is good because it se then easy to distinguish between each kit type.
 
 ### B.
 
@@ -33,31 +36,120 @@ Its hard to tell the kits apart because in order to see the legend you need to s
 
 #### Kits
 
-```{r}
+```{r, include = FALSE}
 genes<-read.csv("https://calvin-data304.netlify.app/data/twins-genetics-long.csv")
 str(genes)
 ```
 
 ```{r}
-vl_chart(height = 400, width = 600, title = "Genetic Share Across Twin Pairs by Kit") |>
+#| code-fold: true
+vl_chart(height = 400, width = 600) |>
   vl_mark_bar() |>
-  vl_encode_x("pair:N", title = "Twin Pair ID") |>
+  vl_encode_x("pair:N", title = "Twin Pair ID #") |>
   vl_encode_y("genetic.share:Q", title = "Genetic Share") |>
   vl_encode_color("kit:N", scale = list(scheme = "category10")) |>
-  vl_facet_column("id:N", title = "ID Group") |>
+  vl_facet_column("id:N",title = "Genetic Share Across Twin Pairs by Kit") |>
+  vl_encode_xOffset("kit")|>
   vl_add_data(genes)
 
 
 ```
+
+I am trying to highlight that although twins tend to share nearly all the DNA, small variation between twins do occur I attempt to do this by creating a side by side bar graph, which makes it easier for the human eye to compare. I hope that through this graphic the small variations observe might explain difference between twin such as appearance, health and things of the sort.
 
 ```{r}
+#| code-fold: true
 vl_chart(height = 500, width = 700, title = "Genetic Similarity Across DNA Test Kits") |>
-  vl_mark_rect() |>  # Heatmap
+  vl_mark_rect() |>  
   vl_encode_x("kit:N", title = "DNA Test Kit") |>
   vl_encode_y("pair:N", title = "Twin Pair") |>
-  vl_encode_color("genetic.share:Q", scale = list(scheme = "viridis"), title = "Genetic Share") |>  # Proper scale definition
+  vl_encode_color("genetic.share:Q", scale = list(scheme = "viridis"), title = "Genetic Share") |>  
   vl_add_data(genes)
 
 
 ```
-This heatmap shows how different DNA test kits report genetic share for each twin pair. The color intensity represents the reported genetic share, with darker color indicating lower similarity and lighter color indicating higher similarity. Further  more this graphic highlights the potential inconsistency of the DNA testing kits. 
+
+The story I am attempting to show through this heat map is the discrepancies of the different DNA test kits report genetic share for each twin pair. The color palette attempts to represent the reported genetic share, with darker color indicating lower similarity and lighter color indicating higher similarity. Furthermore I am trying to highlight the potential inconsistency of the DNA testing kits.
+
+## Exercise 2 (Data and graphics challenge)
+
+![Analysis](AnalysisForPortfolio.png)
+
+-   How our business compares to other businesses (over time and in February 2020)
+
+-   How the components of the net promoter score for our business have changed over time
+
+## Exercise 3 (A new challenge)
+
+```{r, include = FALSE}
+tanzania<-read.csv("tanzaniaDataSet.csv")
+str(tanzania)
+```
+### Data wrangling
+
+```{r}
+#| code-fold: true
+# Renaming the variables
+tanzania_clean <- tanzania |>
+  rename(
+    Survey_Year = DHS.Survey.Year,
+    Total_fertility_Rate = Total.Fertility.Rate..ages.15.49.,
+    Contraception_Rate = Contraception....,
+    Unmet_Planning_Rate = Unmet.Planning....
+  )
+# Dealing with the years
+tanzania_split <- tanzania_clean |>
+ separate(Survey_Year, into = c("start_year", "end_year"), sep = "-", fill = "right") |>
+  # Convert to integers
+  mutate(
+    start_year = as.integer(start_year),
+    end_year = ifelse(is.na(end_year), start_year, as.integer(end_year))
+  ) |>
+  # Replicate data for each year in the range
+  rowwise() |>
+  mutate(year = list(seq(start_year, end_year))) |>
+  unnest(cols = c(year)) |>
+  select(-start_year, -end_year)
+
+# Displaying the data frame
+tanzania_split
+```
+
+```{r, include = FALSE}
+sorted_tanzania_split <- tanzania_split |>
+  arrange(year)
+```
+
+```{r, include = FALSE}
+#converting to long
+sorted_tanzania_split_long <- sorted_tanzania_split |>
+  pivot_longer(cols = c(Total_fertility_Rate, Contraception_Rate, Unmet_Planning_Rate),
+               names_to = "variable", values_to = "value")
+
+sorted_tanzania_split_long$variable <- factor(sorted_tanzania_split_long$variable)
+
+sorted_tanzania_split_long$year <- as.numeric(sorted_tanzania_split_long$year)
+
+sorted_tanzania_split_long$year <- as.numeric(as.character(sorted_tanzania_split_long$year))
+
+sorted_tanzania_split_long$variable <- gsub("_", " ", sorted_tanzania_split_long$variable)
+str(sorted_tanzania_split_long)
+```
+
+
+
+### Graphic
+
+```{r}
+#| code-fold: true
+line_chart <- vl_chart(height = 400, width = 600 ) |>
+  vl_mark_line(point = TRUE) |>
+  vl_encode_x("year", type = "ordinal", axis = list(labelAngle = 0), title = "") |>
+  vl_encode_y("value", type = "quantitative",title = "Rate (%)") |>
+  vl_encode_color("variable", type = "nominal", title = "Variable") |>
+  vl_add_data(sorted_tanzania_split_long)|>
+  vl_encode_tooltip_array(c("year", "value", "variable"))
+# Display the chart
+line_chart
+```
+ The story I am trying to tell with the graphic above is a simple one: how the different rates of patterns of reproductive health have evolved over time in Tanzania. For example, the fertility rate has dropped slightly since the first survey, while the contraception rate has increased almost exponentially, with the data stopping in the last two years. 
