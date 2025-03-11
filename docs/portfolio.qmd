@@ -1,0 +1,63 @@
+---
+ttitle: "Portfolio"
+author: "Sucry Bendeck"
+date: "last-modified"
+format: html
+editor: visual
+embed-resources: true
+code-tools: true
+---
+
+# Components of the portfolio
+
+```{r, include = FALSE}
+library(dplyr)
+library(jsonlite)
+library(tidyr)
+library(vegabrite)
+```
+
+## Exercise 1 (HW 4 revision)
+
+### A.
+
+![Graph I like](GraphILike.png) Its easy to compare the kits and observe their differences. The color is good because it se then easy to distinguish between each kit type.
+
+### B.
+
+![Graph I dont like](GraphIDont.png)
+
+Its hard to tell the kits apart because in order to see the legend you need to scroll. Which makes the graphic rather distracting and takes away from the story the graphic want to tell us.
+
+### C.
+
+#### Kits
+
+```{r}
+genes<-read.csv("https://calvin-data304.netlify.app/data/twins-genetics-long.csv")
+str(genes)
+```
+
+```{r}
+vl_chart(height = 400, width = 600, title = "Genetic Share Across Twin Pairs by Kit") |>
+  vl_mark_bar() |>
+  vl_encode_x("pair:N", title = "Twin Pair ID") |>
+  vl_encode_y("genetic.share:Q", title = "Genetic Share") |>
+  vl_encode_color("kit:N", scale = list(scheme = "category10")) |>
+  vl_facet_column("id:N", title = "ID Group") |>
+  vl_add_data(genes)
+
+
+```
+
+```{r}
+vl_chart(height = 500, width = 700, title = "Genetic Similarity Across DNA Test Kits") |>
+  vl_mark_rect() |>  # Heatmap
+  vl_encode_x("kit:N", title = "DNA Test Kit") |>
+  vl_encode_y("pair:N", title = "Twin Pair") |>
+  vl_encode_color("genetic.share:Q", scale = list(scheme = "viridis"), title = "Genetic Share") |>  # Proper scale definition
+  vl_add_data(genes)
+
+
+```
+This heatmap shows how different DNA test kits report genetic share for each twin pair. The color intensity represents the reported genetic share, with darker color indicating lower similarity and lighter color indicating higher similarity. Further  more this graphic highlights the potential inconsistency of the DNA testing kits. 
