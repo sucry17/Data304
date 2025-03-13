@@ -336,7 +336,8 @@ f.  tooltips:
 
     I used tooltips for my graphics on "my master piece" so that when you hover with the mouse, you can observe multiple variables of the dataset per data point.
 
-g.  another kind of interaction (panning/zooming, brushing, sliders, etc.):\
+g.  another kind of interaction (panning/zooming, brushing, sliders, etc.):
+
     Used a couple of interactions in a coupl ofe graphs. For example, for the Tanzania line graph, I binded the legend to the opacity so that when the user selects one of the rates on the legend, the other two become less opaque. Another is on the first graphic of the strokes data set I used a slider for the age to observe the data points per age.
     
 ## Exercise 6 (Keep learning)
