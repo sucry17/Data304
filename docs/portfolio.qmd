@@ -23,13 +23,13 @@ library(vegabrite)
 
 ![Graph I like](GraphILike.png)
 
-I like this graph because it's easy to compare the kits and see their differences. The colors are good, making it easy to tell each kit type apart. The layout is clean, which helps make the comparisons easily. The data isn't cluttered, which makes the graphic easy on the eyes.
+I like this graph because it's easy to compare the kits and see their differences. The colors are clear, making it easy to distinguish each kit type. The layout is clean, which helps make the comparisons easier. The data isn't cluttered, which makes the graphic easy on the eyes.
 
 ### B.
 
 ![Graph I dont like](GraphIDont.png)
 
-I don't like this graph because it's hard to tell the kits apart. You need to scroll to see the legend, which is distracting and takes away from the story the graphic wants to tell us.
+I don't like this graph because it's hard to tell the kits apart. You need to scroll to see the legend, which is distracting and takes away from the story the graphic is trying to tell.
 
 ### C.
 
@@ -55,7 +55,7 @@ vl_chart(height = 400, width = 600) |>
 
 ```
 
-This bar graph highlights that, although twins tend to share nearly all their DNA, small variations do occur. By creating a side-by-side bar graph, it's easier for the human eye to compare these variations. I hope that this graphic can help explain differences between twins, such as their appearance and health.
+\*\* This bar graph highlights that, although twins tend to share nearly all their DNA, small variations do occur. By creating a side-by-side bar graph, it's easier for the human eye to compare these variations. I hope that this graphic can help explain differences between twins, such as their appearance and health.
 
 ```{r}
 #| code-fold: TRUE
@@ -70,7 +70,7 @@ vl_chart(height = 500, width = 700, title = "Genetic Similarity Across DNA Test 
 
 ```
 
-This heat map shows the discrepancies in how different DNA test kits report genetic share for each twin pair. The color palette represents the reported genetic share, with darker colors indicating lower similarity and lighter colors indicating higher similarity. This graphic highlights the potential inconsistency of the DNA testing kits.
+This heat map shows the differences in how various DNA test kits report genetic similarity for each twin pair. The color palette represents the reported genetic share, with darker colors indicating lower similarity and lighter colors indicating higher similarity. This graphic highlights the potential inconsistency of the DNA testing kits.
 
 ## Exercise 2 (Data and graphics challenge)
 
@@ -78,11 +78,11 @@ This heat map shows the discrepancies in how different DNA test kits report gene
 
 -   How our business compares to other businesses (over time and in February 2020):
 
--   Business's Net Promoter Score (NPS) compares to other businesses over time, showing trends from January 2019 to February 2020. This analysis allows us to see how business's NPS has evolved compared to the competition. By examining these trends, we can identify periods where the business performed well and pinpoint times that may have had challenges. In February 2020 specifically, we can see NPS in relation to competitors, providing a snapshot of the market position at that time.
+    -   Business's Net Promoter Score (NPS) compares to other businesses over time, showing trends from January 2019 to February 2020. This analysis allows us to see how business's NPS has evolved compared to the competition. By examining these trends, we can identify periods where the business performed well and pinpoint times that may have had challenges. In February 2020 specifically, we can see NPS in relation to competitors, providing a snapshot of the market position at that time.
 
 -   How the components of the net promoter score for our business have changed over time:
 
--   The NPS components for the business (Detractors, Passives, Promoters) have changed from January 2019 to February 2020. By analyzing these changes, we gain insights into customer sentiment. For example, an increase in Promoters indicates higher customer satisfaction and loyalty, while an increase in Detractors suggests areas that need improvement. This breakdown helps us understand how the composition of NPS score has evolved.
+    -   The NPS components for the business (Detractors, Passives, Promoters) have changed from January 2019 to February 2020. By analyzing these changes, we gain insights into customer sentiment. For example, an increase in Promoters indicates higher customer satisfaction and loyalty, while an increase in Detractors suggests areas that need improvement. This breakdown helps us understand how the composition of NPS score has evolved.
 
 ## Exercise 3 (A new challenge)
 
@@ -163,7 +163,7 @@ line_chart
 
 bar_chart <- vl_chart(height = 400, width = 600) |>
   vl_mark_bar() |>
-  vl_encode_x("year", type = "ordinal", title = "") |>
+  vl_encode_x("year", type = "ordinal", axis = list(labelAngle = 0), title = "") |>
   vl_encode_y("proportion", type = "quantitative", title = "Proportion") |>
   vl_add_data(sorted_tanzania_split_long) |>
   vl_encode_color("variable", type = "nominal", title = "Variable")
@@ -183,7 +183,7 @@ combined_chart
 
 ```
 
-The story I am trying to tell with the graphic above is a simple one: how the different rates of patterns of reproductive health have evolved over time in Tanzania. For example, the fertility rate has dropped slightly since the first survey, while the contraception rate has increased almost exponentially, with the data stopping in the last two years.
+The story I am trying to tell with the graphic above is a simple one: how the different rates of patterns of reproductive health have evolved in Tanzania. For example, the fertility rate has dropped slightly since the first survey, while the contraception rate has increased almost exponentially, with the data plateauing in the last two years, which is the last survey.
 
 ## Exercise 4 (Your masterpiece)
 
@@ -249,16 +249,19 @@ threshold_chart <- vl_chart(height = 400, width = 600) |>
     max = max(strokeData_Diabetes$Avg_Glucose)
   )
 
+
 threshold_chart
 
 
 ```
-For the first graphic I want to show how as you age the average glucos level tend to be higher and so is the same is with BMI. THen the second graphic I just want to show how much people can go above the dyanmic avg glucose level in this data set.
+
+For the first graphic, I want to show how, as you age, the average glucose level tends to be higher, and the same is true for BMI. In the second graphic, I just want to show how much people's glucose levels can exceed the dynamic average glucose level in this dataset cotroled by a slider.
+
 ```{r}
 #| code-fold: TRUE
 interactive_plot <- vl_chart(height = 400, width = 600) |>
   vl_mark_boxplot() |>
-  vl_encode_x("Smoking_Status", type = "nominal", title = "Smoking Status") |>
+  vl_encode_x("Smoking_Status", type = "nominal", axis = list(labelAngle = 0), title = "Smoking Status") |>
   vl_encode_y("Avg_Glucose", type = "quantitative", title = "Average Glucose Level") |>
   vl_encode_color("Stroke", type = "nominal", title = "Stroke Status") |>
   vl_encode_tooltip_array(c("Smoking_Status", "Avg_Glucose", "Stroke")) |>
@@ -317,65 +320,83 @@ loess_line <- vl_chart() |>
 # Layering
 final_plot <- vl_layer(stroke_scatter, loess_line)
 final_plot
+
 ```
 
-I decided to use a basic stroke data set because a while back my dad had 5 strokes and he had many of the conditions mentioned in the data set from heart diesea, hypertension, he was also a former smoker and he is also diabetic and it is because he didnt take care of the diabetes the average glucose was pretty high. So, the combination of all these factors caused him to have a stroke
-
-
-
+I decided to use a basic stroke dataset because, a while back, my dad had five strokes and he had many of the conditions mentioned in the dataset, such as heart disease, hypertension, and he was also a former smoker and currently is a diabetic. At the end of the day it was because he didn’t take care of his diabetes giving him a high average glucose level. The combination of all these factors led and his age ultimately led to his strokes. Which seems to be consistent with the prediction plot.
 
 ## Exercise 5 (Using your palette):
 
 a.  an encoding channel other than x or y:
 
-    For most of my graphics I use other channels of encoding. For example in the tanzania graphic I use encode for opacity so that when I select one of the rates the other rates become less opaque.
+    For most of my graphics, I use other channels of encoding. For example, in the Tanzania graphic, I use encoding for opacity so that when the user selects one of the rates, the other rates become less opaque.
 
 b.  layers:
 
-    In my "master piece" I use layer to layer a scatter plot and loess line to make the predictions easier to see.
+    In my "masterpiece," I use layers to overlay a scatter plot and a loess line to make the predictions easier to see.
 
 c.  facets:
 
-    In the first twins' graphic, I use a facet to obtain two different graphics that are faceted by the identity of the twins.
+    In the first twins' graphic, I use a facet to create two different graphics, faceted by the identity of the twins.
 
 d.  concatenation or repeat:
 
-    Again, in the Tanzania example, use a concatentiaon to show both the trend of rates over time and then on the left show the proportions of the rates per year.
+    Again, in the Tanzania example, I use concatenation to show both the trend of rates over time and, on the left, the proportions of the rates per year.
 
 e.  non-default settings for a channel’s scale or guide:
 
-    In the heatmap example, I use a non-default scale for the color to highlight the difference between the genetics kits.
+    In the heatmap example, I use a non-default color scale to highlight the differences between the genetic kits.
 
 f.  tooltips:
 
-    I used tooltips for my graphics on "my master piece" so that when you hover with the mouse, you can observe multiple variables of the dataset per data point.
+    I used tooltips in my graphics on "my masterpiece" so that when you hover over a data point, you can observe multiple variables of the dataset for that point.
 
 g.  another kind of interaction (panning/zooming, brushing, sliders, etc.):
 
-    Used a couple of interactions in a coupl ofe graphs. For example, for the Tanzania line graph, I binded the legend to the opacity so that when the user selects one of the rates on the legend, the other two become less opaque. Another is on the first graphic of the strokes data set I used a slider for the age to observe the data points per age.
+    I used a couple of interactions in a few graphs. For example, in the Tanzania line graph, I bound the legend to the opacity so that when the user selects one of the rates on the legend, the other two become less opaque. Another example is in the first graphic of the stroke dataset, where I used a slider for age to observe the data points by age.
 
 ## Exercise 6 (Keep learning)
 
 a.  
 
-    - In the [second graphic](https://vega.github.io/vega-lite/docs/condition.html)  the stroke data set I added a slider that controls the color based on the threshold which I set it to 120 because thats when it start to gett dangerous for diabetic people. I thought that was intresting because then you can see observe who goes beyond that dangerzone threshold. 
+    -   In the [second graphic](https://vega.github.io/vega-lite/docs/condition.html), the stroke dataset ,I added a slider that controls the color based on the threshold, which I set to 120 because that's when it starts to get dangerous for diabetic people. I thought that was interesting because then you can observe who goes beyond that danger zone threshold.
 
-    -   
+    -   While working on some of my graphics, I saw that the axis were at the wrong angle to the point where trying to read the labels became more important than the actual graphic. So, inorder to remove this, I looked at the documentation for axis and found that you could change the angle of the labels with [labelAngle](https://vega.github.io/vega-lite/docs/axis.html). Though it is a small and subtle change, it has an impact on the one observing the graph, shifting the focus from the label to the actual graphic.
 
 b.  
 
-    -   The color for the heat map I chose according to [wilke](https://clauswilke.com/dataviz/color-basics.html#color-as-a-tool-to-distinguish) and [github page](https://vega.github.io/vega/docs/schemes/)  where wikle advises in section 4.1 to use color as a tool to distinguish and then acordding to the documentation dark2 is cattegrocial scheme. 
-    
-    -   For the last stroke graphic, specificaly, followed [Knaflic'](https://github.com/Saurav6789/Books-/blob/master/storytelling-with-data-cole-nussbaumer-knaflic.pdf) advice from chapter 6 page 235. His advice is that visualization with out a story dont stick with the audince. By adding my father's story about his strokes I think I will appeal to the emotion of the audience and hence it will stick with them for longer.
+    -   The color for the heat map I chose according to [Wilke](https://clauswilke.com/dataviz/color-basics.html#color-as-a-tool-to-distinguish) and the [github page](https://vega.github.io/vega/docs/schemes/) where Wilke advises in section 4.1 to use color as a tool to distinguish and then according to the documentation dark2 is categorical scheme.
+
+    -   For the last stroke graphic, specifically, I followed [Knaflic'](https://github.com/Saurav6789/Books-/blob/master/storytelling-with-data-cole-nussbaumer-knaflic.pdf) advice from chapter 6, page 235. His advice is that visualization without a story doesn't stick with the audience. By adding my father's story about his stroke,s I think I will appeal to the emotion of the audience, and hence,e it will stick with them for longer.
 
 ## HW 4-Exercise 2.12:
 
-![Exercise 2.12a](2-12a.png) ![Exercise 2.12b](2-12b.png)
+![Exercise 2.12a](2-12a.png)
+
+![Exercise 2.12b](2-12b.png)
 
 -   QUESTION 1: What do you like about each graph? What can you easily see or compare?
 
+    a.  I like that it is faceted by year, which makes it easier to compare the proportion of the answers by employees
+
+    b.  The bars was very easy and straightforward to compare, which is what I liked about this graph.
+
+    c.  I like that I can see how the employees' answers have shifted positively in a year.
+
+    d.   a simple trendline. This makes it easier to see where employees' minds are.
+
 -   QUESTION 2: What is difficult about the given view? Are there limitations or other considerations of which to be aware?
 
+    a.  The label for strongly disagree is a little distracting. Adding color and legend would improve this graphic.
+
+    b.  The legend is in an odd place, right below the question/ context of the graphic. Perhaps moving the legend to the side or the bottom would improve the graphic.
+
+    c.  A lot of clutter with the response labels, so adding color and a legend that highlights the responses might be good.
+
+    d.  I am not quite sure what to do here. My initial thought would be to expand the y-axis. I would do this because when I first saw that kind of "V" formed by the strongly agree and disagree it through me off.
+
 -   QUESTION 3: If you were tasked with communicating this data, which option would you choose and why?
+
+    -   If I was tasked with communicating this data as is I would chose the bar graph . The reason for this is that this graph is straightforward forward showing the trend change between years and communicating the data easily and effectively.
 
 -   QUESTION 4: Grab a friend or colleague and talk through the various options together. Do they agree with your preferred view, or is there a preference for another? Did your discussion highlight anything interesting that you hadn’t previously considered?
