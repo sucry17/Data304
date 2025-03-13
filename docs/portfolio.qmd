@@ -158,7 +158,7 @@ line_chart <- vl_chart(height = 400, width = 600) |>
   vl_add_data(sorted_tanzania_split_long) 
 
 line_chart <-line_chart |>
-  vl_encode_color("variable", type = "nominal", title = "Variable") |>
+  vl_encode_color("variable", type = "nominal", title = "Variable", legend = TRUE) |>
   vl_add_point_selection("variable_param", bind = "legend", encodings = list("color") )|>
   vl_encode_opacity(value = 0.2) |>
   vl_condition_opacity(param = "variable_param", value = 1)
@@ -171,7 +171,7 @@ bar_chart <- vl_chart(height = 400, width = 600) |>
   vl_encode_x("year", type = "ordinal", axis = list(labelAngle = 0), title = "") |>
   vl_encode_y("proportion", type = "quantitative", title = "Proportion") |>
   vl_add_data(sorted_tanzania_split_long) |>
-  vl_encode_color("variable", type = "nominal", title = "Variable")
+  vl_encode_color("variable", type = "nominal", title = "Variable", legend = TRUE)
 bar_chart
 
 
@@ -188,7 +188,7 @@ combined_chart
 
 ```
 
-The story I am trying to tell with the graphic above is a simple one: how the different rates of patterns of reproductive health have evolved in Tanzania. For example, the fertility rate has dropped slightly since the first survey, while the contraception rate has increased almost exponentially, with the data plateauing in the last two years, which is the last survey.
+The story I am trying to tell with the graphic above is a simple one: how the different rates of patterns of reproductive health have evolved in Tanzania. For example, the fertility rate has dropped slightly since the first survey, while the contraception rate has increased almost exponentially, with the data plateauing in the last two years, which is the last survey. For this graph the usere can scroll to the right and use the legend to select the rate to focus on.
 
 ## Exercise 4 (Your masterpiece)
 
