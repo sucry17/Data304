@@ -224,9 +224,36 @@ interactive_plot <- vl_chart(height = 400, width = 600) |>
 
 interactive_plot
 
+strokeData_Diabetes <- strokeData |>
+  filter(Diabetes == 1)
+#Intersting 
+threshold_chart <- vl_chart(height = 400, width = 600) |>
+  vl_mark_circle() |>
+  vl_encode_x("Avg_Glucose", type = "quantitative", title = "Average Glucose Level") |>  
+  vl_encode_y("BMI", type = "quantitative", title = "BMI") |>
+  vl_encode_color(
+    legend = TRUE, condition = list(
+      test = "datum.Avg_Glucose > threshold_param",  # Condition for threshold
+      value = "red"  # Color for points above the threshold
+    ),
+    value = "blue"  # Default color
+  ) |>
+  vl_add_data(strokeData_Diabetes) |>
+  
+  # Add a parameter for the threshold
+  vl_add_parameter("threshold_param", value = 120) |>
+  vl_bind_range_input(
+    parameter_name = "threshold_param", 
+    name = "Glucose Threshold: ",                 
+    min = min(strokeData_Diabetes$Avg_Glucose),
+    max = max(strokeData_Diabetes$Avg_Glucose)
+  )
+
+threshold_chart
+
 
 ```
-
+For the first graphic I want to show how as you age the average glucos level tend to be higher and so is the same is with BMI. THen the second graphic I just want to show how much people can go above the dyanmic avg glucose level in this data set.
 ```{r}
 #| code-fold: TRUE
 interactive_plot <- vl_chart(height = 400, width = 600) |>
@@ -292,7 +319,10 @@ final_plot <- vl_layer(stroke_scatter, loess_line)
 final_plot
 ```
 
-I decided to use a basic stroke data set because a while back my dad had 5 strokes and he had many of the condtions mentioned in the data set from heart diesea, hypertension, he was also a former smoker and he is also diabeteic and it is because he didnt take care of the diabeites the avgerage glucuse was pretty high. So, the combination of all these factors caused him to have a stroke
+I decided to use a basic stroke data set because a while back my dad had 5 strokes and he had many of the conditions mentioned in the data set from heart diesea, hypertension, he was also a former smoker and he is also diabetic and it is because he didnt take care of the diabetes the average glucose was pretty high. So, the combination of all these factors caused him to have a stroke
+
+
+
 
 ## Exercise 5 (Using your palette):
 
@@ -328,7 +358,7 @@ g.  another kind of interaction (panning/zooming, brushing, sliders, etc.):
 
 a.  
 
-    -   
+    - In the [second graphic](https://vega.github.io/vega-lite/docs/condition.html)  the stroke data set I added a slider that controls the color based on the threshold which I set it to 120 because thats when it start to gett dangerous for diabetic people. I thought that was intresting because then you can see observe who goes beyond that dangerzone threshold. 
 
     -   
 
