@@ -41,9 +41,6 @@ str(genes)
 ```
 
 ```{r}
-
-#|  code-fold: true
-
 vl_chart(height = 400, width = 600) |>
   vl_mark_bar() |>
   vl_encode_x("pair:N", title = "Twin Pair ID #") |>
@@ -59,11 +56,8 @@ vl_chart(height = 400, width = 600) |>
 This bar graph highlights that, although twins tend to share nearly all their DNA, small variations do occur. By creating a side-by-side bar graph, it's easier for the human eye to compare these variations. I hope that this graphic can help explain differences between twins, such as their appearance and health.
 
 ```{r}
-
-#|  code-fold: true
-
 vl_chart(height = 500, width = 700, title = "Genetic Similarity Across DNA Test Kits") |>
-  vl_mark_rect() |>  
+  vl_mark_rect()|>  
   vl_encode_x("kit:N", title = "DNA Test Kit") |>
   vl_encode_y("pair:N", title = "Twin Pair") |>
   vl_encode_color("genetic.share:Q", scale = list(scheme = "viridis"), title = "Genetic Share") |>  
@@ -123,9 +117,6 @@ tanzania_split
 ```
 
 ```{r}
-
-#|  code-fold: true
-
 #Arrage by year ascending
 sorted_tanzania_split <- tanzania_split |>
   arrange(year)
@@ -152,9 +143,6 @@ sorted_tanzania_split_long <- sorted_tanzania_split_long |>
 ### Graphic
 
 ```{r}
-
-#|  code-fold: true
-
 sorted_tanzania_split_long <- as.data.frame(sorted_tanzania_split_long)
 
 line_chart <- vl_chart(height = 400, width = 600) |>
@@ -204,9 +192,6 @@ str(strokeData)
 ```
 
 ```{r}
-
-#|  code-fold: true
-
 strokeData$Age <- as.integer(strokeData$Age)
   
 strokeData_select <- strokeData |>
@@ -241,9 +226,6 @@ interactive_plot
 ```
 
 ```{r}
-
-#|  code-fold: true
-
 interactive_plot <- vl_chart(height = 400, width = 600) |>
   vl_mark_boxplot() |>
   vl_encode_x("Smoking_Status", type = "nominal", title = "Smoking Status") |>
@@ -260,9 +242,6 @@ interactive_plot
 ```
 
 ```{r}
-
-#|  code-fold: true
-
 # Convert categorical variables to factors
 strokeData <- strokeData |>
   mutate(Gender = as.factor(Gender),
@@ -339,9 +318,25 @@ f.  tooltips:
 g.  another kind of interaction (panning/zooming, brushing, sliders, etc.):
 
     Used a couple of interactions in a coupl ofe graphs. For example, for the Tanzania line graph, I binded the legend to the opacity so that when the user selects one of the rates on the legend, the other two become less opaque. Another is on the first graphic of the strokes data set I used a slider for the age to observe the data points per age.
-    
+
 ## Exercise 6 (Keep learning)
 
-a.
-b.
+a.  
 
+    -   
+
+    -   
+
+b.  
+
+## HW 4-Exercise 2.12:
+
+![Exercise 2.12a](2-12a.png) ![Exercise 2.12b](2-12b.png)
+
+-   QUESTION 1: What do you like about each graph? What can you easily see or compare?
+
+-   QUESTION 2: What is difficult about the given view? Are there limitations or other considerations of which to be aware?
+
+-   QUESTION 3: If you were tasked with communicating this data, which option would you choose and why?
+
+-   QUESTION 4: Grab a friend or colleague and talk through the various options together. Do they agree with your preferred view, or is there a preference for another? Did your discussion highlight anything interesting that you hadn’t previously considered?
