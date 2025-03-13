@@ -41,7 +41,7 @@ str(genes)
 ```
 
 ```{r}
-#| code-fold: true
+
 vl_chart(height = 400, width = 600) |>
   vl_mark_bar() |>
   vl_encode_x("pair:N", title = "Twin Pair ID #") |>
@@ -57,7 +57,7 @@ vl_chart(height = 400, width = 600) |>
 This bar graph highlights that, although twins tend to share nearly all their DNA, small variations do occur. By creating a side-by-side bar graph, it's easier for the human eye to compare these variations. I hope that this graphic can help explain differences between twins, such as their appearance and health.
 
 ```{r}
-#| code-fold: true
+
 vl_chart(height = 500, width = 700, title = "Genetic Similarity Across DNA Test Kits") |>
   vl_mark_rect() |>  
   vl_encode_x("kit:N", title = "DNA Test Kit") |>
@@ -92,7 +92,7 @@ str(tanzania)
 ### Data wrangling
 
 ```{r}
-#| code-fold: true
+
 # Renaming the variables
 tanzania_clean <- tanzania |>
   rename(
@@ -120,7 +120,8 @@ tanzania_split
 ```
 
 ```{r}
-#| code-fold: true
+
+
 #Arrage by year ascending
 sorted_tanzania_split <- tanzania_split |>
   arrange(year)
@@ -142,19 +143,29 @@ str(sorted_tanzania_split_long)
 ### Graphic
 
 ```{r}
-#| code-fold: true
-line_chart <- vl_chart(height = 400, width = 600 ) |>
+
+
+line_chart <- vl_chart(height = 400, width = 600) |>
   vl_mark_line(point = TRUE) |>
   vl_encode_x("year", type = "ordinal", axis = list(labelAngle = 0), title = "") |>
-  vl_encode_y("value", type = "quantitative",title = "Rate (%)") |>
+  vl_encode_y("value", type = "quantitative", title = "Rate (%)") |>
+  vl_add_data(sorted_tanzania_split_long) 
+
+line_chart <-line_chart |>
   vl_encode_color("variable", type = "nominal", title = "Variable") |>
-  vl_add_data(sorted_tanzania_split_long)|>
-  vl_encode_tooltip_array(c("year", "value", "variable"))
-# Display the chart
+  vl_add_point_selection("variable_param", bind = "legend", encodings = list("color") )|>
+  vl_encode_opacity(value = 0.2) |>
+  vl_condition_opacity(param = "variable_param", value = 1)
+
 line_chart
+
 ```
 
 The story I am trying to tell with the graphic above is a simple one: how the different rates of patterns of reproductive health have evolved over time in Tanzania. For example, the fertility rate has dropped slightly since the first survey, while the contraception rate has increased almost exponentially, with the data stopping in the last two years.
+
+
+
+
 
 ## Exercise 4 (Your masterpiece)
 
@@ -164,24 +175,22 @@ str(strokeData)
 ```
 
 ```{r}
+#|  code-fold: true
+
 strokeData$Age <- as.integer(strokeData$Age)
-```
-
-```{r}
-# Prepare the data (ensure it contains the correct columns)
+  
 strokeData_select <- strokeData |>
-  select(Age, BMI, Avg_Glucose, Stroke)  # Selecting relevant features
+  select(Age, BMI, Avg_Glucose, Stroke)  
 
-# Define an interactive parameter for Age (slider)
+
 interactive_plot <- vl_chart(height = 400, width = 600) |>
   vl_mark_circle() |>
-  vl_encode_x("Avg_Glucose", type = "quantitative", title = "Average Glucose Level") |>  # X-axis
+  vl_encode_x("Avg_Glucose", type = "quantitative", title = "Average Glucose Level") |>  
   vl_encode_y("BMI", type = "quantitative", title = "BMI") |>
   vl_encode_color("Stroke", type = "nominal", title = "Stroke Status") |>
   vl_encode_tooltip_array(c("Avg_Glucose", "BMI", "Age", "Stroke")) |>
   vl_add_data(strokeData_select) |>
   
-  # Add an interactive slider for Age
   vl_add_parameter("age_param", value = min(strokeData$Age)) |>
   vl_bind_range_input(
     parameter_name = "age_param", 
@@ -191,17 +200,89 @@ interactive_plot <- vl_chart(height = 400, width = 600) |>
   ) |>
   vl_filter("datum.Age <= age_param") |>
   
-  # Add opacity condition for Stroke == 0
   vl_encode_opacity(
-    condition = list(test = "datum.Stroke == 0", value = 0.2),  # Reduce opacity for Stroke == 0
-    value = 1  # Full opacity for Stroke == 1
+    condition = list(test = "datum.Stroke == 0", value = 0.2),  
+    value = 1  
   )
 
-# Display the interactive plot
 interactive_plot
 
 
 ```
+
+
+```{r}
+
+interactive_plot <- vl_chart(height = 400, width = 600) |>
+  vl_mark_boxplot() |>
+  vl_encode_x("Smoking_Status", type = "nominal", title = "Smoking Status") |>
+  vl_encode_y("Avg_Glucose", type = "quantitative", title = "Average Glucose Level") |>
+  vl_encode_color("Stroke", type = "nominal", title = "Stroke Status") |>
+  vl_encode_tooltip_array(c("Smoking_Status", "Avg_Glucose", "Stroke")) |>
+  vl_encode_xOffset("Smoking_Status")|>
+  vl_add_data(strokeData)
+
+interactive_plot
+
+
+
+```
+
+
+```{r}
+
+# Convert categorical variables to factors
+strokeData <- strokeData |>
+  mutate(Gender = as.factor(Gender),
+         SES = as.factor(SES),
+         Smoking_Status = as.factor(Smoking_Status),
+         Hypertension = as.factor(Hypertension),
+         Heart_Disease = as.factor(Heart_Disease),
+         Diabetes = as.factor(Diabetes),
+         Stroke = as.factor(Stroke))  
+
+# Fit Logistic Regression Model
+stroke_model <- glm(Stroke ~ Age + Gender + SES + Hypertension + Heart_Disease + 
+                     BMI + Avg_Glucose + Diabetes + Smoking_Status, 
+                     data = strokeData, family = binomial)
+
+# Predict stroke probabilities
+strokeData_select$predicted_prob <- predict(stroke_model, type = "response")
+
+# Create a Vega-Lite visualization
+stroke_scatter <- vl_chart(height = 400, width = 600) |>
+  vl_mark_circle() |>
+  vl_encode_x("Age", type = "quantitative", title = "Age") |>  
+  vl_encode_y("predicted_prob", type = "quantitative", title = "Predicted Stroke Probability") |>
+  vl_encode_tooltip_array(c("Age", "predicted_prob", "BMI")) |>
+  vl_add_data(strokeData_select)
+# Fit LOESS model
+loess_fit <- loess(predicted_prob ~ Age, data = strokeData_select, span = 0.5)
+
+# Create a new dataset with smoothed values
+stroke_loess <- data.frame(
+  Age = strokeData_select$Age,
+  predicted_smooth = predict(loess_fit, newdata = strokeData_select)
+)
+# Loess graphic
+loess_line <- vl_chart() |> 
+  vl_mark_line(color = "red", opacity = 0.8) |>
+  vl_encode_x("Age", type = "quantitative") |>  
+  vl_encode_y("predicted_smooth", type = "quantitative") |>
+  vl_add_data(stroke_loess)
+
+# Layering
+final_plot <- vl_layer(stroke_scatter, loess_line)
+final_plot
+```
+I decided to use a basic stroke data set because a while back my dad had 5 strokes and he had many of the condtions mentioned in the data set from heart diesea, hypertension, he was also a former smoker and he is also diabeteic and it is because he didnt take care of the diabeites the avgerage glucuse was pretty high. So, the combination of all these factors caused him to have a stroke
+
+
+
+
+
+
+
 
 
 
