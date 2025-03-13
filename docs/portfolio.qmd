@@ -193,7 +193,7 @@ The story I am trying to tell with the graphic above is a simple one: how the di
 strokeData <- read.csv("strokeData.csv")
 str(strokeData)
 ```
-
+#### EDA:
 ```{r}
 #| code-fold: TRUE
 
@@ -274,6 +274,8 @@ interactive_plot
 
 
 ```
+
+#### Final graph:
 
 ```{r}
 #| code-fold: TRUE
