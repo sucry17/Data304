@@ -144,17 +144,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="kits" class="level4">
 <h4 class="anchored" data-anchor-id="kits">Kits</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_bar</span>() <span class="sc">|&gt;</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"pair:N"</span>, <span class="at">title =</span> <span class="st">"Twin Pair ID #"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"genetic.share:Q"</span>, <span class="at">title =</span> <span class="st">"Genetic Share"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">"kit:N"</span>, <span class="at">scale =</span> <span class="fu">list</span>(<span class="at">scheme =</span> <span class="st">"category10"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_facet_column</span>(<span class="st">"id:N"</span>,<span class="at">title =</span> <span class="st">"Genetic Share Across Twin Pairs by Kit"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_xOffset</span>(<span class="st">"kit"</span>)<span class="sc">|&gt;</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(genes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|  code-fold: true</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_bar</span>() <span class="sc">|&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"pair:N"</span>, <span class="at">title =</span> <span class="st">"Twin Pair ID #"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"genetic.share:Q"</span>, <span class="at">title =</span> <span class="st">"Genetic Share"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">"kit:N"</span>, <span class="at">scale =</span> <span class="fu">list</span>(<span class="at">scheme =</span> <span class="st">"category10"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_facet_column</span>(<span class="st">"id:N"</span>,<span class="at">title =</span> <span class="st">"Genetic Share Across Twin Pairs by Kit"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_xOffset</span>(<span class="st">"kit"</span>)<span class="sc">|&gt;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(genes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="htmlwidget-66e2b02b51a74e335ac0" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
-<script type="application/json" data-for="htmlwidget-66e2b02b51a74e335ac0">{"x":{
+<div id="htmlwidget-2930158792d4e8e9375c" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2930158792d4e8e9375c">{"x":{
   "chart_spec": {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "spec": {
@@ -1023,15 +1025,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>This bar graph highlights that, although twins tend to share nearly all their DNA, small variations do occur. By creating a side-by-side bar graph, it’s easier for the human eye to compare these variations. I hope that this graphic can help explain differences between twins, such as their appearance and health.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">500</span>, <span class="at">width =</span> <span class="dv">700</span>, <span class="at">title =</span> <span class="st">"Genetic Similarity Across DNA Test Kits"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_rect</span>() <span class="sc">|&gt;</span>  </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"kit:N"</span>, <span class="at">title =</span> <span class="st">"DNA Test Kit"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"pair:N"</span>, <span class="at">title =</span> <span class="st">"Twin Pair"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">"genetic.share:Q"</span>, <span class="at">scale =</span> <span class="fu">list</span>(<span class="at">scheme =</span> <span class="st">"viridis"</span>), <span class="at">title =</span> <span class="st">"Genetic Share"</span>) <span class="sc">|&gt;</span>  </span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(genes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|  code-fold: true</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">500</span>, <span class="at">width =</span> <span class="dv">700</span>, <span class="at">title =</span> <span class="st">"Genetic Similarity Across DNA Test Kits"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_rect</span>() <span class="sc">|&gt;</span>  </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"kit:N"</span>, <span class="at">title =</span> <span class="st">"DNA Test Kit"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"pair:N"</span>, <span class="at">title =</span> <span class="st">"Twin Pair"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">"genetic.share:Q"</span>, <span class="at">scale =</span> <span class="fu">list</span>(<span class="at">scheme =</span> <span class="st">"viridis"</span>), <span class="at">title =</span> <span class="st">"Genetic Share"</span>) <span class="sc">|&gt;</span>  </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(genes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="htmlwidget-53c413013838cb75c395" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
-<script type="application/json" data-for="htmlwidget-53c413013838cb75c395">{"x":{
+<div id="htmlwidget-905d25b1ba5d56e2d9c7" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-905d25b1ba5d56e2d9c7">{"x":{
   "chart_spec": {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "height": 500,
@@ -1909,33 +1913,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="exercise-3-a-new-challenge" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-3-a-new-challenge">Exercise 3 (A new challenge)</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tanzania<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">"tanzaniaDataSet.csv"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(tanzania)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   6 obs. of  4 variables:
+ $ DHS.Survey.Year                  : chr  "2015-2016" "2010" "2004-2005" "1999" ...
+ $ Total.Fertility.Rate..ages.15.49.: num  5.2 5.4 5.7 5.6 5.8 6.2
+ $ Contraception....                : num  38.4 23.6 17.6 15.6 11.7 5.9
+ $ Unmet.Planning....               : num  22.1 22.3 24.3 22.3 26 27.8</code></pre>
+</div>
+</div>
 <section id="data-wrangling" class="level3">
 <h3 class="anchored" data-anchor-id="data-wrangling">Data wrangling</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Renaming the variables</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>tanzania_clean <span class="ot">&lt;-</span> tanzania <span class="sc">|&gt;</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Survey_Year =</span> DHS.Survey.Year,</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Total_fertility_Rate =</span> Total.Fertility.Rate..ages.<span class="dv">15</span>.<span class="fl">49.</span>,</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">Contraception_Rate =</span> Contraception....,</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">Unmet_Planning_Rate =</span> Unmet.Planning....</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Dealing with the years</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>tanzania_split <span class="ot">&lt;-</span> tanzania_clean <span class="sc">|&gt;</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a> <span class="fu">separate</span>(Survey_Year, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"start_year"</span>, <span class="st">"end_year"</span>), <span class="at">sep =</span> <span class="st">"-"</span>, <span class="at">fill =</span> <span class="st">"right"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Convert to integers</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">start_year =</span> <span class="fu">as.integer</span>(start_year),</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">end_year =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(end_year), start_year, <span class="fu">as.integer</span>(end_year))</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Replicate data for each year in the range</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">|&gt;</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">list</span>(<span class="fu">seq</span>(start_year, end_year))) <span class="sc">|&gt;</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest</span>(<span class="at">cols =</span> <span class="fu">c</span>(year)) <span class="sc">|&gt;</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>start_year, <span class="sc">-</span>end_year)</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Displaying the data frame</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>tanzania_split</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|  code-fold: true</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Renaming the variables</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>tanzania_clean <span class="ot">&lt;-</span> tanzania <span class="sc">|&gt;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">Survey_Year =</span> DHS.Survey.Year,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">Total_fertility_Rate =</span> Total.Fertility.Rate..ages.<span class="dv">15</span>.<span class="fl">49.</span>,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">Contraception_Rate =</span> Contraception....,</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">Unmet_Planning_Rate =</span> Unmet.Planning....</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Dealing with the years</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>tanzania_split <span class="ot">&lt;-</span> tanzania_clean <span class="sc">|&gt;</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a> <span class="fu">separate</span>(Survey_Year, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"start_year"</span>, <span class="st">"end_year"</span>), <span class="at">sep =</span> <span class="st">"-"</span>, <span class="at">fill =</span> <span class="st">"right"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Convert to integers</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">start_year =</span> <span class="fu">as.integer</span>(start_year),</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">end_year =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(end_year), start_year, <span class="fu">as.integer</span>(end_year))</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Replicate data for each year in the range</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">|&gt;</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">list</span>(<span class="fu">seq</span>(start_year, end_year))) <span class="sc">|&gt;</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest</span>(<span class="at">cols =</span> <span class="fu">c</span>(year)) <span class="sc">|&gt;</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>start_year, <span class="sc">-</span>end_year)</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Displaying the data frame</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>tanzania_split</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 9 × 4
   Total_fertility_Rate Contraception_Rate Unmet_Planning_Rate  year
@@ -1952,22 +1969,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Arrage by year ascending</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split <span class="ot">&lt;-</span> tanzania_split <span class="sc">|&gt;</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(year)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#converting to long</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split_long <span class="ot">&lt;-</span> sorted_tanzania_split <span class="sc">|&gt;</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(Total_fertility_Rate, Contraception_Rate, Unmet_Planning_Rate),</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"variable"</span>, <span class="at">values_to =</span> <span class="st">"value"</span>)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split_long<span class="sc">$</span>variable <span class="ot">&lt;-</span> <span class="fu">factor</span>(sorted_tanzania_split_long<span class="sc">$</span>variable)</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split_long<span class="sc">$</span>year <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(sorted_tanzania_split_long<span class="sc">$</span>year)</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split_long<span class="sc">$</span>year <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">as.character</span>(sorted_tanzania_split_long<span class="sc">$</span>year))</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split_long<span class="sc">$</span>variable <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">"_"</span>, <span class="st">" "</span>, sorted_tanzania_split_long<span class="sc">$</span>variable)</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(sorted_tanzania_split_long)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|  code-fold: true</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Arrage by year ascending</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split <span class="ot">&lt;-</span> tanzania_split <span class="sc">|&gt;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(year)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">#converting to long</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split_long <span class="ot">&lt;-</span> sorted_tanzania_split <span class="sc">|&gt;</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(Total_fertility_Rate, Contraception_Rate, Unmet_Planning_Rate),</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"variable"</span>, <span class="at">values_to =</span> <span class="st">"value"</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split_long<span class="sc">$</span>variable <span class="ot">&lt;-</span> <span class="fu">factor</span>(sorted_tanzania_split_long<span class="sc">$</span>variable)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split_long<span class="sc">$</span>year <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(sorted_tanzania_split_long<span class="sc">$</span>year)</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split_long<span class="sc">$</span>year <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">as.character</span>(sorted_tanzania_split_long<span class="sc">$</span>year))</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split_long<span class="sc">$</span>variable <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">"_"</span>, <span class="st">" "</span>, sorted_tanzania_split_long<span class="sc">$</span>variable)</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(sorted_tanzania_split_long)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>tibble [27 × 3] (S3: tbl_df/tbl/data.frame)
  $ year    : num [1:27] 1991 1991 1991 1992 1992 ...
@@ -1979,22 +1998,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="graphic" class="level3">
 <h3 class="anchored" data-anchor-id="graphic">Graphic</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>line_chart <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_line</span>(<span class="at">point =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"year"</span>, <span class="at">type =</span> <span class="st">"ordinal"</span>, <span class="at">axis =</span> <span class="fu">list</span>(<span class="at">labelAngle =</span> <span class="dv">0</span>), <span class="at">title =</span> <span class="st">""</span>) <span class="sc">|&gt;</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"value"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"Rate (%)"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(sorted_tanzania_split_long) </span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>line_chart <span class="ot">&lt;-</span>line_chart <span class="sc">|&gt;</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">"variable"</span>, <span class="at">type =</span> <span class="st">"nominal"</span>, <span class="at">title =</span> <span class="st">"Variable"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_point_selection</span>(<span class="st">"variable_param"</span>, <span class="at">bind =</span> <span class="st">"legend"</span>, <span class="at">encodings =</span> <span class="fu">list</span>(<span class="st">"color"</span>) )<span class="sc">|&gt;</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_opacity</span>(<span class="at">value =</span> <span class="fl">0.2</span>) <span class="sc">|&gt;</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_condition_opacity</span>(<span class="at">param =</span> <span class="st">"variable_param"</span>, <span class="at">value =</span> <span class="dv">1</span>)</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>line_chart</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|  code-fold: true</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>line_chart <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_line</span>(<span class="at">point =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"year"</span>, <span class="at">type =</span> <span class="st">"ordinal"</span>, <span class="at">axis =</span> <span class="fu">list</span>(<span class="at">labelAngle =</span> <span class="dv">0</span>), <span class="at">title =</span> <span class="st">""</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"value"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"Rate (%)"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(sorted_tanzania_split_long) </span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>line_chart <span class="ot">&lt;-</span>line_chart <span class="sc">|&gt;</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">"variable"</span>, <span class="at">type =</span> <span class="st">"nominal"</span>, <span class="at">title =</span> <span class="st">"Variable"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_point_selection</span>(<span class="st">"variable_param"</span>, <span class="at">bind =</span> <span class="st">"legend"</span>, <span class="at">encodings =</span> <span class="fu">list</span>(<span class="st">"color"</span>) )<span class="sc">|&gt;</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_opacity</span>(<span class="at">value =</span> <span class="fl">0.2</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_condition_opacity</span>(<span class="at">param =</span> <span class="st">"variable_param"</span>, <span class="at">value =</span> <span class="dv">1</span>)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>line_chart</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="htmlwidget-6d312eea0965ad078700" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6d312eea0965ad078700">{"x":{
+<div id="htmlwidget-532464af0ff9c1136c81" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-532464af0ff9c1136c81">{"x":{
   "chart_spec": {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "height": 400,
@@ -2195,8 +2216,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="exercise-4-your-masterpiece" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-4-your-masterpiece">Exercise 4 (Your masterpiece)</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>strokeData <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"strokeData.csv"</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(strokeData)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>strokeData <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"strokeData.csv"</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(strokeData)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>'data.frame':   10000 obs. of  10 variables:
  $ Age           : num  66.8 86.4 76.2 72.5 59.9 ...
@@ -2212,38 +2233,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>strokeData<span class="sc">$</span>Age <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(strokeData<span class="sc">$</span>Age)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>strokeData_select <span class="ot">&lt;-</span> strokeData <span class="sc">|&gt;</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Age, BMI, Avg_Glucose, Stroke)  </span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>interactive_plot <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_circle</span>() <span class="sc">|&gt;</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"Avg_Glucose"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"Average Glucose Level"</span>) <span class="sc">|&gt;</span>  </span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"BMI"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"BMI"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">"Stroke"</span>, <span class="at">type =</span> <span class="st">"nominal"</span>, <span class="at">title =</span> <span class="st">"Stroke Status"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_tooltip_array</span>(<span class="fu">c</span>(<span class="st">"Avg_Glucose"</span>, <span class="st">"BMI"</span>, <span class="st">"Age"</span>, <span class="st">"Stroke"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(strokeData_select) <span class="sc">|&gt;</span></span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_parameter</span>(<span class="st">"age_param"</span>, <span class="at">value =</span> <span class="fu">min</span>(strokeData<span class="sc">$</span>Age)) <span class="sc">|&gt;</span></span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_bind_range_input</span>(</span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">parameter_name =</span> <span class="st">"age_param"</span>, </span>
-<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Age: "</span>,                 </span>
-<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">min =</span> <span class="fu">min</span>(strokeData<span class="sc">$</span>Age),</span>
-<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">max =</span> <span class="fu">max</span>(strokeData<span class="sc">$</span>Age)</span>
-<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_filter</span>(<span class="st">"datum.Age &lt;= age_param"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_opacity</span>(</span>
-<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">condition =</span> <span class="fu">list</span>(<span class="at">test =</span> <span class="st">"datum.Stroke == 0"</span>, <span class="at">value =</span> <span class="fl">0.2</span>),  </span>
-<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="dv">1</span>  </span>
-<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>interactive_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|  code-fold: true</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>strokeData<span class="sc">$</span>Age <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(strokeData<span class="sc">$</span>Age)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>strokeData_select <span class="ot">&lt;-</span> strokeData <span class="sc">|&gt;</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Age, BMI, Avg_Glucose, Stroke)  </span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>interactive_plot <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_circle</span>() <span class="sc">|&gt;</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"Avg_Glucose"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"Average Glucose Level"</span>) <span class="sc">|&gt;</span>  </span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"BMI"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"BMI"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">"Stroke"</span>, <span class="at">type =</span> <span class="st">"nominal"</span>, <span class="at">title =</span> <span class="st">"Stroke Status"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_tooltip_array</span>(<span class="fu">c</span>(<span class="st">"Avg_Glucose"</span>, <span class="st">"BMI"</span>, <span class="st">"Age"</span>, <span class="st">"Stroke"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(strokeData_select) <span class="sc">|&gt;</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_parameter</span>(<span class="st">"age_param"</span>, <span class="at">value =</span> <span class="fu">min</span>(strokeData<span class="sc">$</span>Age)) <span class="sc">|&gt;</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_bind_range_input</span>(</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">parameter_name =</span> <span class="st">"age_param"</span>, </span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Age: "</span>,                 </span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">min =</span> <span class="fu">min</span>(strokeData<span class="sc">$</span>Age),</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">max =</span> <span class="fu">max</span>(strokeData<span class="sc">$</span>Age)</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_filter</span>(<span class="st">"datum.Age &lt;= age_param"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_opacity</span>(</span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">condition =</span> <span class="fu">list</span>(<span class="at">test =</span> <span class="st">"datum.Stroke == 0"</span>, <span class="at">value =</span> <span class="fl">0.2</span>),  </span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="dv">1</span>  </span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>interactive_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="htmlwidget-3cac363e5414f6499e9c" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3cac363e5414f6499e9c">{"x":{
+<div id="htmlwidget-e6156f2424bd894506a5" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e6156f2424bd894506a5">{"x":{
   "chart_spec": {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "height": 400,
@@ -62319,19 +62342,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>interactive_plot <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_boxplot</span>() <span class="sc">|&gt;</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"Smoking_Status"</span>, <span class="at">type =</span> <span class="st">"nominal"</span>, <span class="at">title =</span> <span class="st">"Smoking Status"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"Avg_Glucose"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"Average Glucose Level"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">"Stroke"</span>, <span class="at">type =</span> <span class="st">"nominal"</span>, <span class="at">title =</span> <span class="st">"Stroke Status"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_tooltip_array</span>(<span class="fu">c</span>(<span class="st">"Smoking_Status"</span>, <span class="st">"Avg_Glucose"</span>, <span class="st">"Stroke"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_xOffset</span>(<span class="st">"Smoking_Status"</span>)<span class="sc">|&gt;</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(strokeData)</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>interactive_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|  code-fold: true</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>interactive_plot <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_boxplot</span>() <span class="sc">|&gt;</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"Smoking_Status"</span>, <span class="at">type =</span> <span class="st">"nominal"</span>, <span class="at">title =</span> <span class="st">"Smoking Status"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"Avg_Glucose"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"Average Glucose Level"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">"Stroke"</span>, <span class="at">type =</span> <span class="st">"nominal"</span>, <span class="at">title =</span> <span class="st">"Stroke Status"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_tooltip_array</span>(<span class="fu">c</span>(<span class="st">"Smoking_Status"</span>, <span class="st">"Avg_Glucose"</span>, <span class="st">"Stroke"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_xOffset</span>(<span class="st">"Smoking_Status"</span>)<span class="sc">|&gt;</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(strokeData)</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>interactive_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="htmlwidget-2ca16a9ada9ecdc322f6" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2ca16a9ada9ecdc322f6">{"x":{
+<div id="htmlwidget-347734ee71ecd35aa690" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-347734ee71ecd35aa690">{"x":{
   "chart_spec": {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "height": 400,
@@ -182383,52 +182408,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert categorical variables to factors</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>strokeData <span class="ot">&lt;-</span> strokeData <span class="sc">|&gt;</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Gender =</span> <span class="fu">as.factor</span>(Gender),</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">SES =</span> <span class="fu">as.factor</span>(SES),</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">Smoking_Status =</span> <span class="fu">as.factor</span>(Smoking_Status),</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">Hypertension =</span> <span class="fu">as.factor</span>(Hypertension),</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">Heart_Disease =</span> <span class="fu">as.factor</span>(Heart_Disease),</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">Diabetes =</span> <span class="fu">as.factor</span>(Diabetes),</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">Stroke =</span> <span class="fu">as.factor</span>(Stroke))  </span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit Logistic Regression Model</span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>stroke_model <span class="ot">&lt;-</span> <span class="fu">glm</span>(Stroke <span class="sc">~</span> Age <span class="sc">+</span> Gender <span class="sc">+</span> SES <span class="sc">+</span> Hypertension <span class="sc">+</span> Heart_Disease <span class="sc">+</span> </span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>                     BMI <span class="sc">+</span> Avg_Glucose <span class="sc">+</span> Diabetes <span class="sc">+</span> Smoking_Status, </span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>                     <span class="at">data =</span> strokeData, <span class="at">family =</span> binomial)</span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Predict stroke probabilities</span></span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>strokeData_select<span class="sc">$</span>predicted_prob <span class="ot">&lt;-</span> <span class="fu">predict</span>(stroke_model, <span class="at">type =</span> <span class="st">"response"</span>)</span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a Vega-Lite visualization</span></span>
-<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>stroke_scatter <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
-<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_circle</span>() <span class="sc">|&gt;</span></span>
-<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"Age"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"Age"</span>) <span class="sc">|&gt;</span>  </span>
-<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"predicted_prob"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"Predicted Stroke Probability"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_tooltip_array</span>(<span class="fu">c</span>(<span class="st">"Age"</span>, <span class="st">"predicted_prob"</span>, <span class="st">"BMI"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(strokeData_select)</span>
-<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit LOESS model</span></span>
-<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>loess_fit <span class="ot">&lt;-</span> <span class="fu">loess</span>(predicted_prob <span class="sc">~</span> Age, <span class="at">data =</span> strokeData_select, <span class="at">span =</span> <span class="fl">0.5</span>)</span>
-<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new dataset with smoothed values</span></span>
-<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>stroke_loess <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>  <span class="at">Age =</span> strokeData_select<span class="sc">$</span>Age,</span>
-<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>  <span class="at">predicted_smooth =</span> <span class="fu">predict</span>(loess_fit, <span class="at">newdata =</span> strokeData_select)</span>
-<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Loess graphic</span></span>
-<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>loess_line <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_line</span>(<span class="at">color =</span> <span class="st">"red"</span>, <span class="at">opacity =</span> <span class="fl">0.8</span>) <span class="sc">|&gt;</span></span>
-<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"Age"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>) <span class="sc">|&gt;</span>  </span>
-<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"predicted_smooth"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(stroke_loess)</span>
-<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a><span class="co"># Layering</span></span>
-<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a>final_plot <span class="ot">&lt;-</span> <span class="fu">vl_layer</span>(stroke_scatter, loess_line)</span>
-<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a>final_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|  code-fold: true</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert categorical variables to factors</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>strokeData <span class="ot">&lt;-</span> strokeData <span class="sc">|&gt;</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Gender =</span> <span class="fu">as.factor</span>(Gender),</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">SES =</span> <span class="fu">as.factor</span>(SES),</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">Smoking_Status =</span> <span class="fu">as.factor</span>(Smoking_Status),</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">Hypertension =</span> <span class="fu">as.factor</span>(Hypertension),</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">Heart_Disease =</span> <span class="fu">as.factor</span>(Heart_Disease),</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">Diabetes =</span> <span class="fu">as.factor</span>(Diabetes),</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">Stroke =</span> <span class="fu">as.factor</span>(Stroke))  </span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit Logistic Regression Model</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>stroke_model <span class="ot">&lt;-</span> <span class="fu">glm</span>(Stroke <span class="sc">~</span> Age <span class="sc">+</span> Gender <span class="sc">+</span> SES <span class="sc">+</span> Hypertension <span class="sc">+</span> Heart_Disease <span class="sc">+</span> </span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>                     BMI <span class="sc">+</span> Avg_Glucose <span class="sc">+</span> Diabetes <span class="sc">+</span> Smoking_Status, </span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>                     <span class="at">data =</span> strokeData, <span class="at">family =</span> binomial)</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Predict stroke probabilities</span></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>strokeData_select<span class="sc">$</span>predicted_prob <span class="ot">&lt;-</span> <span class="fu">predict</span>(stroke_model, <span class="at">type =</span> <span class="st">"response"</span>)</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a Vega-Lite visualization</span></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>stroke_scatter <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_circle</span>() <span class="sc">|&gt;</span></span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"Age"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"Age"</span>) <span class="sc">|&gt;</span>  </span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"predicted_prob"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"Predicted Stroke Probability"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_tooltip_array</span>(<span class="fu">c</span>(<span class="st">"Age"</span>, <span class="st">"predicted_prob"</span>, <span class="st">"BMI"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(strokeData_select)</span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit LOESS model</span></span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>loess_fit <span class="ot">&lt;-</span> <span class="fu">loess</span>(predicted_prob <span class="sc">~</span> Age, <span class="at">data =</span> strokeData_select, <span class="at">span =</span> <span class="fl">0.5</span>)</span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new dataset with smoothed values</span></span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>stroke_loess <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>  <span class="at">Age =</span> strokeData_select<span class="sc">$</span>Age,</span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>  <span class="at">predicted_smooth =</span> <span class="fu">predict</span>(loess_fit, <span class="at">newdata =</span> strokeData_select)</span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Loess graphic</span></span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a>loess_line <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_line</span>(<span class="at">color =</span> <span class="st">"red"</span>, <span class="at">opacity =</span> <span class="fl">0.8</span>) <span class="sc">|&gt;</span></span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"Age"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>) <span class="sc">|&gt;</span>  </span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"predicted_smooth"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(stroke_loess)</span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Layering</span></span>
+<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a>final_plot <span class="ot">&lt;-</span> <span class="fu">vl_layer</span>(stroke_scatter, loess_line)</span>
+<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a>final_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="htmlwidget-7681fefac447ea612a9b" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
-<script type="application/json" data-for="htmlwidget-7681fefac447ea612a9b">{"x":{
+<div id="htmlwidget-22b211b937f4adadc5c0" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-22b211b937f4adadc5c0">{"x":{
   "chart_spec": {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "layer": [
@@ -292964,284 +292991,298 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb13" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="an">ttitle:</span><span class="co"> "Portfolio"</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Sucry Bendeck"</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "last-modified"</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="an">editor:</span><span class="co"> visual</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="an">embed-resources:</span><span class="co"> true</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="an">code-tools:</span><span class="co"> true</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="fu"># Components of the portfolio</span></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, include = FALSE}</span></span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="in">library(dplyr)</span></span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="in">library(jsonlite)</span></span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="in">library(tidyr)</span></span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="in">library(vegabrite)</span></span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise 1 (HW 4 revision)</span></span>
-<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="fu">### A.</span></span>
-<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a><span class="al">![Graph I like](GraphILike.png)</span></span>
-<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>I like this graph because it's easy to compare the kits and see their differences. The colors are good, making it easy to tell each kit type apart. The layout is clean, which helps make the comparisons easily. The data isn't cluttered, which makes the graphic easy on the eyes.</span>
-<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a><span class="fu">### B.</span></span>
-<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a><span class="al">![Graph I dont like](GraphIDont.png)</span></span>
-<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>I don't like this graph because it's hard to tell the kits apart. You need to scroll to see the legend, which is distracting and takes away from the story the graphic wants to tell us.</span>
-<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a><span class="fu">### C.</span></span>
-<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Kits</span></span>
-<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, include = FALSE}</span></span>
-<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a><span class="in">genes&lt;-read.csv("https://calvin-data304.netlify.app/data/twins-genetics-long.csv")</span></span>
-<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a><span class="in">str(genes)</span></span>
-<span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-45"><a href="#cb13-45" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a><span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_bar</span>() <span class="sc">|&gt;</span></span>
-<span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"pair:N"</span>, <span class="at">title =</span> <span class="st">"Twin Pair ID #"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-49"><a href="#cb13-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"genetic.share:Q"</span>, <span class="at">title =</span> <span class="st">"Genetic Share"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-50"><a href="#cb13-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">"kit:N"</span>, <span class="at">scale =</span> <span class="fu">list</span>(<span class="at">scheme =</span> <span class="st">"category10"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb13-51"><a href="#cb13-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_facet_column</span>(<span class="st">"id:N"</span>,<span class="at">title =</span> <span class="st">"Genetic Share Across Twin Pairs by Kit"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-52"><a href="#cb13-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_xOffset</span>(<span class="st">"kit"</span>)<span class="sc">|&gt;</span></span>
-<span id="cb13-53"><a href="#cb13-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(genes)</span>
-<span id="cb13-54"><a href="#cb13-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-55"><a href="#cb13-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-56"><a href="#cb13-56" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-57"><a href="#cb13-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-58"><a href="#cb13-58" aria-hidden="true" tabindex="-1"></a>This bar graph highlights that, although twins tend to share nearly all their DNA, small variations do occur. By creating a side-by-side bar graph, it's easier for the human eye to compare these variations. I hope that this graphic can help explain differences between twins, such as their appearance and health.</span>
-<span id="cb13-59"><a href="#cb13-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-62"><a href="#cb13-62" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-63"><a href="#cb13-63" aria-hidden="true" tabindex="-1"></a><span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">500</span>, <span class="at">width =</span> <span class="dv">700</span>, <span class="at">title =</span> <span class="st">"Genetic Similarity Across DNA Test Kits"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-64"><a href="#cb13-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_rect</span>() <span class="sc">|&gt;</span>  </span>
-<span id="cb13-65"><a href="#cb13-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"kit:N"</span>, <span class="at">title =</span> <span class="st">"DNA Test Kit"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-66"><a href="#cb13-66" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"pair:N"</span>, <span class="at">title =</span> <span class="st">"Twin Pair"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-67"><a href="#cb13-67" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">"genetic.share:Q"</span>, <span class="at">scale =</span> <span class="fu">list</span>(<span class="at">scheme =</span> <span class="st">"viridis"</span>), <span class="at">title =</span> <span class="st">"Genetic Share"</span>) <span class="sc">|&gt;</span>  </span>
-<span id="cb13-68"><a href="#cb13-68" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(genes)</span>
-<span id="cb13-69"><a href="#cb13-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-70"><a href="#cb13-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-71"><a href="#cb13-71" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-72"><a href="#cb13-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-73"><a href="#cb13-73" aria-hidden="true" tabindex="-1"></a>This heat map shows the discrepancies in how different DNA test kits report genetic share for each twin pair. The color palette represents the reported genetic share, with darker colors indicating lower similarity and lighter colors indicating higher similarity. This graphic highlights the potential inconsistency of the DNA testing kits.</span>
-<span id="cb13-74"><a href="#cb13-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-75"><a href="#cb13-75" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise 2 (Data and graphics challenge)</span></span>
-<span id="cb13-76"><a href="#cb13-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-77"><a href="#cb13-77" aria-hidden="true" tabindex="-1"></a><span class="al">![Analysis](AnalysisForPortfolio.png)</span></span>
-<span id="cb13-78"><a href="#cb13-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-79"><a href="#cb13-79" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>How our business compares to other businesses (over time and in February 2020):</span>
-<span id="cb13-80"><a href="#cb13-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-81"><a href="#cb13-81" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Business's Net Promoter Score (NPS) compares to other businesses over time, showing trends from January 2019 to February 2020. This analysis allows us to see how business's NPS has evolved compared to the competition. By examining these trends, we can identify periods where the business performed well and pinpoint times that may have had challenges. In February 2020 specifically, we can see NPS in relation to competitors, providing a snapshot of the market position at that time.</span>
-<span id="cb13-82"><a href="#cb13-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-83"><a href="#cb13-83" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>How the components of the net promoter score for our business have changed over time:</span>
-<span id="cb13-84"><a href="#cb13-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-85"><a href="#cb13-85" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>The NPS components for the business (Detractors, Passives, Promoters) have changed from January 2019 to February 2020. By analyzing these changes, we gain insights into customer sentiment. For example, an increase in Promoters indicates higher customer satisfaction and loyalty, while an increase in Detractors suggests areas that need improvement. This breakdown helps us understand how the composition of NPS score has evolved.</span>
-<span id="cb13-86"><a href="#cb13-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-87"><a href="#cb13-87" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise 3 (A new challenge)</span></span>
-<span id="cb13-88"><a href="#cb13-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-89"><a href="#cb13-89" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, include = FALSE}</span></span>
-<span id="cb13-90"><a href="#cb13-90" aria-hidden="true" tabindex="-1"></a><span class="in">tanzania&lt;-read.csv("tanzaniaDataSet.csv")</span></span>
-<span id="cb13-91"><a href="#cb13-91" aria-hidden="true" tabindex="-1"></a><span class="in">str(tanzania)</span></span>
-<span id="cb13-92"><a href="#cb13-92" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-93"><a href="#cb13-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-94"><a href="#cb13-94" aria-hidden="true" tabindex="-1"></a><span class="fu">### Data wrangling</span></span>
-<span id="cb13-95"><a href="#cb13-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-98"><a href="#cb13-98" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-99"><a href="#cb13-99" aria-hidden="true" tabindex="-1"></a><span class="co"># Renaming the variables</span></span>
-<span id="cb13-100"><a href="#cb13-100" aria-hidden="true" tabindex="-1"></a>tanzania_clean <span class="ot">&lt;-</span> tanzania <span class="sc">|&gt;</span></span>
-<span id="cb13-101"><a href="#cb13-101" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
-<span id="cb13-102"><a href="#cb13-102" aria-hidden="true" tabindex="-1"></a>    <span class="at">Survey_Year =</span> DHS.Survey.Year,</span>
-<span id="cb13-103"><a href="#cb13-103" aria-hidden="true" tabindex="-1"></a>    <span class="at">Total_fertility_Rate =</span> Total.Fertility.Rate..ages.<span class="dv">15</span>.<span class="fl">49.</span>,</span>
-<span id="cb13-104"><a href="#cb13-104" aria-hidden="true" tabindex="-1"></a>    <span class="at">Contraception_Rate =</span> Contraception....,</span>
-<span id="cb13-105"><a href="#cb13-105" aria-hidden="true" tabindex="-1"></a>    <span class="at">Unmet_Planning_Rate =</span> Unmet.Planning....</span>
-<span id="cb13-106"><a href="#cb13-106" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb13-107"><a href="#cb13-107" aria-hidden="true" tabindex="-1"></a><span class="co"># Dealing with the years</span></span>
-<span id="cb13-108"><a href="#cb13-108" aria-hidden="true" tabindex="-1"></a>tanzania_split <span class="ot">&lt;-</span> tanzania_clean <span class="sc">|&gt;</span></span>
-<span id="cb13-109"><a href="#cb13-109" aria-hidden="true" tabindex="-1"></a> <span class="fu">separate</span>(Survey_Year, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"start_year"</span>, <span class="st">"end_year"</span>), <span class="at">sep =</span> <span class="st">"-"</span>, <span class="at">fill =</span> <span class="st">"right"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-110"><a href="#cb13-110" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Convert to integers</span></span>
-<span id="cb13-111"><a href="#cb13-111" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb13-112"><a href="#cb13-112" aria-hidden="true" tabindex="-1"></a>    <span class="at">start_year =</span> <span class="fu">as.integer</span>(start_year),</span>
-<span id="cb13-113"><a href="#cb13-113" aria-hidden="true" tabindex="-1"></a>    <span class="at">end_year =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(end_year), start_year, <span class="fu">as.integer</span>(end_year))</span>
-<span id="cb13-114"><a href="#cb13-114" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb13-115"><a href="#cb13-115" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Replicate data for each year in the range</span></span>
-<span id="cb13-116"><a href="#cb13-116" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">|&gt;</span></span>
-<span id="cb13-117"><a href="#cb13-117" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">list</span>(<span class="fu">seq</span>(start_year, end_year))) <span class="sc">|&gt;</span></span>
-<span id="cb13-118"><a href="#cb13-118" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest</span>(<span class="at">cols =</span> <span class="fu">c</span>(year)) <span class="sc">|&gt;</span></span>
-<span id="cb13-119"><a href="#cb13-119" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>start_year, <span class="sc">-</span>end_year)</span>
-<span id="cb13-120"><a href="#cb13-120" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-121"><a href="#cb13-121" aria-hidden="true" tabindex="-1"></a><span class="co"># Displaying the data frame</span></span>
-<span id="cb13-122"><a href="#cb13-122" aria-hidden="true" tabindex="-1"></a>tanzania_split</span>
-<span id="cb13-123"><a href="#cb13-123" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-124"><a href="#cb13-124" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-127"><a href="#cb13-127" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-128"><a href="#cb13-128" aria-hidden="true" tabindex="-1"></a><span class="co">#Arrage by year ascending</span></span>
-<span id="cb13-129"><a href="#cb13-129" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split <span class="ot">&lt;-</span> tanzania_split <span class="sc">|&gt;</span></span>
-<span id="cb13-130"><a href="#cb13-130" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(year)</span>
-<span id="cb13-131"><a href="#cb13-131" aria-hidden="true" tabindex="-1"></a><span class="co">#converting to long</span></span>
-<span id="cb13-132"><a href="#cb13-132" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split_long <span class="ot">&lt;-</span> sorted_tanzania_split <span class="sc">|&gt;</span></span>
-<span id="cb13-133"><a href="#cb13-133" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(Total_fertility_Rate, Contraception_Rate, Unmet_Planning_Rate),</span>
-<span id="cb13-134"><a href="#cb13-134" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"variable"</span>, <span class="at">values_to =</span> <span class="st">"value"</span>)</span>
-<span id="cb13-135"><a href="#cb13-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-136"><a href="#cb13-136" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split_long<span class="sc">$</span>variable <span class="ot">&lt;-</span> <span class="fu">factor</span>(sorted_tanzania_split_long<span class="sc">$</span>variable)</span>
-<span id="cb13-137"><a href="#cb13-137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-138"><a href="#cb13-138" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split_long<span class="sc">$</span>year <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(sorted_tanzania_split_long<span class="sc">$</span>year)</span>
-<span id="cb13-139"><a href="#cb13-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-140"><a href="#cb13-140" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split_long<span class="sc">$</span>year <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">as.character</span>(sorted_tanzania_split_long<span class="sc">$</span>year))</span>
-<span id="cb13-141"><a href="#cb13-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-142"><a href="#cb13-142" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split_long<span class="sc">$</span>variable <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">"_"</span>, <span class="st">" "</span>, sorted_tanzania_split_long<span class="sc">$</span>variable)</span>
-<span id="cb13-143"><a href="#cb13-143" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(sorted_tanzania_split_long)</span>
-<span id="cb13-144"><a href="#cb13-144" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-145"><a href="#cb13-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-146"><a href="#cb13-146" aria-hidden="true" tabindex="-1"></a><span class="fu">### Graphic</span></span>
-<span id="cb13-147"><a href="#cb13-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-150"><a href="#cb13-150" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-151"><a href="#cb13-151" aria-hidden="true" tabindex="-1"></a>line_chart <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-152"><a href="#cb13-152" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_line</span>(<span class="at">point =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-153"><a href="#cb13-153" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"year"</span>, <span class="at">type =</span> <span class="st">"ordinal"</span>, <span class="at">axis =</span> <span class="fu">list</span>(<span class="at">labelAngle =</span> <span class="dv">0</span>), <span class="at">title =</span> <span class="st">""</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-154"><a href="#cb13-154" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"value"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"Rate (%)"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-155"><a href="#cb13-155" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(sorted_tanzania_split_long) </span>
-<span id="cb13-156"><a href="#cb13-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-157"><a href="#cb13-157" aria-hidden="true" tabindex="-1"></a>line_chart <span class="ot">&lt;-</span>line_chart <span class="sc">|&gt;</span></span>
-<span id="cb13-158"><a href="#cb13-158" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">"variable"</span>, <span class="at">type =</span> <span class="st">"nominal"</span>, <span class="at">title =</span> <span class="st">"Variable"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-159"><a href="#cb13-159" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_point_selection</span>(<span class="st">"variable_param"</span>, <span class="at">bind =</span> <span class="st">"legend"</span>, <span class="at">encodings =</span> <span class="fu">list</span>(<span class="st">"color"</span>) )<span class="sc">|&gt;</span></span>
-<span id="cb13-160"><a href="#cb13-160" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_opacity</span>(<span class="at">value =</span> <span class="fl">0.2</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-161"><a href="#cb13-161" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_condition_opacity</span>(<span class="at">param =</span> <span class="st">"variable_param"</span>, <span class="at">value =</span> <span class="dv">1</span>)</span>
-<span id="cb13-162"><a href="#cb13-162" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-163"><a href="#cb13-163" aria-hidden="true" tabindex="-1"></a>line_chart</span>
-<span id="cb13-164"><a href="#cb13-164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-165"><a href="#cb13-165" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-166"><a href="#cb13-166" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-167"><a href="#cb13-167" aria-hidden="true" tabindex="-1"></a>The story I am trying to tell with the graphic above is a simple one: how the different rates of patterns of reproductive health have evolved over time in Tanzania. For example, the fertility rate has dropped slightly since the first survey, while the contraception rate has increased almost exponentially, with the data stopping in the last two years.</span>
-<span id="cb13-168"><a href="#cb13-168" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-169"><a href="#cb13-169" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-170"><a href="#cb13-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-171"><a href="#cb13-171" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-172"><a href="#cb13-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-173"><a href="#cb13-173" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise 4 (Your masterpiece)</span></span>
-<span id="cb13-174"><a href="#cb13-174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-177"><a href="#cb13-177" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-178"><a href="#cb13-178" aria-hidden="true" tabindex="-1"></a>strokeData <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"strokeData.csv"</span>)</span>
-<span id="cb13-179"><a href="#cb13-179" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(strokeData)</span>
-<span id="cb13-180"><a href="#cb13-180" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-181"><a href="#cb13-181" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-184"><a href="#cb13-184" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-185"><a href="#cb13-185" aria-hidden="true" tabindex="-1"></a><span class="co">#|  code-fold: true</span></span>
-<span id="cb13-186"><a href="#cb13-186" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-187"><a href="#cb13-187" aria-hidden="true" tabindex="-1"></a>strokeData<span class="sc">$</span>Age <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(strokeData<span class="sc">$</span>Age)</span>
-<span id="cb13-188"><a href="#cb13-188" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb13-189"><a href="#cb13-189" aria-hidden="true" tabindex="-1"></a>strokeData_select <span class="ot">&lt;-</span> strokeData <span class="sc">|&gt;</span></span>
-<span id="cb13-190"><a href="#cb13-190" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Age, BMI, Avg_Glucose, Stroke)  </span>
-<span id="cb13-191"><a href="#cb13-191" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-192"><a href="#cb13-192" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-193"><a href="#cb13-193" aria-hidden="true" tabindex="-1"></a>interactive_plot <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-194"><a href="#cb13-194" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_circle</span>() <span class="sc">|&gt;</span></span>
-<span id="cb13-195"><a href="#cb13-195" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"Avg_Glucose"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"Average Glucose Level"</span>) <span class="sc">|&gt;</span>  </span>
-<span id="cb13-196"><a href="#cb13-196" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"BMI"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"BMI"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-197"><a href="#cb13-197" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">"Stroke"</span>, <span class="at">type =</span> <span class="st">"nominal"</span>, <span class="at">title =</span> <span class="st">"Stroke Status"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-198"><a href="#cb13-198" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_tooltip_array</span>(<span class="fu">c</span>(<span class="st">"Avg_Glucose"</span>, <span class="st">"BMI"</span>, <span class="st">"Age"</span>, <span class="st">"Stroke"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb13-199"><a href="#cb13-199" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(strokeData_select) <span class="sc">|&gt;</span></span>
-<span id="cb13-200"><a href="#cb13-200" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb13-201"><a href="#cb13-201" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_parameter</span>(<span class="st">"age_param"</span>, <span class="at">value =</span> <span class="fu">min</span>(strokeData<span class="sc">$</span>Age)) <span class="sc">|&gt;</span></span>
-<span id="cb13-202"><a href="#cb13-202" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_bind_range_input</span>(</span>
-<span id="cb13-203"><a href="#cb13-203" aria-hidden="true" tabindex="-1"></a>    <span class="at">parameter_name =</span> <span class="st">"age_param"</span>, </span>
-<span id="cb13-204"><a href="#cb13-204" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Age: "</span>,                 </span>
-<span id="cb13-205"><a href="#cb13-205" aria-hidden="true" tabindex="-1"></a>    <span class="at">min =</span> <span class="fu">min</span>(strokeData<span class="sc">$</span>Age),</span>
-<span id="cb13-206"><a href="#cb13-206" aria-hidden="true" tabindex="-1"></a>    <span class="at">max =</span> <span class="fu">max</span>(strokeData<span class="sc">$</span>Age)</span>
-<span id="cb13-207"><a href="#cb13-207" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb13-208"><a href="#cb13-208" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_filter</span>(<span class="st">"datum.Age &lt;= age_param"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-209"><a href="#cb13-209" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb13-210"><a href="#cb13-210" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_opacity</span>(</span>
-<span id="cb13-211"><a href="#cb13-211" aria-hidden="true" tabindex="-1"></a>    <span class="at">condition =</span> <span class="fu">list</span>(<span class="at">test =</span> <span class="st">"datum.Stroke == 0"</span>, <span class="at">value =</span> <span class="fl">0.2</span>),  </span>
-<span id="cb13-212"><a href="#cb13-212" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="dv">1</span>  </span>
-<span id="cb13-213"><a href="#cb13-213" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb13-214"><a href="#cb13-214" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-215"><a href="#cb13-215" aria-hidden="true" tabindex="-1"></a>interactive_plot</span>
-<span id="cb13-216"><a href="#cb13-216" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-217"><a href="#cb13-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-218"><a href="#cb13-218" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-219"><a href="#cb13-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-220"><a href="#cb13-220" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-223"><a href="#cb13-223" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-224"><a href="#cb13-224" aria-hidden="true" tabindex="-1"></a>interactive_plot <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-225"><a href="#cb13-225" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_boxplot</span>() <span class="sc">|&gt;</span></span>
-<span id="cb13-226"><a href="#cb13-226" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"Smoking_Status"</span>, <span class="at">type =</span> <span class="st">"nominal"</span>, <span class="at">title =</span> <span class="st">"Smoking Status"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-227"><a href="#cb13-227" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"Avg_Glucose"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"Average Glucose Level"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-228"><a href="#cb13-228" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">"Stroke"</span>, <span class="at">type =</span> <span class="st">"nominal"</span>, <span class="at">title =</span> <span class="st">"Stroke Status"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-229"><a href="#cb13-229" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_tooltip_array</span>(<span class="fu">c</span>(<span class="st">"Smoking_Status"</span>, <span class="st">"Avg_Glucose"</span>, <span class="st">"Stroke"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb13-230"><a href="#cb13-230" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_xOffset</span>(<span class="st">"Smoking_Status"</span>)<span class="sc">|&gt;</span></span>
-<span id="cb13-231"><a href="#cb13-231" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(strokeData)</span>
-<span id="cb13-232"><a href="#cb13-232" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-233"><a href="#cb13-233" aria-hidden="true" tabindex="-1"></a>interactive_plot</span>
-<span id="cb13-234"><a href="#cb13-234" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-235"><a href="#cb13-235" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-236"><a href="#cb13-236" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-237"><a href="#cb13-237" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-238"><a href="#cb13-238" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-239"><a href="#cb13-239" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-242"><a href="#cb13-242" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-243"><a href="#cb13-243" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert categorical variables to factors</span></span>
-<span id="cb13-244"><a href="#cb13-244" aria-hidden="true" tabindex="-1"></a>strokeData <span class="ot">&lt;-</span> strokeData <span class="sc">|&gt;</span></span>
-<span id="cb13-245"><a href="#cb13-245" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Gender =</span> <span class="fu">as.factor</span>(Gender),</span>
-<span id="cb13-246"><a href="#cb13-246" aria-hidden="true" tabindex="-1"></a>         <span class="at">SES =</span> <span class="fu">as.factor</span>(SES),</span>
-<span id="cb13-247"><a href="#cb13-247" aria-hidden="true" tabindex="-1"></a>         <span class="at">Smoking_Status =</span> <span class="fu">as.factor</span>(Smoking_Status),</span>
-<span id="cb13-248"><a href="#cb13-248" aria-hidden="true" tabindex="-1"></a>         <span class="at">Hypertension =</span> <span class="fu">as.factor</span>(Hypertension),</span>
-<span id="cb13-249"><a href="#cb13-249" aria-hidden="true" tabindex="-1"></a>         <span class="at">Heart_Disease =</span> <span class="fu">as.factor</span>(Heart_Disease),</span>
-<span id="cb13-250"><a href="#cb13-250" aria-hidden="true" tabindex="-1"></a>         <span class="at">Diabetes =</span> <span class="fu">as.factor</span>(Diabetes),</span>
-<span id="cb13-251"><a href="#cb13-251" aria-hidden="true" tabindex="-1"></a>         <span class="at">Stroke =</span> <span class="fu">as.factor</span>(Stroke))  </span>
-<span id="cb13-252"><a href="#cb13-252" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-253"><a href="#cb13-253" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit Logistic Regression Model</span></span>
-<span id="cb13-254"><a href="#cb13-254" aria-hidden="true" tabindex="-1"></a>stroke_model <span class="ot">&lt;-</span> <span class="fu">glm</span>(Stroke <span class="sc">~</span> Age <span class="sc">+</span> Gender <span class="sc">+</span> SES <span class="sc">+</span> Hypertension <span class="sc">+</span> Heart_Disease <span class="sc">+</span> </span>
-<span id="cb13-255"><a href="#cb13-255" aria-hidden="true" tabindex="-1"></a>                     BMI <span class="sc">+</span> Avg_Glucose <span class="sc">+</span> Diabetes <span class="sc">+</span> Smoking_Status, </span>
-<span id="cb13-256"><a href="#cb13-256" aria-hidden="true" tabindex="-1"></a>                     <span class="at">data =</span> strokeData, <span class="at">family =</span> binomial)</span>
-<span id="cb13-257"><a href="#cb13-257" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-258"><a href="#cb13-258" aria-hidden="true" tabindex="-1"></a><span class="co"># Predict stroke probabilities</span></span>
-<span id="cb13-259"><a href="#cb13-259" aria-hidden="true" tabindex="-1"></a>strokeData_select<span class="sc">$</span>predicted_prob <span class="ot">&lt;-</span> <span class="fu">predict</span>(stroke_model, <span class="at">type =</span> <span class="st">"response"</span>)</span>
-<span id="cb13-260"><a href="#cb13-260" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-261"><a href="#cb13-261" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a Vega-Lite visualization</span></span>
-<span id="cb13-262"><a href="#cb13-262" aria-hidden="true" tabindex="-1"></a>stroke_scatter <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-263"><a href="#cb13-263" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_circle</span>() <span class="sc">|&gt;</span></span>
-<span id="cb13-264"><a href="#cb13-264" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"Age"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"Age"</span>) <span class="sc">|&gt;</span>  </span>
-<span id="cb13-265"><a href="#cb13-265" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"predicted_prob"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"Predicted Stroke Probability"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-266"><a href="#cb13-266" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_tooltip_array</span>(<span class="fu">c</span>(<span class="st">"Age"</span>, <span class="st">"predicted_prob"</span>, <span class="st">"BMI"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb13-267"><a href="#cb13-267" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(strokeData_select)</span>
-<span id="cb13-268"><a href="#cb13-268" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit LOESS model</span></span>
-<span id="cb13-269"><a href="#cb13-269" aria-hidden="true" tabindex="-1"></a>loess_fit <span class="ot">&lt;-</span> <span class="fu">loess</span>(predicted_prob <span class="sc">~</span> Age, <span class="at">data =</span> strokeData_select, <span class="at">span =</span> <span class="fl">0.5</span>)</span>
-<span id="cb13-270"><a href="#cb13-270" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-271"><a href="#cb13-271" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new dataset with smoothed values</span></span>
-<span id="cb13-272"><a href="#cb13-272" aria-hidden="true" tabindex="-1"></a>stroke_loess <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb13-273"><a href="#cb13-273" aria-hidden="true" tabindex="-1"></a>  <span class="at">Age =</span> strokeData_select<span class="sc">$</span>Age,</span>
-<span id="cb13-274"><a href="#cb13-274" aria-hidden="true" tabindex="-1"></a>  <span class="at">predicted_smooth =</span> <span class="fu">predict</span>(loess_fit, <span class="at">newdata =</span> strokeData_select)</span>
-<span id="cb13-275"><a href="#cb13-275" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb13-276"><a href="#cb13-276" aria-hidden="true" tabindex="-1"></a><span class="co"># Loess graphic</span></span>
-<span id="cb13-277"><a href="#cb13-277" aria-hidden="true" tabindex="-1"></a>loess_line <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb13-278"><a href="#cb13-278" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_line</span>(<span class="at">color =</span> <span class="st">"red"</span>, <span class="at">opacity =</span> <span class="fl">0.8</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-279"><a href="#cb13-279" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"Age"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>) <span class="sc">|&gt;</span>  </span>
-<span id="cb13-280"><a href="#cb13-280" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"predicted_smooth"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-281"><a href="#cb13-281" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(stroke_loess)</span>
-<span id="cb13-282"><a href="#cb13-282" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-283"><a href="#cb13-283" aria-hidden="true" tabindex="-1"></a><span class="co"># Layering</span></span>
-<span id="cb13-284"><a href="#cb13-284" aria-hidden="true" tabindex="-1"></a>final_plot <span class="ot">&lt;-</span> <span class="fu">vl_layer</span>(stroke_scatter, loess_line)</span>
-<span id="cb13-285"><a href="#cb13-285" aria-hidden="true" tabindex="-1"></a>final_plot</span>
-<span id="cb13-286"><a href="#cb13-286" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-287"><a href="#cb13-287" aria-hidden="true" tabindex="-1"></a>I decided to use a basic stroke data set because a while back my dad had 5 strokes and he had many of the condtions mentioned in the data set from heart diesea, hypertension, he was also a former smoker and he is also diabeteic and it is because he didnt take care of the diabeites the avgerage glucuse was pretty high. So, the combination of all these factors caused him to have a stroke</span>
-<span id="cb13-288"><a href="#cb13-288" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-289"><a href="#cb13-289" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-290"><a href="#cb13-290" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-291"><a href="#cb13-291" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-292"><a href="#cb13-292" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-293"><a href="#cb13-293" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-294"><a href="#cb13-294" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-295"><a href="#cb13-295" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-296"><a href="#cb13-296" aria-hidden="true" tabindex="-1"></a></span>
+<div class="sourceCode" id="cb15" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="an">ttitle:</span><span class="co"> "Portfolio"</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Sucry Bendeck"</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "last-modified"</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="an">editor:</span><span class="co"> visual</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="an">embed-resources:</span><span class="co"> true</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="an">code-tools:</span><span class="co"> true</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="fu"># Components of the portfolio</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, include = FALSE}</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="in">library(dplyr)</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="in">library(jsonlite)</span></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="in">library(tidyr)</span></span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="in">library(vegabrite)</span></span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise 1 (HW 4 revision)</span></span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a><span class="fu">### A.</span></span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a><span class="al">![Graph I like](GraphILike.png)</span></span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>I like this graph because it's easy to compare the kits and see their differences. The colors are good, making it easy to tell each kit type apart. The layout is clean, which helps make the comparisons easily. The data isn't cluttered, which makes the graphic easy on the eyes.</span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a><span class="fu">### B.</span></span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a><span class="al">![Graph I dont like](GraphIDont.png)</span></span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>I don't like this graph because it's hard to tell the kits apart. You need to scroll to see the legend, which is distracting and takes away from the story the graphic wants to tell us.</span>
+<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a><span class="fu">### C.</span></span>
+<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Kits</span></span>
+<span id="cb15-37"><a href="#cb15-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-38"><a href="#cb15-38" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, include = FALSE}</span></span>
+<span id="cb15-39"><a href="#cb15-39" aria-hidden="true" tabindex="-1"></a><span class="in">genes&lt;-read.csv("https://calvin-data304.netlify.app/data/twins-genetics-long.csv")</span></span>
+<span id="cb15-40"><a href="#cb15-40" aria-hidden="true" tabindex="-1"></a><span class="in">str(genes)</span></span>
+<span id="cb15-41"><a href="#cb15-41" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-42"><a href="#cb15-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-45"><a href="#cb15-45" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb15-46"><a href="#cb15-46" aria-hidden="true" tabindex="-1"></a><span class="co">#|  code-fold: true</span></span>
+<span id="cb15-47"><a href="#cb15-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-48"><a href="#cb15-48" aria-hidden="true" tabindex="-1"></a><span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-49"><a href="#cb15-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_bar</span>() <span class="sc">|&gt;</span></span>
+<span id="cb15-50"><a href="#cb15-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"pair:N"</span>, <span class="at">title =</span> <span class="st">"Twin Pair ID #"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-51"><a href="#cb15-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"genetic.share:Q"</span>, <span class="at">title =</span> <span class="st">"Genetic Share"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-52"><a href="#cb15-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">"kit:N"</span>, <span class="at">scale =</span> <span class="fu">list</span>(<span class="at">scheme =</span> <span class="st">"category10"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb15-53"><a href="#cb15-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_facet_column</span>(<span class="st">"id:N"</span>,<span class="at">title =</span> <span class="st">"Genetic Share Across Twin Pairs by Kit"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-54"><a href="#cb15-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_xOffset</span>(<span class="st">"kit"</span>)<span class="sc">|&gt;</span></span>
+<span id="cb15-55"><a href="#cb15-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(genes)</span>
+<span id="cb15-56"><a href="#cb15-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-57"><a href="#cb15-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-58"><a href="#cb15-58" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-59"><a href="#cb15-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-60"><a href="#cb15-60" aria-hidden="true" tabindex="-1"></a>This bar graph highlights that, although twins tend to share nearly all their DNA, small variations do occur. By creating a side-by-side bar graph, it's easier for the human eye to compare these variations. I hope that this graphic can help explain differences between twins, such as their appearance and health.</span>
+<span id="cb15-61"><a href="#cb15-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-64"><a href="#cb15-64" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb15-65"><a href="#cb15-65" aria-hidden="true" tabindex="-1"></a><span class="co">#|  code-fold: true</span></span>
+<span id="cb15-66"><a href="#cb15-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-67"><a href="#cb15-67" aria-hidden="true" tabindex="-1"></a><span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">500</span>, <span class="at">width =</span> <span class="dv">700</span>, <span class="at">title =</span> <span class="st">"Genetic Similarity Across DNA Test Kits"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-68"><a href="#cb15-68" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_rect</span>() <span class="sc">|&gt;</span>  </span>
+<span id="cb15-69"><a href="#cb15-69" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"kit:N"</span>, <span class="at">title =</span> <span class="st">"DNA Test Kit"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-70"><a href="#cb15-70" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"pair:N"</span>, <span class="at">title =</span> <span class="st">"Twin Pair"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-71"><a href="#cb15-71" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">"genetic.share:Q"</span>, <span class="at">scale =</span> <span class="fu">list</span>(<span class="at">scheme =</span> <span class="st">"viridis"</span>), <span class="at">title =</span> <span class="st">"Genetic Share"</span>) <span class="sc">|&gt;</span>  </span>
+<span id="cb15-72"><a href="#cb15-72" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(genes)</span>
+<span id="cb15-73"><a href="#cb15-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-74"><a href="#cb15-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-75"><a href="#cb15-75" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-76"><a href="#cb15-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-77"><a href="#cb15-77" aria-hidden="true" tabindex="-1"></a>This heat map shows the discrepancies in how different DNA test kits report genetic share for each twin pair. The color palette represents the reported genetic share, with darker colors indicating lower similarity and lighter colors indicating higher similarity. This graphic highlights the potential inconsistency of the DNA testing kits.</span>
+<span id="cb15-78"><a href="#cb15-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-79"><a href="#cb15-79" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise 2 (Data and graphics challenge)</span></span>
+<span id="cb15-80"><a href="#cb15-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-81"><a href="#cb15-81" aria-hidden="true" tabindex="-1"></a><span class="al">![Analysis](AnalysisForPortfolio.png)</span></span>
+<span id="cb15-82"><a href="#cb15-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-83"><a href="#cb15-83" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>How our business compares to other businesses (over time and in February 2020):</span>
+<span id="cb15-84"><a href="#cb15-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-85"><a href="#cb15-85" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Business's Net Promoter Score (NPS) compares to other businesses over time, showing trends from January 2019 to February 2020. This analysis allows us to see how business's NPS has evolved compared to the competition. By examining these trends, we can identify periods where the business performed well and pinpoint times that may have had challenges. In February 2020 specifically, we can see NPS in relation to competitors, providing a snapshot of the market position at that time.</span>
+<span id="cb15-86"><a href="#cb15-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-87"><a href="#cb15-87" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>How the components of the net promoter score for our business have changed over time:</span>
+<span id="cb15-88"><a href="#cb15-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-89"><a href="#cb15-89" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>The NPS components for the business (Detractors, Passives, Promoters) have changed from January 2019 to February 2020. By analyzing these changes, we gain insights into customer sentiment. For example, an increase in Promoters indicates higher customer satisfaction and loyalty, while an increase in Detractors suggests areas that need improvement. This breakdown helps us understand how the composition of NPS score has evolved.</span>
+<span id="cb15-90"><a href="#cb15-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-91"><a href="#cb15-91" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise 3 (A new challenge)</span></span>
+<span id="cb15-92"><a href="#cb15-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-95"><a href="#cb15-95" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb15-96"><a href="#cb15-96" aria-hidden="true" tabindex="-1"></a>tanzania<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">"tanzaniaDataSet.csv"</span>)</span>
+<span id="cb15-97"><a href="#cb15-97" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(tanzania)</span>
+<span id="cb15-98"><a href="#cb15-98" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-99"><a href="#cb15-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-100"><a href="#cb15-100" aria-hidden="true" tabindex="-1"></a><span class="fu">### Data wrangling</span></span>
+<span id="cb15-101"><a href="#cb15-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-104"><a href="#cb15-104" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb15-105"><a href="#cb15-105" aria-hidden="true" tabindex="-1"></a><span class="co">#|  code-fold: true</span></span>
+<span id="cb15-106"><a href="#cb15-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-107"><a href="#cb15-107" aria-hidden="true" tabindex="-1"></a><span class="co"># Renaming the variables</span></span>
+<span id="cb15-108"><a href="#cb15-108" aria-hidden="true" tabindex="-1"></a>tanzania_clean <span class="ot">&lt;-</span> tanzania <span class="sc">|&gt;</span></span>
+<span id="cb15-109"><a href="#cb15-109" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb15-110"><a href="#cb15-110" aria-hidden="true" tabindex="-1"></a>    <span class="at">Survey_Year =</span> DHS.Survey.Year,</span>
+<span id="cb15-111"><a href="#cb15-111" aria-hidden="true" tabindex="-1"></a>    <span class="at">Total_fertility_Rate =</span> Total.Fertility.Rate..ages.<span class="dv">15</span>.<span class="fl">49.</span>,</span>
+<span id="cb15-112"><a href="#cb15-112" aria-hidden="true" tabindex="-1"></a>    <span class="at">Contraception_Rate =</span> Contraception....,</span>
+<span id="cb15-113"><a href="#cb15-113" aria-hidden="true" tabindex="-1"></a>    <span class="at">Unmet_Planning_Rate =</span> Unmet.Planning....</span>
+<span id="cb15-114"><a href="#cb15-114" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb15-115"><a href="#cb15-115" aria-hidden="true" tabindex="-1"></a><span class="co"># Dealing with the years</span></span>
+<span id="cb15-116"><a href="#cb15-116" aria-hidden="true" tabindex="-1"></a>tanzania_split <span class="ot">&lt;-</span> tanzania_clean <span class="sc">|&gt;</span></span>
+<span id="cb15-117"><a href="#cb15-117" aria-hidden="true" tabindex="-1"></a> <span class="fu">separate</span>(Survey_Year, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"start_year"</span>, <span class="st">"end_year"</span>), <span class="at">sep =</span> <span class="st">"-"</span>, <span class="at">fill =</span> <span class="st">"right"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-118"><a href="#cb15-118" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Convert to integers</span></span>
+<span id="cb15-119"><a href="#cb15-119" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb15-120"><a href="#cb15-120" aria-hidden="true" tabindex="-1"></a>    <span class="at">start_year =</span> <span class="fu">as.integer</span>(start_year),</span>
+<span id="cb15-121"><a href="#cb15-121" aria-hidden="true" tabindex="-1"></a>    <span class="at">end_year =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(end_year), start_year, <span class="fu">as.integer</span>(end_year))</span>
+<span id="cb15-122"><a href="#cb15-122" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb15-123"><a href="#cb15-123" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Replicate data for each year in the range</span></span>
+<span id="cb15-124"><a href="#cb15-124" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">|&gt;</span></span>
+<span id="cb15-125"><a href="#cb15-125" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">list</span>(<span class="fu">seq</span>(start_year, end_year))) <span class="sc">|&gt;</span></span>
+<span id="cb15-126"><a href="#cb15-126" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest</span>(<span class="at">cols =</span> <span class="fu">c</span>(year)) <span class="sc">|&gt;</span></span>
+<span id="cb15-127"><a href="#cb15-127" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>start_year, <span class="sc">-</span>end_year)</span>
+<span id="cb15-128"><a href="#cb15-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-129"><a href="#cb15-129" aria-hidden="true" tabindex="-1"></a><span class="co"># Displaying the data frame</span></span>
+<span id="cb15-130"><a href="#cb15-130" aria-hidden="true" tabindex="-1"></a>tanzania_split</span>
+<span id="cb15-131"><a href="#cb15-131" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-132"><a href="#cb15-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-135"><a href="#cb15-135" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb15-136"><a href="#cb15-136" aria-hidden="true" tabindex="-1"></a><span class="co">#|  code-fold: true</span></span>
+<span id="cb15-137"><a href="#cb15-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-138"><a href="#cb15-138" aria-hidden="true" tabindex="-1"></a><span class="co">#Arrage by year ascending</span></span>
+<span id="cb15-139"><a href="#cb15-139" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split <span class="ot">&lt;-</span> tanzania_split <span class="sc">|&gt;</span></span>
+<span id="cb15-140"><a href="#cb15-140" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(year)</span>
+<span id="cb15-141"><a href="#cb15-141" aria-hidden="true" tabindex="-1"></a><span class="co">#converting to long</span></span>
+<span id="cb15-142"><a href="#cb15-142" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split_long <span class="ot">&lt;-</span> sorted_tanzania_split <span class="sc">|&gt;</span></span>
+<span id="cb15-143"><a href="#cb15-143" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(Total_fertility_Rate, Contraception_Rate, Unmet_Planning_Rate),</span>
+<span id="cb15-144"><a href="#cb15-144" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"variable"</span>, <span class="at">values_to =</span> <span class="st">"value"</span>)</span>
+<span id="cb15-145"><a href="#cb15-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-146"><a href="#cb15-146" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split_long<span class="sc">$</span>variable <span class="ot">&lt;-</span> <span class="fu">factor</span>(sorted_tanzania_split_long<span class="sc">$</span>variable)</span>
+<span id="cb15-147"><a href="#cb15-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-148"><a href="#cb15-148" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split_long<span class="sc">$</span>year <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(sorted_tanzania_split_long<span class="sc">$</span>year)</span>
+<span id="cb15-149"><a href="#cb15-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-150"><a href="#cb15-150" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split_long<span class="sc">$</span>year <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">as.character</span>(sorted_tanzania_split_long<span class="sc">$</span>year))</span>
+<span id="cb15-151"><a href="#cb15-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-152"><a href="#cb15-152" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split_long<span class="sc">$</span>variable <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">"_"</span>, <span class="st">" "</span>, sorted_tanzania_split_long<span class="sc">$</span>variable)</span>
+<span id="cb15-153"><a href="#cb15-153" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(sorted_tanzania_split_long)</span>
+<span id="cb15-154"><a href="#cb15-154" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-155"><a href="#cb15-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-156"><a href="#cb15-156" aria-hidden="true" tabindex="-1"></a><span class="fu">### Graphic</span></span>
+<span id="cb15-157"><a href="#cb15-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-160"><a href="#cb15-160" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb15-161"><a href="#cb15-161" aria-hidden="true" tabindex="-1"></a><span class="co">#|  code-fold: true</span></span>
+<span id="cb15-162"><a href="#cb15-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-163"><a href="#cb15-163" aria-hidden="true" tabindex="-1"></a>line_chart <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-164"><a href="#cb15-164" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_line</span>(<span class="at">point =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-165"><a href="#cb15-165" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"year"</span>, <span class="at">type =</span> <span class="st">"ordinal"</span>, <span class="at">axis =</span> <span class="fu">list</span>(<span class="at">labelAngle =</span> <span class="dv">0</span>), <span class="at">title =</span> <span class="st">""</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-166"><a href="#cb15-166" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"value"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"Rate (%)"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-167"><a href="#cb15-167" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(sorted_tanzania_split_long) </span>
+<span id="cb15-168"><a href="#cb15-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-169"><a href="#cb15-169" aria-hidden="true" tabindex="-1"></a>line_chart <span class="ot">&lt;-</span>line_chart <span class="sc">|&gt;</span></span>
+<span id="cb15-170"><a href="#cb15-170" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">"variable"</span>, <span class="at">type =</span> <span class="st">"nominal"</span>, <span class="at">title =</span> <span class="st">"Variable"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-171"><a href="#cb15-171" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_point_selection</span>(<span class="st">"variable_param"</span>, <span class="at">bind =</span> <span class="st">"legend"</span>, <span class="at">encodings =</span> <span class="fu">list</span>(<span class="st">"color"</span>) )<span class="sc">|&gt;</span></span>
+<span id="cb15-172"><a href="#cb15-172" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_opacity</span>(<span class="at">value =</span> <span class="fl">0.2</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-173"><a href="#cb15-173" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_condition_opacity</span>(<span class="at">param =</span> <span class="st">"variable_param"</span>, <span class="at">value =</span> <span class="dv">1</span>)</span>
+<span id="cb15-174"><a href="#cb15-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-175"><a href="#cb15-175" aria-hidden="true" tabindex="-1"></a>line_chart</span>
+<span id="cb15-176"><a href="#cb15-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-177"><a href="#cb15-177" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-178"><a href="#cb15-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-179"><a href="#cb15-179" aria-hidden="true" tabindex="-1"></a>The story I am trying to tell with the graphic above is a simple one: how the different rates of patterns of reproductive health have evolved over time in Tanzania. For example, the fertility rate has dropped slightly since the first survey, while the contraception rate has increased almost exponentially, with the data stopping in the last two years.</span>
+<span id="cb15-180"><a href="#cb15-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-181"><a href="#cb15-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-182"><a href="#cb15-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-183"><a href="#cb15-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-184"><a href="#cb15-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-185"><a href="#cb15-185" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise 4 (Your masterpiece)</span></span>
+<span id="cb15-186"><a href="#cb15-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-189"><a href="#cb15-189" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb15-190"><a href="#cb15-190" aria-hidden="true" tabindex="-1"></a>strokeData <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"strokeData.csv"</span>)</span>
+<span id="cb15-191"><a href="#cb15-191" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(strokeData)</span>
+<span id="cb15-192"><a href="#cb15-192" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-193"><a href="#cb15-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-196"><a href="#cb15-196" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb15-197"><a href="#cb15-197" aria-hidden="true" tabindex="-1"></a><span class="co">#|  code-fold: true</span></span>
+<span id="cb15-198"><a href="#cb15-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-199"><a href="#cb15-199" aria-hidden="true" tabindex="-1"></a>strokeData<span class="sc">$</span>Age <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(strokeData<span class="sc">$</span>Age)</span>
+<span id="cb15-200"><a href="#cb15-200" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-201"><a href="#cb15-201" aria-hidden="true" tabindex="-1"></a>strokeData_select <span class="ot">&lt;-</span> strokeData <span class="sc">|&gt;</span></span>
+<span id="cb15-202"><a href="#cb15-202" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Age, BMI, Avg_Glucose, Stroke)  </span>
+<span id="cb15-203"><a href="#cb15-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-204"><a href="#cb15-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-205"><a href="#cb15-205" aria-hidden="true" tabindex="-1"></a>interactive_plot <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-206"><a href="#cb15-206" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_circle</span>() <span class="sc">|&gt;</span></span>
+<span id="cb15-207"><a href="#cb15-207" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"Avg_Glucose"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"Average Glucose Level"</span>) <span class="sc">|&gt;</span>  </span>
+<span id="cb15-208"><a href="#cb15-208" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"BMI"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"BMI"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-209"><a href="#cb15-209" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">"Stroke"</span>, <span class="at">type =</span> <span class="st">"nominal"</span>, <span class="at">title =</span> <span class="st">"Stroke Status"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-210"><a href="#cb15-210" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_tooltip_array</span>(<span class="fu">c</span>(<span class="st">"Avg_Glucose"</span>, <span class="st">"BMI"</span>, <span class="st">"Age"</span>, <span class="st">"Stroke"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb15-211"><a href="#cb15-211" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(strokeData_select) <span class="sc">|&gt;</span></span>
+<span id="cb15-212"><a href="#cb15-212" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-213"><a href="#cb15-213" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_parameter</span>(<span class="st">"age_param"</span>, <span class="at">value =</span> <span class="fu">min</span>(strokeData<span class="sc">$</span>Age)) <span class="sc">|&gt;</span></span>
+<span id="cb15-214"><a href="#cb15-214" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_bind_range_input</span>(</span>
+<span id="cb15-215"><a href="#cb15-215" aria-hidden="true" tabindex="-1"></a>    <span class="at">parameter_name =</span> <span class="st">"age_param"</span>, </span>
+<span id="cb15-216"><a href="#cb15-216" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Age: "</span>,                 </span>
+<span id="cb15-217"><a href="#cb15-217" aria-hidden="true" tabindex="-1"></a>    <span class="at">min =</span> <span class="fu">min</span>(strokeData<span class="sc">$</span>Age),</span>
+<span id="cb15-218"><a href="#cb15-218" aria-hidden="true" tabindex="-1"></a>    <span class="at">max =</span> <span class="fu">max</span>(strokeData<span class="sc">$</span>Age)</span>
+<span id="cb15-219"><a href="#cb15-219" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb15-220"><a href="#cb15-220" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_filter</span>(<span class="st">"datum.Age &lt;= age_param"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-221"><a href="#cb15-221" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-222"><a href="#cb15-222" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_opacity</span>(</span>
+<span id="cb15-223"><a href="#cb15-223" aria-hidden="true" tabindex="-1"></a>    <span class="at">condition =</span> <span class="fu">list</span>(<span class="at">test =</span> <span class="st">"datum.Stroke == 0"</span>, <span class="at">value =</span> <span class="fl">0.2</span>),  </span>
+<span id="cb15-224"><a href="#cb15-224" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="dv">1</span>  </span>
+<span id="cb15-225"><a href="#cb15-225" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb15-226"><a href="#cb15-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-227"><a href="#cb15-227" aria-hidden="true" tabindex="-1"></a>interactive_plot</span>
+<span id="cb15-228"><a href="#cb15-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-229"><a href="#cb15-229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-230"><a href="#cb15-230" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-231"><a href="#cb15-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-232"><a href="#cb15-232" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-235"><a href="#cb15-235" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb15-236"><a href="#cb15-236" aria-hidden="true" tabindex="-1"></a><span class="co">#|  code-fold: true</span></span>
+<span id="cb15-237"><a href="#cb15-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-238"><a href="#cb15-238" aria-hidden="true" tabindex="-1"></a>interactive_plot <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-239"><a href="#cb15-239" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_boxplot</span>() <span class="sc">|&gt;</span></span>
+<span id="cb15-240"><a href="#cb15-240" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"Smoking_Status"</span>, <span class="at">type =</span> <span class="st">"nominal"</span>, <span class="at">title =</span> <span class="st">"Smoking Status"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-241"><a href="#cb15-241" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"Avg_Glucose"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"Average Glucose Level"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-242"><a href="#cb15-242" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">"Stroke"</span>, <span class="at">type =</span> <span class="st">"nominal"</span>, <span class="at">title =</span> <span class="st">"Stroke Status"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-243"><a href="#cb15-243" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_tooltip_array</span>(<span class="fu">c</span>(<span class="st">"Smoking_Status"</span>, <span class="st">"Avg_Glucose"</span>, <span class="st">"Stroke"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb15-244"><a href="#cb15-244" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_xOffset</span>(<span class="st">"Smoking_Status"</span>)<span class="sc">|&gt;</span></span>
+<span id="cb15-245"><a href="#cb15-245" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(strokeData)</span>
+<span id="cb15-246"><a href="#cb15-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-247"><a href="#cb15-247" aria-hidden="true" tabindex="-1"></a>interactive_plot</span>
+<span id="cb15-248"><a href="#cb15-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-249"><a href="#cb15-249" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-250"><a href="#cb15-250" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-251"><a href="#cb15-251" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-252"><a href="#cb15-252" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-253"><a href="#cb15-253" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-256"><a href="#cb15-256" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb15-257"><a href="#cb15-257" aria-hidden="true" tabindex="-1"></a><span class="co">#|  code-fold: true</span></span>
+<span id="cb15-258"><a href="#cb15-258" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-259"><a href="#cb15-259" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert categorical variables to factors</span></span>
+<span id="cb15-260"><a href="#cb15-260" aria-hidden="true" tabindex="-1"></a>strokeData <span class="ot">&lt;-</span> strokeData <span class="sc">|&gt;</span></span>
+<span id="cb15-261"><a href="#cb15-261" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Gender =</span> <span class="fu">as.factor</span>(Gender),</span>
+<span id="cb15-262"><a href="#cb15-262" aria-hidden="true" tabindex="-1"></a>         <span class="at">SES =</span> <span class="fu">as.factor</span>(SES),</span>
+<span id="cb15-263"><a href="#cb15-263" aria-hidden="true" tabindex="-1"></a>         <span class="at">Smoking_Status =</span> <span class="fu">as.factor</span>(Smoking_Status),</span>
+<span id="cb15-264"><a href="#cb15-264" aria-hidden="true" tabindex="-1"></a>         <span class="at">Hypertension =</span> <span class="fu">as.factor</span>(Hypertension),</span>
+<span id="cb15-265"><a href="#cb15-265" aria-hidden="true" tabindex="-1"></a>         <span class="at">Heart_Disease =</span> <span class="fu">as.factor</span>(Heart_Disease),</span>
+<span id="cb15-266"><a href="#cb15-266" aria-hidden="true" tabindex="-1"></a>         <span class="at">Diabetes =</span> <span class="fu">as.factor</span>(Diabetes),</span>
+<span id="cb15-267"><a href="#cb15-267" aria-hidden="true" tabindex="-1"></a>         <span class="at">Stroke =</span> <span class="fu">as.factor</span>(Stroke))  </span>
+<span id="cb15-268"><a href="#cb15-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-269"><a href="#cb15-269" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit Logistic Regression Model</span></span>
+<span id="cb15-270"><a href="#cb15-270" aria-hidden="true" tabindex="-1"></a>stroke_model <span class="ot">&lt;-</span> <span class="fu">glm</span>(Stroke <span class="sc">~</span> Age <span class="sc">+</span> Gender <span class="sc">+</span> SES <span class="sc">+</span> Hypertension <span class="sc">+</span> Heart_Disease <span class="sc">+</span> </span>
+<span id="cb15-271"><a href="#cb15-271" aria-hidden="true" tabindex="-1"></a>                     BMI <span class="sc">+</span> Avg_Glucose <span class="sc">+</span> Diabetes <span class="sc">+</span> Smoking_Status, </span>
+<span id="cb15-272"><a href="#cb15-272" aria-hidden="true" tabindex="-1"></a>                     <span class="at">data =</span> strokeData, <span class="at">family =</span> binomial)</span>
+<span id="cb15-273"><a href="#cb15-273" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-274"><a href="#cb15-274" aria-hidden="true" tabindex="-1"></a><span class="co"># Predict stroke probabilities</span></span>
+<span id="cb15-275"><a href="#cb15-275" aria-hidden="true" tabindex="-1"></a>strokeData_select<span class="sc">$</span>predicted_prob <span class="ot">&lt;-</span> <span class="fu">predict</span>(stroke_model, <span class="at">type =</span> <span class="st">"response"</span>)</span>
+<span id="cb15-276"><a href="#cb15-276" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-277"><a href="#cb15-277" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a Vega-Lite visualization</span></span>
+<span id="cb15-278"><a href="#cb15-278" aria-hidden="true" tabindex="-1"></a>stroke_scatter <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-279"><a href="#cb15-279" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_circle</span>() <span class="sc">|&gt;</span></span>
+<span id="cb15-280"><a href="#cb15-280" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"Age"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"Age"</span>) <span class="sc">|&gt;</span>  </span>
+<span id="cb15-281"><a href="#cb15-281" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"predicted_prob"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"Predicted Stroke Probability"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-282"><a href="#cb15-282" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_tooltip_array</span>(<span class="fu">c</span>(<span class="st">"Age"</span>, <span class="st">"predicted_prob"</span>, <span class="st">"BMI"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb15-283"><a href="#cb15-283" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(strokeData_select)</span>
+<span id="cb15-284"><a href="#cb15-284" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit LOESS model</span></span>
+<span id="cb15-285"><a href="#cb15-285" aria-hidden="true" tabindex="-1"></a>loess_fit <span class="ot">&lt;-</span> <span class="fu">loess</span>(predicted_prob <span class="sc">~</span> Age, <span class="at">data =</span> strokeData_select, <span class="at">span =</span> <span class="fl">0.5</span>)</span>
+<span id="cb15-286"><a href="#cb15-286" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-287"><a href="#cb15-287" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new dataset with smoothed values</span></span>
+<span id="cb15-288"><a href="#cb15-288" aria-hidden="true" tabindex="-1"></a>stroke_loess <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb15-289"><a href="#cb15-289" aria-hidden="true" tabindex="-1"></a>  <span class="at">Age =</span> strokeData_select<span class="sc">$</span>Age,</span>
+<span id="cb15-290"><a href="#cb15-290" aria-hidden="true" tabindex="-1"></a>  <span class="at">predicted_smooth =</span> <span class="fu">predict</span>(loess_fit, <span class="at">newdata =</span> strokeData_select)</span>
+<span id="cb15-291"><a href="#cb15-291" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb15-292"><a href="#cb15-292" aria-hidden="true" tabindex="-1"></a><span class="co"># Loess graphic</span></span>
+<span id="cb15-293"><a href="#cb15-293" aria-hidden="true" tabindex="-1"></a>loess_line <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb15-294"><a href="#cb15-294" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_line</span>(<span class="at">color =</span> <span class="st">"red"</span>, <span class="at">opacity =</span> <span class="fl">0.8</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-295"><a href="#cb15-295" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"Age"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>) <span class="sc">|&gt;</span>  </span>
+<span id="cb15-296"><a href="#cb15-296" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"predicted_smooth"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-297"><a href="#cb15-297" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(stroke_loess)</span>
+<span id="cb15-298"><a href="#cb15-298" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-299"><a href="#cb15-299" aria-hidden="true" tabindex="-1"></a><span class="co"># Layering</span></span>
+<span id="cb15-300"><a href="#cb15-300" aria-hidden="true" tabindex="-1"></a>final_plot <span class="ot">&lt;-</span> <span class="fu">vl_layer</span>(stroke_scatter, loess_line)</span>
+<span id="cb15-301"><a href="#cb15-301" aria-hidden="true" tabindex="-1"></a>final_plot</span>
+<span id="cb15-302"><a href="#cb15-302" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-303"><a href="#cb15-303" aria-hidden="true" tabindex="-1"></a>I decided to use a basic stroke data set because a while back my dad had 5 strokes and he had many of the condtions mentioned in the data set from heart diesea, hypertension, he was also a former smoker and he is also diabeteic and it is because he didnt take care of the diabeites the avgerage glucuse was pretty high. So, the combination of all these factors caused him to have a stroke</span>
+<span id="cb15-304"><a href="#cb15-304" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-305"><a href="#cb15-305" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-306"><a href="#cb15-306" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-307"><a href="#cb15-307" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-308"><a href="#cb15-308" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-309"><a href="#cb15-309" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-310"><a href="#cb15-310" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-311"><a href="#cb15-311" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-312"><a href="#cb15-312" aria-hidden="true" tabindex="-1"></a></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

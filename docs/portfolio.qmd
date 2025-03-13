@@ -42,6 +42,8 @@ str(genes)
 
 ```{r}
 
+#|  code-fold: true
+
 vl_chart(height = 400, width = 600) |>
   vl_mark_bar() |>
   vl_encode_x("pair:N", title = "Twin Pair ID #") |>
@@ -57,6 +59,8 @@ vl_chart(height = 400, width = 600) |>
 This bar graph highlights that, although twins tend to share nearly all their DNA, small variations do occur. By creating a side-by-side bar graph, it's easier for the human eye to compare these variations. I hope that this graphic can help explain differences between twins, such as their appearance and health.
 
 ```{r}
+
+#|  code-fold: true
 
 vl_chart(height = 500, width = 700, title = "Genetic Similarity Across DNA Test Kits") |>
   vl_mark_rect() |>  
@@ -84,7 +88,7 @@ This heat map shows the discrepancies in how different DNA test kits report gene
 
 ## Exercise 3 (A new challenge)
 
-```{r, include = FALSE}
+```{r}
 tanzania<-read.csv("tanzaniaDataSet.csv")
 str(tanzania)
 ```
@@ -92,6 +96,8 @@ str(tanzania)
 ### Data wrangling
 
 ```{r}
+
+#|  code-fold: true
 
 # Renaming the variables
 tanzania_clean <- tanzania |>
@@ -121,6 +127,7 @@ tanzania_split
 
 ```{r}
 
+#|  code-fold: true
 
 #Arrage by year ascending
 sorted_tanzania_split <- tanzania_split |>
@@ -144,6 +151,7 @@ str(sorted_tanzania_split_long)
 
 ```{r}
 
+#|  code-fold: true
 
 line_chart <- vl_chart(height = 400, width = 600) |>
   vl_mark_line(point = TRUE) |>
@@ -175,6 +183,7 @@ str(strokeData)
 ```
 
 ```{r}
+
 #|  code-fold: true
 
 strokeData$Age <- as.integer(strokeData$Age)
@@ -213,6 +222,8 @@ interactive_plot
 
 ```{r}
 
+#|  code-fold: true
+
 interactive_plot <- vl_chart(height = 400, width = 600) |>
   vl_mark_boxplot() |>
   vl_encode_x("Smoking_Status", type = "nominal", title = "Smoking Status") |>
@@ -230,6 +241,8 @@ interactive_plot
 
 
 ```{r}
+
+#|  code-fold: true
 
 # Convert categorical variables to factors
 strokeData <- strokeData |>
