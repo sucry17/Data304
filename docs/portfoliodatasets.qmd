@@ -8,10 +8,8 @@ embed-resources: true
 code-tools: true
 ---
 
-
 [Genes and Kits Data Set](https://calvin-data304.netlify.app/data/twins-genetics-long.csv)
 
 [Tanzania Data Set](https://github.com/sucry17/Data304/blob/main/docs/tanzaniaDataSet.csv)
 
 [Stroke Data Set](https://www.kaggle.com/datasets/shriyashjagtap/stroke-diagnosis-and-health-metrics-data?select=stroke_data.csv)
-

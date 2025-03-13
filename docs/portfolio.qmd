@@ -31,7 +31,7 @@ I like this graph because it's easy to compare the kits and see their difference
 
 ### B.
 
-![Graph I dont like](GraphIDont.png)
+![Graph I don't like](GraphIDont.png)
 
 I don't like this graph because it's hard to tell the kits apart. You need to scroll to see the legend, which is distracting and takes away from the story the graphic is trying to tell.
 
@@ -259,7 +259,7 @@ threshold_chart
 
 ```
 
-For the first graphic, I want to show how, as you age, the average glucose level tends to be higher, and the same is true for BMI. In the second graphic, I just want to show how much people's glucose levels can exceed the dynamic average glucose level in this dataset cotroled by a slider.
+For the first graphic, I want to show how, as you age, the average glucose level tends to be higher, and the same is true for BMI. In the second graphic, I just want to show how much people's glucose levels can exceed the dynamic average glucose level in this dataset controled by a slider.
 
 ```{r}
 #| code-fold: TRUE
@@ -401,6 +401,6 @@ b.
 
 -   QUESTION 3: If you were tasked with communicating this data, which option would you choose and why?
 
-    -   If I was tasked with communicating this data as is I would chose the bar graph . The reason for this is that this graph is straightforward forward showing the trend change between years and communicating the data easily and effectively.
+    -   If I was tasked with communicating this data as is, I would choose the bar graph. The reason for this is that this graph is straightforward, showing the trend change between years and communicating the data easily and effectively.
 
 -   QUESTION 4: Grab a friend or colleague and talk through the various options together. Do they agree with your preferred view, or is there a preference for another? Did your discussion highlight anything interesting that you hadn’t previously considered?
