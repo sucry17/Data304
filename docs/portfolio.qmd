@@ -357,7 +357,7 @@ f.  tooltips:
 
 g.  another kind of interaction (panning/zooming, brushing, sliders, etc.):
 
-    I used a couple of interactions in a few graphs. For example, in the Tanzania line graph, I bound the legend to the opacity so that when the user selects one of the rates on the legend, the other two become less opaque. Another example is in the first graphic of the stroke dataset, where I used a slider for age to observe the data points by age.
+    I used a couple of interactions in a few graphs. For example, in the Tanzania line graph, I bound the legend to the opacity so that when the user selects one of the rates on the legend, the other two become less opaque. Another example is in the first graphic of the stroke dataset, where I used a slider for avgerage glucose to observe the how the data points change between BMI and Age.
 
 ## Exercise 6 (Keep learning)
 
