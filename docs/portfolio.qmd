@@ -370,7 +370,7 @@ b.
 
     -   The color for the heat map I chose according to [Wilke](https://clauswilke.com/dataviz/color-basics.html#color-as-a-tool-to-distinguish) and the [github page](https://vega.github.io/vega/docs/schemes/) where Wilke advises in section 4.1 to use color as a tool to distinguish and then according to the documentation dark2 is categorical scheme.
 
-    -   For the last stroke graphic, specifically, I followed [Knaflic'](https://github.com/Saurav6789/Books-/blob/master/storytelling-with-data-cole-nussbaumer-knaflic.pdf) advice from chapter 6, page 235. His advice is that visualization without a story doesn't stick with the audience. By adding my father's story about his strokes I think I will appeal to the emotion of the audience, and hence, it will stick with them for longer.
+    -   For the last stroke graphic, specifically, I followed [Knaflic'](https://github.com/Saurav6789/Books-/blob/master/storytelling-with-data-cole-nussbaumer-knaflic.pdf) advice from chapter 6, page 235. His advice is that visualization without a story doesn't stick with the audience. By adding my father's story about his strokes, I think I will appeal to the emotion of the audience, and hence, it will stick with them for longer.
 
 ## HW 4-Exercise 2.12:
 
