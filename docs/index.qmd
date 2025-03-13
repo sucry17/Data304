@@ -16,3 +16,5 @@ embed-resources: true
 - You can view my [homework 9](https://sucry17.github.io/Data304/homework9.html).
 
 - You can view my [Final Protfolio](https://sucry17.github.io/Data304/portfolio.html).
+
+  - You can view my [Final Protfolio Data Sets](https://sucry17.github.io/Data304/portfoliodatasets.html).

@@ -10,6 +10,10 @@ code-tools: true
 
 # Components of the portfolio
 
+#### Data sets
+
+[**Data Sets**](https://sucry17.github.io/Data304/portfoliodatasets.html)
+
 ```{r, include = FALSE}
 library(dplyr)
 library(jsonlite)
@@ -383,7 +387,7 @@ b.
 
     c.  I like that I can see how the employees' answers have shifted positively in a year.
 
-    d.   a simple trendline. This makes it easier to see where employees' minds are.
+    d.  a simple trendline. This makes it easier to see where employees' minds are.
 
 -   QUESTION 2: What is difficult about the given view? Are there limitations or other considerations of which to be aware?
 
@@ -393,7 +397,7 @@ b.
 
     c.  A lot of clutter with the response labels, so adding color and a legend that highlights the responses might be good.
 
-    d.  I am not quite sure what to do here. My initial thought would be to expand the y-axis. I would do this because when I first saw that kind of "V" formed by the strongly agree and disagree it through me off.
+    d.  I am not quite sure what to do here. My initial thought would be to expand the y-axis. I would do this because when I first saw that kind of "V" formed by the strongly agree and disagree, it threw me off.
 
 -   QUESTION 3: If you were tasked with communicating this data, which option would you choose and why?
 
