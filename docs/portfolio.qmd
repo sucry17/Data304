@@ -96,9 +96,6 @@ str(tanzania)
 ### Data wrangling
 
 ```{r}
-
-#|  code-fold: true
-
 # Renaming the variables
 tanzania_clean <- tanzania |>
   rename(
@@ -145,6 +142,11 @@ sorted_tanzania_split_long$year <- as.numeric(as.character(sorted_tanzania_split
 
 sorted_tanzania_split_long$variable <- gsub("_", " ", sorted_tanzania_split_long$variable)
 str(sorted_tanzania_split_long)
+
+sorted_tanzania_split_long <- sorted_tanzania_split_long |>
+  group_by(year) |>
+  mutate(proportion = value / sum(value)) |>
+  ungroup()
 ```
 
 ### Graphic
@@ -152,6 +154,8 @@ str(sorted_tanzania_split_long)
 ```{r}
 
 #|  code-fold: true
+
+sorted_tanzania_split_long <- as.data.frame(sorted_tanzania_split_long)
 
 line_chart <- vl_chart(height = 400, width = 600) |>
   vl_mark_line(point = TRUE) |>
@@ -167,13 +171,30 @@ line_chart <-line_chart |>
 
 line_chart
 
+
+bar_chart <- vl_chart(height = 400, width = 600) |>
+  vl_mark_bar() |>
+  vl_encode_x("year", type = "ordinal", title = "") |>
+  vl_encode_y("proportion", type = "quantitative", title = "Proportion") |>
+  vl_add_data(sorted_tanzania_split_long) |>
+  vl_encode_color("variable", type = "nominal", title = "Variable")
+bar_chart
+
+
+
+
+
+combined_chart <- vl_concat(
+  line_chart,
+  bar_chart,
+ columns = 2
+)
+
+combined_chart
+
 ```
 
 The story I am trying to tell with the graphic above is a simple one: how the different rates of patterns of reproductive health have evolved over time in Tanzania. For example, the fertility rate has dropped slightly since the first survey, while the contraception rate has increased almost exponentially, with the data stopping in the last two years.
-
-
-
-
 
 ## Exercise 4 (Your masterpiece)
 
@@ -219,7 +240,6 @@ interactive_plot
 
 ```
 
-
 ```{r}
 
 #|  code-fold: true
@@ -238,7 +258,6 @@ interactive_plot
 
 
 ```
-
 
 ```{r}
 
@@ -288,14 +307,40 @@ loess_line <- vl_chart() |>
 final_plot <- vl_layer(stroke_scatter, loess_line)
 final_plot
 ```
+
 I decided to use a basic stroke data set because a while back my dad had 5 strokes and he had many of the condtions mentioned in the data set from heart diesea, hypertension, he was also a former smoker and he is also diabeteic and it is because he didnt take care of the diabeites the avgerage glucuse was pretty high. So, the combination of all these factors caused him to have a stroke
 
+## Exercise 5 (Using your palette):
 
+a.  an encoding channel other than x or y:
 
+    For most of my graphics I use other channels of encoding. For example in the tanzania graphic I use encode for opacity so that when I select one of the rates the other rates become less opaque.
 
+b.  layers:
 
+    In my "master piece" I use layer to layer a scatter plot and loess line to make the predictions easier to see.
 
+c.  facets:
 
+    In the first twins' graphic, I use a facet to obtain two different graphics that are faceted by the identity of the twins.
 
+d.  concatenation or repeat:
 
+    Again, in the Tanzania example, use a concatentiaon to show both the trend of rates over time and then on the left show the proportions of the rates per year.
+
+e.  non-default settings for a channel’s scale or guide:
+
+    In the heatmap example, I use a non-default scale for the color to highlight the difference between the genetics kits.
+
+f.  tooltips:
+
+    I used tooltips for my graphics on "my master piece" so that when you hover with the mouse, you can observe multiple variables of the dataset per data point.
+
+g.  another kind of interaction (panning/zooming, brushing, sliders, etc.):\
+    Used a couple of interactions in a coupl ofe graphs. For example, for the Tanzania line graph, I binded the legend to the opacity so that when the user selects one of the rates on the legend, the other two become less opaque. Another is on the first graphic of the strokes data set I used a slider for the age to observe the data points per age.
+    
+## Exercise 6 (Keep learning)
+
+a.
+b.
 
