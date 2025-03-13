@@ -35,12 +35,14 @@ I don't like this graph because it's hard to tell the kits apart. You need to sc
 
 #### Kits
 
-```{r, include = FALSE}
+```{r}
 genes<-read.csv("https://calvin-data304.netlify.app/data/twins-genetics-long.csv")
 str(genes)
 ```
 
-```{r,fold=TRUE}
+```{r}
+#| code-fold: TRUE
+
 vl_chart(height = 400, width = 600) |>
   vl_mark_bar() |>
   vl_encode_x("pair:N", title = "Twin Pair ID #") |>
@@ -55,7 +57,9 @@ vl_chart(height = 400, width = 600) |>
 
 This bar graph highlights that, although twins tend to share nearly all their DNA, small variations do occur. By creating a side-by-side bar graph, it's easier for the human eye to compare these variations. I hope that this graphic can help explain differences between twins, such as their appearance and health.
 
-```{r,fold=TRUE}
+```{r}
+#| code-fold: TRUE
+
 vl_chart(height = 500, width = 700, title = "Genetic Similarity Across DNA Test Kits") |>
   vl_mark_rect()|>  
   vl_encode_x("kit:N", title = "DNA Test Kit") |>
@@ -112,11 +116,6 @@ tanzania_split <- tanzania_clean |>
   unnest(cols = c(year)) |>
   select(-start_year, -end_year)
 
-# Displaying the data frame
-tanzania_split
-```
-
-```{r,fold=TRUE}
 #Arrage by year ascending
 sorted_tanzania_split <- tanzania_split |>
   arrange(year)
@@ -124,7 +123,7 @@ sorted_tanzania_split <- tanzania_split |>
 sorted_tanzania_split_long <- sorted_tanzania_split |>
   pivot_longer(cols = c(Total_fertility_Rate, Contraception_Rate, Unmet_Planning_Rate),
                names_to = "variable", values_to = "value")
-
+#converting to appropriate type
 sorted_tanzania_split_long$variable <- factor(sorted_tanzania_split_long$variable)
 
 sorted_tanzania_split_long$year <- as.numeric(sorted_tanzania_split_long$year)
@@ -142,7 +141,9 @@ sorted_tanzania_split_long <- sorted_tanzania_split_long |>
 
 ### Graphic
 
-```{r,fold=TRUE}
+```{r}
+#| code-fold: TRUE
+
 sorted_tanzania_split_long <- as.data.frame(sorted_tanzania_split_long)
 
 line_chart <- vl_chart(height = 400, width = 600) |>
@@ -191,7 +192,8 @@ strokeData <- read.csv("strokeData.csv")
 str(strokeData)
 ```
 
-```{r,fold=TRUE}
+```{r}
+#| code-fold: TRUE
 strokeData$Age <- as.integer(strokeData$Age)
   
 strokeData_select <- strokeData |>
@@ -225,7 +227,8 @@ interactive_plot
 
 ```
 
-```{r,fold=TRUE}
+```{r}
+#| code-fold: TRUE
 interactive_plot <- vl_chart(height = 400, width = 600) |>
   vl_mark_boxplot() |>
   vl_encode_x("Smoking_Status", type = "nominal", title = "Smoking Status") |>
@@ -241,7 +244,9 @@ interactive_plot
 
 ```
 
-```{r,fold=TRUE}
+```{r}
+#| code-fold: TRUE
+
 # Convert categorical variables to factors
 strokeData <- strokeData |>
   mutate(Gender = as.factor(Gender),
@@ -330,6 +335,7 @@ a.
 b.  
 
     -   The color for the heat map I chose according to [wilke](https://clauswilke.com/dataviz/color-basics.html#color-as-a-tool-to-distinguish) and [github page](https://vega.github.io/vega/docs/schemes/)  where wikle advises in section 4.1 to use color as a tool to distinguish and then acordding to the documentation dark2 is cattegrocial scheme. 
+    
     -   For the last stroke graphic, specificaly, followed [Knaflic'](https://github.com/Saurav6789/Books-/blob/master/storytelling-with-data-cole-nussbaumer-knaflic.pdf) advice from chapter 6 page 235. His advice is that visualization with out a story dont stick with the audince. By adding my father's story about his strokes I think I will appeal to the emotion of the audience and hence it will stick with them for longer.
 
 ## HW 4-Exercise 2.12:
