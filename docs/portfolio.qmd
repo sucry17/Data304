@@ -58,7 +58,8 @@ vl_chart(height = 400, width = 600) |>
 
 
 ```
- This bar graph highlights that, although twins tend to share nearly all their DNA, small variations do occur. By creating a side-by-side bar graph, it's easier for the human eye to compare these variations. I hope that this graphic can help explain differences between twins, such as their appearance and health.
+
+This bar graph highlights that, although twins tend to share nearly all their DNA, small variations do occur. By creating a side-by-side bar graph, it's easier for the human eye to compare these variations. I hope that this graphic can help explain differences between twins, such as their appearance and health.
 
 ```{r}
 #| code-fold: TRUE
@@ -187,7 +188,7 @@ combined_chart
 
 ```
 
-The story I am trying to tell with the graphic above is a simple one: how the different rates of patterns of reproductive health have evolved in Tanzania. For example, the fertility rate has dropped slightly since the first survey, while the contraception rate has increased almost exponentially, with the data plateauing in the last two years, which is the last survey. 
+The story I am trying to tell with the graphic above is a simple one: how the different rates of patterns of reproductive health have evolved in Tanzania. For example, the fertility rate has dropped slightly since the first survey, while the contraception rate has increased almost exponentially, with the data plateauing in the last two years, which is the last survey.
 
 ## Exercise 4 (Your masterpiece)
 
@@ -404,4 +405,4 @@ b.
 
 -   QUESTION 4: Grab a friend or colleague and talk through the various options together. Do they agree with your preferred view, or is there a preference for another? Did your discussion highlight anything interesting that you hadn’t previously considered?
 
-    - We agree that the bar graph is the best for this data. However, my friend mentioned that a line chart might be better if it had color and a legend, as it would make it easier to see the different responses.
+    -   We agree that the bar graph is the best for this data. However, my friend mentioned that a line chart might be better if it had color and a legend, as it would make it easier to see the different responses.
