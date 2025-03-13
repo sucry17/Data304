@@ -58,8 +58,7 @@ vl_chart(height = 400, width = 600) |>
 
 
 ```
-
-\*\* This bar graph highlights that, although twins tend to share nearly all their DNA, small variations do occur. By creating a side-by-side bar graph, it's easier for the human eye to compare these variations. I hope that this graphic can help explain differences between twins, such as their appearance and health.
+ This bar graph highlights that, although twins tend to share nearly all their DNA, small variations do occur. By creating a side-by-side bar graph, it's easier for the human eye to compare these variations. I hope that this graphic can help explain differences between twins, such as their appearance and health.
 
 ```{r}
 #| code-fold: TRUE
@@ -82,11 +81,11 @@ This heat map shows the differences in how various DNA test kits report genetic 
 
 -   How our business compares to other businesses (over time and in February 2020):
 
-    -   Business's Net Promoter Score (NPS) compares to other businesses over time, showing trends from January 2019 to February 2020. This analysis allows us to see how business's NPS has evolved compared to the competition. By examining these trends, we can identify periods where the business performed well and pinpoint times that may have had challenges. In February 2020 specifically, we can see NPS in relation to competitors, providing a snapshot of the market position at that time.
+    -   Business's Net Promoter Score (NPS) compared to other businesses over time, showing trends from January 2019 to February 2020. This analysis allows us to see how business's NPS has evolved compared to the competition. By examining these trends, we can identify periods where the business performed well and pinpoint times that may have had challenges. In February 2020 specifically, we can see NPS in relation to competitors, providing a snapshot of the market position at that time.
 
 -   How the components of the net promoter score for our business have changed over time:
 
-    -   The NPS components for the business (Detractors, Passives, Promoters) have changed from January 2019 to February 2020. By analyzing these changes, we gain insights into customer sentiment. For example, an increase in Promoters indicates higher customer satisfaction and loyalty, while an increase in Detractors suggests areas that need improvement. This breakdown helps us understand how the composition of NPS score has evolved.
+    -   The NPS components for the business (Detractors, Passives, Promoters) have changed from January 2019 to February 2020. By analyzing these changes, we gain insights into customer sentiment. For example, an increase in Promoters indicates higher customer satisfaction and loyalty, while an increase in Detractors suggests areas that need improvement. This breakdown helps us understand how the composition of the NPS score has evolved.
 
 ## Exercise 3 (A new challenge)
 
@@ -148,6 +147,7 @@ sorted_tanzania_split_long <- sorted_tanzania_split_long |>
 ```{r}
 #| code-fold: TRUE
 
+#EDA
 sorted_tanzania_split_long <- as.data.frame(sorted_tanzania_split_long)
 
 line_chart <- vl_chart(height = 400, width = 600) |>
@@ -187,7 +187,7 @@ combined_chart
 
 ```
 
-The story I am trying to tell with the graphic above is a simple one: how the different rates of patterns of reproductive health have evolved in Tanzania. For example, the fertility rate has dropped slightly since the first survey, while the contraception rate has increased almost exponentially, with the data plateauing in the last two years, which is the last survey.
+The story I am trying to tell with the graphic above is a simple one: how the different rates of patterns of reproductive health have evolved in Tanzania. For example, the fertility rate has dropped slightly since the first survey, while the contraception rate has increased almost exponentially, with the data plateauing in the last two years, which is the last survey. 
 
 ## Exercise 4 (Your masterpiece)
 
@@ -198,34 +198,33 @@ str(strokeData)
 
 ```{r}
 #| code-fold: TRUE
+
+# EDA
 strokeData$Age <- as.integer(strokeData$Age)
   
 strokeData_select <- strokeData |>
   select(Age, BMI, Avg_Glucose, Stroke)  
 
-
 interactive_plot <- vl_chart(height = 400, width = 600) |>
   vl_mark_circle() |>
-  vl_encode_x("Avg_Glucose", type = "quantitative", title = "Average Glucose Level") |>  
+  vl_encode_x("Age", type = "quantitative", title = "Age") |>  
   vl_encode_y("BMI", type = "quantitative", title = "BMI") |>
-  vl_encode_color("Stroke", type = "nominal", title = "Stroke Status") |>
   vl_encode_tooltip_array(c("Avg_Glucose", "BMI", "Age", "Stroke")) |>
   vl_add_data(strokeData_select) |>
   
-  vl_add_parameter("age_param", value = min(strokeData$Age)) |>
+  vl_add_parameter("Avg_Glucose", value = min(strokeData$Avg_Glucose)) |>
   vl_bind_range_input(
-    parameter_name = "age_param", 
-    name = "Age: ",                 
-    min = min(strokeData$Age),
-    max = max(strokeData$Age)
+    parameter_name = "Avg_Glucose", 
+    name = "Avg Glucose: ",                 
+    min = min(strokeData$Avg_Glucose),
+    max = max(strokeData$Avg_Glucose)
   ) |>
-  vl_filter("datum.Age <= age_param") |>
+  vl_filter("datum.Avg_Glucose <= Avg_Glucose") |>
   
-  vl_encode_opacity(
-    condition = list(test = "datum.Stroke == 0", value = 0.2),  
-    value = 1  
-  )
-
+    vl_encode_color("Stroke", type = "nominal", title = "Stroke Status") |>
+  vl_add_point_selection("variable_param", bind = "legend", encodings = list("color") )|>
+  vl_encode_opacity(value = 0.2) |>
+  vl_condition_opacity(param = "variable_param", value = 1)
 interactive_plot
 
 strokeData_Diabetes <- strokeData |>
@@ -259,7 +258,7 @@ threshold_chart
 
 ```
 
-For the first graphic, I want to show how, as you age, the average glucose level tends to be higher, and the same is true for BMI. In the second graphic, I just want to show how much people's glucose levels can exceed the dynamic average glucose level in this dataset controled by a slider.
+For the first graphic, I want to show how, as you age, the average glucose level tends to be higher, and the same is true for BMI. In the second graphic, I want to show how much people's glucose levels can exceed the dynamic average glucose level in this dataset, controlled by a slider. Additionally, I added an interactive legend so the user can focus on the group that had a stroke, the group that didn’t, or both at the same time.
 
 ```{r}
 #| code-fold: TRUE
@@ -404,3 +403,5 @@ b.
     -   If I was tasked with communicating this data as is, I would choose the bar graph. The reason for this is that this graph is straightforward, showing the trend change between years and communicating the data easily and effectively.
 
 -   QUESTION 4: Grab a friend or colleague and talk through the various options together. Do they agree with your preferred view, or is there a preference for another? Did your discussion highlight anything interesting that you hadn’t previously considered?
+
+    - We agree that the bar graph is the best for this data. However, my friend mentioned that a line chart might be better if it had color and a legend, as it would make it easier to see the different responses.

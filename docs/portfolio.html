@@ -173,8 +173,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(genes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="htmlwidget-3c09e3e245f38906ef94" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3c09e3e245f38906ef94">{"x":{
+<div id="htmlwidget-fbda7d6765afa144e318" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fbda7d6765afa144e318">{"x":{
   "chart_spec": {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "spec": {
@@ -1041,7 +1041,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 },"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
-<p>** This bar graph highlights that, although twins tend to share nearly all their DNA, small variations do occur. By creating a side-by-side bar graph, it’s easier for the human eye to compare these variations. I hope that this graphic can help explain differences between twins, such as their appearance and health.</p>
+<p>This bar graph highlights that, although twins tend to share nearly all their DNA, small variations do occur. By creating a side-by-side bar graph, it’s easier for the human eye to compare these variations. I hope that this graphic can help explain differences between twins, such as their appearance and health.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -1053,8 +1053,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(genes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="htmlwidget-d87e5e3baf5d901f75f3" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d87e5e3baf5d901f75f3">{"x":{
+<div id="htmlwidget-473f27ff9164df791398" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-473f27ff9164df791398">{"x":{
   "chart_spec": {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "height": 500,
@@ -1926,11 +1926,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><p>How our business compares to other businesses (over time and in February 2020):</p>
 <ul>
-<li>Business’s Net Promoter Score (NPS) compares to other businesses over time, showing trends from January 2019 to February 2020. This analysis allows us to see how business’s NPS has evolved compared to the competition. By examining these trends, we can identify periods where the business performed well and pinpoint times that may have had challenges. In February 2020 specifically, we can see NPS in relation to competitors, providing a snapshot of the market position at that time.</li>
+<li>Business’s Net Promoter Score (NPS) compared to other businesses over time, showing trends from January 2019 to February 2020. This analysis allows us to see how business’s NPS has evolved compared to the competition. By examining these trends, we can identify periods where the business performed well and pinpoint times that may have had challenges. In February 2020 specifically, we can see NPS in relation to competitors, providing a snapshot of the market position at that time.</li>
 </ul></li>
 <li><p>How the components of the net promoter score for our business have changed over time:</p>
 <ul>
-<li>The NPS components for the business (Detractors, Passives, Promoters) have changed from January 2019 to February 2020. By analyzing these changes, we gain insights into customer sentiment. For example, an increase in Promoters indicates higher customer satisfaction and loyalty, while an increase in Detractors suggests areas that need improvement. This breakdown helps us understand how the composition of NPS score has evolved.</li>
+<li>The NPS components for the business (Detractors, Passives, Promoters) have changed from January 2019 to February 2020. By analyzing these changes, we gain insights into customer sentiment. For example, an increase in Promoters indicates higher customer satisfaction and loyalty, while an increase in Detractors suggests areas that need improvement. This breakdown helps us understand how the composition of the NPS score has evolved.</li>
 </ul></li>
 </ul>
 </section>
@@ -2005,25 +2005,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split_long <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(sorted_tanzania_split_long)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>line_chart <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_line</span>(<span class="at">point =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"year"</span>, <span class="at">type =</span> <span class="st">"ordinal"</span>, <span class="at">axis =</span> <span class="fu">list</span>(<span class="at">labelAngle =</span> <span class="dv">0</span>), <span class="at">title =</span> <span class="st">""</span>) <span class="sc">|&gt;</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"value"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"Rate (%)"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(sorted_tanzania_split_long) </span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>line_chart <span class="ot">&lt;-</span>line_chart <span class="sc">|&gt;</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">"variable"</span>, <span class="at">type =</span> <span class="st">"nominal"</span>, <span class="at">title =</span> <span class="st">"Variable"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_point_selection</span>(<span class="st">"variable_param"</span>, <span class="at">bind =</span> <span class="st">"legend"</span>, <span class="at">encodings =</span> <span class="fu">list</span>(<span class="st">"color"</span>) )<span class="sc">|&gt;</span></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_opacity</span>(<span class="at">value =</span> <span class="fl">0.2</span>) <span class="sc">|&gt;</span></span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_condition_opacity</span>(<span class="at">param =</span> <span class="st">"variable_param"</span>, <span class="at">value =</span> <span class="dv">1</span>)</span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>line_chart</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#EDA</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split_long <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(sorted_tanzania_split_long)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>line_chart <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_line</span>(<span class="at">point =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"year"</span>, <span class="at">type =</span> <span class="st">"ordinal"</span>, <span class="at">axis =</span> <span class="fu">list</span>(<span class="at">labelAngle =</span> <span class="dv">0</span>), <span class="at">title =</span> <span class="st">""</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"value"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"Rate (%)"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(sorted_tanzania_split_long) </span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>line_chart <span class="ot">&lt;-</span>line_chart <span class="sc">|&gt;</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">"variable"</span>, <span class="at">type =</span> <span class="st">"nominal"</span>, <span class="at">title =</span> <span class="st">"Variable"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_point_selection</span>(<span class="st">"variable_param"</span>, <span class="at">bind =</span> <span class="st">"legend"</span>, <span class="at">encodings =</span> <span class="fu">list</span>(<span class="st">"color"</span>) )<span class="sc">|&gt;</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_opacity</span>(<span class="at">value =</span> <span class="fl">0.2</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_condition_opacity</span>(<span class="at">param =</span> <span class="st">"variable_param"</span>, <span class="at">value =</span> <span class="dv">1</span>)</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>line_chart</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="htmlwidget-687c3c5300aa6a5bd41b" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
-<script type="application/json" data-for="htmlwidget-687c3c5300aa6a5bd41b">{"x":{
+<div id="htmlwidget-f517a7b9aa7254218643" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f517a7b9aa7254218643">{"x":{
   "chart_spec": {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "height": 400,
@@ -2255,8 +2256,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>bar_chart</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="htmlwidget-554a776967a979811711" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
-<script type="application/json" data-for="htmlwidget-554a776967a979811711">{"x":{
+<div id="htmlwidget-a7c5340b61e4648e6e7a" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a7c5340b61e4648e6e7a">{"x":{
   "chart_spec": {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "height": 400,
@@ -2468,8 +2469,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>combined_chart</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="htmlwidget-32196bd7f8322cd05aaf" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
-<script type="application/json" data-for="htmlwidget-32196bd7f8322cd05aaf">{"x":{
+<div id="htmlwidget-3365f5eaf73541d29933" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3365f5eaf73541d29933">{"x":{
   "chart_spec": {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "concat": [
@@ -2914,39 +2915,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>strokeData<span class="sc">$</span>Age <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(strokeData<span class="sc">$</span>Age)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>strokeData_select <span class="ot">&lt;-</span> strokeData <span class="sc">|&gt;</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Age, BMI, Avg_Glucose, Stroke)  </span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># EDA</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>strokeData<span class="sc">$</span>Age <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(strokeData<span class="sc">$</span>Age)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>strokeData_select <span class="ot">&lt;-</span> strokeData <span class="sc">|&gt;</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Age, BMI, Avg_Glucose, Stroke)  </span>
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>interactive_plot <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
 <span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_circle</span>() <span class="sc">|&gt;</span></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"Avg_Glucose"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"Average Glucose Level"</span>) <span class="sc">|&gt;</span>  </span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"Age"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"Age"</span>) <span class="sc">|&gt;</span>  </span>
 <span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"BMI"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"BMI"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">"Stroke"</span>, <span class="at">type =</span> <span class="st">"nominal"</span>, <span class="at">title =</span> <span class="st">"Stroke Status"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_tooltip_array</span>(<span class="fu">c</span>(<span class="st">"Avg_Glucose"</span>, <span class="st">"BMI"</span>, <span class="st">"Age"</span>, <span class="st">"Stroke"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(strokeData_select) <span class="sc">|&gt;</span></span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_parameter</span>(<span class="st">"age_param"</span>, <span class="at">value =</span> <span class="fu">min</span>(strokeData<span class="sc">$</span>Age)) <span class="sc">|&gt;</span></span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_bind_range_input</span>(</span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">parameter_name =</span> <span class="st">"age_param"</span>, </span>
-<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Age: "</span>,                 </span>
-<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">min =</span> <span class="fu">min</span>(strokeData<span class="sc">$</span>Age),</span>
-<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">max =</span> <span class="fu">max</span>(strokeData<span class="sc">$</span>Age)</span>
-<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_filter</span>(<span class="st">"datum.Age &lt;= age_param"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_opacity</span>(</span>
-<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">condition =</span> <span class="fu">list</span>(<span class="at">test =</span> <span class="st">"datum.Stroke == 0"</span>, <span class="at">value =</span> <span class="fl">0.2</span>),  </span>
-<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="dv">1</span>  </span>
-<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>interactive_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_tooltip_array</span>(<span class="fu">c</span>(<span class="st">"Avg_Glucose"</span>, <span class="st">"BMI"</span>, <span class="st">"Age"</span>, <span class="st">"Stroke"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(strokeData_select) <span class="sc">|&gt;</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_parameter</span>(<span class="st">"Avg_Glucose"</span>, <span class="at">value =</span> <span class="fu">min</span>(strokeData<span class="sc">$</span>Avg_Glucose)) <span class="sc">|&gt;</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_bind_range_input</span>(</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">parameter_name =</span> <span class="st">"Avg_Glucose"</span>, </span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Avg Glucose: "</span>,                 </span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">min =</span> <span class="fu">min</span>(strokeData<span class="sc">$</span>Avg_Glucose),</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">max =</span> <span class="fu">max</span>(strokeData<span class="sc">$</span>Avg_Glucose)</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_filter</span>(<span class="st">"datum.Avg_Glucose &lt;= Avg_Glucose"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">vl_encode_color</span>(<span class="st">"Stroke"</span>, <span class="at">type =</span> <span class="st">"nominal"</span>, <span class="at">title =</span> <span class="st">"Stroke Status"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_point_selection</span>(<span class="st">"variable_param"</span>, <span class="at">bind =</span> <span class="st">"legend"</span>, <span class="at">encodings =</span> <span class="fu">list</span>(<span class="st">"color"</span>) )<span class="sc">|&gt;</span></span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_opacity</span>(<span class="at">value =</span> <span class="fl">0.2</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_condition_opacity</span>(<span class="at">param =</span> <span class="st">"variable_param"</span>, <span class="at">value =</span> <span class="dv">1</span>)</span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>interactive_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="htmlwidget-a6d920085a959a28b561" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a6d920085a959a28b561">{"x":{
+<div id="htmlwidget-36673b3556addce9060a" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-36673b3556addce9060a">{"x":{
   "chart_spec": {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "height": 400,
@@ -2956,19 +2955,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     },
     "encoding": {
       "x": {
-        "field": "Avg_Glucose",
+        "field": "Age",
         "type": "quantitative",
-        "title": "Average Glucose Level"
+        "title": "Age"
       },
       "y": {
         "field": "BMI",
         "type": "quantitative",
         "title": "BMI"
-      },
-      "color": {
-        "field": "Stroke",
-        "type": "nominal",
-        "title": "Stroke Status"
       },
       "tooltip": [
         {
@@ -2984,12 +2978,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           "field": "Stroke"
         }
       ],
+      "color": {
+        "field": "Stroke",
+        "type": "nominal",
+        "title": "Stroke Status"
+      },
       "opacity": {
+        "value": 0.2,
         "condition": {
-          "test": "datum.Stroke == 0",
-          "value": 0.2
-        },
-        "value": 1
+          "value": 1,
+          "param": "variable_param"
+        }
       }
     },
     "data": {
@@ -62998,19 +62997,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     },
     "params": [
       {
-        "name": "age_param",
-        "value": 27,
+        "name": "Avg_Glucose",
+        "value": 45.56913524,
         "bind": {
-          "max": 99,
-          "min": 27,
-          "name": "Age: ",
+          "max": 176.1806884,
+          "min": 45.56913524,
+          "name": "Avg Glucose: ",
           "input": "range"
+        }
+      },
+      {
+        "name": "variable_param",
+        "bind": "legend",
+        "select": {
+          "encodings": [
+            "color"
+          ],
+          "type": "point"
         }
       }
     ],
     "transform": [
       {
-        "filter": "datum.Age <= age_param"
+        "filter": "datum.Avg_Glucose <= Avg_Glucose"
       }
     ]
   },
@@ -63056,8 +63065,8 @@ modify_inner_spec.vegaspec_unit</code></pre>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>threshold_chart</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="htmlwidget-a95f03294ec12cad8633" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a95f03294ec12cad8633">{"x":{
+<div id="htmlwidget-d6182ee0468b50172991" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d6182ee0468b50172991">{"x":{
   "chart_spec": {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "height": 400,
@@ -86629,7 +86638,7 @@ modify_inner_spec.vegaspec_unit</code></pre>
 },"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
-<p>For the first graphic, I want to show how, as you age, the average glucose level tends to be higher, and the same is true for BMI. In the second graphic, I just want to show how much people’s glucose levels can exceed the dynamic average glucose level in this dataset controled by a slider.</p>
+<p>For the first graphic, I want to show how, as you age, the average glucose level tends to be higher, and the same is true for BMI. In the second graphic, I want to show how much people’s glucose levels can exceed the dynamic average glucose level in this dataset, controlled by a slider. Additionally, I added an interactive legend so the user can focus on the group that had a stroke, the group that didn’t, or both at the same time.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -86645,8 +86654,8 @@ modify_inner_spec.vegaspec_unit</code></pre>
 <span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>interactive_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="htmlwidget-d4eb164ce981aa515702" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d4eb164ce981aa515702">{"x":{
+<div id="htmlwidget-88630676de2a12e7a70f" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-88630676de2a12e7a70f">{"x":{
   "chart_spec": {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "height": 400,
@@ -206748,8 +206757,8 @@ modify_inner_spec.vegaspec_unit</code></pre>
 <span id="cb20-43"><a href="#cb20-43" aria-hidden="true" tabindex="-1"></a>final_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="htmlwidget-151542a71ba843f84d3c" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
-<script type="application/json" data-for="htmlwidget-151542a71ba843f84d3c">{"x":{
+<div id="htmlwidget-47259066ddde074c7e3c" style="width:auto;height:auto;" class="vegawidget-vl5 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-47259066ddde074c7e3c">{"x":{
   "chart_spec": {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "layer": [
@@ -316884,7 +316893,10 @@ modify_inner_spec.vegaspec_unit</code></pre>
 <ul>
 <li>If I was tasked with communicating this data as is, I would choose the bar graph. The reason for this is that this graph is straightforward, showing the trend change between years and communicating the data easily and effectively.</li>
 </ul></li>
-<li><p>QUESTION 4: Grab a friend or colleague and talk through the various options together. Do they agree with your preferred view, or is there a preference for another? Did your discussion highlight anything interesting that you hadn’t previously considered?</p></li>
+<li><p>QUESTION 4: Grab a friend or colleague and talk through the various options together. Do they agree with your preferred view, or is there a preference for another? Did your discussion highlight anything interesting that you hadn’t previously considered?</p>
+<ul>
+<li>We agree that the bar graph is the best for this data. However, my friend mentioned that a line chart might be better if it had color and a legend, as it would make it easier to see the different responses.</li>
+</ul></li>
 </ul>
 <!-- -->
 
@@ -317413,96 +317425,96 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb21-62"><a href="#cb21-62" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-63"><a href="#cb21-63" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-64"><a href="#cb21-64" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-65"><a href="#cb21-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-66"><a href="#cb21-66" aria-hidden="true" tabindex="-1"></a><span class="sc">\*\*</span> This bar graph highlights that, although twins tend to share nearly all their DNA, small variations do occur. By creating a side-by-side bar graph, it's easier for the human eye to compare these variations. I hope that this graphic can help explain differences between twins, such as their appearance and health.</span>
-<span id="cb21-67"><a href="#cb21-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-70"><a href="#cb21-70" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-71"><a href="#cb21-71" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: TRUE</span></span>
-<span id="cb21-72"><a href="#cb21-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-73"><a href="#cb21-73" aria-hidden="true" tabindex="-1"></a><span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">500</span>, <span class="at">width =</span> <span class="dv">700</span>, <span class="at">title =</span> <span class="st">"Genetic Similarity Across DNA Test Kits"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb21-74"><a href="#cb21-74" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_rect</span>()<span class="sc">|&gt;</span>  </span>
-<span id="cb21-75"><a href="#cb21-75" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"kit:N"</span>, <span class="at">title =</span> <span class="st">"DNA Test Kit"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb21-76"><a href="#cb21-76" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"pair:N"</span>, <span class="at">title =</span> <span class="st">"Twin Pair"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb21-77"><a href="#cb21-77" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">"genetic.share:Q"</span>, <span class="at">scale =</span> <span class="fu">list</span>(<span class="at">scheme =</span> <span class="st">"dark2"</span>), <span class="at">title =</span> <span class="st">"Genetic Share"</span>) <span class="sc">|&gt;</span>  </span>
-<span id="cb21-78"><a href="#cb21-78" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(genes)</span>
+<span id="cb21-65"><a href="#cb21-65" aria-hidden="true" tabindex="-1"></a> This bar graph highlights that, although twins tend to share nearly all their DNA, small variations do occur. By creating a side-by-side bar graph, it's easier for the human eye to compare these variations. I hope that this graphic can help explain differences between twins, such as their appearance and health.</span>
+<span id="cb21-66"><a href="#cb21-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-69"><a href="#cb21-69" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb21-70"><a href="#cb21-70" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: TRUE</span></span>
+<span id="cb21-71"><a href="#cb21-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-72"><a href="#cb21-72" aria-hidden="true" tabindex="-1"></a><span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">500</span>, <span class="at">width =</span> <span class="dv">700</span>, <span class="at">title =</span> <span class="st">"Genetic Similarity Across DNA Test Kits"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb21-73"><a href="#cb21-73" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_rect</span>()<span class="sc">|&gt;</span>  </span>
+<span id="cb21-74"><a href="#cb21-74" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"kit:N"</span>, <span class="at">title =</span> <span class="st">"DNA Test Kit"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb21-75"><a href="#cb21-75" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"pair:N"</span>, <span class="at">title =</span> <span class="st">"Twin Pair"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb21-76"><a href="#cb21-76" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">"genetic.share:Q"</span>, <span class="at">scale =</span> <span class="fu">list</span>(<span class="at">scheme =</span> <span class="st">"dark2"</span>), <span class="at">title =</span> <span class="st">"Genetic Share"</span>) <span class="sc">|&gt;</span>  </span>
+<span id="cb21-77"><a href="#cb21-77" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(genes)</span>
+<span id="cb21-78"><a href="#cb21-78" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-79"><a href="#cb21-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-80"><a href="#cb21-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-81"><a href="#cb21-81" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-82"><a href="#cb21-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-83"><a href="#cb21-83" aria-hidden="true" tabindex="-1"></a>This heat map shows the differences in how various DNA test kits report genetic similarity for each twin pair. The color palette represents the reported genetic share, with darker colors indicating lower similarity and lighter colors indicating higher similarity. This graphic highlights the potential inconsistency of the DNA testing kits.</span>
-<span id="cb21-84"><a href="#cb21-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-85"><a href="#cb21-85" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise 2 (Data and graphics challenge)</span></span>
-<span id="cb21-86"><a href="#cb21-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-87"><a href="#cb21-87" aria-hidden="true" tabindex="-1"></a><span class="al">![Analysis](AnalysisForPortfolio.png)</span></span>
-<span id="cb21-88"><a href="#cb21-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-89"><a href="#cb21-89" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>How our business compares to other businesses (over time and in February 2020):</span>
-<span id="cb21-90"><a href="#cb21-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-91"><a href="#cb21-91" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Business's Net Promoter Score (NPS) compares to other businesses over time, showing trends from January 2019 to February 2020. This analysis allows us to see how business's NPS has evolved compared to the competition. By examining these trends, we can identify periods where the business performed well and pinpoint times that may have had challenges. In February 2020 specifically, we can see NPS in relation to competitors, providing a snapshot of the market position at that time.</span>
-<span id="cb21-92"><a href="#cb21-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-93"><a href="#cb21-93" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>How the components of the net promoter score for our business have changed over time:</span>
-<span id="cb21-94"><a href="#cb21-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-95"><a href="#cb21-95" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>The NPS components for the business (Detractors, Passives, Promoters) have changed from January 2019 to February 2020. By analyzing these changes, we gain insights into customer sentiment. For example, an increase in Promoters indicates higher customer satisfaction and loyalty, while an increase in Detractors suggests areas that need improvement. This breakdown helps us understand how the composition of NPS score has evolved.</span>
-<span id="cb21-96"><a href="#cb21-96" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-97"><a href="#cb21-97" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise 3 (A new challenge)</span></span>
-<span id="cb21-98"><a href="#cb21-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-101"><a href="#cb21-101" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-102"><a href="#cb21-102" aria-hidden="true" tabindex="-1"></a>tanzania<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">"tanzaniaDataSet.csv"</span>)</span>
-<span id="cb21-103"><a href="#cb21-103" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(tanzania)</span>
-<span id="cb21-104"><a href="#cb21-104" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-105"><a href="#cb21-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-106"><a href="#cb21-106" aria-hidden="true" tabindex="-1"></a><span class="fu">### Data wrangling</span></span>
-<span id="cb21-107"><a href="#cb21-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-110"><a href="#cb21-110" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-111"><a href="#cb21-111" aria-hidden="true" tabindex="-1"></a><span class="co"># Renaming the variables</span></span>
-<span id="cb21-112"><a href="#cb21-112" aria-hidden="true" tabindex="-1"></a>tanzania_clean <span class="ot">&lt;-</span> tanzania <span class="sc">|&gt;</span></span>
-<span id="cb21-113"><a href="#cb21-113" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
-<span id="cb21-114"><a href="#cb21-114" aria-hidden="true" tabindex="-1"></a>    <span class="at">Survey_Year =</span> DHS.Survey.Year,</span>
-<span id="cb21-115"><a href="#cb21-115" aria-hidden="true" tabindex="-1"></a>    <span class="at">Total_fertility_Rate =</span> Total.Fertility.Rate..ages.<span class="dv">15</span>.<span class="fl">49.</span>,</span>
-<span id="cb21-116"><a href="#cb21-116" aria-hidden="true" tabindex="-1"></a>    <span class="at">Contraception_Rate =</span> Contraception....,</span>
-<span id="cb21-117"><a href="#cb21-117" aria-hidden="true" tabindex="-1"></a>    <span class="at">Unmet_Planning_Rate =</span> Unmet.Planning....</span>
-<span id="cb21-118"><a href="#cb21-118" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb21-119"><a href="#cb21-119" aria-hidden="true" tabindex="-1"></a><span class="co"># Dealing with the years</span></span>
-<span id="cb21-120"><a href="#cb21-120" aria-hidden="true" tabindex="-1"></a>tanzania_split <span class="ot">&lt;-</span> tanzania_clean <span class="sc">|&gt;</span></span>
-<span id="cb21-121"><a href="#cb21-121" aria-hidden="true" tabindex="-1"></a> <span class="fu">separate</span>(Survey_Year, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"start_year"</span>, <span class="st">"end_year"</span>), <span class="at">sep =</span> <span class="st">"-"</span>, <span class="at">fill =</span> <span class="st">"right"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb21-122"><a href="#cb21-122" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Convert to integers</span></span>
-<span id="cb21-123"><a href="#cb21-123" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb21-124"><a href="#cb21-124" aria-hidden="true" tabindex="-1"></a>    <span class="at">start_year =</span> <span class="fu">as.integer</span>(start_year),</span>
-<span id="cb21-125"><a href="#cb21-125" aria-hidden="true" tabindex="-1"></a>    <span class="at">end_year =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(end_year), start_year, <span class="fu">as.integer</span>(end_year))</span>
-<span id="cb21-126"><a href="#cb21-126" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb21-127"><a href="#cb21-127" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Replicate data for each year in the range</span></span>
-<span id="cb21-128"><a href="#cb21-128" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">|&gt;</span></span>
-<span id="cb21-129"><a href="#cb21-129" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">list</span>(<span class="fu">seq</span>(start_year, end_year))) <span class="sc">|&gt;</span></span>
-<span id="cb21-130"><a href="#cb21-130" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest</span>(<span class="at">cols =</span> <span class="fu">c</span>(year)) <span class="sc">|&gt;</span></span>
-<span id="cb21-131"><a href="#cb21-131" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>start_year, <span class="sc">-</span>end_year)</span>
-<span id="cb21-132"><a href="#cb21-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-133"><a href="#cb21-133" aria-hidden="true" tabindex="-1"></a><span class="co">#Arrage by year ascending</span></span>
-<span id="cb21-134"><a href="#cb21-134" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split <span class="ot">&lt;-</span> tanzania_split <span class="sc">|&gt;</span></span>
-<span id="cb21-135"><a href="#cb21-135" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(year)</span>
-<span id="cb21-136"><a href="#cb21-136" aria-hidden="true" tabindex="-1"></a><span class="co">#converting to long</span></span>
-<span id="cb21-137"><a href="#cb21-137" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split_long <span class="ot">&lt;-</span> sorted_tanzania_split <span class="sc">|&gt;</span></span>
-<span id="cb21-138"><a href="#cb21-138" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(Total_fertility_Rate, Contraception_Rate, Unmet_Planning_Rate),</span>
-<span id="cb21-139"><a href="#cb21-139" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"variable"</span>, <span class="at">values_to =</span> <span class="st">"value"</span>)</span>
-<span id="cb21-140"><a href="#cb21-140" aria-hidden="true" tabindex="-1"></a><span class="co">#converting to appropriate type</span></span>
-<span id="cb21-141"><a href="#cb21-141" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split_long<span class="sc">$</span>variable <span class="ot">&lt;-</span> <span class="fu">factor</span>(sorted_tanzania_split_long<span class="sc">$</span>variable)</span>
-<span id="cb21-142"><a href="#cb21-142" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-143"><a href="#cb21-143" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split_long<span class="sc">$</span>year <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(sorted_tanzania_split_long<span class="sc">$</span>year)</span>
-<span id="cb21-144"><a href="#cb21-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-145"><a href="#cb21-145" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split_long<span class="sc">$</span>year <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">as.character</span>(sorted_tanzania_split_long<span class="sc">$</span>year))</span>
-<span id="cb21-146"><a href="#cb21-146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-147"><a href="#cb21-147" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split_long<span class="sc">$</span>variable <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">"_"</span>, <span class="st">" "</span>, sorted_tanzania_split_long<span class="sc">$</span>variable)</span>
-<span id="cb21-148"><a href="#cb21-148" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(sorted_tanzania_split_long)</span>
-<span id="cb21-149"><a href="#cb21-149" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-150"><a href="#cb21-150" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split_long <span class="ot">&lt;-</span> sorted_tanzania_split_long <span class="sc">|&gt;</span></span>
-<span id="cb21-151"><a href="#cb21-151" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">|&gt;</span></span>
-<span id="cb21-152"><a href="#cb21-152" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">proportion =</span> value <span class="sc">/</span> <span class="fu">sum</span>(value)) <span class="sc">|&gt;</span></span>
-<span id="cb21-153"><a href="#cb21-153" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
-<span id="cb21-154"><a href="#cb21-154" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-155"><a href="#cb21-155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-156"><a href="#cb21-156" aria-hidden="true" tabindex="-1"></a><span class="fu">### Graphic</span></span>
-<span id="cb21-157"><a href="#cb21-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-160"><a href="#cb21-160" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-161"><a href="#cb21-161" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: TRUE</span></span>
-<span id="cb21-162"><a href="#cb21-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-80"><a href="#cb21-80" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb21-81"><a href="#cb21-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-82"><a href="#cb21-82" aria-hidden="true" tabindex="-1"></a>This heat map shows the differences in how various DNA test kits report genetic similarity for each twin pair. The color palette represents the reported genetic share, with darker colors indicating lower similarity and lighter colors indicating higher similarity. This graphic highlights the potential inconsistency of the DNA testing kits.</span>
+<span id="cb21-83"><a href="#cb21-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-84"><a href="#cb21-84" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise 2 (Data and graphics challenge)</span></span>
+<span id="cb21-85"><a href="#cb21-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-86"><a href="#cb21-86" aria-hidden="true" tabindex="-1"></a><span class="al">![Analysis](AnalysisForPortfolio.png)</span></span>
+<span id="cb21-87"><a href="#cb21-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-88"><a href="#cb21-88" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>How our business compares to other businesses (over time and in February 2020):</span>
+<span id="cb21-89"><a href="#cb21-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-90"><a href="#cb21-90" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Business's Net Promoter Score (NPS) compared to other businesses over time, showing trends from January 2019 to February 2020. This analysis allows us to see how business's NPS has evolved compared to the competition. By examining these trends, we can identify periods where the business performed well and pinpoint times that may have had challenges. In February 2020 specifically, we can see NPS in relation to competitors, providing a snapshot of the market position at that time.</span>
+<span id="cb21-91"><a href="#cb21-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-92"><a href="#cb21-92" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>How the components of the net promoter score for our business have changed over time:</span>
+<span id="cb21-93"><a href="#cb21-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-94"><a href="#cb21-94" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>The NPS components for the business (Detractors, Passives, Promoters) have changed from January 2019 to February 2020. By analyzing these changes, we gain insights into customer sentiment. For example, an increase in Promoters indicates higher customer satisfaction and loyalty, while an increase in Detractors suggests areas that need improvement. This breakdown helps us understand how the composition of the NPS score has evolved.</span>
+<span id="cb21-95"><a href="#cb21-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-96"><a href="#cb21-96" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise 3 (A new challenge)</span></span>
+<span id="cb21-97"><a href="#cb21-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-100"><a href="#cb21-100" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb21-101"><a href="#cb21-101" aria-hidden="true" tabindex="-1"></a>tanzania<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">"tanzaniaDataSet.csv"</span>)</span>
+<span id="cb21-102"><a href="#cb21-102" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(tanzania)</span>
+<span id="cb21-103"><a href="#cb21-103" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb21-104"><a href="#cb21-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-105"><a href="#cb21-105" aria-hidden="true" tabindex="-1"></a><span class="fu">### Data wrangling</span></span>
+<span id="cb21-106"><a href="#cb21-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-109"><a href="#cb21-109" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb21-110"><a href="#cb21-110" aria-hidden="true" tabindex="-1"></a><span class="co"># Renaming the variables</span></span>
+<span id="cb21-111"><a href="#cb21-111" aria-hidden="true" tabindex="-1"></a>tanzania_clean <span class="ot">&lt;-</span> tanzania <span class="sc">|&gt;</span></span>
+<span id="cb21-112"><a href="#cb21-112" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb21-113"><a href="#cb21-113" aria-hidden="true" tabindex="-1"></a>    <span class="at">Survey_Year =</span> DHS.Survey.Year,</span>
+<span id="cb21-114"><a href="#cb21-114" aria-hidden="true" tabindex="-1"></a>    <span class="at">Total_fertility_Rate =</span> Total.Fertility.Rate..ages.<span class="dv">15</span>.<span class="fl">49.</span>,</span>
+<span id="cb21-115"><a href="#cb21-115" aria-hidden="true" tabindex="-1"></a>    <span class="at">Contraception_Rate =</span> Contraception....,</span>
+<span id="cb21-116"><a href="#cb21-116" aria-hidden="true" tabindex="-1"></a>    <span class="at">Unmet_Planning_Rate =</span> Unmet.Planning....</span>
+<span id="cb21-117"><a href="#cb21-117" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb21-118"><a href="#cb21-118" aria-hidden="true" tabindex="-1"></a><span class="co"># Dealing with the years</span></span>
+<span id="cb21-119"><a href="#cb21-119" aria-hidden="true" tabindex="-1"></a>tanzania_split <span class="ot">&lt;-</span> tanzania_clean <span class="sc">|&gt;</span></span>
+<span id="cb21-120"><a href="#cb21-120" aria-hidden="true" tabindex="-1"></a> <span class="fu">separate</span>(Survey_Year, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"start_year"</span>, <span class="st">"end_year"</span>), <span class="at">sep =</span> <span class="st">"-"</span>, <span class="at">fill =</span> <span class="st">"right"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb21-121"><a href="#cb21-121" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Convert to integers</span></span>
+<span id="cb21-122"><a href="#cb21-122" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb21-123"><a href="#cb21-123" aria-hidden="true" tabindex="-1"></a>    <span class="at">start_year =</span> <span class="fu">as.integer</span>(start_year),</span>
+<span id="cb21-124"><a href="#cb21-124" aria-hidden="true" tabindex="-1"></a>    <span class="at">end_year =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(end_year), start_year, <span class="fu">as.integer</span>(end_year))</span>
+<span id="cb21-125"><a href="#cb21-125" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb21-126"><a href="#cb21-126" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Replicate data for each year in the range</span></span>
+<span id="cb21-127"><a href="#cb21-127" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">|&gt;</span></span>
+<span id="cb21-128"><a href="#cb21-128" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">list</span>(<span class="fu">seq</span>(start_year, end_year))) <span class="sc">|&gt;</span></span>
+<span id="cb21-129"><a href="#cb21-129" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest</span>(<span class="at">cols =</span> <span class="fu">c</span>(year)) <span class="sc">|&gt;</span></span>
+<span id="cb21-130"><a href="#cb21-130" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>start_year, <span class="sc">-</span>end_year)</span>
+<span id="cb21-131"><a href="#cb21-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-132"><a href="#cb21-132" aria-hidden="true" tabindex="-1"></a><span class="co">#Arrage by year ascending</span></span>
+<span id="cb21-133"><a href="#cb21-133" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split <span class="ot">&lt;-</span> tanzania_split <span class="sc">|&gt;</span></span>
+<span id="cb21-134"><a href="#cb21-134" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(year)</span>
+<span id="cb21-135"><a href="#cb21-135" aria-hidden="true" tabindex="-1"></a><span class="co">#converting to long</span></span>
+<span id="cb21-136"><a href="#cb21-136" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split_long <span class="ot">&lt;-</span> sorted_tanzania_split <span class="sc">|&gt;</span></span>
+<span id="cb21-137"><a href="#cb21-137" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(Total_fertility_Rate, Contraception_Rate, Unmet_Planning_Rate),</span>
+<span id="cb21-138"><a href="#cb21-138" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"variable"</span>, <span class="at">values_to =</span> <span class="st">"value"</span>)</span>
+<span id="cb21-139"><a href="#cb21-139" aria-hidden="true" tabindex="-1"></a><span class="co">#converting to appropriate type</span></span>
+<span id="cb21-140"><a href="#cb21-140" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split_long<span class="sc">$</span>variable <span class="ot">&lt;-</span> <span class="fu">factor</span>(sorted_tanzania_split_long<span class="sc">$</span>variable)</span>
+<span id="cb21-141"><a href="#cb21-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-142"><a href="#cb21-142" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split_long<span class="sc">$</span>year <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(sorted_tanzania_split_long<span class="sc">$</span>year)</span>
+<span id="cb21-143"><a href="#cb21-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-144"><a href="#cb21-144" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split_long<span class="sc">$</span>year <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">as.character</span>(sorted_tanzania_split_long<span class="sc">$</span>year))</span>
+<span id="cb21-145"><a href="#cb21-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-146"><a href="#cb21-146" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split_long<span class="sc">$</span>variable <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">"_"</span>, <span class="st">" "</span>, sorted_tanzania_split_long<span class="sc">$</span>variable)</span>
+<span id="cb21-147"><a href="#cb21-147" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(sorted_tanzania_split_long)</span>
+<span id="cb21-148"><a href="#cb21-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-149"><a href="#cb21-149" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split_long <span class="ot">&lt;-</span> sorted_tanzania_split_long <span class="sc">|&gt;</span></span>
+<span id="cb21-150"><a href="#cb21-150" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">|&gt;</span></span>
+<span id="cb21-151"><a href="#cb21-151" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">proportion =</span> value <span class="sc">/</span> <span class="fu">sum</span>(value)) <span class="sc">|&gt;</span></span>
+<span id="cb21-152"><a href="#cb21-152" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb21-153"><a href="#cb21-153" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb21-154"><a href="#cb21-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-155"><a href="#cb21-155" aria-hidden="true" tabindex="-1"></a><span class="fu">### Graphic</span></span>
+<span id="cb21-156"><a href="#cb21-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-159"><a href="#cb21-159" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb21-160"><a href="#cb21-160" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: TRUE</span></span>
+<span id="cb21-161"><a href="#cb21-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-162"><a href="#cb21-162" aria-hidden="true" tabindex="-1"></a><span class="co">#EDA</span></span>
 <span id="cb21-163"><a href="#cb21-163" aria-hidden="true" tabindex="-1"></a>sorted_tanzania_split_long <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(sorted_tanzania_split_long)</span>
 <span id="cb21-164"><a href="#cb21-164" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-165"><a href="#cb21-165" aria-hidden="true" tabindex="-1"></a>line_chart <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
@@ -317542,7 +317554,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb21-199"><a href="#cb21-199" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-200"><a href="#cb21-200" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb21-201"><a href="#cb21-201" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-202"><a href="#cb21-202" aria-hidden="true" tabindex="-1"></a>The story I am trying to tell with the graphic above is a simple one: how the different rates of patterns of reproductive health have evolved in Tanzania. For example, the fertility rate has dropped slightly since the first survey, while the contraception rate has increased almost exponentially, with the data plateauing in the last two years, which is the last survey.</span>
+<span id="cb21-202"><a href="#cb21-202" aria-hidden="true" tabindex="-1"></a>The story I am trying to tell with the graphic above is a simple one: how the different rates of patterns of reproductive health have evolved in Tanzania. For example, the fertility rate has dropped slightly since the first survey, while the contraception rate has increased almost exponentially, with the data plateauing in the last two years, which is the last survey. </span>
 <span id="cb21-203"><a href="#cb21-203" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-204"><a href="#cb21-204" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise 4 (Your masterpiece)</span></span>
 <span id="cb21-205"><a href="#cb21-205" aria-hidden="true" tabindex="-1"></a></span>
@@ -317553,212 +317565,213 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb21-212"><a href="#cb21-212" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-215"><a href="#cb21-215" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb21-216"><a href="#cb21-216" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: TRUE</span></span>
-<span id="cb21-217"><a href="#cb21-217" aria-hidden="true" tabindex="-1"></a>strokeData<span class="sc">$</span>Age <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(strokeData<span class="sc">$</span>Age)</span>
-<span id="cb21-218"><a href="#cb21-218" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb21-219"><a href="#cb21-219" aria-hidden="true" tabindex="-1"></a>strokeData_select <span class="ot">&lt;-</span> strokeData <span class="sc">|&gt;</span></span>
-<span id="cb21-220"><a href="#cb21-220" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Age, BMI, Avg_Glucose, Stroke)  </span>
-<span id="cb21-221"><a href="#cb21-221" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-222"><a href="#cb21-222" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-223"><a href="#cb21-223" aria-hidden="true" tabindex="-1"></a>interactive_plot <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
-<span id="cb21-224"><a href="#cb21-224" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_circle</span>() <span class="sc">|&gt;</span></span>
-<span id="cb21-225"><a href="#cb21-225" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"Avg_Glucose"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"Average Glucose Level"</span>) <span class="sc">|&gt;</span>  </span>
-<span id="cb21-226"><a href="#cb21-226" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"BMI"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"BMI"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb21-227"><a href="#cb21-227" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">"Stroke"</span>, <span class="at">type =</span> <span class="st">"nominal"</span>, <span class="at">title =</span> <span class="st">"Stroke Status"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb21-217"><a href="#cb21-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-218"><a href="#cb21-218" aria-hidden="true" tabindex="-1"></a><span class="co"># EDA</span></span>
+<span id="cb21-219"><a href="#cb21-219" aria-hidden="true" tabindex="-1"></a>strokeData<span class="sc">$</span>Age <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(strokeData<span class="sc">$</span>Age)</span>
+<span id="cb21-220"><a href="#cb21-220" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb21-221"><a href="#cb21-221" aria-hidden="true" tabindex="-1"></a>strokeData_select <span class="ot">&lt;-</span> strokeData <span class="sc">|&gt;</span></span>
+<span id="cb21-222"><a href="#cb21-222" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Age, BMI, Avg_Glucose, Stroke)  </span>
+<span id="cb21-223"><a href="#cb21-223" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-224"><a href="#cb21-224" aria-hidden="true" tabindex="-1"></a>interactive_plot <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
+<span id="cb21-225"><a href="#cb21-225" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_circle</span>() <span class="sc">|&gt;</span></span>
+<span id="cb21-226"><a href="#cb21-226" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"Age"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"Age"</span>) <span class="sc">|&gt;</span>  </span>
+<span id="cb21-227"><a href="#cb21-227" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"BMI"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"BMI"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb21-228"><a href="#cb21-228" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_tooltip_array</span>(<span class="fu">c</span>(<span class="st">"Avg_Glucose"</span>, <span class="st">"BMI"</span>, <span class="st">"Age"</span>, <span class="st">"Stroke"</span>)) <span class="sc">|&gt;</span></span>
 <span id="cb21-229"><a href="#cb21-229" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(strokeData_select) <span class="sc">|&gt;</span></span>
 <span id="cb21-230"><a href="#cb21-230" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb21-231"><a href="#cb21-231" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_parameter</span>(<span class="st">"age_param"</span>, <span class="at">value =</span> <span class="fu">min</span>(strokeData<span class="sc">$</span>Age)) <span class="sc">|&gt;</span></span>
+<span id="cb21-231"><a href="#cb21-231" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_parameter</span>(<span class="st">"Avg_Glucose"</span>, <span class="at">value =</span> <span class="fu">min</span>(strokeData<span class="sc">$</span>Avg_Glucose)) <span class="sc">|&gt;</span></span>
 <span id="cb21-232"><a href="#cb21-232" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_bind_range_input</span>(</span>
-<span id="cb21-233"><a href="#cb21-233" aria-hidden="true" tabindex="-1"></a>    <span class="at">parameter_name =</span> <span class="st">"age_param"</span>, </span>
-<span id="cb21-234"><a href="#cb21-234" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Age: "</span>,                 </span>
-<span id="cb21-235"><a href="#cb21-235" aria-hidden="true" tabindex="-1"></a>    <span class="at">min =</span> <span class="fu">min</span>(strokeData<span class="sc">$</span>Age),</span>
-<span id="cb21-236"><a href="#cb21-236" aria-hidden="true" tabindex="-1"></a>    <span class="at">max =</span> <span class="fu">max</span>(strokeData<span class="sc">$</span>Age)</span>
+<span id="cb21-233"><a href="#cb21-233" aria-hidden="true" tabindex="-1"></a>    <span class="at">parameter_name =</span> <span class="st">"Avg_Glucose"</span>, </span>
+<span id="cb21-234"><a href="#cb21-234" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Avg Glucose: "</span>,                 </span>
+<span id="cb21-235"><a href="#cb21-235" aria-hidden="true" tabindex="-1"></a>    <span class="at">min =</span> <span class="fu">min</span>(strokeData<span class="sc">$</span>Avg_Glucose),</span>
+<span id="cb21-236"><a href="#cb21-236" aria-hidden="true" tabindex="-1"></a>    <span class="at">max =</span> <span class="fu">max</span>(strokeData<span class="sc">$</span>Avg_Glucose)</span>
 <span id="cb21-237"><a href="#cb21-237" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb21-238"><a href="#cb21-238" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_filter</span>(<span class="st">"datum.Age &lt;= age_param"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb21-238"><a href="#cb21-238" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_filter</span>(<span class="st">"datum.Avg_Glucose &lt;= Avg_Glucose"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb21-239"><a href="#cb21-239" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb21-240"><a href="#cb21-240" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_opacity</span>(</span>
-<span id="cb21-241"><a href="#cb21-241" aria-hidden="true" tabindex="-1"></a>    <span class="at">condition =</span> <span class="fu">list</span>(<span class="at">test =</span> <span class="st">"datum.Stroke == 0"</span>, <span class="at">value =</span> <span class="fl">0.2</span>),  </span>
-<span id="cb21-242"><a href="#cb21-242" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="dv">1</span>  </span>
-<span id="cb21-243"><a href="#cb21-243" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb21-244"><a href="#cb21-244" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-245"><a href="#cb21-245" aria-hidden="true" tabindex="-1"></a>interactive_plot</span>
-<span id="cb21-246"><a href="#cb21-246" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-247"><a href="#cb21-247" aria-hidden="true" tabindex="-1"></a>strokeData_Diabetes <span class="ot">&lt;-</span> strokeData <span class="sc">|&gt;</span></span>
-<span id="cb21-248"><a href="#cb21-248" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Diabetes <span class="sc">==</span> <span class="dv">1</span>)</span>
-<span id="cb21-249"><a href="#cb21-249" aria-hidden="true" tabindex="-1"></a><span class="co">#Intersting </span></span>
-<span id="cb21-250"><a href="#cb21-250" aria-hidden="true" tabindex="-1"></a>threshold_chart <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
-<span id="cb21-251"><a href="#cb21-251" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_circle</span>() <span class="sc">|&gt;</span></span>
-<span id="cb21-252"><a href="#cb21-252" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"Avg_Glucose"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"Average Glucose Level"</span>) <span class="sc">|&gt;</span>  </span>
-<span id="cb21-253"><a href="#cb21-253" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"BMI"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"BMI"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb21-254"><a href="#cb21-254" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(</span>
-<span id="cb21-255"><a href="#cb21-255" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend =</span> <span class="cn">TRUE</span>, <span class="at">condition =</span> <span class="fu">list</span>(</span>
-<span id="cb21-256"><a href="#cb21-256" aria-hidden="true" tabindex="-1"></a>      <span class="at">test =</span> <span class="st">"datum.Avg_Glucose &gt; threshold_param"</span>,  <span class="co"># Condition for threshold</span></span>
-<span id="cb21-257"><a href="#cb21-257" aria-hidden="true" tabindex="-1"></a>      <span class="at">value =</span> <span class="st">"red"</span>  <span class="co"># Color for points above the threshold</span></span>
-<span id="cb21-258"><a href="#cb21-258" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb21-259"><a href="#cb21-259" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="st">"blue"</span>  <span class="co"># Default color</span></span>
-<span id="cb21-260"><a href="#cb21-260" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb21-261"><a href="#cb21-261" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(strokeData_Diabetes) <span class="sc">|&gt;</span></span>
-<span id="cb21-262"><a href="#cb21-262" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb21-263"><a href="#cb21-263" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add a parameter for the threshold</span></span>
-<span id="cb21-264"><a href="#cb21-264" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_parameter</span>(<span class="st">"threshold_param"</span>, <span class="at">value =</span> <span class="dv">120</span>) <span class="sc">|&gt;</span></span>
-<span id="cb21-265"><a href="#cb21-265" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_bind_range_input</span>(</span>
-<span id="cb21-266"><a href="#cb21-266" aria-hidden="true" tabindex="-1"></a>    <span class="at">parameter_name =</span> <span class="st">"threshold_param"</span>, </span>
-<span id="cb21-267"><a href="#cb21-267" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Glucose Threshold: "</span>,                 </span>
-<span id="cb21-268"><a href="#cb21-268" aria-hidden="true" tabindex="-1"></a>    <span class="at">min =</span> <span class="fu">min</span>(strokeData_Diabetes<span class="sc">$</span>Avg_Glucose),</span>
-<span id="cb21-269"><a href="#cb21-269" aria-hidden="true" tabindex="-1"></a>    <span class="at">max =</span> <span class="fu">max</span>(strokeData_Diabetes<span class="sc">$</span>Avg_Glucose)</span>
-<span id="cb21-270"><a href="#cb21-270" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb21-240"><a href="#cb21-240" aria-hidden="true" tabindex="-1"></a>    <span class="fu">vl_encode_color</span>(<span class="st">"Stroke"</span>, <span class="at">type =</span> <span class="st">"nominal"</span>, <span class="at">title =</span> <span class="st">"Stroke Status"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb21-241"><a href="#cb21-241" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_point_selection</span>(<span class="st">"variable_param"</span>, <span class="at">bind =</span> <span class="st">"legend"</span>, <span class="at">encodings =</span> <span class="fu">list</span>(<span class="st">"color"</span>) )<span class="sc">|&gt;</span></span>
+<span id="cb21-242"><a href="#cb21-242" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_opacity</span>(<span class="at">value =</span> <span class="fl">0.2</span>) <span class="sc">|&gt;</span></span>
+<span id="cb21-243"><a href="#cb21-243" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_condition_opacity</span>(<span class="at">param =</span> <span class="st">"variable_param"</span>, <span class="at">value =</span> <span class="dv">1</span>)</span>
+<span id="cb21-244"><a href="#cb21-244" aria-hidden="true" tabindex="-1"></a>interactive_plot</span>
+<span id="cb21-245"><a href="#cb21-245" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-246"><a href="#cb21-246" aria-hidden="true" tabindex="-1"></a>strokeData_Diabetes <span class="ot">&lt;-</span> strokeData <span class="sc">|&gt;</span></span>
+<span id="cb21-247"><a href="#cb21-247" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Diabetes <span class="sc">==</span> <span class="dv">1</span>)</span>
+<span id="cb21-248"><a href="#cb21-248" aria-hidden="true" tabindex="-1"></a><span class="co">#Intersting </span></span>
+<span id="cb21-249"><a href="#cb21-249" aria-hidden="true" tabindex="-1"></a>threshold_chart <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
+<span id="cb21-250"><a href="#cb21-250" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_circle</span>() <span class="sc">|&gt;</span></span>
+<span id="cb21-251"><a href="#cb21-251" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"Avg_Glucose"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"Average Glucose Level"</span>) <span class="sc">|&gt;</span>  </span>
+<span id="cb21-252"><a href="#cb21-252" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"BMI"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"BMI"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb21-253"><a href="#cb21-253" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(</span>
+<span id="cb21-254"><a href="#cb21-254" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend =</span> <span class="cn">TRUE</span>, <span class="at">condition =</span> <span class="fu">list</span>(</span>
+<span id="cb21-255"><a href="#cb21-255" aria-hidden="true" tabindex="-1"></a>      <span class="at">test =</span> <span class="st">"datum.Avg_Glucose &gt; threshold_param"</span>,  <span class="co"># Condition for threshold</span></span>
+<span id="cb21-256"><a href="#cb21-256" aria-hidden="true" tabindex="-1"></a>      <span class="at">value =</span> <span class="st">"red"</span>  <span class="co"># Color for points above the threshold</span></span>
+<span id="cb21-257"><a href="#cb21-257" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb21-258"><a href="#cb21-258" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="st">"blue"</span>  <span class="co"># Default color</span></span>
+<span id="cb21-259"><a href="#cb21-259" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb21-260"><a href="#cb21-260" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(strokeData_Diabetes) <span class="sc">|&gt;</span></span>
+<span id="cb21-261"><a href="#cb21-261" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb21-262"><a href="#cb21-262" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add a parameter for the threshold</span></span>
+<span id="cb21-263"><a href="#cb21-263" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_parameter</span>(<span class="st">"threshold_param"</span>, <span class="at">value =</span> <span class="dv">120</span>) <span class="sc">|&gt;</span></span>
+<span id="cb21-264"><a href="#cb21-264" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_bind_range_input</span>(</span>
+<span id="cb21-265"><a href="#cb21-265" aria-hidden="true" tabindex="-1"></a>    <span class="at">parameter_name =</span> <span class="st">"threshold_param"</span>, </span>
+<span id="cb21-266"><a href="#cb21-266" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Glucose Threshold: "</span>,                 </span>
+<span id="cb21-267"><a href="#cb21-267" aria-hidden="true" tabindex="-1"></a>    <span class="at">min =</span> <span class="fu">min</span>(strokeData_Diabetes<span class="sc">$</span>Avg_Glucose),</span>
+<span id="cb21-268"><a href="#cb21-268" aria-hidden="true" tabindex="-1"></a>    <span class="at">max =</span> <span class="fu">max</span>(strokeData_Diabetes<span class="sc">$</span>Avg_Glucose)</span>
+<span id="cb21-269"><a href="#cb21-269" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb21-270"><a href="#cb21-270" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-271"><a href="#cb21-271" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-272"><a href="#cb21-272" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-273"><a href="#cb21-273" aria-hidden="true" tabindex="-1"></a>threshold_chart</span>
+<span id="cb21-272"><a href="#cb21-272" aria-hidden="true" tabindex="-1"></a>threshold_chart</span>
+<span id="cb21-273"><a href="#cb21-273" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-274"><a href="#cb21-274" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-275"><a href="#cb21-275" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-276"><a href="#cb21-276" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-277"><a href="#cb21-277" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-278"><a href="#cb21-278" aria-hidden="true" tabindex="-1"></a>For the first graphic, I want to show how, as you age, the average glucose level tends to be higher, and the same is true for BMI. In the second graphic, I just want to show how much people's glucose levels can exceed the dynamic average glucose level in this dataset controled by a slider.</span>
-<span id="cb21-279"><a href="#cb21-279" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-282"><a href="#cb21-282" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-283"><a href="#cb21-283" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: TRUE</span></span>
-<span id="cb21-284"><a href="#cb21-284" aria-hidden="true" tabindex="-1"></a>interactive_plot <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
-<span id="cb21-285"><a href="#cb21-285" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_boxplot</span>() <span class="sc">|&gt;</span></span>
-<span id="cb21-286"><a href="#cb21-286" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"Smoking_Status"</span>, <span class="at">type =</span> <span class="st">"nominal"</span>, <span class="at">axis =</span> <span class="fu">list</span>(<span class="at">labelAngle =</span> <span class="dv">0</span>), <span class="at">title =</span> <span class="st">"Smoking Status"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb21-287"><a href="#cb21-287" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"Avg_Glucose"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"Average Glucose Level"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb21-288"><a href="#cb21-288" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">"Stroke"</span>, <span class="at">type =</span> <span class="st">"nominal"</span>, <span class="at">title =</span> <span class="st">"Stroke Status"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb21-289"><a href="#cb21-289" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_tooltip_array</span>(<span class="fu">c</span>(<span class="st">"Smoking_Status"</span>, <span class="st">"Avg_Glucose"</span>, <span class="st">"Stroke"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb21-290"><a href="#cb21-290" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_xOffset</span>(<span class="st">"Smoking_Status"</span>)<span class="sc">|&gt;</span></span>
-<span id="cb21-291"><a href="#cb21-291" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(strokeData)</span>
-<span id="cb21-292"><a href="#cb21-292" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-293"><a href="#cb21-293" aria-hidden="true" tabindex="-1"></a>interactive_plot</span>
+<span id="cb21-275"><a href="#cb21-275" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb21-276"><a href="#cb21-276" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-277"><a href="#cb21-277" aria-hidden="true" tabindex="-1"></a>For the first graphic, I want to show how, as you age, the average glucose level tends to be higher, and the same is true for BMI. In the second graphic, I want to show how much people's glucose levels can exceed the dynamic average glucose level in this dataset, controlled by a slider. Additionally, I added an interactive legend so the user can focus on the group that had a stroke, the group that didn’t, or both at the same time.</span>
+<span id="cb21-278"><a href="#cb21-278" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-281"><a href="#cb21-281" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb21-282"><a href="#cb21-282" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: TRUE</span></span>
+<span id="cb21-283"><a href="#cb21-283" aria-hidden="true" tabindex="-1"></a>interactive_plot <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
+<span id="cb21-284"><a href="#cb21-284" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_boxplot</span>() <span class="sc">|&gt;</span></span>
+<span id="cb21-285"><a href="#cb21-285" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"Smoking_Status"</span>, <span class="at">type =</span> <span class="st">"nominal"</span>, <span class="at">axis =</span> <span class="fu">list</span>(<span class="at">labelAngle =</span> <span class="dv">0</span>), <span class="at">title =</span> <span class="st">"Smoking Status"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb21-286"><a href="#cb21-286" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"Avg_Glucose"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"Average Glucose Level"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb21-287"><a href="#cb21-287" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_color</span>(<span class="st">"Stroke"</span>, <span class="at">type =</span> <span class="st">"nominal"</span>, <span class="at">title =</span> <span class="st">"Stroke Status"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb21-288"><a href="#cb21-288" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_tooltip_array</span>(<span class="fu">c</span>(<span class="st">"Smoking_Status"</span>, <span class="st">"Avg_Glucose"</span>, <span class="st">"Stroke"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb21-289"><a href="#cb21-289" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_xOffset</span>(<span class="st">"Smoking_Status"</span>)<span class="sc">|&gt;</span></span>
+<span id="cb21-290"><a href="#cb21-290" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(strokeData)</span>
+<span id="cb21-291"><a href="#cb21-291" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-292"><a href="#cb21-292" aria-hidden="true" tabindex="-1"></a>interactive_plot</span>
+<span id="cb21-293"><a href="#cb21-293" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-294"><a href="#cb21-294" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-295"><a href="#cb21-295" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-296"><a href="#cb21-296" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-297"><a href="#cb21-297" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-298"><a href="#cb21-298" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-301"><a href="#cb21-301" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-302"><a href="#cb21-302" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: TRUE</span></span>
-<span id="cb21-303"><a href="#cb21-303" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-304"><a href="#cb21-304" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert categorical variables to factors</span></span>
-<span id="cb21-305"><a href="#cb21-305" aria-hidden="true" tabindex="-1"></a>strokeData <span class="ot">&lt;-</span> strokeData <span class="sc">|&gt;</span></span>
-<span id="cb21-306"><a href="#cb21-306" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Gender =</span> <span class="fu">as.factor</span>(Gender),</span>
-<span id="cb21-307"><a href="#cb21-307" aria-hidden="true" tabindex="-1"></a>         <span class="at">SES =</span> <span class="fu">as.factor</span>(SES),</span>
-<span id="cb21-308"><a href="#cb21-308" aria-hidden="true" tabindex="-1"></a>         <span class="at">Smoking_Status =</span> <span class="fu">as.factor</span>(Smoking_Status),</span>
-<span id="cb21-309"><a href="#cb21-309" aria-hidden="true" tabindex="-1"></a>         <span class="at">Hypertension =</span> <span class="fu">as.factor</span>(Hypertension),</span>
-<span id="cb21-310"><a href="#cb21-310" aria-hidden="true" tabindex="-1"></a>         <span class="at">Heart_Disease =</span> <span class="fu">as.factor</span>(Heart_Disease),</span>
-<span id="cb21-311"><a href="#cb21-311" aria-hidden="true" tabindex="-1"></a>         <span class="at">Diabetes =</span> <span class="fu">as.factor</span>(Diabetes),</span>
-<span id="cb21-312"><a href="#cb21-312" aria-hidden="true" tabindex="-1"></a>         <span class="at">Stroke =</span> <span class="fu">as.factor</span>(Stroke))  </span>
-<span id="cb21-313"><a href="#cb21-313" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-314"><a href="#cb21-314" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit Logistic Regression Model</span></span>
-<span id="cb21-315"><a href="#cb21-315" aria-hidden="true" tabindex="-1"></a>stroke_model <span class="ot">&lt;-</span> <span class="fu">glm</span>(Stroke <span class="sc">~</span> Age <span class="sc">+</span> Gender <span class="sc">+</span> SES <span class="sc">+</span> Hypertension <span class="sc">+</span> Heart_Disease <span class="sc">+</span> </span>
-<span id="cb21-316"><a href="#cb21-316" aria-hidden="true" tabindex="-1"></a>                     BMI <span class="sc">+</span> Avg_Glucose <span class="sc">+</span> Diabetes <span class="sc">+</span> Smoking_Status, </span>
-<span id="cb21-317"><a href="#cb21-317" aria-hidden="true" tabindex="-1"></a>                     <span class="at">data =</span> strokeData, <span class="at">family =</span> binomial)</span>
-<span id="cb21-318"><a href="#cb21-318" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-319"><a href="#cb21-319" aria-hidden="true" tabindex="-1"></a><span class="co"># Predict stroke probabilities</span></span>
-<span id="cb21-320"><a href="#cb21-320" aria-hidden="true" tabindex="-1"></a>strokeData_select<span class="sc">$</span>predicted_prob <span class="ot">&lt;-</span> <span class="fu">predict</span>(stroke_model, <span class="at">type =</span> <span class="st">"response"</span>)</span>
-<span id="cb21-321"><a href="#cb21-321" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-322"><a href="#cb21-322" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a Vega-Lite visualization</span></span>
-<span id="cb21-323"><a href="#cb21-323" aria-hidden="true" tabindex="-1"></a>stroke_scatter <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
-<span id="cb21-324"><a href="#cb21-324" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_circle</span>() <span class="sc">|&gt;</span></span>
-<span id="cb21-325"><a href="#cb21-325" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"Age"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"Age"</span>) <span class="sc">|&gt;</span>  </span>
-<span id="cb21-326"><a href="#cb21-326" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"predicted_prob"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"Predicted Stroke Probability"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb21-327"><a href="#cb21-327" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_tooltip_array</span>(<span class="fu">c</span>(<span class="st">"Age"</span>, <span class="st">"predicted_prob"</span>, <span class="st">"BMI"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb21-328"><a href="#cb21-328" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(strokeData_select)</span>
-<span id="cb21-329"><a href="#cb21-329" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit LOESS model</span></span>
-<span id="cb21-330"><a href="#cb21-330" aria-hidden="true" tabindex="-1"></a>loess_fit <span class="ot">&lt;-</span> <span class="fu">loess</span>(predicted_prob <span class="sc">~</span> Age, <span class="at">data =</span> strokeData_select, <span class="at">span =</span> <span class="fl">0.5</span>)</span>
-<span id="cb21-331"><a href="#cb21-331" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-332"><a href="#cb21-332" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new dataset with smoothed values</span></span>
-<span id="cb21-333"><a href="#cb21-333" aria-hidden="true" tabindex="-1"></a>stroke_loess <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb21-334"><a href="#cb21-334" aria-hidden="true" tabindex="-1"></a>  <span class="at">Age =</span> strokeData_select<span class="sc">$</span>Age,</span>
-<span id="cb21-335"><a href="#cb21-335" aria-hidden="true" tabindex="-1"></a>  <span class="at">predicted_smooth =</span> <span class="fu">predict</span>(loess_fit, <span class="at">newdata =</span> strokeData_select)</span>
-<span id="cb21-336"><a href="#cb21-336" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb21-337"><a href="#cb21-337" aria-hidden="true" tabindex="-1"></a><span class="co"># Loess graphic</span></span>
-<span id="cb21-338"><a href="#cb21-338" aria-hidden="true" tabindex="-1"></a>loess_line <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb21-339"><a href="#cb21-339" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_line</span>(<span class="at">color =</span> <span class="st">"red"</span>, <span class="at">opacity =</span> <span class="fl">0.8</span>) <span class="sc">|&gt;</span></span>
-<span id="cb21-340"><a href="#cb21-340" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"Age"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>) <span class="sc">|&gt;</span>  </span>
-<span id="cb21-341"><a href="#cb21-341" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"predicted_smooth"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb21-342"><a href="#cb21-342" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(stroke_loess)</span>
-<span id="cb21-343"><a href="#cb21-343" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-344"><a href="#cb21-344" aria-hidden="true" tabindex="-1"></a><span class="co"># Layering</span></span>
-<span id="cb21-345"><a href="#cb21-345" aria-hidden="true" tabindex="-1"></a>final_plot <span class="ot">&lt;-</span> <span class="fu">vl_layer</span>(stroke_scatter, loess_line)</span>
-<span id="cb21-346"><a href="#cb21-346" aria-hidden="true" tabindex="-1"></a>final_plot</span>
-<span id="cb21-347"><a href="#cb21-347" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-348"><a href="#cb21-348" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-349"><a href="#cb21-349" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-350"><a href="#cb21-350" aria-hidden="true" tabindex="-1"></a>I decided to use a basic stroke dataset because, a while back, my dad had five strokes and he had many of the conditions mentioned in the dataset, such as heart disease, hypertension, and he was also a former smoker and currently is a diabetic. At the end of the day it was because he didn’t take care of his diabetes giving him a high average glucose level. The combination of all these factors led and his age ultimately led to his strokes. Which seems to be consistent with the prediction plot.</span>
-<span id="cb21-351"><a href="#cb21-351" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-352"><a href="#cb21-352" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise 5 (Using your palette):</span></span>
-<span id="cb21-353"><a href="#cb21-353" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-354"><a href="#cb21-354" aria-hidden="true" tabindex="-1"></a>a.  an encoding channel other than x or y:</span>
-<span id="cb21-355"><a href="#cb21-355" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-356"><a href="#cb21-356" aria-hidden="true" tabindex="-1"></a><span class="in">    For most of my graphics, I use other channels of encoding. For example, in the Tanzania graphic, I use encoding for opacity so that when the user selects one of the rates, the other rates become less opaque.</span></span>
-<span id="cb21-357"><a href="#cb21-357" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-358"><a href="#cb21-358" aria-hidden="true" tabindex="-1"></a>b.  layers:</span>
-<span id="cb21-359"><a href="#cb21-359" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-360"><a href="#cb21-360" aria-hidden="true" tabindex="-1"></a><span class="in">    In my "masterpiece," I use layers to overlay a scatter plot and a loess line to make the predictions easier to see.</span></span>
-<span id="cb21-361"><a href="#cb21-361" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-362"><a href="#cb21-362" aria-hidden="true" tabindex="-1"></a>c.  facets:</span>
-<span id="cb21-363"><a href="#cb21-363" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-364"><a href="#cb21-364" aria-hidden="true" tabindex="-1"></a><span class="in">    In the first twins' graphic, I use a facet to create two different graphics, faceted by the identity of the twins.</span></span>
-<span id="cb21-365"><a href="#cb21-365" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-366"><a href="#cb21-366" aria-hidden="true" tabindex="-1"></a>d.  concatenation or repeat:</span>
-<span id="cb21-367"><a href="#cb21-367" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-368"><a href="#cb21-368" aria-hidden="true" tabindex="-1"></a><span class="in">    Again, in the Tanzania example, I use concatenation to show both the trend of rates over time and, on the left, the proportions of the rates per year.</span></span>
-<span id="cb21-369"><a href="#cb21-369" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-370"><a href="#cb21-370" aria-hidden="true" tabindex="-1"></a>e.  non-default settings for a channel’s scale or guide:</span>
-<span id="cb21-371"><a href="#cb21-371" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-372"><a href="#cb21-372" aria-hidden="true" tabindex="-1"></a><span class="in">    In the heatmap example, I use a non-default color scale to highlight the differences between the genetic kits.</span></span>
-<span id="cb21-373"><a href="#cb21-373" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-374"><a href="#cb21-374" aria-hidden="true" tabindex="-1"></a>f.  tooltips:</span>
-<span id="cb21-375"><a href="#cb21-375" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-376"><a href="#cb21-376" aria-hidden="true" tabindex="-1"></a><span class="in">    I used tooltips in my graphics on "my masterpiece" so that when you hover over a data point, you can observe multiple variables of the dataset for that point.</span></span>
-<span id="cb21-377"><a href="#cb21-377" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-378"><a href="#cb21-378" aria-hidden="true" tabindex="-1"></a>g.  another kind of interaction (panning/zooming, brushing, sliders, etc.):</span>
-<span id="cb21-379"><a href="#cb21-379" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-380"><a href="#cb21-380" aria-hidden="true" tabindex="-1"></a><span class="in">    I used a couple of interactions in a few graphs. For example, in the Tanzania line graph, I bound the legend to the opacity so that when the user selects one of the rates on the legend, the other two become less opaque. Another example is in the first graphic of the stroke dataset, where I used a slider for age to observe the data points by age.</span></span>
-<span id="cb21-381"><a href="#cb21-381" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-382"><a href="#cb21-382" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise 6 (Keep learning)</span></span>
-<span id="cb21-383"><a href="#cb21-383" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-384"><a href="#cb21-384" aria-hidden="true" tabindex="-1"></a>a.  </span>
-<span id="cb21-385"><a href="#cb21-385" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-386"><a href="#cb21-386" aria-hidden="true" tabindex="-1"></a><span class="in">    -   In the [second graphic](https://vega.github.io/vega-lite/docs/condition.html), the stroke dataset ,I added a slider that controls the color based on the threshold, which I set to 120 because that's when it starts to get dangerous for diabetic people. I thought that was interesting because then you can observe who goes beyond that danger zone threshold.</span></span>
-<span id="cb21-387"><a href="#cb21-387" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-388"><a href="#cb21-388" aria-hidden="true" tabindex="-1"></a><span class="in">    -   While working on some of my graphics, I saw that the axis were at the wrong angle to the point where trying to read the labels became more important than the actual graphic. So, inorder to remove this, I looked at the documentation for axis and found that you could change the angle of the labels with [labelAngle](https://vega.github.io/vega-lite/docs/axis.html). Though it is a small and subtle change, it has an impact on the one observing the graph, shifting the focus from the label to the actual graphic.</span></span>
-<span id="cb21-389"><a href="#cb21-389" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-390"><a href="#cb21-390" aria-hidden="true" tabindex="-1"></a>b.  </span>
-<span id="cb21-391"><a href="#cb21-391" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-392"><a href="#cb21-392" aria-hidden="true" tabindex="-1"></a><span class="in">    -   The color for the heat map I chose according to [Wilke](https://clauswilke.com/dataviz/color-basics.html#color-as-a-tool-to-distinguish) and the [github page](https://vega.github.io/vega/docs/schemes/) where Wilke advises in section 4.1 to use color as a tool to distinguish and then according to the documentation dark2 is categorical scheme.</span></span>
-<span id="cb21-393"><a href="#cb21-393" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-394"><a href="#cb21-394" aria-hidden="true" tabindex="-1"></a><span class="in">    -   For the last stroke graphic, specifically, I followed [Knaflic'](https://github.com/Saurav6789/Books-/blob/master/storytelling-with-data-cole-nussbaumer-knaflic.pdf) advice from chapter 6, page 235. His advice is that visualization without a story doesn't stick with the audience. By adding my father's story about his stroke,s I think I will appeal to the emotion of the audience, and hence,e it will stick with them for longer.</span></span>
-<span id="cb21-395"><a href="#cb21-395" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-396"><a href="#cb21-396" aria-hidden="true" tabindex="-1"></a><span class="fu">## HW 4-Exercise 2.12:</span></span>
-<span id="cb21-397"><a href="#cb21-397" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-398"><a href="#cb21-398" aria-hidden="true" tabindex="-1"></a><span class="al">![Exercise 2.12a](2-12a.png)</span></span>
-<span id="cb21-399"><a href="#cb21-399" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-400"><a href="#cb21-400" aria-hidden="true" tabindex="-1"></a><span class="al">![Exercise 2.12b](2-12b.png)</span></span>
-<span id="cb21-401"><a href="#cb21-401" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-402"><a href="#cb21-402" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>QUESTION 1: What do you like about each graph? What can you easily see or compare?</span>
-<span id="cb21-403"><a href="#cb21-403" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-404"><a href="#cb21-404" aria-hidden="true" tabindex="-1"></a>    a.  I like that it is faceted by year, which makes it easier to compare the proportion of the answers by employees</span>
-<span id="cb21-405"><a href="#cb21-405" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-406"><a href="#cb21-406" aria-hidden="true" tabindex="-1"></a>    b.  The bars was very easy and straightforward to compare, which is what I liked about this graph.</span>
-<span id="cb21-407"><a href="#cb21-407" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-408"><a href="#cb21-408" aria-hidden="true" tabindex="-1"></a>    c.  I like that I can see how the employees' answers have shifted positively in a year.</span>
-<span id="cb21-409"><a href="#cb21-409" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-410"><a href="#cb21-410" aria-hidden="true" tabindex="-1"></a>    d.  a simple trendline. This makes it easier to see where employees' minds are.</span>
-<span id="cb21-411"><a href="#cb21-411" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-412"><a href="#cb21-412" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>QUESTION 2: What is difficult about the given view? Are there limitations or other considerations of which to be aware?</span>
-<span id="cb21-413"><a href="#cb21-413" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-414"><a href="#cb21-414" aria-hidden="true" tabindex="-1"></a>    a.  The label for strongly disagree is a little distracting. Adding color and legend would improve this graphic.</span>
-<span id="cb21-415"><a href="#cb21-415" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-416"><a href="#cb21-416" aria-hidden="true" tabindex="-1"></a>    b.  The legend is in an odd place, right below the question/ context of the graphic. Perhaps moving the legend to the side or the bottom would improve the graphic.</span>
-<span id="cb21-417"><a href="#cb21-417" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-418"><a href="#cb21-418" aria-hidden="true" tabindex="-1"></a>    c.  A lot of clutter with the response labels, so adding color and a legend that highlights the responses might be good.</span>
-<span id="cb21-419"><a href="#cb21-419" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-420"><a href="#cb21-420" aria-hidden="true" tabindex="-1"></a>    d.  I am not quite sure what to do here. My initial thought would be to expand the y-axis. I would do this because when I first saw that kind of "V" formed by the strongly agree and disagree, it threw me off.</span>
-<span id="cb21-421"><a href="#cb21-421" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-422"><a href="#cb21-422" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>QUESTION 3: If you were tasked with communicating this data, which option would you choose and why?</span>
-<span id="cb21-423"><a href="#cb21-423" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-424"><a href="#cb21-424" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>If I was tasked with communicating this data as is, I would choose the bar graph. The reason for this is that this graph is straightforward, showing the trend change between years and communicating the data easily and effectively.</span>
-<span id="cb21-425"><a href="#cb21-425" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-426"><a href="#cb21-426" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>QUESTION 4: Grab a friend or colleague and talk through the various options together. Do they agree with your preferred view, or is there a preference for another? Did your discussion highlight anything interesting that you hadn’t previously considered?</span>
+<span id="cb21-296"><a href="#cb21-296" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb21-297"><a href="#cb21-297" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-300"><a href="#cb21-300" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb21-301"><a href="#cb21-301" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: TRUE</span></span>
+<span id="cb21-302"><a href="#cb21-302" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-303"><a href="#cb21-303" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert categorical variables to factors</span></span>
+<span id="cb21-304"><a href="#cb21-304" aria-hidden="true" tabindex="-1"></a>strokeData <span class="ot">&lt;-</span> strokeData <span class="sc">|&gt;</span></span>
+<span id="cb21-305"><a href="#cb21-305" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Gender =</span> <span class="fu">as.factor</span>(Gender),</span>
+<span id="cb21-306"><a href="#cb21-306" aria-hidden="true" tabindex="-1"></a>         <span class="at">SES =</span> <span class="fu">as.factor</span>(SES),</span>
+<span id="cb21-307"><a href="#cb21-307" aria-hidden="true" tabindex="-1"></a>         <span class="at">Smoking_Status =</span> <span class="fu">as.factor</span>(Smoking_Status),</span>
+<span id="cb21-308"><a href="#cb21-308" aria-hidden="true" tabindex="-1"></a>         <span class="at">Hypertension =</span> <span class="fu">as.factor</span>(Hypertension),</span>
+<span id="cb21-309"><a href="#cb21-309" aria-hidden="true" tabindex="-1"></a>         <span class="at">Heart_Disease =</span> <span class="fu">as.factor</span>(Heart_Disease),</span>
+<span id="cb21-310"><a href="#cb21-310" aria-hidden="true" tabindex="-1"></a>         <span class="at">Diabetes =</span> <span class="fu">as.factor</span>(Diabetes),</span>
+<span id="cb21-311"><a href="#cb21-311" aria-hidden="true" tabindex="-1"></a>         <span class="at">Stroke =</span> <span class="fu">as.factor</span>(Stroke))  </span>
+<span id="cb21-312"><a href="#cb21-312" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-313"><a href="#cb21-313" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit Logistic Regression Model</span></span>
+<span id="cb21-314"><a href="#cb21-314" aria-hidden="true" tabindex="-1"></a>stroke_model <span class="ot">&lt;-</span> <span class="fu">glm</span>(Stroke <span class="sc">~</span> Age <span class="sc">+</span> Gender <span class="sc">+</span> SES <span class="sc">+</span> Hypertension <span class="sc">+</span> Heart_Disease <span class="sc">+</span> </span>
+<span id="cb21-315"><a href="#cb21-315" aria-hidden="true" tabindex="-1"></a>                     BMI <span class="sc">+</span> Avg_Glucose <span class="sc">+</span> Diabetes <span class="sc">+</span> Smoking_Status, </span>
+<span id="cb21-316"><a href="#cb21-316" aria-hidden="true" tabindex="-1"></a>                     <span class="at">data =</span> strokeData, <span class="at">family =</span> binomial)</span>
+<span id="cb21-317"><a href="#cb21-317" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-318"><a href="#cb21-318" aria-hidden="true" tabindex="-1"></a><span class="co"># Predict stroke probabilities</span></span>
+<span id="cb21-319"><a href="#cb21-319" aria-hidden="true" tabindex="-1"></a>strokeData_select<span class="sc">$</span>predicted_prob <span class="ot">&lt;-</span> <span class="fu">predict</span>(stroke_model, <span class="at">type =</span> <span class="st">"response"</span>)</span>
+<span id="cb21-320"><a href="#cb21-320" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-321"><a href="#cb21-321" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a Vega-Lite visualization</span></span>
+<span id="cb21-322"><a href="#cb21-322" aria-hidden="true" tabindex="-1"></a>stroke_scatter <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>(<span class="at">height =</span> <span class="dv">400</span>, <span class="at">width =</span> <span class="dv">600</span>) <span class="sc">|&gt;</span></span>
+<span id="cb21-323"><a href="#cb21-323" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_circle</span>() <span class="sc">|&gt;</span></span>
+<span id="cb21-324"><a href="#cb21-324" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"Age"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"Age"</span>) <span class="sc">|&gt;</span>  </span>
+<span id="cb21-325"><a href="#cb21-325" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"predicted_prob"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>, <span class="at">title =</span> <span class="st">"Predicted Stroke Probability"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb21-326"><a href="#cb21-326" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_tooltip_array</span>(<span class="fu">c</span>(<span class="st">"Age"</span>, <span class="st">"predicted_prob"</span>, <span class="st">"BMI"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb21-327"><a href="#cb21-327" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(strokeData_select)</span>
+<span id="cb21-328"><a href="#cb21-328" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit LOESS model</span></span>
+<span id="cb21-329"><a href="#cb21-329" aria-hidden="true" tabindex="-1"></a>loess_fit <span class="ot">&lt;-</span> <span class="fu">loess</span>(predicted_prob <span class="sc">~</span> Age, <span class="at">data =</span> strokeData_select, <span class="at">span =</span> <span class="fl">0.5</span>)</span>
+<span id="cb21-330"><a href="#cb21-330" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-331"><a href="#cb21-331" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new dataset with smoothed values</span></span>
+<span id="cb21-332"><a href="#cb21-332" aria-hidden="true" tabindex="-1"></a>stroke_loess <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb21-333"><a href="#cb21-333" aria-hidden="true" tabindex="-1"></a>  <span class="at">Age =</span> strokeData_select<span class="sc">$</span>Age,</span>
+<span id="cb21-334"><a href="#cb21-334" aria-hidden="true" tabindex="-1"></a>  <span class="at">predicted_smooth =</span> <span class="fu">predict</span>(loess_fit, <span class="at">newdata =</span> strokeData_select)</span>
+<span id="cb21-335"><a href="#cb21-335" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb21-336"><a href="#cb21-336" aria-hidden="true" tabindex="-1"></a><span class="co"># Loess graphic</span></span>
+<span id="cb21-337"><a href="#cb21-337" aria-hidden="true" tabindex="-1"></a>loess_line <span class="ot">&lt;-</span> <span class="fu">vl_chart</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb21-338"><a href="#cb21-338" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_mark_line</span>(<span class="at">color =</span> <span class="st">"red"</span>, <span class="at">opacity =</span> <span class="fl">0.8</span>) <span class="sc">|&gt;</span></span>
+<span id="cb21-339"><a href="#cb21-339" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_x</span>(<span class="st">"Age"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>) <span class="sc">|&gt;</span>  </span>
+<span id="cb21-340"><a href="#cb21-340" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_encode_y</span>(<span class="st">"predicted_smooth"</span>, <span class="at">type =</span> <span class="st">"quantitative"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb21-341"><a href="#cb21-341" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vl_add_data</span>(stroke_loess)</span>
+<span id="cb21-342"><a href="#cb21-342" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-343"><a href="#cb21-343" aria-hidden="true" tabindex="-1"></a><span class="co"># Layering</span></span>
+<span id="cb21-344"><a href="#cb21-344" aria-hidden="true" tabindex="-1"></a>final_plot <span class="ot">&lt;-</span> <span class="fu">vl_layer</span>(stroke_scatter, loess_line)</span>
+<span id="cb21-345"><a href="#cb21-345" aria-hidden="true" tabindex="-1"></a>final_plot</span>
+<span id="cb21-346"><a href="#cb21-346" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-347"><a href="#cb21-347" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb21-348"><a href="#cb21-348" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-349"><a href="#cb21-349" aria-hidden="true" tabindex="-1"></a>I decided to use a basic stroke dataset because, a while back, my dad had five strokes and he had many of the conditions mentioned in the dataset, such as heart disease, hypertension, and he was also a former smoker and currently is a diabetic. At the end of the day it was because he didn’t take care of his diabetes giving him a high average glucose level. The combination of all these factors led and his age ultimately led to his strokes. Which seems to be consistent with the prediction plot.</span>
+<span id="cb21-350"><a href="#cb21-350" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-351"><a href="#cb21-351" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise 5 (Using your palette):</span></span>
+<span id="cb21-352"><a href="#cb21-352" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-353"><a href="#cb21-353" aria-hidden="true" tabindex="-1"></a>a.  an encoding channel other than x or y:</span>
+<span id="cb21-354"><a href="#cb21-354" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-355"><a href="#cb21-355" aria-hidden="true" tabindex="-1"></a><span class="in">    For most of my graphics, I use other channels of encoding. For example, in the Tanzania graphic, I use encoding for opacity so that when the user selects one of the rates, the other rates become less opaque.</span></span>
+<span id="cb21-356"><a href="#cb21-356" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-357"><a href="#cb21-357" aria-hidden="true" tabindex="-1"></a>b.  layers:</span>
+<span id="cb21-358"><a href="#cb21-358" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-359"><a href="#cb21-359" aria-hidden="true" tabindex="-1"></a><span class="in">    In my "masterpiece," I use layers to overlay a scatter plot and a loess line to make the predictions easier to see.</span></span>
+<span id="cb21-360"><a href="#cb21-360" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-361"><a href="#cb21-361" aria-hidden="true" tabindex="-1"></a>c.  facets:</span>
+<span id="cb21-362"><a href="#cb21-362" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-363"><a href="#cb21-363" aria-hidden="true" tabindex="-1"></a><span class="in">    In the first twins' graphic, I use a facet to create two different graphics, faceted by the identity of the twins.</span></span>
+<span id="cb21-364"><a href="#cb21-364" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-365"><a href="#cb21-365" aria-hidden="true" tabindex="-1"></a>d.  concatenation or repeat:</span>
+<span id="cb21-366"><a href="#cb21-366" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-367"><a href="#cb21-367" aria-hidden="true" tabindex="-1"></a><span class="in">    Again, in the Tanzania example, I use concatenation to show both the trend of rates over time and, on the left, the proportions of the rates per year.</span></span>
+<span id="cb21-368"><a href="#cb21-368" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-369"><a href="#cb21-369" aria-hidden="true" tabindex="-1"></a>e.  non-default settings for a channel’s scale or guide:</span>
+<span id="cb21-370"><a href="#cb21-370" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-371"><a href="#cb21-371" aria-hidden="true" tabindex="-1"></a><span class="in">    In the heatmap example, I use a non-default color scale to highlight the differences between the genetic kits.</span></span>
+<span id="cb21-372"><a href="#cb21-372" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-373"><a href="#cb21-373" aria-hidden="true" tabindex="-1"></a>f.  tooltips:</span>
+<span id="cb21-374"><a href="#cb21-374" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-375"><a href="#cb21-375" aria-hidden="true" tabindex="-1"></a><span class="in">    I used tooltips in my graphics on "my masterpiece" so that when you hover over a data point, you can observe multiple variables of the dataset for that point.</span></span>
+<span id="cb21-376"><a href="#cb21-376" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-377"><a href="#cb21-377" aria-hidden="true" tabindex="-1"></a>g.  another kind of interaction (panning/zooming, brushing, sliders, etc.):</span>
+<span id="cb21-378"><a href="#cb21-378" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-379"><a href="#cb21-379" aria-hidden="true" tabindex="-1"></a><span class="in">    I used a couple of interactions in a few graphs. For example, in the Tanzania line graph, I bound the legend to the opacity so that when the user selects one of the rates on the legend, the other two become less opaque. Another example is in the first graphic of the stroke dataset, where I used a slider for age to observe the data points by age.</span></span>
+<span id="cb21-380"><a href="#cb21-380" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-381"><a href="#cb21-381" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise 6 (Keep learning)</span></span>
+<span id="cb21-382"><a href="#cb21-382" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-383"><a href="#cb21-383" aria-hidden="true" tabindex="-1"></a>a.  </span>
+<span id="cb21-384"><a href="#cb21-384" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-385"><a href="#cb21-385" aria-hidden="true" tabindex="-1"></a><span class="in">    -   In the [second graphic](https://vega.github.io/vega-lite/docs/condition.html), the stroke dataset ,I added a slider that controls the color based on the threshold, which I set to 120 because that's when it starts to get dangerous for diabetic people. I thought that was interesting because then you can observe who goes beyond that danger zone threshold.</span></span>
+<span id="cb21-386"><a href="#cb21-386" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-387"><a href="#cb21-387" aria-hidden="true" tabindex="-1"></a><span class="in">    -   While working on some of my graphics, I saw that the axis were at the wrong angle to the point where trying to read the labels became more important than the actual graphic. So, inorder to remove this, I looked at the documentation for axis and found that you could change the angle of the labels with [labelAngle](https://vega.github.io/vega-lite/docs/axis.html). Though it is a small and subtle change, it has an impact on the one observing the graph, shifting the focus from the label to the actual graphic.</span></span>
+<span id="cb21-388"><a href="#cb21-388" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-389"><a href="#cb21-389" aria-hidden="true" tabindex="-1"></a>b.  </span>
+<span id="cb21-390"><a href="#cb21-390" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-391"><a href="#cb21-391" aria-hidden="true" tabindex="-1"></a><span class="in">    -   The color for the heat map I chose according to [Wilke](https://clauswilke.com/dataviz/color-basics.html#color-as-a-tool-to-distinguish) and the [github page](https://vega.github.io/vega/docs/schemes/) where Wilke advises in section 4.1 to use color as a tool to distinguish and then according to the documentation dark2 is categorical scheme.</span></span>
+<span id="cb21-392"><a href="#cb21-392" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-393"><a href="#cb21-393" aria-hidden="true" tabindex="-1"></a><span class="in">    -   For the last stroke graphic, specifically, I followed [Knaflic'](https://github.com/Saurav6789/Books-/blob/master/storytelling-with-data-cole-nussbaumer-knaflic.pdf) advice from chapter 6, page 235. His advice is that visualization without a story doesn't stick with the audience. By adding my father's story about his stroke,s I think I will appeal to the emotion of the audience, and hence,e it will stick with them for longer.</span></span>
+<span id="cb21-394"><a href="#cb21-394" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-395"><a href="#cb21-395" aria-hidden="true" tabindex="-1"></a><span class="fu">## HW 4-Exercise 2.12:</span></span>
+<span id="cb21-396"><a href="#cb21-396" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-397"><a href="#cb21-397" aria-hidden="true" tabindex="-1"></a><span class="al">![Exercise 2.12a](2-12a.png)</span></span>
+<span id="cb21-398"><a href="#cb21-398" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-399"><a href="#cb21-399" aria-hidden="true" tabindex="-1"></a><span class="al">![Exercise 2.12b](2-12b.png)</span></span>
+<span id="cb21-400"><a href="#cb21-400" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-401"><a href="#cb21-401" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>QUESTION 1: What do you like about each graph? What can you easily see or compare?</span>
+<span id="cb21-402"><a href="#cb21-402" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-403"><a href="#cb21-403" aria-hidden="true" tabindex="-1"></a>    a.  I like that it is faceted by year, which makes it easier to compare the proportion of the answers by employees</span>
+<span id="cb21-404"><a href="#cb21-404" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-405"><a href="#cb21-405" aria-hidden="true" tabindex="-1"></a>    b.  The bars was very easy and straightforward to compare, which is what I liked about this graph.</span>
+<span id="cb21-406"><a href="#cb21-406" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-407"><a href="#cb21-407" aria-hidden="true" tabindex="-1"></a>    c.  I like that I can see how the employees' answers have shifted positively in a year.</span>
+<span id="cb21-408"><a href="#cb21-408" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-409"><a href="#cb21-409" aria-hidden="true" tabindex="-1"></a>    d.  a simple trendline. This makes it easier to see where employees' minds are.</span>
+<span id="cb21-410"><a href="#cb21-410" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-411"><a href="#cb21-411" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>QUESTION 2: What is difficult about the given view? Are there limitations or other considerations of which to be aware?</span>
+<span id="cb21-412"><a href="#cb21-412" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-413"><a href="#cb21-413" aria-hidden="true" tabindex="-1"></a>    a.  The label for strongly disagree is a little distracting. Adding color and legend would improve this graphic.</span>
+<span id="cb21-414"><a href="#cb21-414" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-415"><a href="#cb21-415" aria-hidden="true" tabindex="-1"></a>    b.  The legend is in an odd place, right below the question/ context of the graphic. Perhaps moving the legend to the side or the bottom would improve the graphic.</span>
+<span id="cb21-416"><a href="#cb21-416" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-417"><a href="#cb21-417" aria-hidden="true" tabindex="-1"></a>    c.  A lot of clutter with the response labels, so adding color and a legend that highlights the responses might be good.</span>
+<span id="cb21-418"><a href="#cb21-418" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-419"><a href="#cb21-419" aria-hidden="true" tabindex="-1"></a>    d.  I am not quite sure what to do here. My initial thought would be to expand the y-axis. I would do this because when I first saw that kind of "V" formed by the strongly agree and disagree, it threw me off.</span>
+<span id="cb21-420"><a href="#cb21-420" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-421"><a href="#cb21-421" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>QUESTION 3: If you were tasked with communicating this data, which option would you choose and why?</span>
+<span id="cb21-422"><a href="#cb21-422" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-423"><a href="#cb21-423" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>If I was tasked with communicating this data as is, I would choose the bar graph. The reason for this is that this graph is straightforward, showing the trend change between years and communicating the data easily and effectively.</span>
+<span id="cb21-424"><a href="#cb21-424" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-425"><a href="#cb21-425" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>QUESTION 4: Grab a friend or colleague and talk through the various options together. Do they agree with your preferred view, or is there a preference for another? Did your discussion highlight anything interesting that you hadn’t previously considered?</span>
+<span id="cb21-426"><a href="#cb21-426" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-427"><a href="#cb21-427" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>We agree that the bar graph is the best for this data. However, my friend mentioned that a line chart might be better if it had color and a legend, as it would make it easier to see the different responses.</span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
